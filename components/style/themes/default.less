@@ -14,7 +14,7 @@
 @info-color: @primary-color;
 @success-color: @green-6;
 @processing-color: @blue-6;
-@error-color: @red-5;
+@error-color: @red-6;
 @highlight-color: @red-5;
 @warning-color: @gold-6;
 @normal-color: #d9d9d9;
@@ -71,7 +71,7 @@
 @heading-5-size: ceil(@font-size-base * 1.14);
 // https://github.com/ant-design/ant-design/issues/20210
 @line-height-base: 1.5715;
-@border-radius-base: 2px;
+@border-radius-base: 4px;
 @border-radius-sm: @border-radius-base;
 
 // vertical paddings
@@ -100,7 +100,7 @@
 // The background colors for active and hover states for things like
 // list items or table cells.
 @item-active-bg: @primary-1;
-@item-hover-bg: #f5f5f5;
+@item-hover-bg: #e6f0ff;
 
 // ICONFONT
 @iconfont-css-prefix: anticon;
@@ -162,8 +162,8 @@
 
 // Buttons
 @btn-font-weight: 400;
-@btn-border-radius-base: @border-radius-base;
-@btn-border-radius-sm: @border-radius-base;
+@btn-border-radius-base: 4px;
+@btn-border-radius-sm: @btn-border-radius-base;
 @btn-border-width: @border-width-base;
 @btn-border-style: @border-style-base;
 @btn-shadow: 0 2px 0 rgba(0, 0, 0, 0.015);
@@ -178,8 +178,10 @@
 @btn-default-border: @border-color-base;
 
 @btn-danger-color: #fff;
-@btn-danger-bg: color(~`colorPalette('@{error-color}', 5) `);
-@btn-danger-border: color(~`colorPalette('@{error-color}', 5) `);
+//@btn-danger-bg: color(~`colorPalette('@{error-color}', 5) `);
+@btn-danger-bg: @error-color;
+//@btn-danger-border: color(~`colorPalette('@{error-color}', 5) `);
+@btn-danger-border: @error-color;
 
 @btn-disable-color: @disabled-color;
 @btn-disable-bg: @disabled-bg;
@@ -648,7 +650,7 @@
 
 // Rate
 // ---
-@rate-star-color: @yellow-6;
+@rate-star-color: @blue-6;
 @rate-star-bg: @border-color-split;
 @rate-star-size: 20px;
 @rate-star-hover-scale: scale(1.1);
@@ -744,7 +746,7 @@
 
 // Switch
 // ---
-@switch-height: 22px;
+@switch-height: 24px;
 @switch-sm-height: 16px;
 @switch-sm-checked-margin-left: -(@switch-sm-height - 3px);
 @switch-disabled-opacity: 0.4;

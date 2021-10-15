@@ -4,7 +4,7 @@ import PropTypes from '../_util/vue-types';
 import type { ExtractPropTypes, PropType } from 'vue';
 import type { SizeType } from '../config-provider';
 
-const ButtonTypes = tuple('default', 'primary', 'ghost', 'dashed', 'link', 'text');
+const ButtonTypes = tuple('default', 'primary', 'ghost', 'link');
 export type ButtonType = typeof ButtonTypes[number];
 const ButtonShapes = tuple('circle', 'round');
 export type ButtonShape = typeof ButtonShapes[number];
@@ -33,6 +33,9 @@ const buttonProps = () => ({
     default: (): boolean | { delay?: number } => false,
   },
   disabled: PropTypes.looseBool,
+  outline: PropTypes.looseBool,
+  dashed: PropTypes.looseBool,
+  text: PropTypes.looseBool,
   ghost: PropTypes.looseBool,
   block: PropTypes.looseBool,
   danger: PropTypes.looseBool,

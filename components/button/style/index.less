@@ -79,8 +79,12 @@
     .btn-link();
   }
 
-  &-text {
-    .btn-text();
+  &-textCls {
+    .btn-textCls-default();
+  }
+
+  &-outline {
+    .btn-outline-default();
   }
 
   &-dangerous {
@@ -124,7 +128,6 @@
     z-index: 1;
     display: none;
     background: @component-background;
-    border-radius: inherit;
     opacity: 0.35;
     transition: opacity 0.2s;
     content: '';
@@ -256,7 +259,6 @@ a.@{btn-prefix-cls} {
   // 0.1px for padding-top solution works and I don't why
   padding-top: 0.01px !important;
   line-height: @btn-height-base - 2px;
-
   &-lg {
     line-height: @btn-height-lg - 2px;
   }

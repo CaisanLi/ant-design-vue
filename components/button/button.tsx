@@ -24,9 +24,8 @@ type Loading = boolean | number;
 const rxTwoCNChar = /^[\u4e00-\u9fa5]{2}$/;
 const isTwoCNChar = rxTwoCNChar.test.bind(rxTwoCNChar);
 const props = buttonTypes();
-
 function isUnborderedButtonType(type: ButtonType | undefined) {
-  return type === 'text' || type === 'link';
+  return type === 'link';
 }
 
 export default defineComponent({
@@ -38,7 +37,6 @@ export default defineComponent({
   emits: ['click'],
   setup(props, { slots, attrs, emit }) {
     const { prefixCls, autoInsertSpaceInButton, direction } = useConfigInject('btn', props);
-
     const buttonNodeRef = ref<HTMLElement>(null);
     const delayTimeoutRef = ref(undefined);
     let isNeedInserted = false;
@@ -73,7 +71,7 @@ export default defineComponent({
     );
 
     const classes = computed(() => {
-      const { type, shape, size, ghost, block, danger } = props;
+      const { type, shape, size, ghost, block, danger, text, outline, dashed } = props;
       const pre = prefixCls.value;
       // large => lg
       // small => sm
@@ -93,6 +91,9 @@ export default defineComponent({
         [`${pre}-${type}`]: type,
         [`${pre}-${shape}`]: shape,
         [`${pre}-${sizeCls}`]: sizeCls,
+        [`${pre}-textCls`]: text,
+        [`${pre}-outline`]: outline,
+        [`${pre}-dashed`]: dashed,
         [`${pre}-loading`]: innerLoading.value,
         [`${pre}-background-ghost`]: ghost && !isUnborderedButtonType(type),
         [`${pre}-two-chinese-chars`]: hasTwoCNChar.value && autoInsertSpace.value,

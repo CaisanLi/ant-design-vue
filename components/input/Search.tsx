@@ -68,34 +68,62 @@ export default defineComponent({
       }
       return <LoadingOutlined class={`${prefixCls}-icon`} key="loadingIcon" />;
     },
-    renderSuffix(prefixCls: string) {
+    renderPrefix(prefixCls: string) {
       const { loading } = this;
-      const suffix = getComponent(this, 'suffix');
+      const prefix = getComponent(this, 'suffix');
       let enterButton = getComponent(this, 'enterButton');
-      // 兼容 <a-input-search enterButton />， 因enterButton类型为 any，此类写法 enterButton 为空字符串
       enterButton = enterButton || enterButton === '';
       if (loading && !enterButton) {
-        return [suffix, this.renderLoading(prefixCls)];
+        return [prefix, this.renderLoading(prefixCls)];
       }
 
-      if (enterButton) return suffix;
+      if (enterButton) return prefix;
 
       const icon = (
         <SearchOutlined class={`${prefixCls}-icon`} key="searchIcon" onClick={this.handleSearch} />
       );
 
-      if (suffix) {
-        // let cloneSuffix = suffix;
-        // if (isValidElement(cloneSuffix) && !cloneSuffix.key) {
-        //   cloneSuffix = cloneElement(cloneSuffix, {
-        //     key: 'originSuffix',
+      if (prefix) {
+        // let clonePrefix = prefix;
+        // if (isValidElement(clonePrefix) && !clonePrefix.key) {
+        //   clonePrefix = cloneElement(clonePrefix, {
+        //     key: 'originPrefix',
         //   });
         // }
-        return [suffix, icon];
+        return [prefix, icon];
       }
 
       return icon;
     },
+    // renderSuffix(prefixCls: string) {
+    //   const { loading } = this;
+    //   const suffix = getComponent(this, 'suffix');
+    //   console.log(suffix, '后面');
+    //   let enterButton = getComponent(this, 'enterButton');
+    //   // 兼容 <a-input-search enterButton />， 因enterButton类型为 any，此类写法 enterButton 为空字符串
+    //   enterButton = enterButton || enterButton === '';
+    //   if (loading && !enterButton) {
+    //     return [suffix, this.renderLoading(prefixCls)];
+    //   }
+    //
+    //   if (enterButton) return suffix;
+    //
+    //   const icon = (
+    //     <SearchOutlined class={`${prefixCls}-icon`} key="searchIcon" onClick={this.handleSearch} />
+    //   );
+    //
+    //   if (suffix) {
+    //     // let cloneSuffix = suffix;
+    //     // if (isValidElement(cloneSuffix) && !cloneSuffix.key) {
+    //     //   cloneSuffix = cloneElement(cloneSuffix, {
+    //     //     key: 'originSuffix',
+    //     //   });
+    //     // }
+    //     return [suffix, icon];
+    //   }
+    //
+    //   return icon;
+    // },
     renderAddonAfter(prefixCls: string) {
       const { size, disabled, loading } = this;
       const btnClassName = `${prefixCls}-button`;
@@ -174,8 +202,10 @@ export default defineComponent({
       ...restProps,
       prefixCls: inputPrefixCls,
       size,
-      suffix: this.renderSuffix(prefixCls),
-      prefix: getComponent(this, 'prefix'),
+      // suffix: this.renderSuffix(prefixCls),
+      // prefix: getComponent(this, 'prefix'),
+      suffix: getComponent(this, 'suffix'),
+      prefix: this.renderPrefix(prefixCls),
       addonAfter: this.renderAddonAfter(prefixCls),
       addonBefore,
       class: inputClassName,
