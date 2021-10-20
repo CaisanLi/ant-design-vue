@@ -1,4 +1,10 @@
 export default {
+  logo: {
+    category: 'Components',
+    subtitle: '众信佳',
+    type: 'Data Display',
+    title: 'ZXJLogo',
+  },
   avatar: {
     category: 'Components',
     subtitle: '头像',
