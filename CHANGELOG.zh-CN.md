@@ -10,6 +10,21 @@
 
 ---
 
+## 3.0.0-alpha.4
+
+`2021-10-20`
+
+- 组件部分状态使用 shallowRef 提升性能 [3a968f](https://github.com/vueComponent/ant-design-vue/commit/3a968fdd33960a788f2037d944aca4e8ee81294f)
+
+## 3.0.0-alpha.3
+
+`2021-10-08`
+
+- Table
+  - 🐞 修复排序提示不显示问题 [f64d7a](https://github.com/vueComponent/ant-design-vue/commit/f64d7adb22952cfdd5bf642343335fd78460d745)
+  - 🐞 修复部分属性响应式丢失问题 [#4756](https://github.com/vueComponent/ant-design-vue/issues/4756)
+- 🐞 修复 `Popover` `Popconfirm` 默认自动校准位置不生效问题 [98b5e5](https://github.com/vueComponent/ant-design-vue/commit/98b5e5d53fd10620eddc2c386181f868ef941397)
+
 ## 3.0.0-alpha.2
 
 `2021-10-08`
@@ -48,7 +63,7 @@
 - `Collapse` 新增 `ghost`、`collapsible`
 - `Popconfirm` 新增 `cancelButton`、`okButton`, 以及 `esc` 按键隐藏
 - `ConfigProvider` 新增 ConfigProvider.config，定义 `Modal.xxx` `message` `notification` 的配置
-- `Tree` `TreeSlelct`
+- `Tree` `TreeSelect`
 
   - 新增了虚拟滚动，废弃使用 `a-tree-node` `a-tree-select-node` 构建节点，使用 `treeData` 属性替代，提升组件性能
   - 废弃 `scopedSlots` `slots` 自定义渲染节点，使用 `v-slot:title` 替换，提升易用性，避免插槽配置膨胀，同时也避免了插槽冲突问题

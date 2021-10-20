@@ -39,6 +39,7 @@ import {
   onMounted,
   reactive,
   ref,
+  shallowRef,
   toRef,
   toRefs,
   watch,
@@ -250,7 +251,7 @@ export default defineComponent<TableProps<DefaultRecordType>>({
       return false;
     });
 
-    const innerExpandedKeys = ref([]);
+    const innerExpandedKeys = shallowRef([]);
     const stop = watchEffect(() => {
       if (props.defaultExpandedRowKeys) {
         innerExpandedKeys.value = props.defaultExpandedRowKeys;
@@ -509,7 +510,7 @@ export default defineComponent<TableProps<DefaultRecordType>>({
     };
     useProvideTable(
       reactive({
-        ...reactivePick(props, 'prefixCls', 'direction', 'transformCellText'),
+        ...toRefs(reactivePick(props, 'prefixCls', 'direction', 'transformCellText')),
         getComponent,
         scrollbarSize,
         fixedInfoList: computed(() =>
@@ -527,17 +528,18 @@ export default defineComponent<TableProps<DefaultRecordType>>({
         summaryCollect,
       }),
     );
-
     useProvideBody(
       reactive({
-        ...reactivePick(
-          props,
-          'rowClassName',
-          'expandedRowClassName',
-          'expandRowByClick',
-          'expandedRowRender',
-          'expandIconColumnIndex',
-          'indentSize',
+        ...toRefs(
+          reactivePick(
+            props,
+            'rowClassName',
+            'expandedRowClassName',
+            'expandRowByClick',
+            'expandedRowRender',
+            'expandIconColumnIndex',
+            'indentSize',
+          ),
         ),
         columns,
         flattenColumns,

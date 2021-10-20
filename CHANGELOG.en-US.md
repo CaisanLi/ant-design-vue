@@ -10,6 +10,21 @@
 
 ---
 
+## 3.0.0-alpha.4
+
+`2021-10-20`
+
+- Use shallowRef to improve performance in part of the component state [3a968f](https://github.com/vueComponent/ant-design-vue/commit/3a968fdd33960a788f2037d944aca4e8ee81294f)
+
+## 3.0.0-alpha.3
+
+`2021-10-08`
+
+- Table
+  - 🐞 Fix the problem that the sorting prompt does not display [f64d7a](https://github.com/vueComponent/ant-design-vue/commit/f64d7adb22952cfdd5bf642343335fd78460d745)
+  - 🐞 Fix the responsive loss of some attributes [#4756](https://github.com/vueComponent/ant-design-vue/issues/4756)
+- 🐞 Fix the problem that the default automatic calibration position of `Popover` and `Popconfirm` does not take effect [98b5e5](https://github.com/vueComponent/ant-design-vue/commit/98b5e5d53fd10620eddc2c386181f868ef941397)
+
 ## 3.0.0-alpha.2
 
 `2021-10-08`
@@ -48,7 +63,7 @@
 - `Collapse` added `ghost`, `collapsible`
 - `Popconfirm` added `cancelButton`, `okButton`, and `esc` button hiding
 - `ConfigProvider` added ConfigProvider.config to define the configuration of `Modal.xxx` `message` `notification`
-- `Tree` `TreeSlelct`
+- `Tree` `TreeSelect`
 
   - Added virtual scrolling, discarded using `a-tree-node` `a-tree-select-node` to build nodes, using `treeData` property instead to improve component performance
   - Deprecated `scopedSlots` `slots` custom rendering node, and replace it with `v-slot:title` to improve ease of use, avoid slot configuration expansion, and also avoid slot conflicts
