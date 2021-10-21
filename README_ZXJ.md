@@ -45,3 +45,12 @@
 2021-10-15
 1.修改分页器样式
 ```
+
+# ZXJ-logo
+
+```
+2021-10-20
+1.新增zxj-logo组件
+2.新增number,height,width,titleStyle属性
+3.新增title插槽
+```
