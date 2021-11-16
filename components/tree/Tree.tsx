@@ -1,7 +1,7 @@
 import type { PropType, ExtractPropTypes } from 'vue';
-import { watchEffect, ref, defineComponent } from 'vue';
+import { watchEffect, ref, defineComponent, computed } from 'vue';
 import classNames from '../_util/classNames';
-import VcTree, { TreeNode } from '../vc-tree';
+import VcTree from '../vc-tree';
 import PropTypes from '../_util/vue-types';
 import { filterEmpty } from '../_util/props-util';
 import initDefaultProps from '../_util/props-util/initDefaultProps';
@@ -151,7 +151,6 @@ export default defineComponent({
     'doubleclick',
     'dblclick',
   ],
-  TreeNode,
   setup(props, { attrs, expose, emit, slots }) {
     warning(
       !(props.treeData === undefined && slots.default),
@@ -164,6 +163,12 @@ export default defineComponent({
       onNodeExpand: (...args) => {
         treeRef.value?.onNodeExpand(...args);
       },
+      selectedKeys: computed(() => treeRef.value?.selectedKeys),
+      checkedKeys: computed(() => treeRef.value?.checkedKeys),
+      halfCheckedKeys: computed(() => treeRef.value?.halfCheckedKeys),
+      loadedKeys: computed(() => treeRef.value?.loadedKeys),
+      loadingKeys: computed(() => treeRef.value?.loadingKeys),
+      expandedKeys: computed(() => treeRef.value?.expandedKeys),
     });
 
     watchEffect(() => {

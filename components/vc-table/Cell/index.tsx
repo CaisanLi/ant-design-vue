@@ -162,7 +162,15 @@ export default defineComponent<CellProps>({
               index,
               column: column.__originColumn__,
             },
-            () => [childNode === undefined ? value : childNode],
+            () => {
+              const fallback = childNode === undefined ? value : childNode;
+              return [
+                (typeof fallback === 'object' && isValidElement(fallback)) ||
+                typeof fallback !== 'object'
+                  ? fallback
+                  : null,
+              ];
+            },
           );
           childNode = flattenChildren(child as any);
         }
@@ -273,6 +281,7 @@ export default defineComponent<CellProps>({
         <Component {...componentProps}>
           {appendNode}
           {childNode}
+          {slots.dragHandle?.()}
         </Component>
       );
     };

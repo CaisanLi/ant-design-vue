@@ -43,7 +43,7 @@ import { useLocaleReceiver } from '../locale-provider/LocaleReceiver';
 import classNames from '../_util/classNames';
 import omit from '../_util/omit';
 import { initDefaultProps } from '../_util/props-util';
-import { useProvideSlots } from './context';
+import { useProvideSlots, useProvideTableContext } from './context';
 import type { ContextSlots } from './context';
 import useColumns from './hooks/useColumns';
 import { convertChildrenToColumns } from './util';
@@ -171,7 +171,7 @@ export const tableProps = () => {
       default: undefined,
     },
     rowExpandable: { type: Function as PropType<TableProps['rowExpandable']>, default: undefined },
-    sticky: { type: String as PropType<TableProps['sticky']>, default: undefined },
+    sticky: { type: [Boolean, Object] as PropType<TableProps['sticky']>, default: undefined },
 
     dropdownPrefixCls: String,
     dataSource: { type: Array as PropType<RcTableProps['data']>, default: undefined },
@@ -195,7 +195,10 @@ export const tableProps = () => {
       >,
       default: undefined,
     },
-
+    onResizeColumn: {
+      type: Function as PropType<(w: number, col: ColumnType) => void>,
+      default: undefined,
+    },
     rowSelection: { type: Object as PropType<TableRowSelection>, default: undefined },
     getPopupContainer: { type: Function as PropType<GetPopupContainer>, default: undefined },
     scroll: {
@@ -243,7 +246,7 @@ const InteralTable = defineComponent<
     'customFilterIcon',
     'customFilterDropdown',
   ],
-  setup(props, { attrs, slots, expose }) {
+  setup(props, { attrs, slots, expose, emit }) {
     devWarning(
       !(typeof props.rowKey === 'function' && props.rowKey.length > 1),
       'Table',
@@ -251,7 +254,11 @@ const InteralTable = defineComponent<
     );
 
     useProvideSlots(computed(() => props.contextSlots));
-
+    useProvideTableContext({
+      onResizeColumn: (w, col) => {
+        emit('resizeColumn', w, col);
+      },
+    });
     const screens = useBreakpoint();
 
     const mergedColumns = computed(() => {
@@ -634,7 +641,7 @@ const InteralTable = defineComponent<
               v-slots={{
                 ...slots,
                 emptyText: () =>
-                  slots.emptyText?.() || tableLocale.value.emptyText || renderEmpty.value('Table'),
+                  slots.emptyText?.() || props.locale?.emptyText || renderEmpty.value('Table'),
               }}
             />
             {bottomPaginationNode}

@@ -10,6 +10,73 @@
 
 ---
 
+## 3.0.0-alpha.12
+
+`2021-11-09`
+
+- 🐞 Fix some component types missing issue [#4863](https://github.com/vueComponent/ant-design-vue/issues/4863)
+
+## 3.0.0-alpha.11
+
+`2021-11-08`
+
+- 🌟 Add codesanbox link to the document [#4861](https://github.com/vueComponent/ant-design-vue/issues/4861)
+- 🐞 Fix Collapse animation loss problem [#4856](https://github.com/vueComponent/ant-design-vue/issues/4856)
+- 🐞 Fix the warning problem when Table does not set dataIndex
+
+## 3.0.0-alpha.10
+
+`2021-11-05`
+
+- 🐞 Fix the problem that Tree does not trigger loadData [#4835](https://github.com/vueComponent/ant-design-vue/issues/4835)
+- 🐞 Fix Breadcrumb.Item click event not triggering issue [#4845](https://github.com/vueComponent/ant-design-vue/issues/4845)
+- 🐞 Fix Checkbox sometimes not centered under Group [#4846](https://github.com/vueComponent/ant-design-vue/issues/4846)
+
+## 3.0.0-alpha.9
+
+`2021-11-03`
+
+- 🐞 Fix requestAnimationFrame undefined error under ssr for some components [#4833](https://github.com/vueComponent/ant-design-vue/issues/4833)
+- 🐞 Fix the problem that TreeSelect selectable and checkable cannot be closed [#4838](https://github.com/vueComponent/ant-design-vue/issues/4838)
+- 🐞 Fix the problem that Tabs cannot be scrolled on the mobile terminal [#4828](https://github.com/vueComponent/ant-design-vue/issues/4828)
+- 🐞 Fix InputNumber does not trigger inspection under form [#4831](https://github.com/vueComponent/ant-design-vue/issues/4831)
+- 🐞 Fix that when Select uses `<a-select-option>` to build a node, the automatic word segmentation fails [#4844](https://github.com/vueComponent/ant-design-vue/issues/4844)
+
+## 3.0.0-alpha.8
+
+`2021-10-30`
+
+- 🐞 Fix the missing component type [#4823](https://github.com/vueComponent/ant-design-vue/issues/4823)
+
+## 3.0.0-alpha.7
+
+`2021-10-29`
+
+- 🌟 Form added validate event [#4817](https://github.com/vueComponent/ant-design-vue/issues/4817)
+- 🌟 Tree provides ref to get internal state api [#4820](https://github.com/vueComponent/ant-design-vue/issues/4820)
+- 🐞 Fix the width mutation problem when dragging Table [#4811](https://github.com/vueComponent/ant-design-vue/issues/4811)
+- 🐞 Fix the problem that TreeSelect is empty and does not update when opened again [a5604b](https://github.com/vueComponent/ant-design-vue/commit/a5604bb96796b9ec0090d3ec0c6d32d13d0df740)
+
+## 3.0.0-alpha.6
+
+`2021-10-27`
+
+- 🌟 Table add drag column feature
+
+## 3.0.0-alpha.5
+
+`2021-10-26`
+
+- Table
+  - 🐞 Fix sticky time reporting error [#4804](https://github.com/vueComponent/ant-design-vue/issues/4804) [#4808](https://github.com/vueComponent/ant-design-vue/issues/4808)
+  - 🐞 Fix emptyText internationalization failure problem [#4805](https://github.com/vueComponent/ant-design-vue/issues/4805)
+  - 🌟 Optimize performance issues when size changes [#4787](https://github.com/vueComponent/ant-design-vue/issues/4787)
+- 🌟 useForm supports deep responsive rule [#4799](https://github.com/vueComponent/ant-design-vue/issues/4799)
+- 🌟 Dropdown type supports text type [#4802](https://github.com/vueComponent/ant-design-vue/issues/4802)
+- 🐞 Fix Menu reporting error on mobile terminal [#4794](https://github.com/vueComponent/ant-design-vue/issues/4794)
+- 🐞 Fix the invalidation problem when checking the Tree custom fieldNames [#4790](https://github.com/vueComponent/ant-design-vue/issues/4790)
+- 🐞 Fix api component internationalization failure problem [#4780](https://github.com/vueComponent/ant-design-vue/issues/4780)
+
 ## 3.0.0-alpha.4
 
 `2021-10-20`

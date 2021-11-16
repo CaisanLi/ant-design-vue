@@ -10,6 +10,73 @@
 
 ---
 
+## 3.0.0-alpha.12
+
+`2021-11-09`
+
+- 🐞 修复部分组件类型丢失问题 [#4863](https://github.com/vueComponent/ant-design-vue/issues/4863)
+
+## 3.0.0-alpha.11
+
+`2021-11-08`
+
+- 🌟 文档添加 codesanbox 链接 [#4861](https://github.com/vueComponent/ant-design-vue/issues/4861)
+- 🐞 修复 Collapse 动画丢失问题 [#4856](https://github.com/vueComponent/ant-design-vue/issues/4856)
+- 🐞 修复 Table 未设置 dataIndex 时报 warning 问题
+
+## 3.0.0-alpha.10
+
+`2021-11-05`
+
+- 🐞 修复 Tree 不触发 loadData 问题 [#4835](https://github.com/vueComponent/ant-design-vue/issues/4835)
+- 🐞 修复 Breadcrumb.Item click 事件不触发问题 [#4845](https://github.com/vueComponent/ant-design-vue/issues/4845)
+- 🐞 修复 Checkbox 在 Group 下有时不居中问题 [#4846](https://github.com/vueComponent/ant-design-vue/issues/4846)
+
+## 3.0.0-alpha.9
+
+`2021-11-03`
+
+- 🐞 修复部分组件在 ssr 下 requestAnimationFrame 未定义错误 [#4833](https://github.com/vueComponent/ant-design-vue/issues/4833)
+- 🐞 修复 TreeSelect selectable、checkable 无法关闭问题 [#4838](https://github.com/vueComponent/ant-design-vue/issues/4838)
+- 🐞 修复 Tabs 在移动端无法滚动问题 [#4828](https://github.com/vueComponent/ant-design-vue/issues/4828)
+- 🐞 修复 InputNumber 在 form 下不触发检验问题 [#4831](https://github.com/vueComponent/ant-design-vue/issues/4831)
+- 🐞 修复 Select 使用 `<a-select-option>` 构建节点时，自动分词失效 [#4844](https://github.com/vueComponent/ant-design-vue/issues/4844)
+
+## 3.0.0-alpha.8
+
+`2021-10-30`
+
+- 🐞 修复组件类型丢失问题 [#4823](https://github.com/vueComponent/ant-design-vue/issues/4823)
+
+## 3.0.0-alpha.7
+
+`2021-10-29`
+
+- 🌟 Form 新增 validate 事件 [#4817](https://github.com/vueComponent/ant-design-vue/issues/4817)
+- 🌟 Tree 提供 ref 获取内部状态 api [#4820](https://github.com/vueComponent/ant-design-vue/issues/4820)
+- 🐞 修复 Table 拖动时宽度突变问题 [#4811](https://github.com/vueComponent/ant-design-vue/issues/4811)
+- 🐞 修复 TreeSelect 为空后，再次打开不更新问题 [a5604b](https://github.com/vueComponent/ant-design-vue/commit/a5604bb96796b9ec0090d3ec0c6d32d13d0df740)
+
+## 3.0.0-alpha.6
+
+`2021-10-27`
+
+- 🌟 Table 新增拖动列
+
+## 3.0.0-alpha.5
+
+`2021-10-26`
+
+- Table
+  - 🐞 修复 sticky 时报错问题 [#4804](https://github.com/vueComponent/ant-design-vue/issues/4804) [#4808](https://github.com/vueComponent/ant-design-vue/issues/4808)
+  - 🐞 修复 emptyText 国际化失效问题 [#4805](https://github.com/vueComponent/ant-design-vue/issues/4805)
+  - 🌟 优化大小改变时的性能问题 [#4787](https://github.com/vueComponent/ant-design-vue/issues/4787)
+- 🌟 useForm 支持深度响应式 rule [#4799](https://github.com/vueComponent/ant-design-vue/issues/4799)
+- 🌟 Dropdown type 支持 text 类型 [#4802](https://github.com/vueComponent/ant-design-vue/issues/4802)
+- 🐞 修复 Menu 在移动端报错问题 [#4794](https://github.com/vueComponent/ant-design-vue/issues/4794)
+- 🐞 修复 Tree 自定义 fieldNames 时，勾选失效问题 [#4790](https://github.com/vueComponent/ant-design-vue/issues/4790)
+- 🐞 修复 api 组件国际化失效问题 [#4780](https://github.com/vueComponent/ant-design-vue/issues/4780)
+
 ## 3.0.0-alpha.4
 
 `2021-10-20`

@@ -1,5 +1,5 @@
 import type { Ref } from 'vue';
-import { computed, reactive, watch, nextTick, unref } from 'vue';
+import { reactive, watch, nextTick, unref, shallowRef, toRaw } from 'vue';
 import cloneDeep from 'lodash-es/cloneDeep';
 import intersection from 'lodash-es/intersection';
 import isEqual from 'lodash-es/isEqual';
@@ -8,7 +8,7 @@ import omit from 'lodash-es/omit';
 import { validateRules } from './utils/validateUtil';
 import { defaultValidateMessages } from './utils/messages';
 import { allPromiseFinish } from './utils/asyncUtil';
-import type { RuleError, ValidateMessages } from './interface';
+import type { Callbacks, RuleError, ValidateMessages } from './interface';
 import type { ValidateStatus } from './FormItem';
 
 interface DebounceSettings {
@@ -98,6 +98,7 @@ function useForm(
     deep?: boolean;
     validateOnRuleChange?: boolean;
     debounce?: DebounceSettings;
+    onValidate?: Callbacks['onValidate'];
   },
 ): {
   modelRef: Props | Ref<Props>;
@@ -120,30 +121,7 @@ function useForm(
   const initialModel = cloneDeep(unref(modelRef));
   const validateInfos = reactive<validateInfos>({});
 
-  const rulesKeys = computed(() => {
-    return rulesRef ? Object.keys(unref(rulesRef)) : [];
-  });
-
-  watch(
-    rulesKeys,
-    () => {
-      const newValidateInfos = {};
-      rulesKeys.value.forEach(key => {
-        newValidateInfos[key] = validateInfos[key] || {
-          autoLink: false,
-          required: isRequired(unref(rulesRef)[key]),
-        };
-        delete validateInfos[key];
-      });
-      for (const key in validateInfos) {
-        if (Object.prototype.hasOwnProperty.call(validateInfos, key)) {
-          delete validateInfos[key];
-        }
-      }
-      Object.assign(validateInfos, newValidateInfos);
-    },
-    { immediate: true },
-  );
+  const rulesKeys = shallowRef([]);
 
   const resetFields = (newValues: Props) => {
     Object.assign(unref(modelRef), {
@@ -275,6 +253,11 @@ function useForm(
           const res = results.filter(result => result && result.errors.length);
           validateInfos[name].validateStatus = res.length ? 'error' : 'success';
           validateInfos[name].help = res.length ? res.map(r => r.errors) : '';
+          options?.onValidate?.(
+            name,
+            !res.length,
+            res.length ? toRaw(validateInfos[name].help[0]) : null,
+          );
         }
       });
     return promise;
@@ -350,22 +333,45 @@ function useForm(
 
   const debounceOptions = options?.debounce;
 
+  let first = true;
+  watch(
+    rulesRef,
+    () => {
+      rulesKeys.value = rulesRef ? Object.keys(unref(rulesRef)) : [];
+      if (!first && options && options.validateOnRuleChange) {
+        validate();
+      }
+      first = false;
+    },
+    { deep: true, immediate: true },
+  );
+
+  watch(
+    rulesKeys,
+    () => {
+      const newValidateInfos = {};
+      rulesKeys.value.forEach(key => {
+        newValidateInfos[key] = Object.assign({}, validateInfos[key], {
+          autoLink: false,
+          required: isRequired(unref(rulesRef)[key]),
+        });
+        delete validateInfos[key];
+      });
+      for (const key in validateInfos) {
+        if (Object.prototype.hasOwnProperty.call(validateInfos, key)) {
+          delete validateInfos[key];
+        }
+      }
+      Object.assign(validateInfos, newValidateInfos);
+    },
+    { immediate: true },
+  );
   watch(
     modelRef,
     debounceOptions && debounceOptions.wait
       ? debounce(modelFn, debounceOptions.wait, omit(debounceOptions, ['wait']))
       : modelFn,
     { immediate: options && !!options.immediate, deep: true },
-  );
-
-  watch(
-    rulesRef,
-    () => {
-      if (options && options.validateOnRuleChange) {
-        validate();
-      }
-    },
-    { deep: true },
   );
 
   return {

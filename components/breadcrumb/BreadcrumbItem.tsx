@@ -18,8 +18,9 @@ export default defineComponent({
   name: 'ABreadcrumbItem',
   __ANT_BREADCRUMB_ITEM: true,
   props: breadcrumbItemProps,
+  emits: ['click'],
   slots: ['separator', 'overlay'],
-  setup(props, { slots }) {
+  setup(props, { slots, emit }) {
     const { prefixCls } = useConfigInject('breadcrumb', props);
     /**
      * if overlay is have
@@ -40,11 +41,14 @@ export default defineComponent({
       return breadcrumbItem;
     };
 
+    const handleClick = (e: MouseEvent) => {
+      emit('click', e);
+    };
+
     return () => {
       const separator = getPropsSlot(slots, props, 'separator') ?? '/';
       const children = getPropsSlot(slots, props);
       let link: JSX.Element;
-
       if (props.href !== undefined) {
         link = <a class={`${prefixCls.value}-link`}>{children}</a>;
       } else {
@@ -54,7 +58,7 @@ export default defineComponent({
       link = renderBreadcrumbNode(link, prefixCls.value);
       if (children) {
         return (
-          <span>
+          <span onClick={handleClick}>
             {link}
             {separator && <span class={`${prefixCls.value}-separator`}>{separator}</span>}
           </span>

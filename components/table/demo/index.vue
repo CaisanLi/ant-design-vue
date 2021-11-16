@@ -21,6 +21,8 @@
     <RowSelectionAndOperation />
     <RowSelectionCustom />
     <RowSelection />
+    <Sticky />
+    <ResizableColumn />
     <Size />
     <Stripe />
     <Summary />
@@ -55,6 +57,8 @@ import Ellipsis from './ellipsis.vue';
 import Stripe from './stripe.vue';
 import MultipleSorter from './multiple-sorter.vue';
 import Summary from './summary.vue';
+import Sticky from './sticky.vue';
+import ResizableColumn from './resizable-column.vue';
 import CN from '../index.zh-CN.md';
 import US from '../index.en-US.md';
 import { defineComponent } from '@vue/runtime-core';
@@ -88,6 +92,8 @@ export default defineComponent({
     Stripe,
     MultipleSorter,
     Summary,
+    Sticky,
+    ResizableColumn,
   },
 });
 </script>

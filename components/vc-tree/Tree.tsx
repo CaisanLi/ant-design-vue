@@ -595,7 +595,7 @@ export default defineComponent({
 
     const onNodeCheck = (e: MouseEvent, treeNode: EventDataNode, checked: boolean) => {
       const { checkStrictly, onCheck } = props;
-      const { key } = treeNode;
+      const key = treeNode[fieldNames.value.key];
 
       // Prepare trigger arguments
       let checkedObj;
@@ -952,6 +952,12 @@ export default defineComponent({
       onNodeExpand,
       scrollTo,
       onKeydown,
+      selectedKeys: computed(() => selectedKeys.value),
+      checkedKeys: computed(() => checkedKeys.value),
+      halfCheckedKeys: computed(() => halfCheckedKeys.value),
+      loadedKeys: computed(() => loadedKeys.value),
+      loadingKeys: computed(() => loadingKeys.value),
+      expandedKeys: computed(() => expandedKeys.value),
     });
     onUnmounted(() => {
       window.removeEventListener('dragend', onWindowDragEnd);
