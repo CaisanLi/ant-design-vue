@@ -61,5 +61,5 @@ import './form/style';
 import './space/style';
 import './image/style';
 import './typography/style';
-import './zxj-logo/style';
+import './logo/style';
 // import './color-picker/style';

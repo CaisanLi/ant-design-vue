@@ -1,7 +1,7 @@
 ---
 category: Components
 type: Other
-title: ZXJLogo
+title: Logo
 cover: https://gw.alipayobjects.com/zos/alicdn/5swjECahe/Divider.svg
 ---
 

@@ -4,14 +4,14 @@ import { computed, defineComponent, inject } from 'vue';
 import PropTypes from '../_util/vue-types';
 import { defaultConfigProvider } from '../config-provider';
 import { withInstall } from '../_util/type';
-import logo1 from './image/logo1.png';
-import logo2 from './image/logo2.png';
-import logo3 from './image/logo3.png';
-import logo4 from './image/logo4.png';
-import logo5 from './image/logo5.png';
-import logo6 from './image/logo6.png';
-import logo7 from './image/logo7.png';
-import logo8 from './image/logo8.png';
+import logo1 from './images/logo1.png';
+import logo2 from './images/logo2.png';
+import logo3 from './images/logo3.png';
+import logo4 from './images/logo4.png';
+import logo5 from './images/logo5.png';
+import logo6 from './images/logo6.png';
+import logo7 from './images/logo7.png';
+import logo8 from './images/logo8.png';
 const imgUrlObj = {
   1: logo1,
   2: logo2,
@@ -33,7 +33,7 @@ export const logoProps = {
 
 export type LogoProps = Partial<ExtractPropTypes<typeof logoProps>>;
 
-const ZxjLogo = defineComponent({
+const Logo = defineComponent({
   name: 'ALogo',
   props: initDefaultProps(logoProps, {
     number: 1,
@@ -80,4 +80,4 @@ const ZxjLogo = defineComponent({
   },
 });
 
-export default withInstall(ZxjLogo);
+export default withInstall(Logo);

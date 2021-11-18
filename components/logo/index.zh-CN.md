@@ -1,7 +1,7 @@
 ---
 category: Components
 type: 其他
-title: ZXJLogo
+title: Logo
 subtitle: 众信佳logo
 cover: https://gw.alipayobjects.com/zos/alicdn/5swjECahe/Divider.svg
 ---

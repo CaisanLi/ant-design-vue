@@ -3,7 +3,7 @@ export default {
     category: 'Components',
     subtitle: '众信佳',
     type: 'Data Display',
-    title: 'ZXJLogo',
+    title: 'Logo',
   },
   avatar: {
     category: 'Components',
