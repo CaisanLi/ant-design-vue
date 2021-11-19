@@ -17,16 +17,16 @@ Use `beforeUpload` for transform file before request such as add a watermark.
 
 <template>
   <div>
-    <a-upload
+    <z-upload
       v-model:file-list="fileList"
       action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
       :transform-file="transformFile"
     >
-      <a-button>
+      <z-button>
         <upload-outlined></upload-outlined>
         Upload
-      </a-button>
-    </a-upload>
+      </z-button>
+    </z-upload>
   </div>
 </template>
 <script lang="ts">

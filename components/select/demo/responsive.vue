@@ -20,44 +20,44 @@ Set a number and automatically fold after exceeding.
 </docs>
 
 <template>
-  <a-space direction="vertical" style="width: 100%">
-    <a-space>
-      <a-button type="primary" @click="maxTagCount++">maxTagCount++</a-button>
-      <a-button type="primary" @click="maxTagCount--">maxTagCount--</a-button>
-    </a-space>
+  <z-space direction="vertical" style="width: 100%">
+    <z-space>
+      <z-button type="primary" @click="maxTagCount++">maxTagCount++</z-button>
+      <z-button type="primary" @click="maxTagCount--">maxTagCount--</z-button>
+    </z-space>
 
     <h2>maxTagCount: {{ maxTagCount }}</h2>
-    <a-select
+    <z-select
       v-model:value="value"
       mode="multiple"
       style="width: 100%"
       placeholder="Select Item..."
       :max-tag-count="maxTagCount"
       :options="options"
-    ></a-select>
+    ></z-select>
     <h2>maxTagCount: responsive</h2>
-    <a-select
+    <z-select
       v-model:value="value"
       mode="multiple"
       style="width: 100%"
       placeholder="Select Item..."
       max-tag-count="responsive"
       :options="options"
-    ></a-select>
-    <a-space>
-      <a-button type="primary" @click="maxTagTextLength++">maxTagTextLength++</a-button>
-      <a-button type="primary" @click="maxTagTextLength--">maxTagTextLength--</a-button>
-    </a-space>
+    ></z-select>
+    <z-space>
+      <z-button type="primary" @click="maxTagTextLength++">maxTagTextLength++</z-button>
+      <z-button type="primary" @click="maxTagTextLength--">maxTagTextLength--</z-button>
+    </z-space>
     <h2>maxTagTextLength: {{ maxTagTextLength }}</h2>
-    <a-select
+    <z-select
       v-model:value="value"
       mode="multiple"
       style="width: 100%"
       placeholder="Select Item..."
       :max-tag-text-length="maxTagTextLength"
       :options="options"
-    ></a-select>
-  </a-space>
+    ></z-select>
+  </z-space>
 </template>
 <script lang="ts">
 import type { SelectProps } from 'ant-design-vue';

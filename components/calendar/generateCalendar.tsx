@@ -86,7 +86,7 @@ function generateCalendar<
   }
 
   const Calendar = defineComponent<Props>({
-    name: 'ACalendar',
+    name: 'ZCalendar',
     inheritAttrs: false,
     emits: ['change', 'panelChange', 'select', 'update:value'],
     slots: [

@@ -52,7 +52,7 @@ const switchProps = {
 export type SwitchProps = Partial<ExtractPropTypes<typeof switchProps>>;
 
 const Switch = defineComponent({
-  name: 'ASwitch',
+  name: 'ZSwitch',
   __ANT_SWITCH: true,
   inheritAttrs: false,
   props: switchProps,

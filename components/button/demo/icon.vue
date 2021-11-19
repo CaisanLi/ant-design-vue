@@ -20,35 +20,35 @@ If you want specific control over the positioning and placement of the `Icon`, t
 </docs>
 
 <template>
-  <a-button type="primary" shape="circle">
+  <z-button type="primary" shape="circle">
     <template #icon><SearchOutlined /></template>
-  </a-button>
-  <a-button type="primary" shape="circle">A</a-button>
-  <a-button type="primary">
-    <template #icon><SearchOutlined /></template>
-    Search
-  </a-button>
-  <a-button shape="circle">
-    <template #icon><SearchOutlined /></template>
-  </a-button>
-  <a-button>
+  </z-button>
+  <z-button type="primary" shape="circle">A</z-button>
+  <z-button type="primary">
     <template #icon><SearchOutlined /></template>
     Search
-  </a-button>
-  <a-button shape="circle">
+  </z-button>
+  <z-button shape="circle">
     <template #icon><SearchOutlined /></template>
-  </a-button>
-  <a-button>
-    <template #icon><SearchOutlined /></template>
-    Search
-  </a-button>
-  <a-button type="dashed" shape="circle">
-    <template #icon><SearchOutlined /></template>
-  </a-button>
-  <a-button type="dashed">
+  </z-button>
+  <z-button>
     <template #icon><SearchOutlined /></template>
     Search
-  </a-button>
+  </z-button>
+  <z-button shape="circle">
+    <template #icon><SearchOutlined /></template>
+  </z-button>
+  <z-button>
+    <template #icon><SearchOutlined /></template>
+    Search
+  </z-button>
+  <z-button type="dashed" shape="circle">
+    <template #icon><SearchOutlined /></template>
+  </z-button>
+  <z-button type="dashed">
+    <template #icon><SearchOutlined /></template>
+    Search
+  </z-button>
 </template>
 <script>
 import { SearchOutlined } from '@ant-design/icons-vue';

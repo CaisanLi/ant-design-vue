@@ -18,9 +18,9 @@ Disabled state of `Switch`.
 
 <template>
   <div>
-    <a-switch v-model:checked="checked" :disabled="disabled" style="margin-bottom: 5px" />
+    <z-switch v-model:checked="checked" :disabled="disabled" style="margin-bottom: 5px" />
     <br />
-    <a-button type="primary" @click="onToggle">Toggle disabled</a-button>
+    <z-button type="primary" @click="onToggle">Toggle disabled</z-button>
   </div>
 </template>
 

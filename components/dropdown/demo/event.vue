@@ -17,19 +17,19 @@ An event will be triggered when you click menu items, in which you can make diff
 </docs>
 
 <template>
-  <a-dropdown>
+  <z-dropdown>
     <a class="ant-dropdown-link" @click.prevent>
       Hover me, Click menu item
       <DownOutlined />
     </a>
     <template #overlay>
-      <a-menu @click="onClick">
-        <a-menu-item key="1">1st menu item</a-menu-item>
-        <a-menu-item key="2">2nd menu item</a-menu-item>
-        <a-menu-item key="3">3rd menu item</a-menu-item>
-      </a-menu>
+      <z-menu @click="onClick">
+        <z-menu-item key="1">1st menu item</z-menu-item>
+        <z-menu-item key="2">2nd menu item</z-menu-item>
+        <z-menu-item key="3">3rd menu item</z-menu-item>
+      </z-menu>
     </template>
-  </a-dropdown>
+  </z-dropdown>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';

@@ -34,7 +34,7 @@ export const logoProps = {
 export type LogoProps = Partial<ExtractPropTypes<typeof logoProps>>;
 
 const Logo = defineComponent({
-  name: 'ALogo',
+  name: 'ZLogo',
   props: initDefaultProps(logoProps, {
     number: 1,
     height: 50,

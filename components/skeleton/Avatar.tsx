@@ -19,7 +19,7 @@ export const avatarProps = initDefaultProps(
 );
 
 const SkeletonAvatar = defineComponent({
-  name: 'ASkeletonAvatar',
+  name: 'ZSkeletonAvatar',
   props: avatarProps,
   setup(props) {
     const { prefixCls } = useConfigInject('skeleton', props);

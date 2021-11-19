@@ -30,20 +30,20 @@ You can use a array to set vertical spacing, `[horizontal, vertical]` `[16, { xs
 
 <template>
   <div class="gutter-example">
-    <a-row :gutter="16">
-      <a-col class="gutter-row" :span="6">
+    <z-row :gutter="16">
+      <z-col class="gutter-row" :span="6">
         <div class="gutter-box">col-6</div>
-      </a-col>
-      <a-col class="gutter-row" :span="6">
+      </z-col>
+      <z-col class="gutter-row" :span="6">
         <div class="gutter-box">col-6</div>
-      </a-col>
-      <a-col class="gutter-row" :span="6">
+      </z-col>
+      <z-col class="gutter-row" :span="6">
         <div class="gutter-box">col-6</div>
-      </a-col>
-      <a-col class="gutter-row" :span="6">
+      </z-col>
+      <z-col class="gutter-row" :span="6">
         <div class="gutter-box">col-6</div>
-      </a-col>
-    </a-row>
+      </z-col>
+    </z-row>
   </div>
 </template>
 <style scoped>

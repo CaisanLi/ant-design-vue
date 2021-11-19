@@ -17,7 +17,7 @@ The style and className are available to customize Notification.
 </docs>
 
 <template>
-  <a-button type="primary" @click="openNotification">Open the notification box</a-button>
+  <z-button type="primary" @click="openNotification">Open the notification box</z-button>
 </template>
 <script>
 import { notification } from 'ant-design-vue';

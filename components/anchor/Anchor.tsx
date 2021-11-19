@@ -74,7 +74,7 @@ export interface AnchorState {
 }
 
 export default defineComponent({
-  name: 'AAnchor',
+  name: 'ZAnchor',
   inheritAttrs: false,
   props: anchorProps,
   emits: ['change', 'click'],

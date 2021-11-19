@@ -22,7 +22,7 @@ export default function generateRangePicker<DateType, ExtraProps = {}>(
   extraProps: ExtraProps,
 ) {
   const RangePicker = defineComponent({
-    name: 'ARangePicker',
+    name: 'ZRangePicker',
     inheritAttrs: false,
     props: {
       ...commonProps<DateType>(),

@@ -18,12 +18,12 @@ Display value within it's situation with `formatter`, and we usually use `parser
 
 <template>
   <div>
-    <a-input-number
+    <z-input-number
       v-model:value="value1"
       :formatter="value => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')"
       :parser="value => value.replace(/\$\s?|(,*)/g, '')"
     />
-    <a-input-number
+    <z-input-number
       v-model:value="value2"
       :min="0"
       :max="100"

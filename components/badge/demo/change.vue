@@ -1,7 +1,7 @@
 <docs>
 ---
 order: 5
-title: 
+title:
   zh-CN: 动态
   en-US: Dynamic
 ---
@@ -11,29 +11,29 @@ title:
 展示动态变化的效果。
 
 ## en-US
-  
+
 The count will be animated as it changes.
 </docs>
 
 <template>
   <div>
-    <a-badge :count="count">
+    <z-badge :count="count">
       <a href="#" class="head-example" />
-    </a-badge>
-    <a-button-group>
-      <a-button @click="decline">
+    </z-badge>
+    <z-button-group>
+      <z-button @click="decline">
         <minus-outlined />
-      </a-button>
-      <a-button @click="increase">
+      </z-button>
+      <z-button @click="increase">
         <plus-outlined />
-      </a-button>
-    </a-button-group>
+      </z-button>
+    </z-button-group>
   </div>
   <div style="margin-top: 10px">
-    <a-badge :dot="show">
+    <z-badge :dot="show">
       <a href="#" class="head-example" />
-    </a-badge>
-    <a-switch v-model:checked="show" />
+    </z-badge>
+    <z-switch v-model:checked="show" />
   </div>
 </template>
 <script lang="ts">

@@ -17,7 +17,7 @@ title:
 </docs>
 
 <template>
-  <a-button @click="success">Display a sequence of message</a-button>
+  <z-button @click="success">Display a sequence of message</z-button>
 </template>
 <script lang="ts">
 import { message } from 'ant-design-vue';

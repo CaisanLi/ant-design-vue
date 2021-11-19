@@ -3,16 +3,16 @@
     <h3>
       {{ $t('userandregister.register.register') }}
     </h3>
-    <a-form :form="form" @submit="handleSubmit">
-      <a-form-item>
-        <a-input
+    <z-form :form="form" @submit="handleSubmit">
+      <z-form-item>
+        <z-input
           v-decorator="formConfig.mail"
           size="large"
           :placeholder="$t('userandregister.email.placeholder')"
         />
-      </a-form-item>
-      <a-form-item :help="help">
-        <a-popover
+      </z-form-item>
+      <z-form-item :help="help">
+        <z-popover
           :get-popup-container="getPopupContainer"
           :overlay-style="{ width: '240px' }"
           placement="right"
@@ -32,7 +32,7 @@
                     {{ $t('userandregister.strength.short') }}
                   </div>
                   <div v-if="password && password.length" :class="`progress-${status}`">
-                    <a-progress
+                    <z-progress
                       :status="passwordProgressMap[status]"
                       class="progress"
                       :stroke-width="6"
@@ -47,24 +47,24 @@
               </div>
             </div>
           </template>
-          <a-input
+          <z-input
             v-decorator="formConfig.password"
             size="large"
             type="password"
             :placeholder="$t('userandregister.password.placeholder')"
           />
-        </a-popover>
-      </a-form-item>
-      <a-form-item>
-        <a-input
+        </z-popover>
+      </z-form-item>
+      <z-form-item>
+        <z-input
           v-decorator="formConfig.confirm"
           size="large"
           type="password"
           :placeholder="$t('userandregister.confirm-password.placeholder')"
         />
-      </a-form-item>
-      <a-form-item>
-        <a-button
+      </z-form-item>
+      <z-form-item>
+        <z-button
           size="large"
           :loading="submitting"
           class="submit"
@@ -72,12 +72,12 @@
           html-type="submit"
         >
           {{ $t('userandregister.register.register') }}
-        </a-button>
+        </z-button>
         <router-link class="login" to="/user/login">
           {{ $t('userandregister.register.sign-in') }}
         </router-link>
-      </a-form-item>
-    </a-form>
+      </z-form-item>
+    </z-form>
   </div>
 </template>
 <script>

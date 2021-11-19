@@ -18,7 +18,7 @@ large count of items with pagination.
 
 <template>
   <div>
-    <a-transfer
+    <z-transfer
       v-model:target-keys="targetKeys"
       :data-source="mockData"
       :render="item => item.title"
@@ -26,7 +26,7 @@ large count of items with pagination.
       pagination
       @change="handleChange"
     />
-    <a-switch
+    <z-switch
       v-model:checked="disabled"
       un-checked-children="enabled"
       checked-children="disabled"

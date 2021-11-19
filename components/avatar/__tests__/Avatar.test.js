@@ -117,7 +117,7 @@ describe('Avatar Render', () => {
       wrapper.find('img').trigger('error');
     }, 0);
     await asyncExpect(() => {
-      expect(wrapper.findComponent({ name: 'AAvatar' }).findAll('img').length).toBe(0);
+      expect(wrapper.findComponent({ name: 'ZAvatar' }).findAll('img').length).toBe(0);
       expect(wrapper.findAll('.ant-avatar-string').length).toBe(1);
     }, 0);
 
@@ -125,7 +125,7 @@ describe('Avatar Render', () => {
       wrapper.vm.src = LOAD_SUCCESS_SRC;
     });
     await asyncExpect(() => {
-      expect(wrapper.findComponent({ name: 'AAvatar' }).findAll('img').length).toBe(1);
+      expect(wrapper.findComponent({ name: 'ZAvatar' }).findAll('img').length).toBe(1);
       expect(wrapper.findAll('.ant-avatar-image').length).toBe(1);
     }, 0);
   });

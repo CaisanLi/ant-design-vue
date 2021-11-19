@@ -16,18 +16,18 @@ There are 4 position options available.
 </docs>
 
 <template>
-  <a-radio-group v-model:value="dotPosition" style="margin-bottom: 8px">
-    <a-radio-button value="top">Top</a-radio-button>
-    <a-radio-button value="bottom">Bottom</a-radio-button>
-    <a-radio-button value="left">Left</a-radio-button>
-    <a-radio-button value="right">Right</a-radio-button>
-  </a-radio-group>
-  <a-carousel :dot-position="dotPosition">
+  <z-radio-group v-model:value="dotPosition" style="margin-bottom: 8px">
+    <z-radio-button value="top">Top</z-radio-button>
+    <z-radio-button value="bottom">Bottom</z-radio-button>
+    <z-radio-button value="left">Left</z-radio-button>
+    <z-radio-button value="right">Right</z-radio-button>
+  </z-radio-group>
+  <z-carousel :dot-position="dotPosition">
     <div><h3>1</h3></div>
     <div><h3>2</h3></div>
     <div><h3>3</h3></div>
     <div><h3>4</h3></div>
-  </a-carousel>
+  </z-carousel>
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue';

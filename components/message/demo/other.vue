@@ -18,9 +18,9 @@ Messages of success, error and warning types.
 
 <template>
   <div>
-    <a-button @click="success">Success</a-button>
-    <a-button @click="error">Error</a-button>
-    <a-button @click="warning">Warning</a-button>
+    <z-button @click="success">Success</z-button>
+    <z-button @click="error">Error</z-button>
+    <z-button @click="warning">Warning</z-button>
   </div>
 </template>
 <script lang="ts">

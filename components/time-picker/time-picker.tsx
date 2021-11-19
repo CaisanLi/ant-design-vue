@@ -70,7 +70,7 @@ function createTimePicker<
   const { TimePicker: InternalTimePicker, RangePicker: InternalRangePicker } = DatePicker as any;
 
   const TimePicker = defineComponent<DTimePickerProps>({
-    name: 'ATimePicker',
+    name: 'ZTimePicker',
     inheritAttrs: false,
     slot: ['addon', 'renderExtraFooter', 'suffixIcon', 'clearIcon'],
     emits: ['change', 'openChange', 'focus', 'blur', 'ok', 'update:value', 'update:open'],
@@ -142,7 +142,7 @@ function createTimePicker<
   };
 
   const TimeRangePicker = defineComponent<DTimeRangePickerProps>({
-    name: 'ATimeRangePicker',
+    name: 'ZTimeRangePicker',
     inheritAttrs: false,
     slot: ['renderExtraFooter', 'suffixIcon', 'clearIcon'],
     emits: [

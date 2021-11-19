@@ -11,7 +11,7 @@ function getTime(value?: countdownValueType) {
 }
 
 export default defineComponent({
-  name: 'AStatisticCountdown',
+  name: 'ZStatisticCountdown',
   props: initDefaultProps(statisticProps, {
     format: 'HH:mm:ss',
   }),

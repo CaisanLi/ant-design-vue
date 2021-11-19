@@ -16,11 +16,11 @@ cover: https://gw.alipayobjects.com/zos/antfincdn/UZYqMizXHaj/Steps.svg
 ## API
 
 ```jsx
-<a-steps>
-  <a-step title="第一步" />
-  <a-step title="第二步" />
-  <a-step title="第三步" />
-</a-steps>
+<z-steps>
+  <z-step title="第一步" />
+  <z-step title="第二步" />
+  <z-step title="第三步" />
+</z-steps>
 ```
 
 ### Steps
@@ -43,7 +43,7 @@ cover: https://gw.alipayobjects.com/zos/antfincdn/UZYqMizXHaj/Steps.svg
 #### Steps 事件
 
 | 事件名称 | 说明               | 回调参数          | 版本 |
-| -------- | ------------------ | ----------------- | ---- |
+| -------- | ------------------ | ----------------- | ---- | ----- |
 | change   | 点击切换步骤时触发 | (current) => void | -    | 1.5.0 |
 
 ### Steps.Step

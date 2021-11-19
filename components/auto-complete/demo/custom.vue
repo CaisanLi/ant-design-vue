@@ -16,20 +16,20 @@ Customize Input Component.
 </docs>
 
 <template>
-  <a-auto-complete
+  <z-auto-complete
     v-model:value="value"
     :options="options"
     style="width: 200px"
     @search="handleSearch"
     @select="onSelect"
   >
-    <a-textarea
+    <z-textarea
       placeholder="input here"
       class="custom"
       style="height: 50px"
       @keypress="handleKeyPress"
     />
-  </a-auto-complete>
+  </z-auto-complete>
 </template>
 
 <script lang="ts">

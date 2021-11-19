@@ -63,7 +63,7 @@ const alertProps = {
 export type AlertProps = Partial<ExtractPropTypes<typeof alertProps>>;
 
 const Alert = defineComponent({
-  name: 'AAlert',
+  name: 'ZAlert',
   inheritAttrs: false,
   props: alertProps,
   emits: ['close'],

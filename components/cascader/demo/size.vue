@@ -16,13 +16,13 @@ Cascade selection box of different sizes.
 
 </docs>
 <template>
-  <a-cascader v-model:value="value" size="large" :options="options" />
+  <z-cascader v-model:value="value" size="large" :options="options" />
   <br />
   <br />
-  <a-cascader v-model:value="value" :options="options" />
+  <z-cascader v-model:value="value" :options="options" />
   <br />
   <br />
-  <a-cascader v-model:value="value" size="small" :options="options" />
+  <z-cascader v-model:value="value" size="small" :options="options" />
   <br />
   <br />
 </template>

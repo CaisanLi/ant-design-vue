@@ -18,39 +18,39 @@ Basic Usage
 
 <template>
   <h2>use a-select-option</h2>
-  <a-space>
-    <a-select
+  <z-space>
+    <z-select
       ref="select"
       v-model:value="value1"
       style="width: 120px"
       @focus="focus"
       @change="handleChange"
     >
-      <a-select-option value="jack">Jack</a-select-option>
-      <a-select-option value="lucy">Lucy</a-select-option>
-      <a-select-option value="disabled" disabled>Disabled</a-select-option>
-      <a-select-option value="Yiminghe">yiminghe</a-select-option>
-    </a-select>
-    <a-select v-model:value="value2" style="width: 120px" disabled>
-      <a-select-option value="lucy">Lucy</a-select-option>
-    </a-select>
-    <a-select v-model:value="value3" style="width: 120px" loading>
-      <a-select-option value="lucy">Lucy</a-select-option>
-    </a-select>
-  </a-space>
+      <z-select-option value="jack">Jack</z-select-option>
+      <z-select-option value="lucy">Lucy</z-select-option>
+      <z-select-option value="disabled" disabled>Disabled</z-select-option>
+      <z-select-option value="Yiminghe">yiminghe</z-select-option>
+    </z-select>
+    <z-select v-model:value="value2" style="width: 120px" disabled>
+      <z-select-option value="lucy">Lucy</z-select-option>
+    </z-select>
+    <z-select v-model:value="value3" style="width: 120px" loading>
+      <z-select-option value="lucy">Lucy</z-select-option>
+    </z-select>
+  </z-space>
   <h2 style="margin-top: 10px">use options (recommend)</h2>
-  <a-space>
-    <a-select
+  <z-space>
+    <z-select
       ref="select"
       v-model:value="value1"
       style="width: 120px"
       :options="options1"
       @focus="focus"
       @change="handleChange"
-    ></a-select>
-    <a-select v-model:value="value2" style="width: 120px" disabled :options="options2"></a-select>
-    <a-select v-model:value="value3" style="width: 120px" loading :options="options3"></a-select>
-  </a-space>
+    ></z-select>
+    <z-select v-model:value="value2" style="width: 120px" disabled :options="options2"></z-select>
+    <z-select v-model:value="value3" style="width: 120px" loading :options="options3"></z-select>
+  </z-space>
 </template>
 <script lang="ts">
 import type { SelectProps } from 'ant-design-vue';

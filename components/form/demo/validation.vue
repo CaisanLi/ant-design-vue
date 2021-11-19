@@ -16,55 +16,55 @@ Just add the `rules` attribute for `Form` component, pass validation rules, and 
 </docs>
 
 <template>
-  <a-form
+  <z-form
     ref="formRef"
     :model="formState"
     :rules="rules"
     :label-col="labelCol"
     :wrapper-col="wrapperCol"
   >
-    <a-form-item ref="name" label="Activity name" name="name">
-      <a-input v-model:value="formState.name" />
-    </a-form-item>
-    <a-form-item label="Activity zone" name="region">
-      <a-select v-model:value="formState.region" placeholder="please select your zone">
-        <a-select-option value="shanghai">Zone one</a-select-option>
-        <a-select-option value="beijing">Zone two</a-select-option>
-      </a-select>
-    </a-form-item>
-    <a-form-item label="Activity time" required name="date1">
-      <a-date-picker
+    <z-form-item ref="name" label="Activity name" name="name">
+      <z-input v-model:value="formState.name" />
+    </z-form-item>
+    <z-form-item label="Activity zone" name="region">
+      <z-select v-model:value="formState.region" placeholder="please select your zone">
+        <z-select-option value="shanghai">Zone one</z-select-option>
+        <z-select-option value="beijing">Zone two</z-select-option>
+      </z-select>
+    </z-form-item>
+    <z-form-item label="Activity time" required name="date1">
+      <z-date-picker
         v-model:value="formState.date1"
         show-time
         type="date"
         placeholder="Pick a date"
         style="width: 100%"
       />
-    </a-form-item>
-    <a-form-item label="Instant delivery" name="delivery">
-      <a-switch v-model:checked="formState.delivery" />
-    </a-form-item>
-    <a-form-item label="Activity type" name="type">
-      <a-checkbox-group v-model:value="formState.type">
-        <a-checkbox value="1" name="type">Online</a-checkbox>
-        <a-checkbox value="2" name="type">Promotion</a-checkbox>
-        <a-checkbox value="3" name="type">Offline</a-checkbox>
-      </a-checkbox-group>
-    </a-form-item>
-    <a-form-item label="Resources" name="resource">
-      <a-radio-group v-model:value="formState.resource">
-        <a-radio value="1">Sponsor</a-radio>
-        <a-radio value="2">Venue</a-radio>
-      </a-radio-group>
-    </a-form-item>
-    <a-form-item label="Activity form" name="desc">
-      <a-textarea v-model:value="formState.desc" />
-    </a-form-item>
-    <a-form-item :wrapper-col="{ span: 14, offset: 4 }">
-      <a-button type="primary" @click="onSubmit">Create</a-button>
-      <a-button style="margin-left: 10px" @click="resetForm">Reset</a-button>
-    </a-form-item>
-  </a-form>
+    </z-form-item>
+    <z-form-item label="Instant delivery" name="delivery">
+      <z-switch v-model:checked="formState.delivery" />
+    </z-form-item>
+    <z-form-item label="Activity type" name="type">
+      <z-checkbox-group v-model:value="formState.type">
+        <z-checkbox value="1" name="type">Online</z-checkbox>
+        <z-checkbox value="2" name="type">Promotion</z-checkbox>
+        <z-checkbox value="3" name="type">Offline</z-checkbox>
+      </z-checkbox-group>
+    </z-form-item>
+    <z-form-item label="Resources" name="resource">
+      <z-radio-group v-model:value="formState.resource">
+        <z-radio value="1">Sponsor</z-radio>
+        <z-radio value="2">Venue</z-radio>
+      </z-radio-group>
+    </z-form-item>
+    <z-form-item label="Activity form" name="desc">
+      <z-textarea v-model:value="formState.desc" />
+    </z-form-item>
+    <z-form-item :wrapper-col="{ span: 14, offset: 4 }">
+      <z-button type="primary" @click="onSubmit">Create</z-button>
+      <z-button style="margin-left: 10px" @click="resetForm">Reset</z-button>
+    </z-form-item>
+  </z-form>
 </template>
 <script lang="ts">
 import { Dayjs } from 'dayjs';

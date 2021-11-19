@@ -17,13 +17,13 @@ Responsive grid list. The size property is as same as [Layout Grid](https://www.
 </docs>
 
 <template>
-  <a-list :grid="{ gutter: 16, xs: 1, sm: 2, md: 4, lg: 4, xl: 6, xxl: 3 }" :data-source="data">
+  <z-list :grid="{ gutter: 16, xs: 1, sm: 2, md: 4, lg: 4, xl: 6, xxl: 3 }" :data-source="data">
     <template #renderItem="{ item }">
-      <a-list-item>
-        <a-card :title="item.title">Card content</a-card>
-      </a-list-item>
+      <z-list-item>
+        <z-card :title="item.title">Card content</z-card>
+      </z-list-item>
     </template>
-  </a-list>
+  </z-list>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';

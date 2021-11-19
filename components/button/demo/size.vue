@@ -20,46 +20,46 @@ If a large or small button is desired, set the `size` property to either `large`
 </docs>
 
 <template>
-  <a-radio-group v-model:value="size">
-    <a-radio-button value="large">Large</a-radio-button>
-    <a-radio-button value="default">Default</a-radio-button>
-    <a-radio-button value="small">Small</a-radio-button>
-  </a-radio-group>
+  <z-radio-group v-model:value="size">
+    <z-radio-button value="large">Large</z-radio-button>
+    <z-radio-button value="default">Default</z-radio-button>
+    <z-radio-button value="small">Small</z-radio-button>
+  </z-radio-group>
   <br />
   <br />
-  <a-button type="primary" :size="size">Primary</a-button>
-  <a-button :size="size">Normal</a-button>
-  <a-button type="dashed" :size="size">Dashed</a-button>
-  <a-button danger :size="size">Danger</a-button>
-  <a-button type="link" :size="size">Link</a-button>
+  <z-button type="primary" :size="size">Primary</z-button>
+  <z-button :size="size">Normal</z-button>
+  <z-button type="dashed" :size="size">Dashed</z-button>
+  <z-button danger :size="size">Danger</z-button>
+  <z-button type="link" :size="size">Link</z-button>
   <br />
-  <a-button type="primary" :size="size">
+  <z-button type="primary" :size="size">
     <template #icon>
       <DownloadOutlined />
     </template>
-  </a-button>
-  <a-button type="primary" shape="circle" :size="size">
+  </z-button>
+  <z-button type="primary" shape="circle" :size="size">
     <template #icon>
       <DownloadOutlined />
     </template>
-  </a-button>
-  <a-button type="primary" shape="round" :size="size">
+  </z-button>
+  <z-button type="primary" shape="round" :size="size">
     <template #icon>
       <DownloadOutlined />
       Download
     </template>
-  </a-button>
-  <a-button type="primary" shape="round" :size="size">
+  </z-button>
+  <z-button type="primary" shape="round" :size="size">
     <template #icon>
       <DownloadOutlined />
     </template>
-  </a-button>
-  <a-button type="primary" :size="size">
+  </z-button>
+  <z-button type="primary" :size="size">
     <template #icon>
       <DownloadOutlined />
     </template>
     Download
-  </a-button>
+  </z-button>
   <br />
 </template>
 <script lang="ts">

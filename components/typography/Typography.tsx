@@ -13,7 +13,7 @@ export interface InternalTypographyProps extends TypographyProps {
 }
 
 const Typography = defineComponent<InternalTypographyProps>({
-  name: 'ATypography',
+  name: 'ZTypography',
   inheritAttrs: false,
   setup(props, { slots, attrs }) {
     const { prefixCls } = useConfigInject('typography', props);

@@ -653,7 +653,7 @@ const InteralTable = defineComponent<
 });
 
 const Table = defineComponent<TableProps>({
-  name: 'ATable',
+  name: 'ZTable',
   inheritAttrs: false,
   setup(_props, { attrs, slots, expose }) {
     const table = ref();

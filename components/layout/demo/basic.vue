@@ -16,38 +16,38 @@ Classic page layouts.
 
 </docs>
 <template>
-  <a-layout>
-    <a-layout-header>Header</a-layout-header>
-    <a-layout-content>Content</a-layout-content>
-    <a-layout-footer>Footer</a-layout-footer>
-  </a-layout>
+  <z-layout>
+    <z-layout-header>Header</z-layout-header>
+    <z-layout-content>Content</z-layout-content>
+    <z-layout-footer>Footer</z-layout-footer>
+  </z-layout>
 
-  <a-layout>
-    <a-layout-header>Header</a-layout-header>
-    <a-layout>
-      <a-layout-sider>Sider</a-layout-sider>
-      <a-layout-content>Content</a-layout-content>
-    </a-layout>
-    <a-layout-footer>Footer</a-layout-footer>
-  </a-layout>
+  <z-layout>
+    <z-layout-header>Header</z-layout-header>
+    <z-layout>
+      <z-layout-sider>Sider</z-layout-sider>
+      <z-layout-content>Content</z-layout-content>
+    </z-layout>
+    <z-layout-footer>Footer</z-layout-footer>
+  </z-layout>
 
-  <a-layout>
-    <a-layout-header>Header</a-layout-header>
-    <a-layout>
-      <a-layout-content>Content</a-layout-content>
-      <a-layout-sider>Sider</a-layout-sider>
-    </a-layout>
-    <a-layout-footer>Footer</a-layout-footer>
-  </a-layout>
+  <z-layout>
+    <z-layout-header>Header</z-layout-header>
+    <z-layout>
+      <z-layout-content>Content</z-layout-content>
+      <z-layout-sider>Sider</z-layout-sider>
+    </z-layout>
+    <z-layout-footer>Footer</z-layout-footer>
+  </z-layout>
 
-  <a-layout>
-    <a-layout-sider>Sider</a-layout-sider>
-    <a-layout>
-      <a-layout-header>Header</a-layout-header>
-      <a-layout-content>Content</a-layout-content>
-      <a-layout-footer>Footer</a-layout-footer>
-    </a-layout>
-  </a-layout>
+  <z-layout>
+    <z-layout-sider>Sider</z-layout-sider>
+    <z-layout>
+      <z-layout-header>Header</z-layout-header>
+      <z-layout-content>Content</z-layout-content>
+      <z-layout-footer>Footer</z-layout-footer>
+    </z-layout>
+  </z-layout>
 </template>
 
 <style>

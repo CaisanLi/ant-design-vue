@@ -21,19 +21,19 @@ You can create a basic grid system by using a single set of `Row` and `Col` grid
 </docs>
 
 <template>
-  <a-row>
-    <a-col :span="12">col-12</a-col>
-    <a-col :span="12">col-12</a-col>
-  </a-row>
-  <a-row>
-    <a-col :span="8">col-8</a-col>
-    <a-col :span="8">col-8</a-col>
-    <a-col :span="8">col-8</a-col>
-  </a-row>
-  <a-row>
-    <a-col :span="6">col-6</a-col>
-    <a-col :span="6">col-6</a-col>
-    <a-col :span="6">col-6</a-col>
-    <a-col :span="6">col-6</a-col>
-  </a-row>
+  <z-row>
+    <z-col :span="12">col-12</z-col>
+    <z-col :span="12">col-12</z-col>
+  </z-row>
+  <z-row>
+    <z-col :span="8">col-8</z-col>
+    <z-col :span="8">col-8</z-col>
+    <z-col :span="8">col-8</z-col>
+  </z-row>
+  <z-row>
+    <z-col :span="6">col-6</z-col>
+    <z-col :span="6">col-6</z-col>
+    <z-col :span="6">col-6</z-col>
+    <z-col :span="6">col-6</z-col>
+  </z-row>
 </template>

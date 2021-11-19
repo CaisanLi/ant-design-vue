@@ -15,8 +15,8 @@ title:
 Add or remove form items dynamically.
 </docs>
 <template>
-  <a-form ref="formRef" :model="dynamicValidateForm" v-bind="formItemLayoutWithOutLabel">
-    <a-form-item
+  <z-form ref="formRef" :model="dynamicValidateForm" v-bind="formItemLayoutWithOutLabel">
+    <z-form-item
       v-for="(domain, index) in dynamicValidateForm.domains"
       :key="domain.key"
       v-bind="index === 0 ? formItemLayout : {}"
@@ -28,7 +28,7 @@ Add or remove form items dynamically.
         trigger: 'change',
       }"
     >
-      <a-input
+      <z-input
         v-model:value="domain.value"
         placeholder="please input domain"
         style="width: 60%; margin-right: 8px"
@@ -39,18 +39,18 @@ Add or remove form items dynamically.
         :disabled="dynamicValidateForm.domains.length === 1"
         @click="removeDomain(domain)"
       />
-    </a-form-item>
-    <a-form-item v-bind="formItemLayoutWithOutLabel">
-      <a-button type="dashed" style="width: 60%" @click="addDomain">
+    </z-form-item>
+    <z-form-item v-bind="formItemLayoutWithOutLabel">
+      <z-button type="dashed" style="width: 60%" @click="addDomain">
         <PlusOutlined />
         Add field
-      </a-button>
-    </a-form-item>
-    <a-form-item v-bind="formItemLayoutWithOutLabel">
-      <a-button type="primary" html-type="submit" @click="submitForm">Submit</a-button>
-      <a-button style="margin-left: 10px" @click="resetForm">Reset</a-button>
-    </a-form-item>
-  </a-form>
+      </z-button>
+    </z-form-item>
+    <z-form-item v-bind="formItemLayoutWithOutLabel">
+      <z-button type="primary" html-type="submit" @click="submitForm">Submit</z-button>
+      <z-button style="margin-left: 10px" @click="resetForm">Reset</z-button>
+    </z-form-item>
+  </z-form>
 </template>
 
 <script lang="ts">

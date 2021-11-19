@@ -18,19 +18,19 @@ A dynamic progress bar is better.
 
 <template>
   <div>
-    <a-progress :percent="defaultPercent" />
-    <a-button-group>
-      <a-button @click="decline">
+    <z-progress :percent="defaultPercent" />
+    <z-button-group>
+      <z-button @click="decline">
         <template #icon><minus-outlined /></template>
-      </a-button>
-      <a-button @click="increase">
+      </z-button>
+      <z-button @click="increase">
         <template #icon><plus-outlined /></template>
-      </a-button>
-    </a-button-group>
+      </z-button>
+    </z-button-group>
   </div>
 </template>
 <script lang="ts">
-import { MinusOutlined , PlusOutlined } from '@ant-design/icons-vue';
+import { MinusOutlined, PlusOutlined } from '@ant-design/icons-vue';
 import { defineComponent, ref } from 'vue';
 export default defineComponent({
   components: {

@@ -15,7 +15,7 @@ When there is a need for autocomplete functionality.
 ## API
 
 ```html
-<a-auto-complete v-model:value="value" :options="options" />
+<z-auto-complete v-model:value="value" :options="options" />
 ```
 
 | Property | Description | Type | Default | Version |

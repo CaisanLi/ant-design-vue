@@ -1,19 +1,19 @@
 <template>
-  <a-form-item v-if="type === 'Captcha'">
-    <a-row :gutter="8">
-      <a-col :span="16">
-        <a-input v-decorator="[name, getFormItemOptions()]" v-bind="customprops" />
-      </a-col>
-      <a-col :span="8">
-        <a-button :disabled="!!count" class="getCaptcha" size="large" @click="handleClick">
+  <z-form-item v-if="type === 'Captcha'">
+    <z-row :gutter="8">
+      <z-col :span="16">
+        <z-input v-decorator="[name, getFormItemOptions()]" v-bind="customprops" />
+      </z-col>
+      <z-col :span="8">
+        <z-button :disabled="!!count" class="getCaptcha" size="large" @click="handleClick">
           {{ count ? `${count} ${getCaptchaSecondText}` : getCaptchaButtonText }}
-        </a-button>
-      </a-col>
-    </a-row>
-  </a-form-item>
-  <a-form-item v-else>
-    <a-input v-decorator="[name, getFormItemOptions()]" v-bind="customprops" />
-  </a-form-item>
+        </z-button>
+      </z-col>
+    </z-row>
+  </z-form-item>
+  <z-form-item v-else>
+    <z-input v-decorator="[name, getFormItemOptions()]" v-bind="customprops" />
+  </z-form-item>
 </template>
 <script>
 export default {

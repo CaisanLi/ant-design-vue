@@ -19,32 +19,32 @@ Config item align.
 <template>
   <div class="space-align-container">
     <div class="space-align-block">
-      <a-space align="center">
+      <z-space align="center">
         center
-        <a-button type="primary">Primary</a-button>
+        <z-button type="primary">Primary</z-button>
         <span class="mock-block">Block</span>
-      </a-space>
+      </z-space>
     </div>
     <div class="space-align-block">
-      <a-space align="start">
+      <z-space align="start">
         start
-        <a-button type="primary">Primary</a-button>
+        <z-button type="primary">Primary</z-button>
         <span class="mock-block">Block</span>
-      </a-space>
+      </z-space>
     </div>
     <div class="space-align-block">
-      <a-space align="end">
+      <z-space align="end">
         end
-        <a-button type="primary">Primary</a-button>
+        <z-button type="primary">Primary</z-button>
         <span class="mock-block">Block</span>
-      </a-space>
+      </z-space>
     </div>
     <div class="space-align-block">
-      <a-space align="baseline">
+      <z-space align="baseline">
         baseline
-        <a-button type="primary">Primary</a-button>
+        <z-button type="primary">Primary</z-button>
         <span class="mock-block">Block</span>
-      </a-space>
+      </z-space>
     </div>
   </div>
 </template>

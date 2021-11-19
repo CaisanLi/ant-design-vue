@@ -15,9 +15,9 @@ title:
 By setting like this: `<Steps size="small">`, you can get a mini version.
 </docs>
 <template>
-  <a-steps :current="1" size="small">
-    <a-step title="Finished" />
-    <a-step title="In Progress" />
-    <a-step title="Waiting" />
-  </a-steps>
+  <z-steps :current="1" size="small">
+    <z-step title="Finished" />
+    <z-step title="In Progress" />
+    <z-step title="Waiting" />
+  </z-steps>
 </template>

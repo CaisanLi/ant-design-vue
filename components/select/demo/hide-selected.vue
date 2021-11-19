@@ -17,14 +17,13 @@ Hide already selected options in the dropdown.
 </docs>
 
 <template>
-  <a-select
+  <z-select
     v-model:value="selectedItems"
     mode="multiple"
     placeholder="Inserted are removed"
     style="width: 100%"
     :options="filteredOptions.map(item => ({ value: item }))"
-  >
-  </a-select>
+  ></z-select>
 </template>
 <script lang="ts">
 import { computed, defineComponent, ref } from 'vue';

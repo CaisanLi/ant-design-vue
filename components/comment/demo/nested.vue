@@ -1,8 +1,8 @@
 <docs>
 ---
-order: 2 
-title: 
-  zh-CN: 嵌套评论 
+order: 2
+title:
+  zh-CN: 嵌套评论
   en-US: Nested comments
 ---
 
@@ -17,7 +17,7 @@ Comments can be nested.
 </docs>
 
 <template>
-  <a-comment>
+  <z-comment>
     <template #actions>
       <span key="comment-nested-reply-to">Reply to</span>
     </template>
@@ -25,7 +25,7 @@ Comments can be nested.
       <a>Han Solo</a>
     </template>
     <template #avatar>
-      <a-avatar
+      <z-avatar
         src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
         alt="Han Solo"
       />
@@ -36,7 +36,7 @@ Comments can be nested.
         resources (Sketch and Axure).
       </p>
     </template>
-    <a-comment>
+    <z-comment>
       <template #actions>
         <span>Reply to</span>
       </template>
@@ -44,7 +44,7 @@ Comments can be nested.
         <a>Han Solo</a>
       </template>
       <template #avatar>
-        <a-avatar
+        <z-avatar
           src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
           alt="Han Solo"
         />
@@ -55,7 +55,7 @@ Comments can be nested.
           resources (Sketch and Axure).
         </p>
       </template>
-      <a-comment>
+      <z-comment>
         <template #actions>
           <span>Reply to</span>
         </template>
@@ -63,7 +63,7 @@ Comments can be nested.
           <a>Han Solo</a>
         </template>
         <template #avatar>
-          <a-avatar
+          <z-avatar
             src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
             alt="Han Solo"
           />
@@ -74,8 +74,8 @@ Comments can be nested.
             resources (Sketch and Axure).
           </p>
         </template>
-      </a-comment>
-      <a-comment>
+      </z-comment>
+      <z-comment>
         <template #actions>
           <span>Reply to</span>
         </template>
@@ -83,7 +83,7 @@ Comments can be nested.
           <a>Han Solo</a>
         </template>
         <template #avatar>
-          <a-avatar
+          <z-avatar
             src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
             alt="Han Solo"
           />
@@ -94,7 +94,7 @@ Comments can be nested.
             resources (Sketch and Axure).
           </p>
         </template>
-      </a-comment>
-    </a-comment>
-  </a-comment>
+      </z-comment>
+    </z-comment>
+  </z-comment>
 </template>

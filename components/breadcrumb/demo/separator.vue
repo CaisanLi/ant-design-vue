@@ -18,17 +18,17 @@ The separator can be customized by setting the separator preperty: separator=">"
 </docs>
 
 <template>
-  <a-breadcrumb separator=">">
-    <a-breadcrumb-item>Home</a-breadcrumb-item>
-    <a-breadcrumb-item href="">Application Center</a-breadcrumb-item>
-    <a-breadcrumb-item href="">Application List</a-breadcrumb-item>
-    <a-breadcrumb-item>An Application</a-breadcrumb-item>
-  </a-breadcrumb>
-  <a-breadcrumb>
+  <z-breadcrumb separator=">">
+    <z-breadcrumb-item>Home</z-breadcrumb-item>
+    <z-breadcrumb-item href="">Application Center</z-breadcrumb-item>
+    <z-breadcrumb-item href="">Application List</z-breadcrumb-item>
+    <z-breadcrumb-item>An Application</z-breadcrumb-item>
+  </z-breadcrumb>
+  <z-breadcrumb>
     <template #separator><span style="color: red">></span></template>
-    <a-breadcrumb-item>Home</a-breadcrumb-item>
-    <a-breadcrumb-item href="">Application Center</a-breadcrumb-item>
-    <a-breadcrumb-item href="">Application List</a-breadcrumb-item>
-    <a-breadcrumb-item>An Application</a-breadcrumb-item>
-  </a-breadcrumb>
+    <z-breadcrumb-item>Home</z-breadcrumb-item>
+    <z-breadcrumb-item href="">Application Center</z-breadcrumb-item>
+    <z-breadcrumb-item href="">Application List</z-breadcrumb-item>
+    <z-breadcrumb-item>An Application</z-breadcrumb-item>
+  </z-breadcrumb>
 </template>

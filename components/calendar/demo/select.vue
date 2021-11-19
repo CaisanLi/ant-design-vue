@@ -17,8 +17,8 @@ A basic calendar component with Year/Month switch.
 </docs>
 
 <template>
-  <a-alert :message="`You selected date: ${selectedValue && selectedValue.format('YYYY-MM-DD')}`" />
-  <a-calendar :value="date" @select="onSelect" @panelChange="onPanelChange" />
+  <z-alert :message="`You selected date: ${selectedValue && selectedValue.format('YYYY-MM-DD')}`" />
+  <z-calendar :value="date" @select="onSelect" @panelChange="onPanelChange" />
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
@@ -45,4 +45,3 @@ export default defineComponent({
   },
 });
 </script>
-

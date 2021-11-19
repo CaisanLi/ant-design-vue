@@ -17,7 +17,7 @@ A disabled state of the `TimePicker`.
 </docs>
 
 <template>
-  <a-time-picker :value="dayjs('12:08:23', 'HH:mm:ss')" disabled />
+  <z-time-picker :value="dayjs('12:08:23', 'HH:mm:ss')" disabled />
 </template>
 <script lang="ts">
 import dayjs from 'dayjs';
@@ -30,4 +30,3 @@ export default defineComponent({
   },
 });
 </script>
-

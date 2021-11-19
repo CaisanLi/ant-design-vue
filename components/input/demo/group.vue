@@ -19,102 +19,102 @@ Note: You don't need `Col` to control the width in the `compact` mode.
 </docs>
 <template>
   <div>
-    <a-input-group size="large">
-      <a-row :gutter="8">
-        <a-col :span="5">
-          <a-input v-model:value="value1" />
-        </a-col>
-        <a-col :span="8">
-          <a-input v-model:value="value2" />
-        </a-col>
-      </a-row>
-    </a-input-group>
+    <z-input-group size="large">
+      <z-row :gutter="8">
+        <z-col :span="5">
+          <z-input v-model:value="value1" />
+        </z-col>
+        <z-col :span="8">
+          <z-input v-model:value="value2" />
+        </z-col>
+      </z-row>
+    </z-input-group>
     <br />
-    <a-input-group compact>
-      <a-input v-model:value="value1" style="width: 20%" />
-      <a-input v-model:value="value2" style="width: 30%" />
-    </a-input-group>
+    <z-input-group compact>
+      <z-input v-model:value="value1" style="width: 20%" />
+      <z-input v-model:value="value2" style="width: 30%" />
+    </z-input-group>
     <br />
-    <a-input-group compact>
-      <a-select v-model:value="value3">
-        <a-select-option value="Zhejiang">Zhejiang</a-select-option>
-        <a-select-option value="Jiangsu">Jiangsu</a-select-option>
-      </a-select>
-      <a-input v-model:value="value4" style="width: 50%" />
-    </a-input-group>
+    <z-input-group compact>
+      <z-select v-model:value="value3">
+        <z-select-option value="Zhejiang">Zhejiang</z-select-option>
+        <z-select-option value="Jiangsu">Jiangsu</z-select-option>
+      </z-select>
+      <z-input v-model:value="value4" style="width: 50%" />
+    </z-input-group>
     <br />
-    <a-input-group compact>
-      <a-select v-model:value="value5">
-        <a-select-option value="Option1">Option1</a-select-option>
-        <a-select-option value="Option2">Option2</a-select-option>
-      </a-select>
-      <a-input v-model:value="value6" style="width: 50%" />
-    </a-input-group>
+    <z-input-group compact>
+      <z-select v-model:value="value5">
+        <z-select-option value="Option1">Option1</z-select-option>
+        <z-select-option value="Option2">Option2</z-select-option>
+      </z-select>
+      <z-input v-model:value="value6" style="width: 50%" />
+    </z-input-group>
     <br />
-    <a-input-group compact>
-      <a-input v-model:value="value7" style="width: 50%" />
-      <a-date-picker v-model:value="value8" style="width: 50%" />
-    </a-input-group>
+    <z-input-group compact>
+      <z-input v-model:value="value7" style="width: 50%" />
+      <z-date-picker v-model:value="value8" style="width: 50%" />
+    </z-input-group>
     <br />
-    <a-input-group compact>
-      <a-select v-model:value="value9">
-        <a-select-option value="Option1-1">Option1-1</a-select-option>
-        <a-select-option value="Option1-2">Option1-2</a-select-option>
-      </a-select>
-      <a-select v-model:value="value10">
-        <a-select-option value="Option2-1">Option2-1</a-select-option>
-        <a-select-option value="Option2-2">Option2-2</a-select-option>
-      </a-select>
-    </a-input-group>
+    <z-input-group compact>
+      <z-select v-model:value="value9">
+        <z-select-option value="Option1-1">Option1-1</z-select-option>
+        <z-select-option value="Option1-2">Option1-2</z-select-option>
+      </z-select>
+      <z-select v-model:value="value10">
+        <z-select-option value="Option2-1">Option2-1</z-select-option>
+        <z-select-option value="Option2-2">Option2-2</z-select-option>
+      </z-select>
+    </z-input-group>
     <br />
-    <a-input-group compact>
-      <a-select v-model:value="value11">
-        <a-select-option value="1">Between</a-select-option>
-        <a-select-option value="2">Except</a-select-option>
-      </a-select>
-      <a-input
+    <z-input-group compact>
+      <z-select v-model:value="value11">
+        <z-select-option value="1">Between</z-select-option>
+        <z-select-option value="2">Except</z-select-option>
+      </z-select>
+      <z-input
         v-model:value="value12"
         style="width: 100px; text-align: center"
         placeholder="Minimum"
       />
-      <a-input
+      <z-input
         v-model:value="value13"
         style="width: 30px; border-left: 0; pointer-events: none; background-color: #fff"
         placeholder="~"
         disabled
       />
-      <a-input
+      <z-input
         v-model:value="value14"
         style="width: 100px; text-align: center; border-left: 0"
         placeholder="Maximum"
       />
-    </a-input-group>
+    </z-input-group>
     <br />
-    <a-input-group compact>
-      <a-select v-model:value="value15">
-        <a-select-option value="Sign Up">Sign Up</a-select-option>
-        <a-select-option value="Sign In">Sign In</a-select-option>
-      </a-select>
-      <a-auto-complete
+    <z-input-group compact>
+      <z-select v-model:value="value15">
+        <z-select-option value="Sign Up">Sign Up</z-select-option>
+        <z-select-option value="Sign In">Sign In</z-select-option>
+      </z-select>
+      <z-auto-complete
         v-model:value="value16"
         :options="[{ value: 'text 1' }, { value: 'text 2' }]"
         style="width: 200px"
         placeholder="Email"
       />
-    </a-input-group>
+    </z-input-group>
     <br />
-    <a-input-group compact>
-      <a-select v-model:value="value17" style="width: 30%">
-        <a-select-option value="Home">Home</a-select-option>
-        <a-select-option value="Company">Company</a-select-option>
-      </a-select>
-      <a-cascader
+    <z-input-group compact>
+      <z-select v-model:value="value17" style="width: 30%">
+        <z-select-option value="Home">Home</z-select-option>
+        <z-select-option value="Company">Company</z-select-option>
+      </z-select>
+      <z-cascader
         v-model:value="value18"
         style="width: 70%"
         :options="options"
         placeholder="Select Address"
       />
-    </a-input-group>
+    </z-input-group>
   </div>
 </template>
 <script lang="ts">

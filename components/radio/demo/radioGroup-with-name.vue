@@ -16,12 +16,12 @@ Passing the `name` property to all `input[type="radio"]` that are in the same Ra
 
 </docs>
 <template>
-  <a-radio-group v-model:value="value" name="radioGroup">
-    <a-radio value="1">A</a-radio>
-    <a-radio value="2">B</a-radio>
-    <a-radio value="3">C</a-radio>
-    <a-radio value="4">D</a-radio>
-  </a-radio-group>
+  <z-radio-group v-model:value="value" name="radioGroup">
+    <z-radio value="1">A</z-radio>
+    <z-radio value="2">B</z-radio>
+    <z-radio value="3">C</z-radio>
+    <z-radio value="4">D</z-radio>
+  </z-radio-group>
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue';

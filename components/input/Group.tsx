@@ -5,7 +5,7 @@ import { defaultConfigProvider } from '../config-provider';
 import { tuple } from '../_util/type';
 
 export default defineComponent({
-  name: 'AInputGroup',
+  name: 'ZInputGroup',
   props: {
     prefixCls: PropTypes.string,
     size: PropTypes.oneOf(tuple('small', 'large', 'default')),

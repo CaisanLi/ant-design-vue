@@ -1,7 +1,7 @@
 <template>
   <span>
-    <a-input type="text" :value="value.number" style="width: 100px" @change="onNumberChange" />
-    <a-select
+    <z-input type="text" :value="value.number" style="width: 100px" @change="onNumberChange" />
+    <z-select
       :value="value.currency"
       style="width: 80px; margin: 0 8px"
       :options="[
@@ -9,7 +9,7 @@
         { value: 'dollar', label: 'Dollar' },
       ]"
       @change="onCurrencyChange"
-    ></a-select>
+    ></z-select>
   </span>
 </template>
 

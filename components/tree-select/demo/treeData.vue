@@ -16,7 +16,7 @@ The tree structure can be populated using `treeData` property. This is a quick a
 
 </docs>
 <template>
-  <a-tree-select
+  <z-tree-select
     v-model:value="value"
     style="width: 100%"
     :dropdown-style="{ maxHeight: '400px', overflow: 'auto' }"
@@ -28,7 +28,7 @@ The tree structure can be populated using `treeData` property. This is a quick a
       <span v-if="key === '0-0-1'" style="color: #08c">Child Node1 {{ val }}</span>
       <template v-else>{{ title }}</template>
     </template>
-  </a-tree-select>
+  </z-tree-select>
 </template>
 
 <script lang="ts">

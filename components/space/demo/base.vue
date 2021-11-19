@@ -18,19 +18,19 @@ Crowded components horizontal spacing.
 </docs>
 
 <template>
-  <a-space>
+  <z-space>
     Space
-    <a-button type="primary">Button</a-button>
-    <a-upload>
-      <a-button>
+    <z-button type="primary">Button</z-button>
+    <z-upload>
+      <z-button>
         <UploadOutlined />
         Click to Upload
-      </a-button>
-    </a-upload>
-    <a-popconfirm title="Are you sure delete this task?" ok-text="Yes" cancel-text="No">
-      <a-button>Confirm</a-button>
-    </a-popconfirm>
-  </a-space>
+      </z-button>
+    </z-upload>
+    <z-popconfirm title="Are you sure delete this task?" ok-text="Yes" cancel-text="No">
+      <z-button>Confirm</z-button>
+    </z-popconfirm>
+  </z-space>
 </template>
 <script lang="ts">
 import { UploadOutlined } from '@ant-design/icons-vue';

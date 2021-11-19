@@ -18,20 +18,20 @@ Solid radio button style.
 <template>
   <div>
     <div>
-      <a-radio-group v-model:value="value1" button-style="solid">
-        <a-radio-button value="a">Hangzhou</a-radio-button>
-        <a-radio-button value="b">Shanghai</a-radio-button>
-        <a-radio-button value="c">Beijing</a-radio-button>
-        <a-radio-button value="d">Chengdu</a-radio-button>
-      </a-radio-group>
+      <z-radio-group v-model:value="value1" button-style="solid">
+        <z-radio-button value="a">Hangzhou</z-radio-button>
+        <z-radio-button value="b">Shanghai</z-radio-button>
+        <z-radio-button value="c">Beijing</z-radio-button>
+        <z-radio-button value="d">Chengdu</z-radio-button>
+      </z-radio-group>
     </div>
     <div :style="{ marginTop: '16px' }">
-      <a-radio-group v-model:value="value2" button-style="solid">
-        <a-radio-button value="a">Hangzhou</a-radio-button>
-        <a-radio-button value="b" disabled>Shanghai</a-radio-button>
-        <a-radio-button value="c">Beijing</a-radio-button>
-        <a-radio-button value="d">Chengdu</a-radio-button>
-      </a-radio-group>
+      <z-radio-group v-model:value="value2" button-style="solid">
+        <z-radio-button value="a">Hangzhou</z-radio-button>
+        <z-radio-button value="b" disabled>Shanghai</z-radio-button>
+        <z-radio-button value="c">Beijing</z-radio-button>
+        <z-radio-button value="d">Chengdu</z-radio-button>
+      </z-radio-group>
     </div>
   </div>
 </template>

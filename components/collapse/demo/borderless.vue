@@ -17,17 +17,17 @@ A borderless style of Collapse.
 </docs>
 
 <template>
-  <a-collapse v-model:activeKey="activeKey" :bordered="false">
-    <a-collapse-panel key="1" header="This is panel header 1">
+  <z-collapse v-model:activeKey="activeKey" :bordered="false">
+    <z-collapse-panel key="1" header="This is panel header 1">
       <p>{{ text }}</p>
-    </a-collapse-panel>
-    <a-collapse-panel key="2" header="This is panel header 2">
+    </z-collapse-panel>
+    <z-collapse-panel key="2" header="This is panel header 2">
       <p>{{ text }}</p>
-    </a-collapse-panel>
-    <a-collapse-panel key="3" header="This is panel header 3">
+    </z-collapse-panel>
+    <z-collapse-panel key="3" header="This is panel header 3">
       <p>{{ text }}</p>
-    </a-collapse-panel>
-  </a-collapse>
+    </z-collapse-panel>
+  </z-collapse>
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue';

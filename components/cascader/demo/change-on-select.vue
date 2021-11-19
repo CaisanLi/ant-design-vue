@@ -16,7 +16,7 @@ Allow only select parent options.
 
 </docs>
 <template>
-  <a-cascader v-model:value="value" :options="options" change-on-select />
+  <z-cascader v-model:value="value" :options="options" change-on-select />
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue';

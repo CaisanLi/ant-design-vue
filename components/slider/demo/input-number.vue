@@ -17,28 +17,28 @@ Synchronize with [InputNumber](/components/input-number/) component.
 
 <template>
   <div>
-    <a-row>
-      <a-col :span="12">
-        <a-slider v-model:value="inputValue1" :min="1" :max="20" />
-      </a-col>
-      <a-col :span="4">
-        <a-input-number v-model:value="inputValue1" :min="1" :max="20" style="margin-left: 16px" />
-      </a-col>
-    </a-row>
-    <a-row>
-      <a-col :span="12">
-        <a-slider v-model:value="inputValue" :min="0" :max="1" :step="0.01" />
-      </a-col>
-      <a-col :span="4">
-        <a-input-number
+    <z-row>
+      <z-col :span="12">
+        <z-slider v-model:value="inputValue1" :min="1" :max="20" />
+      </z-col>
+      <z-col :span="4">
+        <z-input-number v-model:value="inputValue1" :min="1" :max="20" style="margin-left: 16px" />
+      </z-col>
+    </z-row>
+    <z-row>
+      <z-col :span="12">
+        <z-slider v-model:value="inputValue" :min="0" :max="1" :step="0.01" />
+      </z-col>
+      <z-col :span="4">
+        <z-input-number
           v-model:value="inputValue"
           :min="0"
           :max="1"
           :step="0.01"
           style="margin-left: 16px"
         />
-      </a-col>
-    </a-row>
+      </z-col>
+    </z-row>
   </div>
 </template>
 <script lang="ts">

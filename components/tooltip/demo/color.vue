@@ -18,17 +18,17 @@ We preset a series of colorful Tooltip styles for use in different situations.
 
 <template>
   <div id="components-a-tooltip-demo-color">
-    <a-divider orientation="left">Presets</a-divider>
+    <z-divider orientation="left">Presets</z-divider>
     <div>
-      <a-tooltip v-for="color in colors" :key="color" title="prompt text" :color="color">
-        <a-button>{{ color }}</a-button>
-      </a-tooltip>
+      <z-tooltip v-for="color in colors" :key="color" title="prompt text" :color="color">
+        <z-button>{{ color }}</z-button>
+      </z-tooltip>
     </div>
-    <a-divider orientation="left">Custom</a-divider>
+    <z-divider orientation="left">Custom</z-divider>
     <div>
-      <a-tooltip v-for="color in customColors" :key="color" title="prompt text" :color="color">
-        <a-button>{{ color }}</a-button>
-      </a-tooltip>
+      <z-tooltip v-for="color in customColors" :key="color" title="prompt text" :color="color">
+        <z-button>{{ color }}</z-button>
+      </z-tooltip>
     </div>
   </div>
 </template>

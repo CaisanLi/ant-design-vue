@@ -1,7 +1,7 @@
 <docs>
 ---
 order: 6
-title: 
+title:
   zh-CN: 自定义标题
   en-US: Title
 ---
@@ -18,9 +18,9 @@ The badge will display `title` when hovered over, instead of `count`.
 
 <template>
   <div id="components-badge-demo-title">
-    <a-badge :count="5" title="Custom hover text">
+    <z-badge :count="5" title="Custom hover text">
       <a href="#" class="head-example" />
-    </a-badge>
+    </z-badge>
   </div>
 </template>
 <style scoped>

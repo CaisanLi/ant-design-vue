@@ -17,11 +17,11 @@ Radio unavailable.
 </docs>
 <template>
   <div>
-    <a-radio v-model:checked="checked1" :disabled="disabled">Disabled</a-radio>
+    <z-radio v-model:checked="checked1" :disabled="disabled">Disabled</z-radio>
     <br />
-    <a-radio v-model:checked="checked2" :disabled="disabled">Disabled</a-radio>
+    <z-radio v-model:checked="checked2" :disabled="disabled">Disabled</z-radio>
     <div :style="{ marginTop: 20 }">
-      <a-button type="primary" @click="toggleDisabled">Toggle disabled</a-button>
+      <z-button type="primary" @click="toggleDisabled">Toggle disabled</z-button>
     </div>
   </div>
 </template>

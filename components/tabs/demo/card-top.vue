@@ -17,23 +17,23 @@ Should be used at the top of container, needs to override styles.
 
 <template>
   <div class="card-container">
-    <a-tabs v-model:activeKey="activeKey" type="card">
-      <a-tab-pane key="1" tab="Tab Title 1">
+    <z-tabs v-model:activeKey="activeKey" type="card">
+      <z-tab-pane key="1" tab="Tab Title 1">
         <p>Content of Tab Pane 1</p>
         <p>Content of Tab Pane 1</p>
         <p>Content of Tab Pane 1</p>
-      </a-tab-pane>
-      <a-tab-pane key="2" tab="Tab Title 2">
+      </z-tab-pane>
+      <z-tab-pane key="2" tab="Tab Title 2">
         <p>Content of Tab Pane 2</p>
         <p>Content of Tab Pane 2</p>
         <p>Content of Tab Pane 2</p>
-      </a-tab-pane>
-      <a-tab-pane key="3" tab="Tab Title 3">
+      </z-tab-pane>
+      <z-tab-pane key="3" tab="Tab Title 3">
         <p>Content of Tab Pane 3</p>
         <p>Content of Tab Pane 3</p>
         <p>Content of Tab Pane 3</p>
-      </a-tab-pane>
-    </a-tabs>
+      </z-tab-pane>
+    </z-tabs>
   </div>
 </template>
 <script lang="ts">

@@ -35,7 +35,7 @@ export function setDefaultIndicator(Content: any) {
 }
 
 export default defineComponent({
-  name: 'ASpin',
+  name: 'ZSpin',
   mixins: [BaseMixin],
   inheritAttrs: false,
   props: initDefaultProps(spinProps(), {

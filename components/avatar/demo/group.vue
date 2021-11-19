@@ -16,33 +16,33 @@ Avatar group display.
 </docs>
 
 <template>
-  <a-avatar-group>
-    <a-avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
-    <a-avatar style="background-color: #f56a00">K</a-avatar>
-    <a-tooltip title="Ant User" placement="top">
-      <a-avatar style="background-color: #87d068">
+  <z-avatar-group>
+    <z-avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+    <z-avatar style="background-color: #f56a00">K</z-avatar>
+    <z-tooltip title="Ant User" placement="top">
+      <z-avatar style="background-color: #87d068">
         <template #icon><UserOutlined /></template>
-      </a-avatar>
-    </a-tooltip>
-    <a-avatar style="background-color: #1890ff">
+      </z-avatar>
+    </z-tooltip>
+    <z-avatar style="background-color: #1890ff">
       <template #icon><UserOutlined /></template>
-    </a-avatar>
-  </a-avatar-group>
-  <a-divider />
-  <a-avatar-group :max-count="2" :max-style="{ color: '#f56a00', backgroundColor: '#fde3cf' }">
-    <a-avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
-    <a-avatar style="background-color: #1890ff">K</a-avatar>
-    <a-tooltip title="Ant User" placement="top">
-      <a-avatar style="background-color: #87d068">
+    </z-avatar>
+  </z-avatar-group>
+  <z-divider />
+  <z-avatar-group :max-count="2" :max-style="{ color: '#f56a00', backgroundColor: '#fde3cf' }">
+    <z-avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+    <z-avatar style="background-color: #1890ff">K</z-avatar>
+    <z-tooltip title="Ant User" placement="top">
+      <z-avatar style="background-color: #87d068">
         <template #icon><UserOutlined /></template>
-      </a-avatar>
-    </a-tooltip>
-    <a-avatar style="background-color: #1890ff">
+      </z-avatar>
+    </z-tooltip>
+    <z-avatar style="background-color: #1890ff">
       <template #icon><UserOutlined /></template>
-    </a-avatar>
-  </a-avatar-group>
-  <a-divider />
-  <a-avatar-group
+    </z-avatar>
+  </z-avatar-group>
+  <z-divider />
+  <z-avatar-group
     :max-count="2"
     size="large"
     :max-style="{
@@ -50,17 +50,17 @@ Avatar group display.
       backgroundColor: '#fde3cf',
     }"
   >
-    <a-avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
-    <a-avatar style="background-color: #1890ff">K</a-avatar>
-    <a-tooltip title="Ant User" placement="top">
-      <a-avatar style="background-color: #87d068">
+    <z-avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+    <z-avatar style="background-color: #1890ff">K</z-avatar>
+    <z-tooltip title="Ant User" placement="top">
+      <z-avatar style="background-color: #87d068">
         <template #icon><UserOutlined /></template>
-      </a-avatar>
-    </a-tooltip>
-    <a-avatar style="background-color: #1890ff">
+      </z-avatar>
+    </z-tooltip>
+    <z-avatar style="background-color: #1890ff">
       <template #icon><UserOutlined /></template>
-    </a-avatar>
-  </a-avatar-group>
+    </z-avatar>
+  </z-avatar-group>
 </template>
 
 <script lang="ts">

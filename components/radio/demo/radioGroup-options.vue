@@ -17,17 +17,17 @@ Render radios by configuring `options`.
 </docs>
 <template>
   <div>
-    <a-radio-group v-model:value="value1" :options="plainOptions" />
+    <z-radio-group v-model:value="value1" :options="plainOptions" />
     <br />
-    <a-radio-group v-model:value="value2" :options="optionsWithDisabled" />
+    <z-radio-group v-model:value="value2" :options="optionsWithDisabled" />
     <br />
-    <a-radio-group v-model:value="value3" :options="plainOptions" disabled />
+    <z-radio-group v-model:value="value3" :options="plainOptions" disabled />
     <br />
-    <a-radio-group v-model:value="value1" option-type="button" :options="plainOptions" />
+    <z-radio-group v-model:value="value1" option-type="button" :options="plainOptions" />
     <br />
-    <a-radio-group v-model:value="value2" option-type="button" :options="optionsWithDisabled" />
+    <z-radio-group v-model:value="value2" option-type="button" :options="optionsWithDisabled" />
     <br />
-    <a-radio-group v-model:value="value3" option-type="button" :options="plainOptions" disabled />
+    <z-radio-group v-model:value="value3" option-type="button" :options="plainOptions" disabled />
     <br />
   </div>
 </template>

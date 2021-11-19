@@ -17,8 +17,8 @@ The most basic usage.
 </docs>
 
 <template>
-  <a-space direction="vertical" style="width: 100%">
-    <a-tree-select
+  <z-space direction="vertical" style="width: 100%">
+    <z-tree-select
       v-model:value="value"
       show-search
       style="width: 100%"
@@ -29,9 +29,9 @@ The most basic usage.
       :tree-data="treeData"
     >
       <template #suffixIcon><SmileOutlined /></template>
-    </a-tree-select>
+    </z-tree-select>
 
-    <a-tree-select
+    <z-tree-select
       v-model:value="value1"
       show-search
       style="width: 100%"
@@ -44,8 +44,8 @@ The most basic usage.
       :tree-data="treeData"
     >
       <template #suffixIcon><SmileOutlined /></template>
-    </a-tree-select>
-  </a-space>
+    </z-tree-select>
+  </z-space>
 </template>
 <script lang="ts">
 import { SmileOutlined } from '@ant-design/icons-vue';

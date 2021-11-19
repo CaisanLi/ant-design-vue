@@ -10,7 +10,7 @@ const breadcrumbSeparatorProps = {
 export type BreadcrumbSeparatorProps = Partial<ExtractPropTypes<typeof breadcrumbSeparatorProps>>;
 
 export default defineComponent({
-  name: 'ABreadcrumbSeparator',
+  name: 'ZBreadcrumbSeparator',
   __ANT_BREADCRUMB_SEPARATOR: true,
   inheritAttrs: false,
   props: breadcrumbSeparatorProps,

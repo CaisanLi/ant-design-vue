@@ -17,12 +17,12 @@ Timing of scrolling to the next card/picture.
 </docs>
 
 <template>
-  <a-carousel autoplay>
+  <z-carousel autoplay>
     <div><h3>1</h3></div>
     <div><h3>2</h3></div>
     <div><h3>3</h3></div>
     <div><h3>4</h3></div>
-  </a-carousel>
+  </z-carousel>
 </template>
 <style scoped>
 /* For demo */

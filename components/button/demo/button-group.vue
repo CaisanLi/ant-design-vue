@@ -19,41 +19,41 @@ Debug usage
 <template>
   <div id="components-button-demo-button-group">
     <h4>Basic</h4>
-    <a-button-group>
-      <a-button>Cancel</a-button>
-      <a-button type="primary">OK</a-button>
-    </a-button-group>
-    <a-button-group>
-      <a-button disabled>L</a-button>
-      <a-button disabled>M</a-button>
-      <a-button disabled>R</a-button>
-    </a-button-group>
-    <a-button-group>
-      <a-button type="primary">L</a-button>
-      <a-button>M</a-button>
-      <a-button>M</a-button>
-      <a-button type="dashed">R</a-button>
-    </a-button-group>
+    <z-button-group>
+      <z-button>Cancel</z-button>
+      <z-button type="primary">OK</z-button>
+    </z-button-group>
+    <z-button-group>
+      <z-button disabled>L</z-button>
+      <z-button disabled>M</z-button>
+      <z-button disabled>R</z-button>
+    </z-button-group>
+    <z-button-group>
+      <z-button type="primary">L</z-button>
+      <z-button>M</z-button>
+      <z-button>M</z-button>
+      <z-button type="dashed">R</z-button>
+    </z-button-group>
 
     <h4>With Icon</h4>
-    <a-button-group>
-      <a-button type="primary">
+    <z-button-group>
+      <z-button type="primary">
         <LeftOutlined />
         Go back
-      </a-button>
-      <a-button type="primary">
+      </z-button>
+      <z-button type="primary">
         Go forward
         <RightOutlined />
-      </a-button>
-    </a-button-group>
-    <a-button-group>
-      <a-button type="primary">
+      </z-button>
+    </z-button-group>
+    <z-button-group>
+      <z-button type="primary">
         <template #icon><CloudOutlined /></template>
-      </a-button>
-      <a-button type="primary">
+      </z-button>
+      <z-button type="primary">
         <template #icon><CloudDownloadOutlined /></template>
-      </a-button>
-    </a-button-group>
+      </z-button>
+    </z-button-group>
   </div>
 </template>
 <script lang="ts">

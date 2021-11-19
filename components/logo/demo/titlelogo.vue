@@ -17,9 +17,9 @@ The title slot is provided to customize the title content on the right.
 
 <template>
   <div class="content">
-    <a-logo :number="2">
+    <z-logo :number="2">
       <template #title>众信佳</template>
-    </a-logo>
+    </z-logo>
   </div>
 </template>
 

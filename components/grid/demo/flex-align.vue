@@ -18,50 +18,50 @@ Child elements vertically aligned.
 
 <template>
   <p>Align Top</p>
-  <a-row type="flex" justify="center" align="top">
-    <a-col :span="4">
+  <z-row type="flex" justify="center" align="top">
+    <z-col :span="4">
       <p class="height-100">col-4</p>
-    </a-col>
-    <a-col :span="4">
+    </z-col>
+    <z-col :span="4">
       <p class="height-50">col-4</p>
-    </a-col>
-    <a-col :span="4">
+    </z-col>
+    <z-col :span="4">
       <p class="height-120">col-4</p>
-    </a-col>
-    <a-col :span="4">
+    </z-col>
+    <z-col :span="4">
       <p class="height-80">col-4</p>
-    </a-col>
-  </a-row>
+    </z-col>
+  </z-row>
 
   <p>Align Center</p>
-  <a-row type="flex" justify="space-around" align="middle">
-    <a-col :span="4">
+  <z-row type="flex" justify="space-around" align="middle">
+    <z-col :span="4">
       <p class="height-100">col-4</p>
-    </a-col>
-    <a-col :span="4">
+    </z-col>
+    <z-col :span="4">
       <p class="height-50">col-4</p>
-    </a-col>
-    <a-col :span="4">
+    </z-col>
+    <z-col :span="4">
       <p class="height-120">col-4</p>
-    </a-col>
-    <a-col :span="4">
+    </z-col>
+    <z-col :span="4">
       <p class="height-80">col-4</p>
-    </a-col>
-  </a-row>
+    </z-col>
+  </z-row>
 
   <p>Align Bottom</p>
-  <a-row type="flex" justify="space-between" align="bottom">
-    <a-col :span="4">
+  <z-row type="flex" justify="space-between" align="bottom">
+    <z-col :span="4">
       <p class="height-100">col-4</p>
-    </a-col>
-    <a-col :span="4">
+    </z-col>
+    <z-col :span="4">
       <p class="height-50">col-4</p>
-    </a-col>
-    <a-col :span="4">
+    </z-col>
+    <z-col :span="4">
       <p class="height-120">col-4</p>
-    </a-col>
-    <a-col :span="4">
+    </z-col>
+    <z-col :span="4">
       <p class="height-80">col-4</p>
-    </a-col>
-  </a-row>
+    </z-col>
+  </z-row>
 </template>

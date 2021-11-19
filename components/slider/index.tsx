@@ -73,7 +73,7 @@ export const sliderProps = () => ({
 export type Visibles = { [index: number]: boolean };
 
 const Slider = defineComponent({
-  name: 'ASlider',
+  name: 'ZSlider',
   inheritAttrs: false,
   props: {
     ...sliderProps(),

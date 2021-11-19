@@ -54,7 +54,7 @@ export type TreeSelectProps = Partial<ExtractPropTypes<typeof treeSelectProps>>;
 
 const TreeSelect = defineComponent({
   TreeNode,
-  name: 'ATreeSelect',
+  name: 'ZTreeSelect',
   inheritAttrs: false,
   props: initDefaultProps(treeSelectProps, {
     transitionName: 'slide-up',

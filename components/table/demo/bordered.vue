@@ -16,7 +16,7 @@ Add border, title and footer for table.
 </docs>
 
 <template>
-  <a-table :columns="columns" :data-source="data" bordered>
+  <z-table :columns="columns" :data-source="data" bordered>
     <template #bodyCell="{ column, text }">
       <template v-if="column.dataIndex === 'name'">
         <a>{{ text }}</a>
@@ -24,7 +24,7 @@ Add border, title and footer for table.
     </template>
     <template #title>Header</template>
     <template #footer>Footer</template>
-  </a-table>
+  </z-table>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';

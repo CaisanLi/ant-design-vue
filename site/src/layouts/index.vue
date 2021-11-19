@@ -1,9 +1,9 @@
 <template>
   <Header />
   <div class="main-wrapper">
-    <a-row>
+    <z-row>
       <template v-if="isMobile">
-        <a-drawer
+        <z-drawer
           key="mobile-menu"
           :closable="false"
           placement="left"
@@ -18,56 +18,56 @@
               <MenuOutlined v-else :style="iconStyle" />
             </div>
           </template>
-        </a-drawer>
+        </z-drawer>
       </template>
       <template v-else>
-        <a-col :xxl="4" :xl="5" :lg="6" :md="6" :sm="24" :xs="24" class="main-menu">
-          <a-affix>
+        <z-col :xxl="4" :xl="5" :lg="6" :md="6" :sm="24" :xs="24" class="main-menu">
+          <z-affix>
             <section class="main-menu-inner">
               <Sponsors :is-c-n="isZhCN" />
               <Menu :menus="dataSource" :active-menu-item="activeMenuItem" :is-zh-c-n="isZhCN" />
             </section>
-          </a-affix>
-        </a-col>
+          </z-affix>
+        </z-col>
       </template>
-      <a-col :xxl="20" :xl="19" :lg="18" :md="18" :sm="24" :xs="24">
+      <z-col :xxl="20" :xl="19" :lg="18" :md="18" :sm="24" :xs="24">
         <section :class="mainContainerClass">
           <TopAd :is-c-n="isZhCN" />
           <Demo v-if="isDemo" :page-data="pageData" :is-zh-c-n="isZhCN">
             <component :is="matchCom" />
           </Demo>
           <router-view v-else />
-          <a-affix v-if="headers.length" class="toc-affix" :offset-top="20">
-            <a-anchor>
-              <a-anchor-link
+          <z-affix v-if="headers.length" class="toc-affix" :offset-top="20">
+            <z-anchor>
+              <z-anchor-link
                 v-for="h in headers"
                 :key="h.title"
                 :href="h.href || `#${slugifyTitle(h.title)}`"
                 :title="h.title"
-              ></a-anchor-link>
-            </a-anchor>
-          </a-affix>
+              ></z-anchor-link>
+            </z-anchor>
+          </z-affix>
         </section>
         <div class="fixed-widgets" :style="isZhCN ? { bottom: '175px' } : {}">
-          <a-dropdown placement="topCenter">
+          <z-dropdown placement="topCenter">
             <template #overlay>
-              <a-menu
+              <z-menu
                 :selected-keys="[themeMode.theme.value]"
                 @click="({ key }) => themeMode.changeTheme(key)"
               >
-                <a-menu-item key="default">{{ $t('app.theme.switch.default') }}</a-menu-item>
-                <a-menu-item key="dark">{{ $t('app.theme.switch.dark') }}</a-menu-item>
-              </a-menu>
+                <z-menu-item key="default">{{ $t('app.theme.switch.default') }}</z-menu-item>
+                <z-menu-item key="dark">{{ $t('app.theme.switch.dark') }}</z-menu-item>
+              </z-menu>
             </template>
-            <a-avatar class="fixed-widgets-avatar" :size="44">
+            <z-avatar class="fixed-widgets-avatar" :size="44">
               <template #icon><ThemeIcon /></template>
-            </a-avatar>
-          </a-dropdown>
+            </z-avatar>
+          </z-dropdown>
         </div>
         <PrevAndNext :menus="menus" :current-menu-index="currentMenuIndex" :is-zh-c-n="isZhCN" />
         <Footer />
-      </a-col>
-    </a-row>
+      </z-col>
+    </z-row>
     <RightBottomAd :is-c-n="isZhCN" :is-mobile="isMobile" />
   </div>
 </template>

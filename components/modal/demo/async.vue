@@ -19,15 +19,15 @@ you can use this pattern when you submit a form.
 
 <template>
   <div>
-    <a-button type="primary" @click="showModal">Open Modal with async logic</a-button>
-    <a-modal
+    <z-button type="primary" @click="showModal">Open Modal with async logic</z-button>
+    <z-modal
       v-model:visible="visible"
       title="Title"
       :confirm-loading="confirmLoading"
       @ok="handleOk"
     >
       <p>{{ modalText }}</p>
-    </a-modal>
+    </z-modal>
   </div>
 </template>
 <script lang="ts">

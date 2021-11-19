@@ -188,7 +188,7 @@ export const configProviderProps = {
 export type ConfigProviderProps = Partial<ExtractPropTypes<typeof configProviderProps>>;
 
 const ConfigProvider = defineComponent({
-  name: 'AConfigProvider',
+  name: 'ZConfigProvider',
   inheritAttrs: false,
   props: configProviderProps,
   setup(props, { slots }) {

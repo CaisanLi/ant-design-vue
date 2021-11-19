@@ -18,47 +18,47 @@ Click the menu and you will see that all the other menus gets collapsed to keep 
 
 <template>
   <div>
-    <a-menu
+    <z-menu
       v-model:selectedKeys="selectedKeys"
       style="width: 256px"
       mode="inline"
       :open-keys="openKeys"
       @openChange="onOpenChange"
     >
-      <a-sub-menu key="sub1">
+      <z-sub-menu key="sub1">
         <template #icon>
           <MailOutlined />
         </template>
         <template #title>Navigation One</template>
-        <a-menu-item key="1">Option 1</a-menu-item>
-        <a-menu-item key="2">Option 2</a-menu-item>
-        <a-menu-item key="3">Option 3</a-menu-item>
-        <a-menu-item key="4">Option 4</a-menu-item>
-      </a-sub-menu>
-      <a-sub-menu key="sub2">
+        <z-menu-item key="1">Option 1</z-menu-item>
+        <z-menu-item key="2">Option 2</z-menu-item>
+        <z-menu-item key="3">Option 3</z-menu-item>
+        <z-menu-item key="4">Option 4</z-menu-item>
+      </z-sub-menu>
+      <z-sub-menu key="sub2">
         <template #icon></template>
         <template #title>
           <AppstoreOutlined />
           Navigation Two
         </template>
-        <a-menu-item key="5">Option 5</a-menu-item>
-        <a-menu-item key="6">Option 6</a-menu-item>
-        <a-sub-menu key="sub3" title="Submenu">
-          <a-menu-item key="7">Option 7</a-menu-item>
-          <a-menu-item key="8">Option 8</a-menu-item>
-        </a-sub-menu>
-      </a-sub-menu>
-      <a-sub-menu key="sub4">
+        <z-menu-item key="5">Option 5</z-menu-item>
+        <z-menu-item key="6">Option 6</z-menu-item>
+        <z-sub-menu key="sub3" title="Submenu">
+          <z-menu-item key="7">Option 7</z-menu-item>
+          <z-menu-item key="8">Option 8</z-menu-item>
+        </z-sub-menu>
+      </z-sub-menu>
+      <z-sub-menu key="sub4">
         <template #icon>
           <SettingOutlined />
         </template>
         <template #title>Navigation Three</template>
-        <a-menu-item key="9">Option 9</a-menu-item>
-        <a-menu-item key="10">Option 10</a-menu-item>
-        <a-menu-item key="11">Option 11</a-menu-item>
-        <a-menu-item key="12">Option 12</a-menu-item>
-      </a-sub-menu>
-    </a-menu>
+        <z-menu-item key="9">Option 9</z-menu-item>
+        <z-menu-item key="10">Option 10</z-menu-item>
+        <z-menu-item key="11">Option 11</z-menu-item>
+        <z-menu-item key="12">Option 12</z-menu-item>
+      </z-sub-menu>
+    </z-menu>
   </div>
 </template>
 <script lang="ts">

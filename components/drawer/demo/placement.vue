@@ -17,14 +17,14 @@ The Drawer can appear from any edge of the screen.
 </docs>
 
 <template>
-  <a-radio-group v-model:value="placement" style="margin-right: 8px">
-    <a-radio value="top">top</a-radio>
-    <a-radio value="right">right</a-radio>
-    <a-radio value="bottom">bottom</a-radio>
-    <a-radio value="left">left</a-radio>
-  </a-radio-group>
-  <a-button type="primary" @click="showDrawer">Open</a-button>
-  <a-drawer
+  <z-radio-group v-model:value="placement" style="margin-right: 8px">
+    <z-radio value="top">top</z-radio>
+    <z-radio value="right">right</z-radio>
+    <z-radio value="bottom">bottom</z-radio>
+    <z-radio value="left">left</z-radio>
+  </z-radio-group>
+  <z-button type="primary" @click="showDrawer">Open</z-button>
+  <z-drawer
     title="Basic Drawer"
     :placement="placement"
     :closable="false"
@@ -34,7 +34,7 @@ The Drawer can appear from any edge of the screen.
     <p>Some contents...</p>
     <p>Some contents...</p>
     <p>Some contents...</p>
-  </a-drawer>
+  </z-drawer>
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue';

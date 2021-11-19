@@ -1,16 +1,16 @@
 <template>
-  <a-menu id="nav" class="menu-site" :mode="menuMode" :selected-keys="[activeMenuItem]">
-    <a-menu-item key="docs/vue">
+  <z-menu id="nav" class="menu-site" :mode="menuMode" :selected-keys="[activeMenuItem]">
+    <z-menu-item key="docs/vue">
       <router-link :to="getLocalizedPathname('/docs/vue/introduce', isZhCN)">
         {{ $t('app.header.menu.documentation') }}
       </router-link>
-    </a-menu-item>
-    <a-menu-item key="components">
+    </z-menu-item>
+    <z-menu-item key="components">
       <router-link :to="getLocalizedPathname('/components/overview/', isZhCN)">
         {{ $t('app.header.menu.components') }}
       </router-link>
-    </a-menu-item>
-    <a-menu-item key="store">
+    </z-menu-item>
+    <z-menu-item key="store">
       <a
         href="https://store.antdv.com/pro/"
         target="_blank"
@@ -18,10 +18,10 @@
         style="position: relative"
       >
         {{ $t('app.header.menu.store') }}
-        <a-badge color="red" style="position: absolute; top: -35px; right: -15px" />
+        <z-badge color="red" style="position: absolute; top: -35px; right: -15px" />
       </a>
-    </a-menu-item>
-    <a-menu-item v-if="isZhCN" key="geektime">
+    </z-menu-item>
+    <z-menu-item v-if="isZhCN" key="geektime">
       <a
         href="https://time.geekbang.org/course/intro/100024601?code=KHKYcoBU6vZa8nMglg7AWfDxxi3BWrz9INAzAY3umPk%3D"
         target="_blank"
@@ -29,14 +29,14 @@
         style="position: relative"
       >
         实战课程
-        <a-badge color="red" style="position: absolute; top: -35px; right: -15px" />
+        <z-badge color="red" style="position: absolute; top: -35px; right: -15px" />
       </a>
-    </a-menu-item>
+    </z-menu-item>
     <template v-if="isMobile">
-      <a-menu-item key="switch-lang" @click="$emit('langChange')">
+      <z-menu-item key="switch-lang" @click="$emit('langChange')">
         {{ $t('app.header.lang') }}
-      </a-menu-item>
-      <a-menu-item key="github">
+      </z-menu-item>
+      <z-menu-item key="github">
         <a
           href="https://github.com/vueComponent/ant-design-vue"
           target="_blank"
@@ -44,9 +44,9 @@
         >
           Github
         </a>
-      </a-menu-item>
+      </z-menu-item>
     </template>
-  </a-menu>
+  </z-menu>
 </template>
 <script lang="ts">
 import type { GlobalConfig } from '../../App.vue';

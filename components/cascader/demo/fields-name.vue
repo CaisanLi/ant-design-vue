@@ -16,7 +16,7 @@ Custom Field Names
 
 </docs>
 <template>
-  <a-cascader
+  <z-cascader
     v-model:value="value"
     :field-names="{ label: 'name', value: 'code', children: 'items' }"
     :options="options"

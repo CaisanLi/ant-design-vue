@@ -17,8 +17,8 @@ Use the width attribute to customize the logo width.  You can customize the logo
 
 <template>
   <div class="content">
-    <a-logo :number="2" :width="200" />
-    <a-logo :number="2" :height="200" />
+    <z-logo :number="2" :width="200" />
+    <z-logo :number="2" :height="200" />
   </div>
 </template>
 

@@ -17,7 +17,7 @@ You can customize icons for different nodes.
 </docs>
 
 <template>
-  <a-tree v-model:selectedKeys="selectedKeys" :tree-data="treeData" show-icon default-expand-all>
+  <z-tree v-model:selectedKeys="selectedKeys" :tree-data="treeData" show-icon default-expand-all>
     <template #switcherIcon>
       <down-outlined />
     </template>
@@ -33,7 +33,7 @@ You can customize icons for different nodes.
         <frown-outlined v-else />
       </template>
     </template>
-  </a-tree>
+  </z-tree>
 </template>
 <script lang="ts">
 import { DownOutlined, SmileOutlined, FrownOutlined, FrownFilled } from '@ant-design/icons-vue';

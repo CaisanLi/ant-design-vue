@@ -16,9 +16,9 @@ title:
 </docs>
 
 <template>
-  <a-button type="primary" block>Primary</a-button>
-  <a-button block>Default</a-button>
-  <a-button type="dashed" block>Dashed</a-button>
-  <a-button danger block>Danger</a-button>
-  <a-button type="link" block>Link</a-button>
+  <z-button type="primary" block>Primary</z-button>
+  <z-button block>Default</z-button>
+  <z-button type="dashed" block>Dashed</z-button>
+  <z-button danger block>Danger</z-button>
+  <z-button type="link" block>Link</z-button>
 </template>

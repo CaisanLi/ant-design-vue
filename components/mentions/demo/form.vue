@@ -16,42 +16,42 @@ to work with `Form`.
 </docs>
 
 <template>
-  <a-form layout="horizontal">
-    <a-form-item
+  <z-form layout="horizontal">
+    <z-form-item
       label="Top coders"
       :label-col="{ span: 6 }"
       :wrapper-col="{ span: 18 }"
       name="coders"
       v-bind="validateInfos.coders"
     >
-      <a-mentions v-model:value="modelRef.coders" rows="1">
-        <a-mentions-option value="afc163">afc163</a-mentions-option>
-        <a-mentions-option value="zombieJ">zombieJ</a-mentions-option>
-        <a-mentions-option value="yesmeck">yesmeck</a-mentions-option>
-      </a-mentions>
-    </a-form-item>
-    <a-form-item
+      <z-mentions v-model:value="modelRef.coders" rows="1">
+        <z-mentions-option value="afc163">afc163</z-mentions-option>
+        <z-mentions-option value="zombieJ">zombieJ</z-mentions-option>
+        <z-mentions-option value="yesmeck">yesmeck</z-mentions-option>
+      </z-mentions>
+    </z-form-item>
+    <z-form-item
       label="Bio"
       :label-col="{ span: 6 }"
       :wrapper-col="{ span: 18 }"
       name="bio"
       v-bind="validateInfos.bio"
     >
-      <a-mentions
+      <z-mentions
         v-model:value="modelRef.bio"
         rows="3"
         placeholder="You can use @ to ref user here"
       >
-        <a-mentions-option value="afc163">afc163</a-mentions-option>
-        <a-mentions-option value="zombieJ">zombieJ</a-mentions-option>
-        <a-mentions-option value="yesmeck">yesmeck</a-mentions-option>
-      </a-mentions>
-    </a-form-item>
-    <a-form-item :wrapper-col="{ span: 12, offset: 5 }">
-      <a-button type="primary" @click="handleSubmit">Submit</a-button>
-      <a-button style="margin-left: 8px" @click="resetFields">Reset</a-button>
-    </a-form-item>
-  </a-form>
+        <z-mentions-option value="afc163">afc163</z-mentions-option>
+        <z-mentions-option value="zombieJ">zombieJ</z-mentions-option>
+        <z-mentions-option value="yesmeck">yesmeck</z-mentions-option>
+      </z-mentions>
+    </z-form-item>
+    <z-form-item :wrapper-col="{ span: 12, offset: 5 }">
+      <z-button type="primary" @click="handleSubmit">Submit</z-button>
+      <z-button style="margin-left: 8px" @click="resetFields">Reset</z-button>
+    </z-form-item>
+  </z-form>
 </template>
 <script>
 import { Mentions, Form } from 'ant-design-vue';

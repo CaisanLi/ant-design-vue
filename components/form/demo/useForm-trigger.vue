@@ -16,24 +16,24 @@ use [`Form.useForm`](#useForm) custom trigger to validation logic and status.
 </docs>
 
 <template>
-  <a-form :label-col="labelCol" :wrapper-col="wrapperCol">
-    <a-form-item label="Activity name" v-bind="validateInfos.name">
-      <a-input
+  <z-form :label-col="labelCol" :wrapper-col="wrapperCol">
+    <z-form-item label="Activity name" v-bind="validateInfos.name">
+      <z-input
         v-model:value="modelRef.name"
         @blur="validate('name', { trigger: 'blur' }).catch(() => {})"
       />
-    </a-form-item>
-    <a-form-item label="Activity zone" v-bind="validateInfos.region">
-      <a-select v-model:value="modelRef.region" placeholder="please select your zone">
-        <a-select-option value="shanghai">Zone one</a-select-option>
-        <a-select-option value="beijing">Zone two</a-select-option>
-      </a-select>
-    </a-form-item>
-    <a-form-item :wrapper-col="{ span: 14, offset: 4 }">
-      <a-button type="primary" @click.prevent="onSubmit">Create</a-button>
-      <a-button style="margin-left: 10px" @click="resetFields">Reset</a-button>
-    </a-form-item>
-  </a-form>
+    </z-form-item>
+    <z-form-item label="Activity zone" v-bind="validateInfos.region">
+      <z-select v-model:value="modelRef.region" placeholder="please select your zone">
+        <z-select-option value="shanghai">Zone one</z-select-option>
+        <z-select-option value="beijing">Zone two</z-select-option>
+      </z-select>
+    </z-form-item>
+    <z-form-item :wrapper-col="{ span: 14, offset: 4 }">
+      <z-button type="primary" @click.prevent="onSubmit">Create</z-button>
+      <z-button style="margin-left: 10px" @click="resetFields">Reset</z-button>
+    </z-form-item>
+  </z-form>
 </template>
 <script lang="ts">
 import { defineComponent, reactive, toRaw } from 'vue';

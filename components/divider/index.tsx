@@ -26,7 +26,7 @@ export const dividerProps = {
 export type DividerProps = Partial<ExtractPropTypes<typeof dividerProps>>;
 
 const Divider = defineComponent({
-  name: 'ADivider',
+  name: 'ZDivider',
   props: dividerProps,
   setup(props, { slots }) {
     const configProvider = inject('configProvider', defaultConfigProvider);

@@ -18,8 +18,8 @@ Full screen by custom style.
 
 <template>
   <div>
-    <a-button type="primary" @click="showModal">Open Modal</a-button>
-    <a-modal
+    <z-button type="primary" @click="showModal">Open Modal</z-button>
+    <z-modal
       v-model:visible="visible"
       title="Basic Modal"
       width="100%"
@@ -29,7 +29,7 @@ Full screen by custom style.
       <p>Some contents...</p>
       <p>Some contents...</p>
       <p>Some contents...</p>
-    </a-modal>
+    </z-modal>
   </div>
 </template>
 <script lang="ts">

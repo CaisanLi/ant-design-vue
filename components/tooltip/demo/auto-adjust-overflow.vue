@@ -18,18 +18,18 @@ Adjust popup placement automatically when popup is invisible.
 
 <template>
   <div :style="wrapStyles">
-    <a-tooltip placement="left" title="Prompt Text" :get-popup-container="getPopupContainer">
-      <a-button>Adjust automatically / 自动调整</a-button>
-    </a-tooltip>
+    <z-tooltip placement="left" title="Prompt Text" :get-popup-container="getPopupContainer">
+      <z-button>Adjust automatically / 自动调整</z-button>
+    </z-tooltip>
     <br />
-    <a-tooltip
+    <z-tooltip
       placement="left"
       title="Prompt Text"
       :get-popup-container="getPopupContainer"
       :auto-adjust-overflow="false"
     >
-      <a-button style="margin-top: 10px">Ingore / 不处理</a-button>
-    </a-tooltip>
+      <z-button style="margin-top: 10px">Ingore / 不处理</z-button>
+    </z-tooltip>
   </div>
 </template>
 <script lang="ts">

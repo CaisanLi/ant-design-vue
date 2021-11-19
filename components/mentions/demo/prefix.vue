@@ -16,16 +16,16 @@ Customize Trigger Token by `prefix` props. Default to `@`, `Array<string>` also 
 
 </docs>
 <template>
-  <a-mentions
+  <z-mentions
     v-model:value="value"
     placeholder="input @ to mention people, # to mention tag"
     :prefix="['@', '#']"
     @search="onSearch"
   >
-    <a-mentions-option v-for="val in options" :key="val" :value="val">
+    <z-mentions-option v-for="val in options" :key="val" :value="val">
       {{ val }}
-    </a-mentions-option>
-  </a-mentions>
+    </z-mentions-option>
+  </z-mentions>
 </template>
 <script lang="ts">
 import { computed, defineComponent, ref } from 'vue';

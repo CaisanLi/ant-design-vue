@@ -18,17 +18,17 @@ Communicated with other components
 
 <template>
   <p :style="{ marginBottom: '20px' }">
-    <a-checkbox v-model:checked="checked" :disabled="disabled">
+    <z-checkbox v-model:checked="checked" :disabled="disabled">
       {{ label }}
-    </a-checkbox>
+    </z-checkbox>
   </p>
   <p>
-    <a-button type="primary" size="small" @click="toggleChecked">
+    <z-button type="primary" size="small" @click="toggleChecked">
       {{ !checked ? 'Check' : 'Uncheck' }}
-    </a-button>
-    <a-button :style="{ marginLeft: '10px' }" type="primary" size="small" @click="toggleDisable">
+    </z-button>
+    <z-button :style="{ marginLeft: '10px' }" type="primary" size="small" @click="toggleDisable">
       {{ !disabled ? 'Disable' : 'Enable' }}
-    </a-button>
+    </z-button>
   </p>
 </template>
 <script lang="ts">

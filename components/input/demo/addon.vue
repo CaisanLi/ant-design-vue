@@ -18,32 +18,32 @@ Using pre & post tabs example.
 <template>
   <div>
     <div style="margin-bottom: 16px">
-      <a-input v-model:value="value1" addon-before="Http://" addon-after=".com" />
+      <z-input v-model:value="value1" addon-before="Http://" addon-after=".com" />
     </div>
     <div style="margin-bottom: 16px">
-      <a-input v-model:value="value2">
+      <z-input v-model:value="value2">
         <template #addonBefore>
-          <a-select v-model:value="value3" style="width: 90px">
-            <a-select-option value="Http://">Http://</a-select-option>
-            <a-select-option value="Https://">Https://</a-select-option>
-          </a-select>
+          <z-select v-model:value="value3" style="width: 90px">
+            <z-select-option value="Http://">Http://</z-select-option>
+            <z-select-option value="Https://">Https://</z-select-option>
+          </z-select>
         </template>
         <template #addonAfter>
-          <a-select v-model:value="value4" style="width: 80px">
-            <a-select-option value=".com">.com</a-select-option>
-            <a-select-option value=".jp">.jp</a-select-option>
-            <a-select-option value=".cn">.cn</a-select-option>
-            <a-select-option value=".org">.org</a-select-option>
-          </a-select>
+          <z-select v-model:value="value4" style="width: 80px">
+            <z-select-option value=".com">.com</z-select-option>
+            <z-select-option value=".jp">.jp</z-select-option>
+            <z-select-option value=".cn">.cn</z-select-option>
+            <z-select-option value=".org">.org</z-select-option>
+          </z-select>
         </template>
-      </a-input>
+      </z-input>
     </div>
     <div style="margin-bottom: 16px">
-      <a-input v-model:value="value5">
+      <z-input v-model:value="value5">
         <template #addonAfter>
           <setting-outlined />
         </template>
-      </a-input>
+      </z-input>
     </div>
   </div>
 </template>

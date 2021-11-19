@@ -18,9 +18,9 @@ To use `confirm()` to show a confirmation modal dialog.
 
 <template>
   <div>
-    <a-button @click="showConfirm">Confirm</a-button>
-    <a-button type="dashed" @click="showDeleteConfirm">Delete</a-button>
-    <a-button type="dashed" @click="showPropsConfirm">With extra props</a-button>
+    <z-button @click="showConfirm">Confirm</z-button>
+    <z-button type="dashed" @click="showDeleteConfirm">Delete</z-button>
+    <z-button type="dashed" @click="showPropsConfirm">With extra props</z-button>
   </div>
 </template>
 <script lang="ts">

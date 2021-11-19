@@ -17,14 +17,14 @@ Show successful results.
 </docs>
 
 <template>
-  <a-result
+  <z-result
     status="success"
     title="Successfully Purchased Cloud Server ECS!"
     sub-title="Order number: 2017182818828182881 Cloud server configuration takes 1-5 minutes, please wait."
   >
     <template #extra>
-      <a-button key="console" type="primary">Go Console</a-button>
-      <a-button key="buy">Buy Again</a-button>
+      <z-button key="console" type="primary">Go Console</z-button>
+      <z-button key="buy">Buy Again</z-button>
     </template>
-  </a-result>
+  </z-result>
 </template>

@@ -16,20 +16,20 @@ Image, Icon and letter are supported, and the latter two kinds avatar can have c
 </docs>
 
 <template>
-  <a-avatar>
+  <z-avatar>
     <template #icon>
       <UserOutlined />
     </template>
-  </a-avatar>
-  <a-avatar>U</a-avatar>
-  <a-avatar>USER</a-avatar>
-  <a-avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
-  <a-avatar style="color: #f56a00; background-color: #fde3cf">U</a-avatar>
-  <a-avatar style="background-color: #87d068">
+  </z-avatar>
+  <z-avatar>U</z-avatar>
+  <z-avatar>USER</z-avatar>
+  <z-avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+  <z-avatar style="color: #f56a00; background-color: #fde3cf">U</z-avatar>
+  <z-avatar style="background-color: #87d068">
     <template #icon>
       <UserOutlined />
     </template>
-  </a-avatar>
+  </z-avatar>
 </template>
 
 <script lang="ts">

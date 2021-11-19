@@ -2,7 +2,7 @@ import { defineComponent } from 'vue';
 import { useInjectMenu } from './hooks/useMenuContext';
 
 export default defineComponent({
-  name: 'AMenuDivider',
+  name: 'ZMenuDivider',
   setup() {
     const { prefixCls } = useInjectMenu();
     return () => {

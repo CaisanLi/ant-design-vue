@@ -12,7 +12,7 @@ export interface SkeletonInputProps extends Omit<SkeletonElementProps, 'size' | 
 }
 
 const SkeletonInput = defineComponent({
-  name: 'ASkeletonInput',
+  name: 'ZSkeletonInput',
   props: {
     ...omit(skeletonElementProps(), ['shape']),
     size: PropTypes.oneOf(tuple('large', 'small', 'default')),

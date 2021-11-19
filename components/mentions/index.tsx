@@ -80,7 +80,7 @@ const mentionsProps = {
 export type MentionsProps = Partial<ExtractPropTypes<typeof mentionsProps>>;
 
 const Mentions = defineComponent({
-  name: 'AMentions',
+  name: 'ZMentions',
   inheritAttrs: false,
   props: mentionsProps,
   emits: ['update:value', 'change', 'focus', 'blur', 'select', 'pressenter'],
@@ -208,7 +208,7 @@ const Mentions = defineComponent({
 /* istanbul ignore next */
 export const MentionsOption = defineComponent({
   ...Option,
-  name: 'AMentionsOption',
+  name: 'ZMentionsOption',
 });
 
 export default Object.assign(Mentions, {

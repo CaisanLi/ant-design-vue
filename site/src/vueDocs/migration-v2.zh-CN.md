@@ -16,7 +16,7 @@
 
 ### 兼容性调整
 
-- 浏览器不再兼容 IE 11及以下版本。
+- 浏览器不再兼容 IE 11 及以下版本。
 - Vue 最低支持版本为 Vue 3.0。
 
 #### 调整的 API
@@ -45,8 +45,8 @@
 旧版 Icon 使用方式将被废弃：
 
 ```html
-<a-icon type="smile" />
-<a-button icon="smile" />
+<z-icon type="smile" />
+<z-button icon="smile" />
 ```
 
 2.0 中会采用按需引入的方式：
@@ -54,9 +54,9 @@
 ```html
 <template>
   <smile-outlined />
-  <a-button>
+  <z-button>
     <template #icon><smile-outlined /></template>
-  </a-button>
+  </z-button>
 </template>
 <script>
   import SmileOutlined from '@ant-design/icons-vue/SmileOutlined';

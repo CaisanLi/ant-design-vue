@@ -17,21 +17,21 @@ The height of the input field for the select defaults to 32px. If size is set to
 </docs>
 
 <template>
-  <a-radio-group v-model:value="size">
-    <a-radio-button value="large">Large</a-radio-button>
-    <a-radio-button value="default">Default</a-radio-button>
-    <a-radio-button value="small">Small</a-radio-button>
-  </a-radio-group>
+  <z-radio-group v-model:value="size">
+    <z-radio-button value="large">Large</z-radio-button>
+    <z-radio-button value="default">Default</z-radio-button>
+    <z-radio-button value="small">Small</z-radio-button>
+  </z-radio-group>
   <br />
   <br />
-  <a-space direction="vertical">
-    <a-select
+  <z-space direction="vertical">
+    <z-select
       v-model:value="value1"
       :size="size"
       style="width: 200px"
       :options="options"
-    ></a-select>
-    <a-select
+    ></z-select>
+    <z-select
       v-model:value="value2"
       :options="options"
       mode="multiple"
@@ -39,18 +39,16 @@ The height of the input field for the select defaults to 32px. If size is set to
       placeholder="Please select"
       style="width: 200px"
       @popupScroll="popupScroll"
-    >
-    </a-select>
-    <a-select
+    ></z-select>
+    <z-select
       v-model:value="value3"
       :options="options"
       mode="tags"
       :size="size"
       placeholder="Please select"
       style="width: 200px"
-    >
-    </a-select>
-  </a-space>
+    ></z-select>
+  </z-space>
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue';

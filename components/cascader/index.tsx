@@ -216,7 +216,7 @@ function flattenTree(
 const defaultDisplayRender = ({ labels }) => labels.join(' / ');
 
 const Cascader = defineComponent({
-  name: 'ACascader',
+  name: 'ZCascader',
   mixins: [BaseMixin],
   inheritAttrs: false,
   props: cascaderProps,

@@ -17,20 +17,20 @@ For long table，need to scroll to view the header and scroll bar，then you can
 </docs>
 
 <template>
-  <a-table sticky :columns="columns" :data-source="data" :scroll="{ x: 1500 }">
+  <z-table sticky :columns="columns" :data-source="data" :scroll="{ x: 1500 }">
     <template #bodyCell="{ column }">
       <template v-if="column.key === 'operation'"><a>action</a></template>
     </template>
     <template #summary>
-      <a-table-summary>
-        <a-table-summary-row>
-          <a-table-summary-cell :index="0" :col-span="2">Fix Left</a-table-summary-cell>
-          <a-table-summary-cell :index="2" :col-span="8">Scroll Context</a-table-summary-cell>
-          <a-table-summary-cell :index="10">Fix Right</a-table-summary-cell>
-        </a-table-summary-row>
-      </a-table-summary>
+      <z-table-summary>
+        <z-table-summary-row>
+          <z-table-summary-cell :index="0" :col-span="2">Fix Left</z-table-summary-cell>
+          <z-table-summary-cell :index="2" :col-span="8">Scroll Context</z-table-summary-cell>
+          <z-table-summary-cell :index="10">Fix Right</z-table-summary-cell>
+        </z-table-summary-row>
+      </z-table-summary>
     </template>
-  </a-table>
+  </z-table>
 </template>
 
 <script lang="ts">

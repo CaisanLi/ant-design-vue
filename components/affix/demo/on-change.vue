@@ -17,9 +17,9 @@ Callback with affixed state.
 </docs>
 
 <template>
-  <a-affix :offset-top="120" @change="change">
-    <a-button>120px to affix top</a-button>
-  </a-affix>
+  <z-affix :offset-top="120" @change="change">
+    <z-button>120px to affix top</z-button>
+  </z-affix>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';

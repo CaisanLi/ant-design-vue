@@ -16,22 +16,22 @@ We can customize the rendering of date cells in the calendar by providing a `dat
 
 </docs>
 <template>
-  <a-space direction="vertical" :size="12">
-    <a-date-picker v-model:value="value1">
+  <z-space direction="vertical" :size="12">
+    <z-date-picker v-model:value="value1">
       <template #dateRender="{ current }">
         <div class="ant-picker-cell-inner" :style="getCurrentStyle(current)">
           {{ current.date() }}
         </div>
       </template>
-    </a-date-picker>
-    <a-range-picker v-model:value="value2">
+    </z-date-picker>
+    <z-range-picker v-model:value="value2">
       <template #dateRender="{ current }">
         <div class="ant-picker-cell-inner" :style="getCurrentStyle(current)">
           {{ current.date() }}
         </div>
       </template>
-    </a-range-picker>
-  </a-space>
+    </z-range-picker>
+  </z-space>
 </template>
 <script lang="ts">
 import type { Dayjs } from 'dayjs';

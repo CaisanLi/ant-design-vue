@@ -20,32 +20,32 @@ Top-bottom structure is conform with the top-bottom viewing habit, it's a classi
 
 </docs>
 <template>
-  <a-layout class="layout">
-    <a-layout-header>
+  <z-layout class="layout">
+    <z-layout-header>
       <div class="logo" />
-      <a-menu
+      <z-menu
         v-model:selectedKeys="selectedKeys"
         theme="dark"
         mode="horizontal"
         :style="{ lineHeight: '64px' }"
       >
-        <a-menu-item key="1">nav 1</a-menu-item>
-        <a-menu-item key="2">nav 2</a-menu-item>
-        <a-menu-item key="3">nav 3</a-menu-item>
-      </a-menu>
-    </a-layout-header>
-    <a-layout-content style="padding: 0 50px">
-      <a-breadcrumb style="margin: 16px 0">
-        <a-breadcrumb-item>Home</a-breadcrumb-item>
-        <a-breadcrumb-item>List</a-breadcrumb-item>
-        <a-breadcrumb-item>App</a-breadcrumb-item>
-      </a-breadcrumb>
+        <z-menu-item key="1">nav 1</z-menu-item>
+        <z-menu-item key="2">nav 2</z-menu-item>
+        <z-menu-item key="3">nav 3</z-menu-item>
+      </z-menu>
+    </z-layout-header>
+    <z-layout-content style="padding: 0 50px">
+      <z-breadcrumb style="margin: 16px 0">
+        <z-breadcrumb-item>Home</z-breadcrumb-item>
+        <z-breadcrumb-item>List</z-breadcrumb-item>
+        <z-breadcrumb-item>App</z-breadcrumb-item>
+      </z-breadcrumb>
       <div :style="{ background: '#fff', padding: '24px', minHeight: '280px' }">Content</div>
-    </a-layout-content>
-    <a-layout-footer style="text-align: center">
+    </z-layout-content>
+    <z-layout-footer style="text-align: center">
       Ant Design ©2018 Created by Ant UED
-    </a-layout-footer>
-  </a-layout>
+    </z-layout-footer>
+  </z-layout>
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue';

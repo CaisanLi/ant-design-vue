@@ -17,7 +17,7 @@ The simplest usage that close the notification box after 4.5s.
 </docs>
 
 <template>
-  <a-button type="primary" @click="openNotification">Open the notification box</a-button>
+  <z-button type="primary" @click="openNotification">Open the notification box</z-button>
 </template>
 <script lang="ts">
 import { notification } from 'ant-design-vue';

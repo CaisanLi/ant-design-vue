@@ -21,7 +21,7 @@ export const timelineProps = () => ({
 export type TimelineProps = Partial<ExtractPropTypes<ReturnType<typeof timelineProps>>>;
 
 export default defineComponent({
-  name: 'ATimeline',
+  name: 'ZTimeline',
   props: initDefaultProps(timelineProps(), {
     reverse: false,
     mode: '',

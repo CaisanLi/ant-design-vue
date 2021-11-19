@@ -17,14 +17,14 @@ customize collapse/expand icon of tree node
 </docs>
 
 <template>
-  <a-tree
+  <z-tree
     v-model:expandedKeys="expandedKeys"
     v-model:selectedKeys="selectedKeys"
     show-line
     :tree-data="treeData"
   >
     <template #switcherIcon><down-outlined /></template>
-  </a-tree>
+  </z-tree>
 </template>
 <script lang="ts">
 import { DownOutlined } from '@ant-design/icons-vue';

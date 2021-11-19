@@ -17,12 +17,12 @@ A disabled state of the `DatePicker`.
 </docs>
 
 <template>
-  <a-space direction="vertical">
-    <a-date-picker v-model:value="value1" />
-    <a-date-picker v-model:value="value2" disabled picker="month" />
-    <a-range-picker v-model:value="value3" disabled />
-    <a-range-picker v-model:value="value4" :disabled="[false, true]" />
-  </a-space>
+  <z-space direction="vertical">
+    <z-date-picker v-model:value="value1" />
+    <z-date-picker v-model:value="value2" disabled picker="month" />
+    <z-range-picker v-model:value="value3" disabled />
+    <z-range-picker v-model:value="value4" :disabled="[false, true]" />
+  </z-space>
 </template>
 <script lang="ts">
 import dayjs, { Dayjs } from 'dayjs';
@@ -33,10 +33,7 @@ export default defineComponent({
     return {
       value1: ref<Dayjs>(dayjs('2015-06-06', dateFormat)),
       value2: ref<Dayjs>(dayjs('2015-06', 'YYYY-MM')),
-      value3: ref<Dayjs[]>([
-        dayjs('2015-06-06', dateFormat),
-        dayjs('2015-06-06', dateFormat),
-      ]),
+      value3: ref<Dayjs[]>([dayjs('2015-06-06', dateFormat), dayjs('2015-06-06', dateFormat)]),
       value4: ref<Dayjs[]>([dayjs('2019-09-03', dateFormat), dayjs('2019-11-22', dateFormat)]),
     };
   },

@@ -35,7 +35,7 @@ export const badgeProps = {
 export type BadgeProps = Partial<ExtractPropTypes<typeof badgeProps>>;
 
 export default defineComponent({
-  name: 'ABadge',
+  name: 'ZBadge',
   Ribbon,
   inheritAttrs: false,
   props: badgeProps,

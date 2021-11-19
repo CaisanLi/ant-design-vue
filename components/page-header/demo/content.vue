@@ -18,7 +18,7 @@ Show all props provided by PageHeader.
 
 <template>
   <div class="components-page-header-demo-content">
-    <a-page-header
+    <z-page-header
       title="Title"
       class="site-page-header"
       sub-title="This is a subtitle"
@@ -26,38 +26,38 @@ Show all props provided by PageHeader.
       :breadcrumb="{ routes }"
     >
       <template #tags>
-        <a-tag color="blue">Running</a-tag>
+        <z-tag color="blue">Running</z-tag>
       </template>
       <template #extra>
-        <a-button key="3">Operation</a-button>
-        <a-button key="2">Operation</a-button>
-        <a-button key="1" type="primary">Primary</a-button>
-        <a-dropdown key="more">
-          <a-button :style="{ border: 'none', padding: 0 }">
+        <z-button key="3">Operation</z-button>
+        <z-button key="2">Operation</z-button>
+        <z-button key="1" type="primary">Primary</z-button>
+        <z-dropdown key="more">
+          <z-button :style="{ border: 'none', padding: 0 }">
             <EllipsisOutlined :style="{ fontSize: '20px', verticalAlign: 'top' }" />
-          </a-button>
+          </z-button>
           <template #overlay>
-            <a-menu>
-              <a-menu-item>
+            <z-menu>
+              <z-menu-item>
                 <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">
                   1st menu item
                 </a>
-              </a-menu-item>
-              <a-menu-item>
+              </z-menu-item>
+              <z-menu-item>
                 <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">
                   2nd menu item
                 </a>
-              </a-menu-item>
-              <a-menu-item>
+              </z-menu-item>
+              <z-menu-item>
                 <a target="_blank" rel="noopener noreferrer" href="http://www.tmall.com/">
                   3rd menu item
                 </a>
-              </a-menu-item>
-            </a-menu>
+              </z-menu-item>
+            </z-menu>
           </template>
-        </a-dropdown>
+        </z-dropdown>
       </template>
-      <a-row class="content">
+      <z-row class="content">
         <div style="flex: 1">
           <p>
             Ant Design interprets the color system into two levels: a system-level color system and
@@ -84,8 +84,8 @@ Show all props provided by PageHeader.
             style="width: 100%"
           />
         </div>
-      </a-row>
-    </a-page-header>
+      </z-row>
+    </z-page-header>
   </div>
 </template>
 

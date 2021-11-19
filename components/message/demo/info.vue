@@ -17,7 +17,7 @@ Normal message for information.
 </docs>
 
 <template>
-  <a-button type="primary" @click="info">Display normal message</a-button>
+  <z-button type="primary" @click="info">Display normal message</z-button>
 </template>
 <script lang="ts">
 import { message } from 'ant-design-vue';

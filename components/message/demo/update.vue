@@ -17,7 +17,7 @@ Update message content with unique `key`.
 </docs>
 
 <template>
-  <a-button type="primary" @click="openMessage">Open the message box</a-button>
+  <z-button type="primary" @click="openMessage">Open the message box</z-button>
 </template>
 <script lang="ts">
 import { message } from 'ant-design-vue';

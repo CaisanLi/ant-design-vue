@@ -80,7 +80,7 @@ function getParagraphBasicProps(hasAvatar: boolean, hasTitle: boolean): Skeleton
 }
 
 const Skeleton = defineComponent({
-  name: 'ASkeleton',
+  name: 'ZSkeleton',
   props: initDefaultProps(skeletonProps, {
     avatar: false,
     title: true,

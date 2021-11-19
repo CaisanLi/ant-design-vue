@@ -25,33 +25,33 @@ Using template style API.
 </docs>
 
 <template>
-  <a-table :data-source="data">
-    <a-table-column-group>
+  <z-table :data-source="data">
+    <z-table-column-group>
       <template #title><span style="color: #1890ff">Name</span></template>
-      <a-table-column key="firstName" data-index="firstName">
+      <z-table-column key="firstName" data-index="firstName">
         <template #title><span style="color: #1890ff">First Name</span></template>
-      </a-table-column>
-      <a-table-column key="lastName" title="Last Name" data-index="lastName" />
-    </a-table-column-group>
-    <a-table-column key="age" title="Age" data-index="age" />
-    <a-table-column key="address" title="Address" data-index="address" />
-    <a-table-column key="tags" title="Tags" data-index="tags">
+      </z-table-column>
+      <z-table-column key="lastName" title="Last Name" data-index="lastName" />
+    </z-table-column-group>
+    <z-table-column key="age" title="Age" data-index="age" />
+    <z-table-column key="address" title="Address" data-index="address" />
+    <z-table-column key="tags" title="Tags" data-index="tags">
       <template #default="{ text: tags }">
         <span>
-          <a-tag v-for="tag in tags" :key="tag" color="blue">{{ tag }}</a-tag>
+          <z-tag v-for="tag in tags" :key="tag" color="blue">{{ tag }}</z-tag>
         </span>
       </template>
-    </a-table-column>
-    <a-table-column key="action" title="Action">
+    </z-table-column>
+    <z-table-column key="action" title="Action">
       <template #default="{ record }">
         <span>
           <a>Action 一 {{ record.firstName }}</a>
-          <a-divider type="vertical" />
+          <z-divider type="vertical" />
           <a>Delete</a>
         </span>
       </template>
-    </a-table-column>
-  </a-table>
+    </z-table-column>
+  </z-table>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';

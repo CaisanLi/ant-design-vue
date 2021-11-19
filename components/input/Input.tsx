@@ -51,7 +51,7 @@ export function getInputClassName(prefixCls: string, size: string, disabled: boo
 }
 
 export default defineComponent({
-  name: 'AInput',
+  name: 'ZInput',
   inheritAttrs: false,
   props: {
     ...inputProps,

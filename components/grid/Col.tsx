@@ -58,7 +58,7 @@ const colProps = {
 export type ColProps = Partial<ExtractPropTypes<typeof colProps>>;
 
 export default defineComponent({
-  name: 'ACol',
+  name: 'ZCol',
   props: colProps,
   setup(props, { slots }) {
     const { gutter, supportFlexGap, wrap } = useInjectRow();

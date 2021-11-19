@@ -31,7 +31,7 @@ function getNumberSize(size: SpaceSize) {
 }
 
 const Space = defineComponent({
-  name: 'ASpace',
+  name: 'ZSpace',
   props: spaceProps,
   slots: ['split'],
   setup(props, { slots }) {

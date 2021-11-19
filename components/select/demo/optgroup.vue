@@ -17,30 +17,30 @@ Using `OptGroup` or `options.options` to group the options.
 </docs>
 
 <template>
-  <a-space>
-    <a-select v-model:value="value" style="width: 200px" @change="handleChange">
-      <a-select-opt-group>
+  <z-space>
+    <z-select v-model:value="value" style="width: 200px" @change="handleChange">
+      <z-select-opt-group>
         <template #label>
           <span>
             <user-outlined />
             Manager
           </span>
         </template>
-        <a-select-option value="jack">Jack</a-select-option>
-        <a-select-option value="lucy">Lucy</a-select-option>
-      </a-select-opt-group>
-      <a-select-opt-group label="Engineer">
-        <a-select-option value="Yiminghe">yiminghe</a-select-option>
-        <a-select-option value="Yiminghe1">yiminghe1</a-select-option>
-      </a-select-opt-group>
-    </a-select>
-    <a-select
+        <z-select-option value="jack">Jack</z-select-option>
+        <z-select-option value="lucy">Lucy</z-select-option>
+      </z-select-opt-group>
+      <z-select-opt-group label="Engineer">
+        <z-select-option value="Yiminghe">yiminghe</z-select-option>
+        <z-select-option value="Yiminghe1">yiminghe1</z-select-option>
+      </z-select-opt-group>
+    </z-select>
+    <z-select
       v-model:value="value"
       :options="options"
       style="width: 200px"
       @change="handleChange"
-    ></a-select>
-  </a-space>
+    ></z-select>
+  </z-space>
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue';

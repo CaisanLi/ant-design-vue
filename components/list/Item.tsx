@@ -17,7 +17,7 @@ export const ListItemProps = {
 };
 
 export default defineComponent({
-  name: 'AListItem',
+  name: 'ZListItem',
   inheritAttrs: false,
   Meta: ItemMeta,
   props: ListItemProps,

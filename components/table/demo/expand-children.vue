@@ -19,11 +19,11 @@ You can control the indent width by setting `indentSize`.
 </docs>
 
 <template>
-  <a-space align="center" style="margin-bottom: 16px">
+  <z-space align="center" style="margin-bottom: 16px">
     CheckStrictly:
-    <a-switch v-model:checked="rowSelection.checkStrictly"></a-switch>
-  </a-space>
-  <a-table :columns="columns" :data-source="data" :row-selection="rowSelection" />
+    <z-switch v-model:checked="rowSelection.checkStrictly"></z-switch>
+  </z-space>
+  <z-table :columns="columns" :data-source="data" :row-selection="rowSelection" />
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue';

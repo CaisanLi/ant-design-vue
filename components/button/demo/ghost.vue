@@ -18,9 +18,9 @@ title:
 
 <template>
   <div :style="{ background: 'rgb(190, 200, 200)', padding: '26px 16px 16px' }">
-    <a-button type="primary" ghost>Primary</a-button>
-    <a-button ghost>Default</a-button>
-    <a-button type="dashed" ghost>Dashed</a-button>
-    <a-button danger ghost>Danger</a-button>
+    <z-button type="primary" ghost>Primary</z-button>
+    <z-button ghost>Default</z-button>
+    <z-button type="dashed" ghost>Dashed</z-button>
+    <z-button danger ghost>Danger</z-button>
   </div>
 </template>

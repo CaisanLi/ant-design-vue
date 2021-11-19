@@ -16,17 +16,17 @@ A loading indicator can be added to a button by setting the `loading` property o
 </docs>
 
 <template>
-  <a-button type="primary" loading>Loading</a-button>
-  <a-button type="primary" size="small" loading>Loading</a-button>
+  <z-button type="primary" loading>Loading</z-button>
+  <z-button type="primary" size="small" loading>Loading</z-button>
   <br />
-  <a-button type="primary" :loading="loading" @mouseenter="loading = true">mouseenter me!</a-button>
-  <a-button type="primary" icon="poweroff" :loading="iconLoading" @click="enterIconLoading">
+  <z-button type="primary" :loading="loading" @mouseenter="loading = true">mouseenter me!</z-button>
+  <z-button type="primary" icon="poweroff" :loading="iconLoading" @click="enterIconLoading">
     延迟1s
-  </a-button>
+  </z-button>
   <br />
-  <a-button type="primary" loading />
-  <a-button type="primary" shape="circle" loading />
-  <a-button danger shape="round" loading />
+  <z-button type="primary" loading />
+  <z-button type="primary" shape="circle" loading />
+  <z-button danger shape="round" loading />
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue';

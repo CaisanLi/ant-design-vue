@@ -1,7 +1,7 @@
 <docs>
 ---
 order: 0
-title: 
+title:
   zh-CN: 基本
   en-US: Basic
 ---
@@ -16,13 +16,13 @@ Simplest Usage.
 </docs>
 
 <template>
-  <a-descriptions title="User Info">
-    <a-descriptions-item label="UserName">Zhou Maomao</a-descriptions-item>
-    <a-descriptions-item label="Telephone">1810000000</a-descriptions-item>
-    <a-descriptions-item label="Live">Hangzhou, Zhejiang</a-descriptions-item>
-    <a-descriptions-item label="Remark">empty</a-descriptions-item>
-    <a-descriptions-item label="Address">
+  <z-descriptions title="User Info">
+    <z-descriptions-item label="UserName">Zhou Maomao</z-descriptions-item>
+    <z-descriptions-item label="Telephone">1810000000</z-descriptions-item>
+    <z-descriptions-item label="Live">Hangzhou, Zhejiang</z-descriptions-item>
+    <z-descriptions-item label="Remark">empty</z-descriptions-item>
+    <z-descriptions-item label="Address">
       No. 18, Wantang Road, Xihu District, Hangzhou, Zhejiang, China
-    </a-descriptions-item>
-  </a-descriptions>
+    </z-descriptions-item>
+  </z-descriptions>
 </template>

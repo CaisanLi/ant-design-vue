@@ -18,24 +18,24 @@ Custom sizes to fit in a variety of containers.
 
 <template>
   <div>
-    <a-radio-group v-model:value="size" @change="onChange">
-      <a-radio value="default">default</a-radio>
-      <a-radio value="middle">middle</a-radio>
-      <a-radio value="small">small</a-radio>
-    </a-radio-group>
+    <z-radio-group v-model:value="size" @change="onChange">
+      <z-radio value="default">default</z-radio>
+      <z-radio value="middle">middle</z-radio>
+      <z-radio value="small">small</z-radio>
+    </z-radio-group>
     <br />
     <br />
-    <a-descriptions bordered title="Custom Size" :size="size">
+    <z-descriptions bordered title="Custom Size" :size="size">
       <template #extra>
-        <a-button type="primary">Edit</a-button>
+        <z-button type="primary">Edit</z-button>
       </template>
-      <a-descriptions-item label="Product">Cloud Database</a-descriptions-item>
-      <a-descriptions-item label="Billing">Prepaid</a-descriptions-item>
-      <a-descriptions-item label="Time">18:00:00</a-descriptions-item>
-      <a-descriptions-item label="Amount">$80.00</a-descriptions-item>
-      <a-descriptions-item label="Discount">$20.00</a-descriptions-item>
-      <a-descriptions-item label="Official">$60.00</a-descriptions-item>
-      <a-descriptions-item label="Config Info">
+      <z-descriptions-item label="Product">Cloud Database</z-descriptions-item>
+      <z-descriptions-item label="Billing">Prepaid</z-descriptions-item>
+      <z-descriptions-item label="Time">18:00:00</z-descriptions-item>
+      <z-descriptions-item label="Amount">$80.00</z-descriptions-item>
+      <z-descriptions-item label="Discount">$20.00</z-descriptions-item>
+      <z-descriptions-item label="Official">$60.00</z-descriptions-item>
+      <z-descriptions-item label="Config Info">
         Data disk type: MongoDB
         <br />
         Database version: 3.4
@@ -48,21 +48,21 @@ Custom sizes to fit in a variety of containers.
         <br />
         Region: East China 1
         <br />
-      </a-descriptions-item>
-    </a-descriptions>
+      </z-descriptions-item>
+    </z-descriptions>
     <br />
     <br />
-    <a-descriptions title="Custom Size" :size="size">
+    <z-descriptions title="Custom Size" :size="size">
       <template #extra>
-        <a-button type="primary">Edit</a-button>
+        <z-button type="primary">Edit</z-button>
       </template>
-      <a-descriptions-item label="Product">Cloud Database</a-descriptions-item>
-      <a-descriptions-item label="Billing">Prepaid</a-descriptions-item>
-      <a-descriptions-item label="Time">18:00:00</a-descriptions-item>
-      <a-descriptions-item label="Amount">$80.00</a-descriptions-item>
-      <a-descriptions-item label="Discount">$20.00</a-descriptions-item>
-      <a-descriptions-item label="Official">$60.00</a-descriptions-item>
-    </a-descriptions>
+      <z-descriptions-item label="Product">Cloud Database</z-descriptions-item>
+      <z-descriptions-item label="Billing">Prepaid</z-descriptions-item>
+      <z-descriptions-item label="Time">18:00:00</z-descriptions-item>
+      <z-descriptions-item label="Amount">$80.00</z-descriptions-item>
+      <z-descriptions-item label="Discount">$20.00</z-descriptions-item>
+      <z-descriptions-item label="Official">$60.00</z-descriptions-item>
+    </z-descriptions>
   </div>
 </template>
 <script lang="ts">

@@ -16,14 +16,14 @@ You can hide the arrow icon by passing `showArrow={false}` to `CollapsePanel` co
 </docs>
 
 <template>
-  <a-collapse v-model:activeKey="activeKey">
-    <a-collapse-panel key="1" header="This is panel header with arrow icon">
+  <z-collapse v-model:activeKey="activeKey">
+    <z-collapse-panel key="1" header="This is panel header with arrow icon">
       <p>{{ text }}</p>
-    </a-collapse-panel>
-    <a-collapse-panel key="2" header="This is panel header with no arrow icon" :show-arrow="false">
+    </z-collapse-panel>
+    <z-collapse-panel key="2" header="This is panel header with no arrow icon" :show-arrow="false">
       <p>{{ text }}</p>
-    </a-collapse-panel>
-  </a-collapse>
+    </z-collapse-panel>
+  </z-collapse>
 </template>
 <script lang="ts">
 import { defineComponent, ref, watch } from 'vue';

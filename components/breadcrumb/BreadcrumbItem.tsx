@@ -15,7 +15,7 @@ const breadcrumbItemProps = {
 
 export type BreadcrumbItemProps = Partial<ExtractPropTypes<typeof breadcrumbItemProps>>;
 export default defineComponent({
-  name: 'ABreadcrumbItem',
+  name: 'ZBreadcrumbItem',
   __ANT_BREADCRUMB_ITEM: true,
   props: breadcrumbItemProps,
   emits: ['click'],

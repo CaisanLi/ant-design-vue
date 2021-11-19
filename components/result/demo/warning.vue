@@ -17,9 +17,9 @@ The result of the warning.
 </docs>
 
 <template>
-  <a-result status="warning" title="There are some problems with your operation.">
+  <z-result status="warning" title="There are some problems with your operation.">
     <template #extra>
-      <a-button key="console" type="primary">Go Console</a-button>
+      <z-button key="console" type="primary">Go Console</z-button>
     </template>
-  </a-result>
+  </z-result>
 </template>

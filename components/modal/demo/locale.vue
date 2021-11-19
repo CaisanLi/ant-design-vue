@@ -18,9 +18,9 @@ To customize the text of the buttons, you need to set `okText` and `cancelText` 
 
 <template>
   <div>
-    <a-button type="primary" @click="showModal">Modal</a-button>
-    <a-button @click="confirm">Confirm</a-button>
-    <a-modal
+    <z-button type="primary" @click="showModal">Modal</z-button>
+    <z-button @click="confirm">Confirm</z-button>
+    <z-modal
       v-model:visible="visible"
       title="Modal"
       ok-text="确认"
@@ -30,7 +30,7 @@ To customize the text of the buttons, you need to set `okText` and `cancelText` 
       <p>Bla bla ...</p>
       <p>Bla bla ...</p>
       <p>Bla bla ...</p>
-    </a-modal>
+    </z-modal>
   </div>
 </template>
 <script lang="ts">

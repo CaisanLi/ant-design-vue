@@ -59,7 +59,7 @@ export type MenuProps = Partial<ExtractPropTypes<typeof menuProps>>;
 
 const EMPTY_LIST: string[] = [];
 export default defineComponent({
-  name: 'AMenu',
+  name: 'ZMenu',
   props: menuProps,
   emits: [
     'update:openKeys',

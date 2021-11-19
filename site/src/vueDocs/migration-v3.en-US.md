@@ -74,10 +74,10 @@ Major updates after the 3.0 version refactoring include `Tree` `TreeSelect` `Dat
     2. A Form.Item can only collect the data of one form item. If there are multiple form items, it will cause collection confusion, for example,
 
     ```html
-    <a-form-item>
-      <a-input name="a"></a-input>
-      <a-input name="b"></a-input>
-    </a-form-item>
+    <z-form-item>
+      <z-input name="a"></z-input>
+      <z-input name="b"></z-input>
+    </z-form-item>
     ```
 
     As above Form.Item does not know whether to collect `name="a"` or `name=`b``, you can solve this kind of problem in the following two ways:
@@ -85,10 +85,10 @@ Major updates after the 3.0 version refactoring include `Tree` `TreeSelect` `Dat
     The first is to use multiple `a-form-item`:
 
     ```html
-    <a-form-item>
-      <a-input name="a"></a-input>
-      <a-form-item><a-input name="b"></a-input></a-form-item>
-    </a-form-item>
+    <z-form-item>
+      <z-input name="a"></z-input>
+      <z-form-item><z-input name="b"></z-input></z-form-item>
+    </z-form-item>
     ```
 
     The second way is to wrap it with a custom component and call `useFormItemContext` in the custom component, It is equivalent to merging multiple form items into one.
@@ -107,21 +107,21 @@ Major updates after the 3.0 version refactoring include `Tree` `TreeSelect` `Dat
     ```
 
     ```html
-    <a-form-item>
+    <z-form-item>
       <custom-com>
-        <a-input name="a"></a-input>
-        <a-input name="b"></a-input>
+        <z-input name="a"></z-input>
+        <z-input name="b"></z-input>
       </custom-com>
-    </a-form-item>
+    </z-form-item>
     ```
 
     Third, the component library provides an `a-form-item-rest` component, which will prevent data collection. You can put form items that do not need to be collected and verified into this component. It is the same as the first This method is very similar, but it does not generate additional dom nodes.
 
     ```html
-    <a-form-item>
-      <a-input name="a"></a-input>
-      <a-form-item-rest><a-input name="b"></a-input></a-form-item-rest>
-    </a-form-item>
+    <z-form-item>
+      <z-input name="a"></z-input>
+      <z-form-item-rest><z-input name="b"></z-input></z-form-item-rest>
+    </z-form-item>
     ```
 
 ## Encounter problems

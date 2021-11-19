@@ -323,7 +323,7 @@ const InternalTabs = defineComponent({
 });
 
 export default defineComponent({
-  name: 'ATabs',
+  name: 'ZTabs',
   inheritAttrs: false,
   props: initDefaultProps(tabsProps(), {
     tabPosition: 'top',

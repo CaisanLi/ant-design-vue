@@ -17,14 +17,14 @@ Customized or third-party form controls can be used in Form, too.
 Controls must injects `useInjectFormItemContext` and calls the corresponding method.
 </docs>
 <template>
-  <a-form name="customized_form_controls" layout="inline" :model="formState" @finish="onFinish">
-    <a-form-item name="price" label="Price" :rules="[{ validator: checkPrice }]">
+  <z-form name="customized_form_controls" layout="inline" :model="formState" @finish="onFinish">
+    <z-form-item name="price" label="Price" :rules="[{ validator: checkPrice }]">
       <price-input v-model:value="formState.price" />
-    </a-form-item>
-    <a-form-item>
-      <a-button type="primary" html-type="submit">Submit</a-button>
-    </a-form-item>
-  </a-form>
+    </z-form-item>
+    <z-form-item>
+      <z-button type="primary" html-type="submit">Submit</z-button>
+    </z-form-item>
+  </z-form>
 </template>
 <script lang="ts">
 import { defineComponent, reactive } from 'vue';

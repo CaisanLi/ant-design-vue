@@ -39,7 +39,7 @@ const radioGroupProps = {
 export type RadioGroupProps = Partial<ExtractPropTypes<typeof radioGroupProps>>;
 
 export default defineComponent({
-  name: 'ARadioGroup',
+  name: 'ZRadioGroup',
   props: radioGroupProps,
   emits: ['update:value', 'change'],
   setup(props, { slots, emit }) {

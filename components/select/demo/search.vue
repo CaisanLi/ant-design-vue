@@ -17,7 +17,7 @@ Search the options while expanded.
 </docs>
 
 <template>
-  <a-select
+  <z-select
     v-model:value="value"
     show-search
     placeholder="Select a person"
@@ -26,7 +26,7 @@ Search the options while expanded.
     @focus="handleFocus"
     @blur="handleBlur"
     @change="handleChange"
-  ></a-select>
+  ></z-select>
 </template>
 <script lang="ts">
 import type { SelectProps } from 'ant-design-vue';

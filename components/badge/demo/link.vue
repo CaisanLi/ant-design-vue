@@ -1,7 +1,7 @@
 <docs>
 ---
 order: 8
-title: 
+title:
   zh-CN: 可点击
   en-US: Clickable
 ---
@@ -17,8 +17,8 @@ The badge can be wrapped with `a` tag to make it linkable.
 
 <template>
   <a href="#">
-    <a-badge count="5">
+    <z-badge count="5">
       <span class="head-example" />
-    </a-badge>
+    </z-badge>
   </a>
 </template>

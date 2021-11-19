@@ -17,7 +17,7 @@ Basic usage of checkbox
 </docs>
 
 <template>
-  <a-checkbox v-model:checked="checked">Checkbox</a-checkbox>
+  <z-checkbox v-model:checked="checked">Checkbox</z-checkbox>
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue';

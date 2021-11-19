@@ -78,7 +78,7 @@ Modify `src/App.vue`。
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <a-button type="primary">Button></a-button>
+    <z-button type="primary">Button></z-button>
     <router-view/>
   </div>
 </template>

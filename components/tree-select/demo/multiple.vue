@@ -17,7 +17,7 @@ Multiple selection usage.
 </docs>
 
 <template>
-  <a-tree-select
+  <z-tree-select
     v-model:value="value"
     show-search
     style="width: 100%"
@@ -27,7 +27,7 @@ Multiple selection usage.
     multiple
     tree-default-expand-all
     :tree-data="treeData"
-  ></a-tree-select>
+  ></z-tree-select>
 </template>
 <script lang="ts">
 import type { TreeSelectProps } from 'ant-design-vue';

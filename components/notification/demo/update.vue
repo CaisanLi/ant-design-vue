@@ -1,8 +1,8 @@
 <docs>
 ---
-order: 7 
-title: 
-  zh-CN: 更新消息内容 
+order: 7
+title:
+  zh-CN: 更新消息内容
   en-US: Update Message Content
 ---
 
@@ -17,7 +17,7 @@ Update content with unique key.
 </docs>
 
 <template>
-  <a-button type="primary" @click="openNotification">Open the notification box</a-button>
+  <z-button type="primary" @click="openNotification">Open the notification box</z-button>
 </template>
 <script lang="ts">
 import { notification } from 'ant-design-vue';

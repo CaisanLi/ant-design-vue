@@ -16,12 +16,12 @@ async.
 
 </docs>
 <template>
-  <a-mentions v-model:value="value" :loading="loading" @search="onSearch">
-    <a-mentions-option v-for="{ login, avatar_url: avatar } in users" :key="login" :value="login">
+  <z-mentions v-model:value="value" :loading="loading" @search="onSearch">
+    <z-mentions-option v-for="{ login, avatar_url: avatar } in users" :key="login" :value="login">
       <img :src="avatar" :alt="login" style="width: 20px; margin-right: 8px" />
       <span>{{ login }}</span>
-    </a-mentions-option>
-  </a-mentions>
+    </z-mentions-option>
+  </z-mentions>
 </template>
 
 <script lang="ts">

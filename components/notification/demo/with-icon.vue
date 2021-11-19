@@ -18,10 +18,10 @@ A notification box with a icon at the left side.
 
 <template>
   <div>
-    <a-button @click="() => openNotificationWithIcon('success')">Success</a-button>
-    <a-button @click="() => openNotificationWithIcon('info')">Info</a-button>
-    <a-button @click="() => openNotificationWithIcon('warning')">Warning</a-button>
-    <a-button @click="() => openNotificationWithIcon('error')">Error</a-button>
+    <z-button @click="() => openNotificationWithIcon('success')">Success</z-button>
+    <z-button @click="() => openNotificationWithIcon('info')">Info</z-button>
+    <z-button @click="() => openNotificationWithIcon('warning')">Warning</z-button>
+    <z-button @click="() => openNotificationWithIcon('error')">Error</z-button>
   </div>
 </template>
 <script lang="ts">

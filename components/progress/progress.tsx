@@ -14,7 +14,7 @@ import devWarning from '../vc-util/devWarning';
 import { progressProps, progressStatuses } from './props';
 
 export default defineComponent({
-  name: 'AProgress',
+  name: 'ZProgress',
   props: initDefaultProps(progressProps(), {
     type: 'line',
     percent: 0,

@@ -55,7 +55,7 @@ export const CarouselProps = {
 };
 
 const Carousel = defineComponent({
-  name: 'ACarousel',
+  name: 'ZCarousel',
   inheritAttrs: false,
   props: CarouselProps,
   setup() {

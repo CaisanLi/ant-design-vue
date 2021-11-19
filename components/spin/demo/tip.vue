@@ -1,8 +1,8 @@
 <docs>
 ---
-order: 4 
-title: 
-  zh-CN: 自定义描述文案 
+order: 4
+title:
+  zh-CN: 自定义描述文案
   en-US: Customized description
 ---
 
@@ -17,10 +17,10 @@ Customized description content.
 </docs>
 
 <template>
-  <a-spin tip="Loading...">
-    <a-alert
+  <z-spin tip="Loading...">
+    <z-alert
       message="Alert message title"
       description="Further details about the context of this alert."
-    ></a-alert>
-  </a-spin>
+    ></z-alert>
+  </z-spin>
 </template>

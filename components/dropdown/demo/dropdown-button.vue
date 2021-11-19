@@ -18,86 +18,86 @@ A button is on the left, and a related functional menu is on the right. You can 
 
 <template>
   <div class="demo-dropdown-wrap">
-    <a-dropdown-button @click="handleButtonClick">
+    <z-dropdown-button @click="handleButtonClick">
       Dropdown
       <template #overlay>
-        <a-menu @click="handleMenuClick">
-          <a-menu-item key="1">
+        <z-menu @click="handleMenuClick">
+          <z-menu-item key="1">
             <UserOutlined />
             1st menu item
-          </a-menu-item>
-          <a-menu-item key="2">
+          </z-menu-item>
+          <z-menu-item key="2">
             <UserOutlined />
             2nd menu item
-          </a-menu-item>
-          <a-menu-item key="3">
+          </z-menu-item>
+          <z-menu-item key="3">
             <UserOutlined />
             3rd item
-          </a-menu-item>
-        </a-menu>
+          </z-menu-item>
+        </z-menu>
       </template>
-    </a-dropdown-button>
-    <a-dropdown-button>
+    </z-dropdown-button>
+    <z-dropdown-button>
       Dropdown
       <template #overlay>
-        <a-menu @click="handleMenuClick">
-          <a-menu-item key="1">
+        <z-menu @click="handleMenuClick">
+          <z-menu-item key="1">
             <UserOutlined />
             1st menu item
-          </a-menu-item>
-          <a-menu-item key="2">
+          </z-menu-item>
+          <z-menu-item key="2">
             <UserOutlined />
             2nd menu item
-          </a-menu-item>
-          <a-menu-item key="3">
+          </z-menu-item>
+          <z-menu-item key="3">
             <UserOutlined />
             3rd item
-          </a-menu-item>
-        </a-menu>
+          </z-menu-item>
+        </z-menu>
       </template>
       <template #icon><UserOutlined /></template>
-    </a-dropdown-button>
-    <a-dropdown-button disabled @click="handleButtonClick">
+    </z-dropdown-button>
+    <z-dropdown-button disabled @click="handleButtonClick">
       Dropdown
       <template #overlay>
-        <a-menu @click="handleMenuClick">
-          <a-menu-item key="1">
+        <z-menu @click="handleMenuClick">
+          <z-menu-item key="1">
             <UserOutlined />
             1st menu item
-          </a-menu-item>
-          <a-menu-item key="2">
+          </z-menu-item>
+          <z-menu-item key="2">
             <UserOutlined />
             2nd menu item
-          </a-menu-item>
-          <a-menu-item key="3">
+          </z-menu-item>
+          <z-menu-item key="3">
             <UserOutlined />
             3rd item
-          </a-menu-item>
-        </a-menu>
+          </z-menu-item>
+        </z-menu>
       </template>
-    </a-dropdown-button>
-    <a-dropdown>
+    </z-dropdown-button>
+    <z-dropdown>
       <template #overlay>
-        <a-menu @click="handleMenuClick">
-          <a-menu-item key="1">
+        <z-menu @click="handleMenuClick">
+          <z-menu-item key="1">
             <UserOutlined />
             1st menu item
-          </a-menu-item>
-          <a-menu-item key="2">
+          </z-menu-item>
+          <z-menu-item key="2">
             <UserOutlined />
             2nd menu item
-          </a-menu-item>
-          <a-menu-item key="3">
+          </z-menu-item>
+          <z-menu-item key="3">
             <UserOutlined />
             3rd item
-          </a-menu-item>
-        </a-menu>
+          </z-menu-item>
+        </z-menu>
       </template>
-      <a-button>
+      <z-button>
         Button
         <DownOutlined />
-      </a-button>
-    </a-dropdown>
+      </z-button>
+    </z-dropdown>
   </div>
 </template>
 <script lang="ts">

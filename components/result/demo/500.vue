@@ -17,9 +17,9 @@ The server is wrong.
 </docs>
 
 <template>
-  <a-result status="500" title="500" sub-title="Sorry, the server is wrong.">
+  <z-result status="500" title="500" sub-title="Sorry, the server is wrong.">
     <template #extra>
-      <a-button type="primary">Back Home</a-button>
+      <z-button type="primary">Back Home</z-button>
     </template>
-  </a-result>
+  </z-result>
 </template>

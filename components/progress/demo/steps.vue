@@ -17,9 +17,9 @@ A progress bar with steps.
 </docs>
 
 <template>
-  <a-progress :percent="50" :steps="3" />
+  <z-progress :percent="50" :steps="3" />
   <br />
-  <a-progress :percent="30" :steps="5" />
+  <z-progress :percent="30" :steps="5" />
   <br />
-  <a-progress :percent="100" :steps="5" size="small" stroke-color="#52c41a" />
+  <z-progress :percent="100" :steps="5" size="small" stroke-color="#52c41a" />
 </template>

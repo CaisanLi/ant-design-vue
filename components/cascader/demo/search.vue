@@ -18,7 +18,7 @@ Search and select options directly.
 
 </docs>
 <template>
-  <a-cascader
+  <z-cascader
     v-model:value="value"
     :options="options"
     :show-search="{ filter }"

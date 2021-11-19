@@ -52,7 +52,7 @@ export type PaginationConfig = Partial<ExtractPropTypes<ReturnType<typeof pagina
 
 export type PaginationLocale = any;
 export default defineComponent({
-  name: 'APagination',
+  name: 'ZPagination',
   inheritAttrs: false,
   props: paginationProps(),
   emits: ['change', 'showSizeChange', 'update:current', 'update:pageSize'],
@@ -75,7 +75,7 @@ export default defineComponent({
         </button>
       );
       let jumpPrevIcon = (
-        <a rel='nofollow' class={`${pre}-item-link`}>
+        <a rel="nofollow" class={`${pre}-item-link`}>
           {/* You can use transition effects in the container :) */}
           <div class={`${pre}-item-container`}>
             <DoubleLeftOutlined class={`${pre}-item-link-icon`} />
@@ -84,7 +84,7 @@ export default defineComponent({
         </a>
       );
       let jumpNextIcon = (
-        <a rel='nofollow' class={`${pre}-item-link`}>
+        <a rel="nofollow" class={`${pre}-item-link`}>
           {/* You can use transition effects in the container :) */}
           <div class={`${pre}-item-container`}>
             <DoubleRightOutlined class={`${pre}-item-link-icon`} />

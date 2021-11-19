@@ -44,7 +44,7 @@ export const selectProps = () => ({
 export type SelectProps = Partial<ExtractPropTypes<ReturnType<typeof selectProps>>>;
 
 const Select = defineComponent({
-  name: 'ASelect',
+  name: 'ZSelect',
   Option,
   OptGroup,
   inheritAttrs: false,

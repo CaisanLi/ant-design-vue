@@ -17,7 +17,7 @@ A complete multiple select sample with remote search, debounce fetch, ajax callb
 </docs>
 
 <template>
-  <a-select
+  <z-select
     v-model:value="value"
     mode="multiple"
     label-in-value
@@ -29,9 +29,9 @@ A complete multiple select sample with remote search, debounce fetch, ajax callb
     @search="fetchUser"
   >
     <template v-if="fetching" #notFoundContent>
-      <a-spin size="small" />
+      <z-spin size="small" />
     </template>
-  </a-select>
+  </z-select>
 </template>
 <script>
 import { defineComponent, reactive, toRefs, watch } from 'vue';

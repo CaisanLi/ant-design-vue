@@ -14,7 +14,7 @@ import omit from '../_util/omit';
 export type DropdownProps = Partial<ExtractPropTypes<ReturnType<typeof dropdownProps>>>;
 
 const Dropdown = defineComponent({
-  name: 'ADropdown',
+  name: 'ZDropdown',
   inheritAttrs: false,
   props: initDefaultProps(dropdownProps(), {
     mouseEnterDelay: 0.15,

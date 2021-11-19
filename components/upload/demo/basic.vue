@@ -16,7 +16,7 @@ Classic mode. File selection dialog pops up when upload button is clicked.
 </docs>
 
 <template>
-  <a-upload
+  <z-upload
     v-model:file-list="fileList"
     name="file"
     :multiple="true"
@@ -24,11 +24,11 @@ Classic mode. File selection dialog pops up when upload button is clicked.
     :headers="headers"
     @change="handleChange"
   >
-    <a-button>
+    <z-button>
       <upload-outlined></upload-outlined>
       Click to Upload
-    </a-button>
-  </a-upload>
+    </z-button>
+  </z-upload>
 </template>
 <script lang="ts">
 import { message } from 'ant-design-vue';

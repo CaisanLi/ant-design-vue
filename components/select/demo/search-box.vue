@@ -17,7 +17,7 @@ Search with remote data.
 </docs>
 
 <template>
-  <a-select
+  <z-select
     v-model:value="value"
     show-search
     placeholder="input search text"
@@ -29,8 +29,7 @@ Search with remote data.
     :options="data"
     @search="handleSearch"
     @change="handleChange"
-  >
-  </a-select>
+  ></z-select>
 </template>
 <script lang="ts">
 import jsonp from 'fetch-jsonp';

@@ -16,7 +16,7 @@ For instance, add an external link after the selected value.
 
 </docs>
 <template>
-  <a-cascader v-model:value="value" :options="options" style="width: 100%">
+  <z-cascader v-model:value="value" :options="options" style="width: 100%">
     <template #displayRender="{ labels, selectedOptions }">
       <span v-for="(label, index) in labels" :key="selectedOptions[index].value">
         <span v-if="index === labels.length - 1">
@@ -29,7 +29,7 @@ For instance, add an external link after the selected value.
         <span v-else>{{ label }} /</span>
       </span>
     </template>
-  </a-cascader>
+  </z-cascader>
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue';

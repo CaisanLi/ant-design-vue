@@ -1,8 +1,8 @@
 <template>
   <footer id="footer">
     <div class="footer-wrap">
-      <a-row>
-        <a-col :md="6" :sm="24" :xs="24">
+      <z-row>
+        <z-col :md="6" :sm="24" :xs="24">
           <div class="footer-center">
             <h2>Ant Design</h2>
             <div>
@@ -35,8 +35,8 @@
               </a>
             </div>
           </div>
-        </a-col>
-        <a-col :md="6" :sm="24" :xs="24">
+        </z-col>
+        <z-col :md="6" :sm="24" :xs="24">
           <div class="footer-center">
             <h2>{{ isCN ? '社区' : 'Community' }}</h2>
             <div v-if="isCN">
@@ -59,8 +59,8 @@
               </a>
             </div>
           </div>
-        </a-col>
-        <a-col :md="6" :sm="24" :xs="24">
+        </z-col>
+        <z-col :md="6" :sm="24" :xs="24">
           <div class="footer-center">
             <h2>{{ isCN ? '友情链接' : 'Links' }}</h2>
             <div>
@@ -76,8 +76,8 @@
               <a href="https://www.pengpengyu.com/" target="_blank">砰砰鱼</a>
             </div>
           </div>
-        </a-col>
-        <a-col :md="6" :sm="24" :xs="24">
+        </z-col>
+        <z-col :md="6" :sm="24" :xs="24">
           <div class="footer-center">
             <h2>
               <img
@@ -98,8 +98,8 @@
               <span>{{ isCN ? '企业级 Node 开发框架' : 'Enterprise Node Framework' }}</span>
             </div>
           </div>
-        </a-col>
-      </a-row>
+        </z-col>
+      </z-row>
     </div>
     <div style="padding: 10px 144px">
       备案号：

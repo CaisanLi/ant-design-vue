@@ -17,27 +17,27 @@ Mouse to click, focus and move in.
 </docs>
 <template>
   <div>
-    <a-popover title="Title" trigger="hover">
+    <z-popover title="Title" trigger="hover">
       <template #content>
         <p>Content</p>
         <p>Content</p>
       </template>
-      <a-button>Hover me</a-button>
-    </a-popover>
-    <a-popover title="Title" trigger="focus">
+      <z-button>Hover me</z-button>
+    </z-popover>
+    <z-popover title="Title" trigger="focus">
       <template #content>
         <p>Content</p>
         <p>Content</p>
       </template>
-      <a-button>Focus me</a-button>
-    </a-popover>
-    <a-popover title="Title" trigger="click">
+      <z-button>Focus me</z-button>
+    </z-popover>
+    <z-popover title="Title" trigger="click">
       <template #content>
         <p>Content</p>
         <p>Content</p>
       </template>
-      <a-button>Click me</a-button>
-    </a-popover>
+      <z-button>Click me</z-button>
+    </z-popover>
   </div>
 </template>
 <style>

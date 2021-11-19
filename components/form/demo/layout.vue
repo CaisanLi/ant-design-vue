@@ -16,24 +16,24 @@ There are three layout for form: `horizontal`, `vertical`, `inline`.
 </docs>
 
 <template>
-  <a-form :layout="formState.layout" :model="formState" v-bind="formItemLayout">
-    <a-form-item label="Form Layout">
-      <a-radio-group v-model:value="formState.layout">
-        <a-radio-button value="horizontal">Horizontal</a-radio-button>
-        <a-radio-button value="vertical">Vertical</a-radio-button>
-        <a-radio-button value="inline">Inline</a-radio-button>
-      </a-radio-group>
-    </a-form-item>
-    <a-form-item label="Field A">
-      <a-input v-model:value="formState.fieldA" placeholder="input placeholder" />
-    </a-form-item>
-    <a-form-item label="Field B">
-      <a-input v-model:value="formState.fieldB" placeholder="input placeholder" />
-    </a-form-item>
-    <a-form-item :wrapper-col="buttonItemLayout.wrapperCol">
-      <a-button type="primary">Submit</a-button>
-    </a-form-item>
-  </a-form>
+  <z-form :layout="formState.layout" :model="formState" v-bind="formItemLayout">
+    <z-form-item label="Form Layout">
+      <z-radio-group v-model:value="formState.layout">
+        <z-radio-button value="horizontal">Horizontal</z-radio-button>
+        <z-radio-button value="vertical">Vertical</z-radio-button>
+        <z-radio-button value="inline">Inline</z-radio-button>
+      </z-radio-group>
+    </z-form-item>
+    <z-form-item label="Field A">
+      <z-input v-model:value="formState.fieldA" placeholder="input placeholder" />
+    </z-form-item>
+    <z-form-item label="Field B">
+      <z-input v-model:value="formState.fieldB" placeholder="input placeholder" />
+    </z-form-item>
+    <z-form-item :wrapper-col="buttonItemLayout.wrapperCol">
+      <z-button type="primary">Submit</z-button>
+    </z-form-item>
+  </z-form>
 </template>
 <script lang="ts">
 import { computed, defineComponent, reactive } from 'vue';

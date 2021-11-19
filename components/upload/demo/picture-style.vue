@@ -17,29 +17,29 @@ If uploaded file is a picture, the thumbnail can be shown. `IE8/9` do not suppor
 
 <template>
   <div>
-    <a-upload
+    <z-upload
       v-model:file-list="fileList"
       action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
       list-type="picture"
     >
-      <a-button>
+      <z-button>
         <upload-outlined></upload-outlined>
         upload
-      </a-button>
-    </a-upload>
+      </z-button>
+    </z-upload>
     <br />
     <br />
-    <a-upload
+    <z-upload
       v-model:file-list="fileList1"
       action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
       list-type="picture"
       class="upload-list-inline"
     >
-      <a-button>
+      <z-button>
         <upload-outlined></upload-outlined>
         upload
-      </a-button>
-    </a-upload>
+      </z-button>
+    </z-upload>
   </div>
 </template>
 

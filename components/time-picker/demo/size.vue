@@ -18,9 +18,9 @@ The input box comes in three sizes. large is used in the form, while the medium 
 
 <template>
   <div>
-    <a-time-picker v-model:value="value1" size="large" />
-    <a-time-picker v-model:value="value2" />
-    <a-time-picker v-model:value="value3" size="small" />
+    <z-time-picker v-model:value="value1" size="large" />
+    <z-time-picker v-model:value="value2" />
+    <z-time-picker v-model:value="value3" size="small" />
   </div>
 </template>
 <script lang="ts">

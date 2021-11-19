@@ -17,8 +17,8 @@ Basic drawer.
 </docs>
 
 <template>
-  <a-button type="primary" @click="showDrawer">Open</a-button>
-  <a-drawer
+  <z-button type="primary" @click="showDrawer">Open</z-button>
+  <z-drawer
     v-model:visible="visible"
     class="custom-class"
     style="color: red"
@@ -29,7 +29,7 @@ Basic drawer.
     <p>Some contents...</p>
     <p>Some contents...</p>
     <p>Some contents...</p>
-  </a-drawer>
+  </z-drawer>
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue';

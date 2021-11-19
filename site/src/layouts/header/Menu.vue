@@ -4,24 +4,24 @@
     <Ecosystem />
   </template>
   <template v-else>
-    <a-select
+    <z-select
       key="version"
       class="version"
       size="small"
       :default-value="antdVersion"
       :get-popup-container="trigger => trigger.parentNode"
     >
-      <a-select-option :value="antdVersion">{{ antdVersion }}</a-select-option>
-      <a-select-option value="1.x" @click="changeVersion">1.x</a-select-option>
-    </a-select>
-    <a-button
+      <z-select-option :value="antdVersion">{{ antdVersion }}</z-select-option>
+      <z-select-option value="1.x" @click="changeVersion">1.x</z-select-option>
+    </z-select>
+    <z-button
       key="lang-button"
       size="small"
       class="header-button header-lang-button"
       @click="onLangChange"
     >
       {{ $t('app.header.lang') }}
-    </a-button>
+    </z-button>
     <More />
     <Github />
   </template>

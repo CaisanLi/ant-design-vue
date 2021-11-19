@@ -17,8 +17,8 @@ There are 4 types of Alert: `success`, `info`, `warning`, `error`.
 </docs>
 
 <template>
-  <a-alert message="Success Text" type="success" />
-  <a-alert message="Info Text" type="info" />
-  <a-alert message="Warning Text" type="warning" />
-  <a-alert message="Error Text" type="error" />
+  <z-alert message="Success Text" type="success" />
+  <z-alert message="Info Text" type="info" />
+  <z-alert message="Warning Text" type="warning" />
+  <z-alert message="Error Text" type="error" />
 </template>

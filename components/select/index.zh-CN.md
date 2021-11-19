@@ -16,9 +16,9 @@ cover: https://gw.alipayobjects.com/zos/alicdn/_0XzgOis7/Select.svg
 ## API
 
 ```html
-<a-select>
-  <a-select-option value="lucy">lucy</a-select-option>
-</a-select>
+<z-select>
+  <z-select-option value="lucy">lucy</z-select-option>
+</z-select>
 ```
 
 ### Select props

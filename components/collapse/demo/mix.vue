@@ -17,21 +17,21 @@ title:
 </docs>
 
 <template>
-  <a-collapse v-model:activeKey="activeKey" @change="changeActivekey">
-    <a-collapse-panel key="1" header="This is panel header 1">
-      <a-collapse default-active-key="4">
-        <a-collapse-panel key="4" header="This is panel nest panel">
+  <z-collapse v-model:activeKey="activeKey" @change="changeActivekey">
+    <z-collapse-panel key="1" header="This is panel header 1">
+      <z-collapse default-active-key="4">
+        <z-collapse-panel key="4" header="This is panel nest panel">
           <p>{{ text }}</p>
-        </a-collapse-panel>
-      </a-collapse>
-    </a-collapse-panel>
-    <a-collapse-panel key="2" header="This is panel header 2">
+        </z-collapse-panel>
+      </z-collapse>
+    </z-collapse-panel>
+    <z-collapse-panel key="2" header="This is panel header 2">
       <p>{{ text }}</p>
-    </a-collapse-panel>
-    <a-collapse-panel key="3" header="This is panel header 3">
+    </z-collapse-panel>
+    <z-collapse-panel key="3" header="This is panel header 3">
       <p>{{ text }}</p>
-    </a-collapse-panel>
-  </a-collapse>
+    </z-collapse-panel>
+  </z-collapse>
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue';

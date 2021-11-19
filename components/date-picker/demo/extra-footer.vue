@@ -17,21 +17,21 @@ Render extra footer in panel for customized requirements.
 </docs>
 
 <template>
-  <a-space direction="vertical">
-    <a-date-picker>
+  <z-space direction="vertical">
+    <z-date-picker>
       <template #renderExtraFooter>extra footer</template>
-    </a-date-picker>
-    <a-date-picker show-time>
+    </z-date-picker>
+    <z-date-picker show-time>
       <template #renderExtraFooter>extra footer</template>
-    </a-date-picker>
-    <a-range-picker>
+    </z-date-picker>
+    <z-range-picker>
       <template #renderExtraFooter>extra footer</template>
-    </a-range-picker>
-    <a-range-picker show-time>
+    </z-range-picker>
+    <z-range-picker show-time>
       <template #renderExtraFooter>extra footer</template>
-    </a-range-picker>
-    <a-date-picker placeholder="Select month" picker="month">
+    </z-range-picker>
+    <z-date-picker placeholder="Select month" picker="month">
       <template #renderExtraFooter>extra footer</template>
-    </a-date-picker>
-  </a-space>
+    </z-date-picker>
+  </z-space>
 </template>

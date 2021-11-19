@@ -17,7 +17,7 @@ Lookup-Patterns - Certain Category.
 
 <template>
   <div class="certain-category-search-wrapper" style="width: 250px">
-    <a-auto-complete
+    <z-auto-complete
       v-model:value="value"
       class="certain-category-search"
       dropdown-class-name="certain-category-search-dropdown"
@@ -56,10 +56,10 @@ Lookup-Patterns - Certain Category.
           <span class="certain-search-item-count">{{ item.count }} people</span>
         </template>
       </template>
-      <a-input placeholder="input here">
+      <z-input placeholder="input here">
         <template #suffix><search-outlined class="certain-category-icon" /></template>
-      </a-input>
-    </a-auto-complete>
+      </z-input>
+    </z-auto-complete>
   </div>
 </template>
 

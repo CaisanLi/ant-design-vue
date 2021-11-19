@@ -23,7 +23,7 @@ import classNames from '../_util/classNames';
 import { UploadListProps } from './interface';
 
 export default defineComponent({
-  name: 'AUploadList',
+  name: 'ZUploadList',
   mixins: [BaseMixin],
   props: initDefaultProps(UploadListProps, {
     listType: 'text', // or picture

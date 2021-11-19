@@ -17,9 +17,9 @@ You can customize the right title slot style using the titleStyle property.
 
 <template>
   <div class="content">
-    <a-logo :number="2" :title-style="customStyle">
+    <z-logo :number="2" :title-style="customStyle">
       <template #title>众信佳</template>
-    </a-logo>
+    </z-logo>
   </div>
 </template>
 

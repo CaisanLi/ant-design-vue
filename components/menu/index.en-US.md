@@ -18,12 +18,12 @@ More layouts with navigation: [Layout](/components/layout).
 
 ```html
 <template>
-  <a-menu>
-    <a-menu-item>Menu</a-menu-item>
-    <a-sub-menu title="SubMenu">
-      <a-menu-item>SubMenuItem</a-menu-item>
-    </a-sub-menu>
-  </a-menu>
+  <z-menu>
+    <z-menu-item>Menu</z-menu-item>
+    <z-sub-menu title="SubMenu">
+      <z-menu-item>SubMenuItem</z-menu-item>
+    </z-sub-menu>
+  </z-menu>
 </template>
 ```
 

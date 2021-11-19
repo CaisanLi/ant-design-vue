@@ -104,7 +104,7 @@ let indexGuid = 0;
 const defaultItemNamePrefixCls = 'form_item';
 
 export default defineComponent({
-  name: 'AFormItem',
+  name: 'ZFormItem',
   inheritAttrs: false,
   __ANT_NEW_FORM_ITEM: true,
   props: formItemProps,

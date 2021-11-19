@@ -16,7 +16,7 @@ const ActionMap = {
 };
 
 export default defineComponent({
-  name: 'AInputPassword',
+  name: 'ZInputPassword',
   mixins: [BaseMixin],
   inheritAttrs: false,
   props: {

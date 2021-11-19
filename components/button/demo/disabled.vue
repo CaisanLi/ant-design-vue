@@ -16,33 +16,33 @@ To mark a button as disabled, add the `disabled` property to the `Button`.
 </docs>
 
 <template>
-  <a-button type="primary">Primary</a-button>
-  <a-button type="primary" disabled>Primary(disabled)</a-button>
+  <z-button type="primary">Primary</z-button>
+  <z-button type="primary" disabled>Primary(disabled)</z-button>
   <br />
-  <a-button>Default</a-button>
-  <a-button disabled>Default(disabled)</a-button>
+  <z-button>Default</z-button>
+  <z-button disabled>Default(disabled)</z-button>
   <br />
-  <a-button type="dashed">Dashed</a-button>
-  <a-button type="dashed" disabled>Dashed(disabled)</a-button>
+  <z-button type="dashed">Dashed</z-button>
+  <z-button type="dashed" disabled>Dashed(disabled)</z-button>
   <br />
-  <a-button type="text">Text</a-button>
-  <a-button type="text" disabled>Text(disabled)</a-button>
+  <z-button type="text">Text</z-button>
+  <z-button type="text" disabled>Text(disabled)</z-button>
   <br />
-  <a-button type="link">Link</a-button>
-  <a-button type="link" disabled>Link(disabled)</a-button>
+  <z-button type="link">Link</z-button>
+  <z-button type="link" disabled>Link(disabled)</z-button>
   <br />
-  <a-button danger>Danger Default</a-button>
-  <a-button danger disabled>Danger Default(disabled)</a-button>
+  <z-button danger>Danger Default</z-button>
+  <z-button danger disabled>Danger Default(disabled)</z-button>
   <br />
-  <a-button type="text" danger>Danger Text</a-button>
-  <a-button type="text" danger disabled>Danger Text(disabled)</a-button>
+  <z-button type="text" danger>Danger Text</z-button>
+  <z-button type="text" danger disabled>Danger Text(disabled)</z-button>
   <br />
-  <a-button type="link" danger>Danger Link</a-button>
-  <a-button type="link" danger disabled>Danger Link(disabled)</a-button>
+  <z-button type="link" danger>Danger Link</z-button>
+  <z-button type="link" danger disabled>Danger Link(disabled)</z-button>
   <br />
 
   <div :style="{ padding: '8px 8px 0 8px', background: 'rgb(190, 200, 200)' }">
-    <a-button ghost>Ghost</a-button>
-    <a-button ghost disabled>Ghost(disabled)</a-button>
+    <z-button ghost>Ghost</z-button>
+    <z-button ghost disabled>Ghost(disabled)</z-button>
   </div>
 </template>

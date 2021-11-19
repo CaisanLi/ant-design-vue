@@ -20,7 +20,7 @@ This example shows how to fetch and present data from a remote server, and how t
 </docs>
 
 <template>
-  <a-table
+  <z-table
     :columns="columns"
     :row-key="record => record.login.uuid"
     :data-source="dataSource"
@@ -31,7 +31,7 @@ This example shows how to fetch and present data from a remote server, and how t
     <template #bodyCell="{ column, text }">
       <template v-if="column.dataIndex === 'name'">{{ text.first }} {{ text.last }}</template>
     </template>
-  </a-table>
+  </z-table>
 </template>
 <script lang="ts">
 import type { TableProps } from 'ant-design-vue';

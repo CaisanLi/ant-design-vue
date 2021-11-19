@@ -17,9 +17,9 @@ Show processing results.
 </docs>
 
 <template>
-  <a-result title="Your operation has been executed">
+  <z-result title="Your operation has been executed">
     <template #extra>
-      <a-button key="console" type="primary">Go Console</a-button>
+      <z-button key="console" type="primary">Go Console</z-button>
     </template>
-  </a-result>
+  </z-result>
 </template>

@@ -1,7 +1,7 @@
 <docs>
 ---
 order: 4
-title: 
+title:
   zh-CN: 垂直
   en-US: Vertical
 ---
@@ -17,13 +17,13 @@ Simplest Usage.
 </docs>
 
 <template>
-  <a-descriptions title="User Info" layout="vertical">
-    <a-descriptions-item label="UserName">Zhou Maomao</a-descriptions-item>
-    <a-descriptions-item label="Telephone">1810000000</a-descriptions-item>
-    <a-descriptions-item label="Live">Hangzhou, Zhejiang</a-descriptions-item>
-    <a-descriptions-item label="Address" span="2">
+  <z-descriptions title="User Info" layout="vertical">
+    <z-descriptions-item label="UserName">Zhou Maomao</z-descriptions-item>
+    <z-descriptions-item label="Telephone">1810000000</z-descriptions-item>
+    <z-descriptions-item label="Live">Hangzhou, Zhejiang</z-descriptions-item>
+    <z-descriptions-item label="Address" span="2">
       No. 18, Wantang Road, Xihu District, Hangzhou, Zhejiang, China
-    </a-descriptions-item>
-    <a-descriptions-item label="Remark">empty</a-descriptions-item>
-  </a-descriptions>
+    </z-descriptions-item>
+    <z-descriptions-item label="Remark">empty</z-descriptions-item>
+  </z-descriptions>
 </template>

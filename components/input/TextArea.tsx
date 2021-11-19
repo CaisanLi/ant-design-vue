@@ -19,7 +19,7 @@ const TextAreaProps = {
 };
 
 export default defineComponent({
-  name: 'ATextarea',
+  name: 'ZTextarea',
   inheritAttrs: false,
   props: {
     ...TextAreaProps,

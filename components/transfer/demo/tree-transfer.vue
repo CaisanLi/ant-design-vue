@@ -18,7 +18,7 @@ Customize render list with Tree component.
 
 <template>
   <div>
-    <a-transfer
+    <z-transfer
       v-model:target-keys="targetKeys"
       class="tree-transfer"
       :data-source="dataSource"
@@ -26,7 +26,7 @@ Customize render list with Tree component.
       :show-select-all="false"
     >
       <template #children="{ direction, selectedKeys, onItemSelect }">
-        <a-tree
+        <z-tree
           v-if="direction === 'left'"
           block-node
           checkable
@@ -46,7 +46,7 @@ Customize render list with Tree component.
           "
         />
       </template>
-    </a-transfer>
+    </z-transfer>
   </div>
 </template>
 <script lang="ts">

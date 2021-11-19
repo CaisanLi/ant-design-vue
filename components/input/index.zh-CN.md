@@ -28,7 +28,7 @@ cover: https://gw.alipayobjects.com/zos/alicdn/xS9YEJhfe/Input.svg
 | prefix | 带有前缀图标的 input | string\|slot |  |  |
 | size | 控件大小。注：标准表单内的输入框大小限制为 `large`。可选 `large` `default` `small` | string | `default` |  |
 | suffix | 带有后缀图标的 input | string\|slot |  |  |
-| type | 声明 input 类型，同原生 input 标签的 type 属性，见：[MDN](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input#属性)(请直接使用 `<a-textarea />` 代替 `type="textarea"`)。 | string | `text` |  |
+| type | 声明 input 类型，同原生 input 标签的 type 属性，见：[MDN](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input#属性)(请直接使用 `<z-textarea />` 代替 `type="textarea"`)。 | string | `text` |  |
 | value(v-model) | 输入框内容 | string |  |  |
 | allowClear | 可以点击清除图标删除内容 | boolean |  |  |
 
@@ -82,10 +82,10 @@ cover: https://gw.alipayobjects.com/zos/alicdn/xS9YEJhfe/Input.svg
 | size | `Input.Group` 中所有的 `Input` 的大小，可选 `large` `default` `small` | string | `default` |
 
 ```html
-<a-input-group>
-  <a-input />
-  <a-input />
-</a-input-group>
+<z-input-group>
+  <z-input />
+  <z-input />
+</z-input-group>
 ```
 
 #### Input.Password (1.14.0 中新增)

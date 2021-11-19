@@ -16,7 +16,7 @@ function convertNodeToOption(node: VNode): OptionData {
     key,
     value: value !== undefined ? value : key,
     children: child,
-    disabled: disabled || disabled === '', // support <a-select-option disabled />
+    disabled: disabled || disabled === '', // support <z-select-option disabled />
     ...(restProps as Omit<typeof restProps, 'key'>),
   };
 }

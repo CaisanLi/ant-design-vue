@@ -60,7 +60,7 @@ const affixProps = {
 export type AffixProps = Partial<ExtractPropTypes<typeof affixProps>>;
 
 const Affix = defineComponent({
-  name: 'AAffix',
+  name: 'ZAffix',
   props: affixProps,
   emits: ['change', 'testUpdatePosition'],
   setup(props, { slots, emit, expose }) {

@@ -18,16 +18,16 @@ The `indeterminate` property can help you to achieve a 'check all' effect.
 
 <template>
   <div :style="{ borderBottom: '1px solid #E9E9E9' }">
-    <a-checkbox
+    <z-checkbox
       v-model:checked="checkAll"
       :indeterminate="indeterminate"
       @change="onCheckAllChange"
     >
       Check all
-    </a-checkbox>
+    </z-checkbox>
   </div>
   <br />
-  <a-checkbox-group v-model:value="checkedList" :options="plainOptions" />
+  <z-checkbox-group v-model:value="checkedList" :options="plainOptions" />
 </template>
 <script lang="ts">
 import { defineComponent, reactive, toRefs, watch } from 'vue';

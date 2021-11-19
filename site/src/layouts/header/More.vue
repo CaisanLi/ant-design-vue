@@ -1,6 +1,6 @@
 <template>
-  <a-dropdown>
-    <a-button size="small" class="header-button">
+  <z-dropdown>
+    <z-button size="small" class="header-button">
       {{ $t('app.header.menu.more') }}
       <DownOutlined
         :style="{
@@ -9,11 +9,11 @@
           verticalAlign: 'middle',
         }"
       />
-    </a-button>
+    </z-button>
     <template #overlay>
       <Ecosystem />
     </template>
-  </a-dropdown>
+  </z-dropdown>
 </template>
 <script lang="ts">
 import { computed, defineComponent, inject } from 'vue';

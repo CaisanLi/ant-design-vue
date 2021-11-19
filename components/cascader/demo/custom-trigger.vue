@@ -18,9 +18,9 @@ Separate trigger button and result.
 <template>
   <span>
     {{ text }} &nbsp;
-    <a-cascader v-model:value="value" :options="options" @change="onChange">
+    <z-cascader v-model:value="value" :options="options" @change="onChange">
       <a href="#">Change city</a>
-    </a-cascader>
+    </z-cascader>
   </span>
 </template>
 <script lang="ts">

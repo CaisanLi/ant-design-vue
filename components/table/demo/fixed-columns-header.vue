@@ -24,13 +24,13 @@ A Solution for displaying large amounts of data with long columns.
 </docs>
 
 <template>
-  <a-table :columns="columns" :data-source="data" :scroll="{ x: 1500, y: 300 }">
+  <z-table :columns="columns" :data-source="data" :scroll="{ x: 1500, y: 300 }">
     <template #bodyCell="{ column }">
       <template v-if="column.key === 'operation'">
         <a>action</a>
       </template>
     </template>
-  </a-table>
+  </z-table>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';

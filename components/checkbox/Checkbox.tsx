@@ -33,7 +33,7 @@ export const checkboxProps = () => {
 export type CheckboxProps = Partial<ExtractPropTypes<ReturnType<typeof checkboxProps>>>;
 
 export default defineComponent({
-  name: 'ACheckbox',
+  name: 'ZCheckbox',
   inheritAttrs: false,
   __ANT_CHECKBOX: true,
   props: checkboxProps(),

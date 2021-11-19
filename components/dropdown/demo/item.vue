@@ -17,28 +17,28 @@ Divider and disabled menu item.
 </docs>
 
 <template>
-  <a-dropdown>
+  <z-dropdown>
     <a class="ant-dropdown-link" @click.prevent>
       Hover me
       <DownOutlined />
     </a>
     <template #overlay>
-      <a-menu>
-        <a-menu-item key="0">
+      <z-menu>
+        <z-menu-item key="0">
           <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">
             1st menu item
           </a>
-        </a-menu-item>
-        <a-menu-item key="1">
+        </z-menu-item>
+        <z-menu-item key="1">
           <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">
             2nd menu item
           </a>
-        </a-menu-item>
-        <a-menu-divider />
-        <a-menu-item key="3" disabled>3rd menu item（disabled）</a-menu-item>
-      </a-menu>
+        </z-menu-item>
+        <z-menu-divider />
+        <z-menu-item key="3" disabled>3rd menu item（disabled）</z-menu-item>
+      </z-menu>
     </template>
-  </a-dropdown>
+  </z-dropdown>
 </template>
 <script lant="ts">
 import { defineComponent } from 'vue';

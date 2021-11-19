@@ -4,7 +4,7 @@ import Upload from './Upload';
 import { UploadProps } from './interface';
 
 export default defineComponent({
-  name: 'AUploadDragger',
+  name: 'ZUploadDragger',
   inheritAttrs: false,
   props: UploadProps,
   render() {

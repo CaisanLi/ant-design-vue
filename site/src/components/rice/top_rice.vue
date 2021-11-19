@@ -1,13 +1,13 @@
 <template>
   <div>
     <template v-if="ads.length">
-      <a-carousel autoplay>
+      <z-carousel autoplay>
         <template v-for="ad in ads" :key="ad.href">
           <a :href="ad.href" target="_blank">
             <img style="width: 100%; max-width: 1200px" :alt="ad.alt || ''" :src="ad.img" />
           </a>
         </template>
-      </a-carousel>
+      </z-carousel>
     </template>
     <template v-else-if="showGoogleAd">
       <template v-if="isCN">

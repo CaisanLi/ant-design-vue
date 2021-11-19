@@ -16,7 +16,7 @@ Disable option by specifying the `disabled` property in `options`.
 
 </docs>
 <template>
-  <a-cascader v-model:value="value" :options="options" />
+  <z-cascader v-model:value="value" :options="options" />
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue';

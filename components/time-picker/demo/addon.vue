@@ -18,16 +18,16 @@ Render addon contents to timepicker panel's bottom.
 
 <template>
   <div>
-    <a-time-picker v-model:value="value" v-model:open="open" @openChange="handleOpenChange">
+    <z-time-picker v-model:value="value" v-model:open="open" @openChange="handleOpenChange">
       <template #renderExtraFooter="{ prefixCls }">
-        <a-button size="small" type="primary" @click="handleClose">Ok {{ prefixCls }}</a-button>
+        <z-button size="small" type="primary" @click="handleClose">Ok {{ prefixCls }}</z-button>
       </template>
-    </a-time-picker>
-    <a-time-picker v-model:value="value" v-model:open="open2">
+    </z-time-picker>
+    <z-time-picker v-model:value="value" v-model:open="open2">
       <template #renderExtraFooter>
-        <a-button size="small" type="primary" @click="handleClose">Ok</a-button>
+        <z-button size="small" type="primary" @click="handleClose">Ok</z-button>
       </template>
-    </a-time-picker>
+    </z-time-picker>
   </div>
 </template>
 <script lang="ts">
@@ -60,5 +60,3 @@ export default defineComponent({
   },
 });
 </script>
-
-

@@ -73,7 +73,7 @@ export type ListProps = Partial<ExtractPropTypes<typeof listProps>>;
 import { ListContextKey } from './contextKey';
 
 const List = defineComponent({
-  name: 'AList',
+  name: 'ZList',
   Item,
   props: initDefaultProps(listProps, {
     dataSource: [],

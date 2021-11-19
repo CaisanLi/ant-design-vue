@@ -2,7 +2,7 @@ import { defineComponent, computed } from 'vue';
 import useConfigInject from '../_util/hooks/useConfigInject';
 
 export default defineComponent({
-  name: 'ACardGrid',
+  name: 'ZCardGrid',
   __ANT_CARD_GRID: true,
   props: {
     prefixCls: String,

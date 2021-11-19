@@ -28,7 +28,7 @@ export const AutoCompleteOption = Option;
 export const AutoCompleteOptGroup = OptGroup;
 
 const AutoComplete = defineComponent({
-  name: 'AAutoComplete',
+  name: 'ZAutoComplete',
   inheritAttrs: false,
   props: {
     ...autoCompleteProps,

@@ -16,18 +16,18 @@ title:
 </docs>
 
 <template>
-  <a-form :label-col="labelCol" :wrapper-col="wrapperCol">
-    <a-form-item label="Activity name" v-bind="validateInfos.name">
-      <a-input v-model:value="modelRef.name" />
-    </a-form-item>
-    <a-form-item label="Sub name" v-bind="validateInfos['sub.name']">
-      <a-input v-model:value="modelRef.sub.name" />
-    </a-form-item>
-    <a-form-item :wrapper-col="{ span: 14, offset: 4 }">
-      <a-button type="primary" @click.prevent="onSubmit">Create</a-button>
-      <a-button style="margin-left: 10px" @click="reset">Reset</a-button>
-    </a-form-item>
-  </a-form>
+  <z-form :label-col="labelCol" :wrapper-col="wrapperCol">
+    <z-form-item label="Activity name" v-bind="validateInfos.name">
+      <z-input v-model:value="modelRef.name" />
+    </z-form-item>
+    <z-form-item label="Sub name" v-bind="validateInfos['sub.name']">
+      <z-input v-model:value="modelRef.sub.name" />
+    </z-form-item>
+    <z-form-item :wrapper-col="{ span: 14, offset: 4 }">
+      <z-button type="primary" @click.prevent="onSubmit">Create</z-button>
+      <z-button style="margin-left: 10px" @click="reset">Reset</z-button>
+    </z-form-item>
+  </z-form>
 </template>
 <script lang="ts">
 import { defineComponent, reactive, toRaw } from 'vue';

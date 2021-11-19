@@ -65,7 +65,7 @@ export type PlacementTypes = typeof placementTypes[number];
 export type TooltipProps = Partial<ExtractPropTypes<ReturnType<typeof tooltipProps>>>;
 
 export default defineComponent({
-  name: 'ATooltip',
+  name: 'ZTooltip',
   inheritAttrs: false,
   props: initDefaultProps(tooltipProps(), {
     trigger: 'hover',

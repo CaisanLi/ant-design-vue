@@ -32,7 +32,7 @@ export const rateProps = {
 export type RateProps = Partial<ExtractPropTypes<typeof rateProps>>;
 
 const Rate = defineComponent({
-  name: 'ARate',
+  name: 'ZRate',
   inheritAttrs: false,
   props: initDefaultProps(rateProps, {
     value: 0,

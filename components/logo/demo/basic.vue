@@ -17,14 +17,14 @@ The default number is 1,different numbers correspond to different logos.
 
 <template>
   <div class="content">
-    <a-logo />
-    <a-logo :number="2" />
-    <a-logo :number="3" />
-    <a-logo :number="4" />
-    <a-logo :number="5" />
-    <a-logo :number="6" />
-    <a-logo :number="7" />
-    <a-logo :number="8" />
+    <z-logo />
+    <z-logo :number="2" />
+    <z-logo :number="3" />
+    <z-logo :number="4" />
+    <z-logo :number="5" />
+    <z-logo :number="6" />
+    <z-logo :number="7" />
+    <z-logo :number="8" />
   </div>
 </template>
 

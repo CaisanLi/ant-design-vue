@@ -6,17 +6,17 @@ title:
   en-US: Ribbon
 ---
 
-## zh-CN 
-使用缎带型的徽标。 
+## zh-CN
+使用缎带型的徽标。
 
-## en-US 
+## en-US
 
-Use ribbon badge. 
+Use ribbon badge.
 
 </docs>
 
 <template>
-  <a-badge-ribbon text="Pushes open the window">
-    <a-card>And raises the spyglass.</a-card>
-  </a-badge-ribbon>
+  <z-badge-ribbon text="Pushes open the window">
+    <z-card>And raises the spyglass.</z-card>
+  </z-badge-ribbon>
 </template>

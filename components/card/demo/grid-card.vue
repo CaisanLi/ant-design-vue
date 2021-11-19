@@ -17,14 +17,14 @@ Grid style card content.
 </docs>
 
 <template>
-  <a-card title="Card Title">
-    <a-card-grid style="width: 25%; text-align: center">Content</a-card-grid>
-    <a-card-grid style="width: 25%; text-align: center" :hoverable="false">Content</a-card-grid>
-    <a-card-grid style="width: 25%; text-align: center">Content</a-card-grid>
-    <a-card-grid style="width: 25%; text-align: center">Content</a-card-grid>
-    <a-card-grid style="width: 25%; text-align: center">Content</a-card-grid>
-    <a-card-grid style="width: 25%; text-align: center">Content</a-card-grid>
-    <a-card-grid style="width: 25%; text-align: center">Content</a-card-grid>
-    <a-card-grid style="width: 25%; text-align: center">Content</a-card-grid>
-  </a-card>
+  <z-card title="Card Title">
+    <z-card-grid style="width: 25%; text-align: center">Content</z-card-grid>
+    <z-card-grid style="width: 25%; text-align: center" :hoverable="false">Content</z-card-grid>
+    <z-card-grid style="width: 25%; text-align: center">Content</z-card-grid>
+    <z-card-grid style="width: 25%; text-align: center">Content</z-card-grid>
+    <z-card-grid style="width: 25%; text-align: center">Content</z-card-grid>
+    <z-card-grid style="width: 25%; text-align: center">Content</z-card-grid>
+    <z-card-grid style="width: 25%; text-align: center">Content</z-card-grid>
+    <z-card-grid style="width: 25%; text-align: center">Content</z-card-grid>
+  </z-card>
 </template>

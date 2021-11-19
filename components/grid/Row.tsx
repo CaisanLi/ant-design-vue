@@ -30,7 +30,7 @@ const rowProps = {
 export type RowProps = Partial<ExtractPropTypes<typeof rowProps>>;
 
 const ARow = defineComponent({
-  name: 'ARow',
+  name: 'ZRow',
   props: rowProps,
   setup(props, { slots }) {
     const { prefixCls, direction } = useConfigInject('row', props);

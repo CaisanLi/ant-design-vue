@@ -13,7 +13,7 @@ import { defaultConfigProvider } from '../config-provider';
 import isPlainObject from 'lodash-es/isPlainObject';
 
 export default defineComponent({
-  name: 'AInputSearch',
+  name: 'ZInputSearch',
   inheritAttrs: false,
   props: {
     ...inputProps,
@@ -57,7 +57,7 @@ export default defineComponent({
     renderLoading(prefixCls: string) {
       const { size } = this.$props;
       let enterButton = getComponent(this, 'enterButton');
-      // 兼容 <a-input-search enterButton />， 因enterButton类型为 any，此类写法 enterButton 为空字符串
+      // 兼容 <z-input-search enterButton />， 因enterButton类型为 any，此类写法 enterButton 为空字符串
       enterButton = enterButton || enterButton === '';
       if (enterButton) {
         return (
@@ -100,7 +100,7 @@ export default defineComponent({
     //   const suffix = getComponent(this, 'suffix');
     //   console.log(suffix, '后面');
     //   let enterButton = getComponent(this, 'enterButton');
-    //   // 兼容 <a-input-search enterButton />， 因enterButton类型为 any，此类写法 enterButton 为空字符串
+    //   // 兼容 <z-input-search enterButton />， 因enterButton类型为 any，此类写法 enterButton 为空字符串
     //   enterButton = enterButton || enterButton === '';
     //   if (loading && !enterButton) {
     //     return [suffix, this.renderLoading(prefixCls)];

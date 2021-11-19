@@ -17,30 +17,30 @@ A basic comment with author, avatar, time and actions.
 </docs>
 
 <template>
-  <a-comment>
+  <z-comment>
     <template #actions>
       <span key="comment-basic-like">
-        <a-tooltip title="Like">
+        <z-tooltip title="Like">
           <template v-if="action === 'liked'">
             <LikeFilled @click="like" />
           </template>
           <template v-else>
             <LikeOutlined @click="like" />
           </template>
-        </a-tooltip>
+        </z-tooltip>
         <span style="padding-left: 8px; cursor: auto">
           {{ likes }}
         </span>
       </span>
       <span key="comment-basic-dislike">
-        <a-tooltip title="Dislike">
+        <z-tooltip title="Dislike">
           <template v-if="action === 'disliked'">
             <DislikeFilled @click="dislike" />
           </template>
           <template v-else>
             <DislikeOutlined @click="dislike" />
           </template>
-        </a-tooltip>
+        </z-tooltip>
         <span style="padding-left: 8px; cursor: auto">
           {{ dislikes }}
         </span>
@@ -49,7 +49,7 @@ A basic comment with author, avatar, time and actions.
     </template>
     <template #author><a>Han Solo</a></template>
     <template #avatar>
-      <a-avatar
+      <z-avatar
         src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
         alt="Han Solo"
       />
@@ -62,11 +62,11 @@ A basic comment with author, avatar, time and actions.
       </p>
     </template>
     <template #datetime>
-      <a-tooltip :title="dayjs().format('YYYY-MM-DD HH:mm:ss')">
+      <z-tooltip :title="dayjs().format('YYYY-MM-DD HH:mm:ss')">
         <span>{{ dayjs().fromNow() }}</span>
-      </a-tooltip>
+      </z-tooltip>
     </template>
-  </a-comment>
+  </z-comment>
 </template>
 <script lang="ts">
 import dayjs from 'dayjs';

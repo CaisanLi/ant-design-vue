@@ -16,7 +16,7 @@ For multi-line input.
 
 </docs>
 <template>
-  <a-textarea v-model:value="value" placeholder="Basic usage" :rows="4" />
+  <z-textarea v-model:value="value" placeholder="Basic usage" :rows="4" />
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue';

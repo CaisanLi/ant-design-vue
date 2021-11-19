@@ -17,38 +17,38 @@ Navigation steps.
 
 <template>
   <div>
-    <a-steps v-model:current="current" type="navigation" size="small" :style="stepStyle">
-      <a-step
+    <z-steps v-model:current="current" type="navigation" size="small" :style="stepStyle">
+      <z-step
         title="Step 1"
         sub-title="00:00:05"
         status="finish"
         description="This is a description."
       />
-      <a-step
+      <z-step
         title="Step 2"
         sub-title="00:01:02"
         status="process"
         description="This is a description."
       />
-      <a-step
+      <z-step
         title="Step 3"
         sub-title="waiting for longlong time"
         status="wait"
         description="This is a description."
       />
-    </a-steps>
-    <a-steps v-model:current="current" type="navigation" :style="stepStyle">
-      <a-step status="finish" title="Step 1" />
-      <a-step status="process" title="Step 2" />
-      <a-step status="wait" title="Step 3" />
-      <a-step status="wait" title="Step 4" />
-    </a-steps>
-    <a-steps v-model:current="current" type="navigation" size="small" :style="stepStyle">
-      <a-step status="finish" title="finish 1" />
-      <a-step status="finish" title="finish 2" />
-      <a-step status="process" title="current process" />
-      <a-step status="wait" title="wait" disabled />
-    </a-steps>
+    </z-steps>
+    <z-steps v-model:current="current" type="navigation" :style="stepStyle">
+      <z-step status="finish" title="Step 1" />
+      <z-step status="process" title="Step 2" />
+      <z-step status="wait" title="Step 3" />
+      <z-step status="wait" title="Step 4" />
+    </z-steps>
+    <z-steps v-model:current="current" type="navigation" size="small" :style="stepStyle">
+      <z-step status="finish" title="finish 1" />
+      <z-step status="finish" title="finish 2" />
+      <z-step status="process" title="current process" />
+      <z-step status="wait" title="wait" disabled />
+    </z-steps>
   </div>
 </template>
 <script lang="ts">

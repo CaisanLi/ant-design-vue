@@ -22,7 +22,7 @@ export const commentProps = {
 export type CommentProps = Partial<ExtractPropTypes<typeof commentProps>>;
 
 const Comment = defineComponent({
-  name: 'AComment',
+  name: 'ZComment',
   props: commentProps,
   slots: ['actions', 'author', 'avatar', 'content', 'datetime'],
   setup(props, { slots }) {

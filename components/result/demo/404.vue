@@ -17,9 +17,9 @@ The page you visited does not exist.
 </docs>
 
 <template>
-  <a-result status="404" title="404" sub-title="Sorry, the page you visited does not exist.">
+  <z-result status="404" title="404" sub-title="Sorry, the page you visited does not exist.">
     <template #extra>
-      <a-button type="primary">Back Home</a-button>
+      <z-button type="primary">Back Home</z-button>
     </template>
-  </a-result>
+  </z-result>
 </template>

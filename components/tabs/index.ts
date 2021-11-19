@@ -2,7 +2,7 @@ import type { App, Plugin } from 'vue';
 import Tabs, { TabPane } from './src';
 export type { TabsProps, TabPaneProps } from './src';
 
-Tabs.TabPane = { ...TabPane, name: 'ATabPane', __ANT_TAB_PANE: true };
+Tabs.TabPane = { ...TabPane, name: 'ZTabPane', __ANT_TAB_PANE: true };
 
 /* istanbul ignore next */
 Tabs.install = function (app: App) {

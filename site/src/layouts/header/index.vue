@@ -16,7 +16,7 @@
 
       <CloseOutlined class="close-icon" @click="visibleAdblockBanner = false" />
     </div>
-    <a-popover
+    <z-popover
       v-model:visible="menuVisible"
       overlay-class-name="popover-menu"
       placement="bottomRight"
@@ -27,12 +27,12 @@
       <template #content>
         <Menu :is-mobile="isMobile" />
       </template>
-    </a-popover>
-    <a-row :style="{ flexFlow: 'nowrap', height: 64 }">
-      <a-col v-bind="colProps[0]">
+    </z-popover>
+    <z-row :style="{ flexFlow: 'nowrap', height: 64 }">
+      <z-col v-bind="colProps[0]">
         <Logo />
-      </a-col>
-      <a-col v-bind="colProps[1]" class="menu-row">
+      </z-col>
+      <z-col v-bind="colProps[1]" class="menu-row">
         <SearchBox
           key="search"
           :is-zh-c-n="isZhCN"
@@ -40,8 +40,8 @@
           @triggerFocus="onTriggerSearching"
         />
         <Menu v-if="!isMobile" />
-      </a-col>
-    </a-row>
+      </z-col>
+    </z-row>
   </header>
 </template>
 <script lang="ts">

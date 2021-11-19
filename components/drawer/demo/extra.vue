@@ -17,14 +17,14 @@ Extra actions should be placed at corner of drawer in Ant Design, you can using 
 </docs>
 
 <template>
-  <a-radio-group v-model:value="placement" style="margin-right: 8px">
-    <a-radio value="top">top</a-radio>
-    <a-radio value="right">right</a-radio>
-    <a-radio value="bottom">bottom</a-radio>
-    <a-radio value="left">left</a-radio>
-  </a-radio-group>
-  <a-button type="primary" @click="showDrawer">Open</a-button>
-  <a-drawer
+  <z-radio-group v-model:value="placement" style="margin-right: 8px">
+    <z-radio value="top">top</z-radio>
+    <z-radio value="right">right</z-radio>
+    <z-radio value="bottom">bottom</z-radio>
+    <z-radio value="left">left</z-radio>
+  </z-radio-group>
+  <z-button type="primary" @click="showDrawer">Open</z-button>
+  <z-drawer
     :width="500"
     title="Basic Drawer"
     :placement="placement"
@@ -32,13 +32,13 @@ Extra actions should be placed at corner of drawer in Ant Design, you can using 
     @close="onClose"
   >
     <template #extra>
-      <a-button style="margin-right: 8px" @click="onClose">Cancel</a-button>
-      <a-button type="primary" @click="onClose">Submit</a-button>
+      <z-button style="margin-right: 8px" @click="onClose">Cancel</z-button>
+      <z-button type="primary" @click="onClose">Submit</z-button>
     </template>
     <p>Some contents...</p>
     <p>Some contents...</p>
     <p>Some contents...</p>
-  </a-drawer>
+  </z-drawer>
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue';

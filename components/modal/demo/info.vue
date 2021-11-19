@@ -18,10 +18,10 @@ In the various types of information modal dialog, only one button to close dialo
 
 <template>
   <div>
-    <a-button @click="info">Info</a-button>
-    <a-button @click="success">Success</a-button>
-    <a-button @click="error">Error</a-button>
-    <a-button @click="warning">Warning</a-button>
+    <z-button @click="info">Info</z-button>
+    <z-button @click="success">Success</z-button>
+    <z-button @click="error">Error</z-button>
+    <z-button @click="warning">Warning</z-button>
   </div>
 </template>
 <script lang="ts">

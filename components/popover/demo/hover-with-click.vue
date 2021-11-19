@@ -16,7 +16,7 @@ The following example shows how to create a popover which can be hovered and cli
 
 </docs>
 <template>
-  <a-popover
+  <z-popover
     style="width: 500px"
     title="Hover title"
     trigger="hover"
@@ -26,7 +26,7 @@ The following example shows how to create a popover which can be hovered and cli
     <template #content>
       <div>This is hover content.</div>
     </template>
-    <a-popover
+    <z-popover
       title="Click title"
       trigger="click"
       :visible="clicked"
@@ -38,9 +38,9 @@ The following example shows how to create a popover which can be hovered and cli
           <a @click="hide">Close</a>
         </div>
       </template>
-      <a-button>Hover and click / 悬停并单击</a-button>
-    </a-popover>
-  </a-popover>
+      <z-button>Hover and click / 悬停并单击</z-button>
+    </z-popover>
+  </z-popover>
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue';

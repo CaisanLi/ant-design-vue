@@ -145,7 +145,7 @@ export interface ModalLocale {
 export const destroyFns = [];
 
 export default defineComponent({
-  name: 'AModal',
+  name: 'ZModal',
   inheritAttrs: false,
   props: initDefaultProps(modalProps, {
     width: 520,

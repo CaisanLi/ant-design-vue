@@ -29,7 +29,7 @@ function isUnborderedButtonType(type: ButtonType | undefined) {
 }
 
 export default defineComponent({
-  name: 'AButton',
+  name: 'ZButton',
   inheritAttrs: false,
   __ANT_BUTTON: true,
   props,

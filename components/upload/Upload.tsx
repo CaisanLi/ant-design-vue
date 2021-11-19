@@ -38,7 +38,7 @@ export interface UploadFile<T = any> {
 }
 
 export default defineComponent({
-  name: 'AUpload',
+  name: 'ZUpload',
   mixins: [BaseMixin],
   inheritAttrs: false,
   Dragger,

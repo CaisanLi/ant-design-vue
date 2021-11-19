@@ -17,20 +17,20 @@ Use `label` show time alone.
 </docs>
 
 <template>
-  <a-radio-group v-model:value="mode" style="margin-bottom: 20px">
-    <a-radio value="left">Left</a-radio>
-    <a-radio value="right">Right</a-radio>
-    <a-radio value="alternate">Alternate</a-radio>
-  </a-radio-group>
-  <a-timeline :mode="mode">
-    <a-timeline-item label="2015-09-01">Create a services</a-timeline-item>
-    <a-timeline-item label="2015-09-01 09:12:11">Solve initial network problems</a-timeline-item>
-    <a-timeline-item>Technical testing</a-timeline-item>
-    <a-timeline-item>
+  <z-radio-group v-model:value="mode" style="margin-bottom: 20px">
+    <z-radio value="left">Left</z-radio>
+    <z-radio value="right">Right</z-radio>
+    <z-radio value="alternate">Alternate</z-radio>
+  </z-radio-group>
+  <z-timeline :mode="mode">
+    <z-timeline-item label="2015-09-01">Create a services</z-timeline-item>
+    <z-timeline-item label="2015-09-01 09:12:11">Solve initial network problems</z-timeline-item>
+    <z-timeline-item>Technical testing</z-timeline-item>
+    <z-timeline-item>
       <template #label><strong style="color: red">2015-09-01 09:12:11</strong></template>
       Network problems being solved
-    </a-timeline-item>
-  </a-timeline>
+    </z-timeline-item>
+  </z-timeline>
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue';

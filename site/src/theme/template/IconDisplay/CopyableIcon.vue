@@ -6,9 +6,9 @@
   >
     <component :is="allIcons[name]"></component>
     <span class="anticon-class">
-      <a-badge :dot="isNew">
+      <z-badge :dot="isNew">
         {{ type }}
-      </a-badge>
+      </z-badge>
     </span>
   </li>
 </template>

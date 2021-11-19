@@ -16,7 +16,7 @@ Hover to expand sub menu, click to select option.
 
 </docs>
 <template>
-  <a-cascader
+  <z-cascader
     v-model:value="value"
     :options="options"
     :display-render="displayRender"

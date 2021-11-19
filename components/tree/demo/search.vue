@@ -18,8 +18,8 @@ Searchable Tree.
 
 <template>
   <div>
-    <a-input-search v-model:value="searchValue" style="margin-bottom: 8px" placeholder="Search" />
-    <a-tree
+    <z-input-search v-model:value="searchValue" style="margin-bottom: 8px" placeholder="Search" />
+    <z-tree
       :expanded-keys="expandedKeys"
       :auto-expand-parent="autoExpandParent"
       :tree-data="gData"
@@ -33,7 +33,7 @@ Searchable Tree.
         </span>
         <span v-else>{{ title }}</span>
       </template>
-    </a-tree>
+    </z-tree>
   </div>
 </template>
 

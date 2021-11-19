@@ -18,18 +18,18 @@ Showing more detailed info of every row.
 </docs>
 
 <template>
-  <a-table :columns="columns" :data-source="data" class="components-table-demo-nested">
+  <z-table :columns="columns" :data-source="data" class="components-table-demo-nested">
     <template #bodyCell="{ column }">
       <template v-if="column.key === 'operation'">
         <a>Publish</a>
       </template>
     </template>
     <template #expandedRowRender>
-      <a-table :columns="innerColumns" :data-source="innerData" :pagination="false">
+      <z-table :columns="innerColumns" :data-source="innerData" :pagination="false">
         <template #bodyCell="{ column }">
           <template v-if="column.key === 'state'">
             <span>
-              <a-badge status="success" />
+              <z-badge status="success" />
               Finished
             </span>
           </template>
@@ -37,24 +37,24 @@ Showing more detailed info of every row.
             <span class="table-operation">
               <a>Pause</a>
               <a>Stop</a>
-              <a-dropdown>
+              <z-dropdown>
                 <template #overlay>
-                  <a-menu>
-                    <a-menu-item>Action 1</a-menu-item>
-                    <a-menu-item>Action 2</a-menu-item>
-                  </a-menu>
+                  <z-menu>
+                    <z-menu-item>Action 1</z-menu-item>
+                    <z-menu-item>Action 2</z-menu-item>
+                  </z-menu>
                 </template>
                 <a>
                   More
                   <down-outlined />
                 </a>
-              </a-dropdown>
+              </z-dropdown>
             </span>
           </template>
         </template>
-      </a-table>
+      </z-table>
     </template>
-  </a-table>
+  </z-table>
 </template>
 <script lang="ts">
 import { DownOutlined } from '@ant-design/icons-vue';

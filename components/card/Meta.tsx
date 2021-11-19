@@ -4,7 +4,7 @@ import { getPropsSlot } from '../_util/props-util';
 import useConfigInject from '../_util/hooks/useConfigInject';
 
 export default defineComponent({
-  name: 'ACardMeta',
+  name: 'ZCardMeta',
   props: {
     prefixCls: PropTypes.string,
     title: PropTypes.any,

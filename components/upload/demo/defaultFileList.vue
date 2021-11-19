@@ -16,12 +16,12 @@ Use `defaultFileList` for uploaded files when page init.
 </docs>
 
 <template>
-  <a-upload v-model:file-list="fileList" action="https://www.mocky.io/v2/5cc8019d300000980a055e76">
-    <a-button>
+  <z-upload v-model:file-list="fileList" action="https://www.mocky.io/v2/5cc8019d300000980a055e76">
+    <z-button>
       <upload-outlined></upload-outlined>
       Upload
-    </a-button>
-  </a-upload>
+    </z-button>
+  </z-upload>
 </template>
 <script lang="ts">
 import { UploadOutlined } from '@ant-design/icons-vue';

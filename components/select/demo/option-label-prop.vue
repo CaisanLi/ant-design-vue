@@ -17,33 +17,33 @@ Spacified the prop name of Option which will be rendered in select box.
 </docs>
 
 <template>
-  <a-space direction="vertical" style="width: 100%">
-    <a-select
+  <z-space direction="vertical" style="width: 100%">
+    <z-select
       v-model:value="value"
       mode="multiple"
       style="width: 100%"
       placeholder="select one country"
       option-label-prop="label"
     >
-      <a-select-option value="china" label="China">
+      <z-select-option value="china" label="China">
         <span role="img" aria-label="China">🇨🇳</span>
         &nbsp;&nbsp;China (中国)
-      </a-select-option>
-      <a-select-option value="usa" label="USA">
+      </z-select-option>
+      <z-select-option value="usa" label="USA">
         <span role="img" aria-label="USA">🇺🇸</span>
         &nbsp;&nbsp;USA (美国)
-      </a-select-option>
-      <a-select-option value="japan" label="Japan">
+      </z-select-option>
+      <z-select-option value="japan" label="Japan">
         <span role="img" aria-label="Japan">🇯🇵</span>
         &nbsp;&nbsp;Japan (日本)
-      </a-select-option>
-      <a-select-option value="korea" label="Korea">
+      </z-select-option>
+      <z-select-option value="korea" label="Korea">
         <span role="img" aria-label="Korea">🇰🇷</span>
         &nbsp;&nbsp;Korea (韩国)
-      </a-select-option>
-    </a-select>
+      </z-select-option>
+    </z-select>
 
-    <a-select
+    <z-select
       v-model:value="value"
       mode="multiple"
       style="width: 100%"
@@ -55,9 +55,9 @@ Spacified the prop name of Option which will be rendered in select box.
         <span role="img" :aria-label="val">{{ icon }}</span>
         &nbsp;&nbsp;{{ label }}
       </template>
-    </a-select>
+    </z-select>
     <span>Note: v-slot:option support from v2.2.5</span>
-  </a-space>
+  </z-space>
 </template>
 <script lang="ts">
 import { defineComponent, ref, watch } from 'vue';

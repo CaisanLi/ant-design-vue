@@ -17,28 +17,28 @@ Set the color of circles. `green` means completed or success status, `red` means
 </docs>
 
 <template>
-  <a-timeline>
-    <a-timeline-item color="green">Create a services site 2015-09-01</a-timeline-item>
-    <a-timeline-item color="green">Create a services site 2015-09-01</a-timeline-item>
-    <a-timeline-item color="red">
+  <z-timeline>
+    <z-timeline-item color="green">Create a services site 2015-09-01</z-timeline-item>
+    <z-timeline-item color="green">Create a services site 2015-09-01</z-timeline-item>
+    <z-timeline-item color="red">
       <p>Solve initial network problems 1</p>
       <p>Solve initial network problems 2</p>
       <p>Solve initial network problems 3 2015-09-01</p>
-    </a-timeline-item>
-    <a-timeline-item>
+    </z-timeline-item>
+    <z-timeline-item>
       <p>Technical testing 1</p>
       <p>Technical testing 2</p>
       <p>Technical testing 3 2015-09-01</p>
-    </a-timeline-item>
-    <a-timeline-item color="gray">
+    </z-timeline-item>
+    <z-timeline-item color="gray">
       <p>Technical testing 1</p>
       <p>Technical testing 2</p>
       <p>Technical testing 3 2015-09-01</p>
-    </a-timeline-item>
-    <a-timeline-item color="gray">
+    </z-timeline-item>
+    <z-timeline-item color="gray">
       <p>Technical testing 1</p>
       <p>Technical testing 2</p>
       <p>Technical testing 3 2015-09-01</p>
-    </a-timeline-item>
-  </a-timeline>
+    </z-timeline-item>
+  </z-timeline>
 </template>

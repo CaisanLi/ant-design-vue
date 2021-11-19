@@ -18,52 +18,52 @@ Using `marks` property to mark a graduated slider, use `value` to specify the po
 <template>
   <div id="components-slider-demo-mark">
     <h4>included=true</h4>
-    <a-slider v-model:value="value1" :marks="marks">
+    <z-slider v-model:value="value1" :marks="marks">
       <template #mark="{ label, point }">
         <template v-if="point === 100">
           <strong>{{ label }}</strong>
         </template>
         <template v-else>{{ label }}</template>
       </template>
-    </a-slider>
-    <a-slider v-model:value="value2" range :marks="marks">
+    </z-slider>
+    <z-slider v-model:value="value2" range :marks="marks">
       <template #mark="{ label, point }">
         <template v-if="point === 100">
           <strong>{{ label }}</strong>
         </template>
         <template v-else>{{ label }}</template>
       </template>
-    </a-slider>
+    </z-slider>
 
     <h4>included=false</h4>
-    <a-slider v-model:value="value3" :marks="marks" :included="false">
+    <z-slider v-model:value="value3" :marks="marks" :included="false">
       <template #mark="{ label, point }">
         <template v-if="point === 100">
           <strong>{{ label }}</strong>
         </template>
         <template v-else>{{ label }}</template>
       </template>
-    </a-slider>
+    </z-slider>
 
     <h4>marks & step</h4>
-    <a-slider v-model:value="value4" :marks="marks" :step="10">
+    <z-slider v-model:value="value4" :marks="marks" :step="10">
       <template #mark="{ label, point }">
         <template v-if="point === 100">
           <strong>{{ label }}</strong>
         </template>
         <template v-else>{{ label }}</template>
       </template>
-    </a-slider>
+    </z-slider>
 
     <h4>step=null</h4>
-    <a-slider v-model:value="value5" :marks="marks" :step="null">
+    <z-slider v-model:value="value5" :marks="marks" :step="null">
       <template #mark="{ label, point }">
         <template v-if="point === 100">
           <strong>{{ label }}</strong>
         </template>
         <template v-else>{{ label }}</template>
       </template>
-    </a-slider>
+    </z-slider>
   </div>
 </template>
 <script lang="ts">

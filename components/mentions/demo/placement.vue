@@ -16,11 +16,11 @@ Change the suggestions placement.
 
 </docs>
 <template>
-  <a-mentions v-model:value="value" placement="top">
-    <a-mentions-option value="afc163">afc163</a-mentions-option>
-    <a-mentions-option value="zombieJ">zombieJ</a-mentions-option>
-    <a-mentions-option value="yesmeck">yesmeck</a-mentions-option>
-  </a-mentions>
+  <z-mentions v-model:value="value" placement="top">
+    <z-mentions-option value="afc163">afc163</z-mentions-option>
+    <z-mentions-option value="zombieJ">zombieJ</z-mentions-option>
+    <z-mentions-option value="yesmeck">yesmeck</z-mentions-option>
+  </z-mentions>
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue';

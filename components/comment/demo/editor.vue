@@ -17,41 +17,41 @@ Comment can be used as editor, user can customize the editor component.
 </docs>
 
 <template>
-  <a-list
+  <z-list
     v-if="comments.length"
     :data-source="comments"
     :header="`${comments.length} ${comments.length > 1 ? 'replies' : 'reply'}`"
     item-layout="horizontal"
   >
     <template #renderItem="{ item }">
-      <a-list-item>
-        <a-comment
+      <z-list-item>
+        <z-comment
           :author="item.author"
           :avatar="item.avatar"
           :content="item.content"
           :datetime="item.datetime"
         />
-      </a-list-item>
+      </z-list-item>
     </template>
-  </a-list>
-  <a-comment>
+  </z-list>
+  <z-comment>
     <template #avatar>
-      <a-avatar
+      <z-avatar
         src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
         alt="Han Solo"
       />
     </template>
     <template #content>
-      <a-form-item>
-        <a-textarea v-model:value="value" :rows="4" />
-      </a-form-item>
-      <a-form-item>
-        <a-button html-type="submit" :loading="submitting" type="primary" @click="handleSubmit">
+      <z-form-item>
+        <z-textarea v-model:value="value" :rows="4" />
+      </z-form-item>
+      <z-form-item>
+        <z-button html-type="submit" :loading="submitting" type="primary" @click="handleSubmit">
           Add Comment
-        </a-button>
-      </a-form-item>
+        </z-button>
+      </z-form-item>
     </template>
-  </a-comment>
+  </z-comment>
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue';

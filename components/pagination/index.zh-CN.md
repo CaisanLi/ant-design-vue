@@ -12,7 +12,7 @@ cover: https://gw.alipayobjects.com/zos/alicdn/1vqv2bj68/Pagination.svg
 ## API
 
 ```html
-<a-pagination @change="onChange" :total="50" />
+<z-pagination @change="onChange" :total="50" />
 ```
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
@@ -35,6 +35,6 @@ cover: https://gw.alipayobjects.com/zos/alicdn/1vqv2bj68/Pagination.svg
 ### 事件
 
 | 事件名称       | 说明                                         | 回调参数                 |
-| -------------- | -------------------------------------------- | ------------------------ |
+| -------------- | -------------------------------------------- | ------------------------ | ---- |
 | change         | 页码改变的回调，参数是改变后的页码及每页条数 | Function(page, pageSize) | noop |
 | showSizeChange | pageSize 变化的回调                          | Function(current, size)  | noop |

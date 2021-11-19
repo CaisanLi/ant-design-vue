@@ -17,7 +17,7 @@ export interface CheckboxOptionType {
 }
 function noop() {}
 export default defineComponent({
-  name: 'ACheckboxGroup',
+  name: 'ZCheckboxGroup',
   props: {
     name: PropTypes.string,
     prefixCls: PropTypes.string,

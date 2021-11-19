@@ -17,17 +17,17 @@ In accordion mode, only one panel can be expanded at a time.
 </docs>
 
 <template>
-  <a-collapse v-model:activeKey="activeKey" accordion>
-    <a-collapse-panel key="1" header="This is panel header 1">
+  <z-collapse v-model:activeKey="activeKey" accordion>
+    <z-collapse-panel key="1" header="This is panel header 1">
       <p>{{ text }}</p>
-    </a-collapse-panel>
-    <a-collapse-panel key="2" header="This is panel header 2">
+    </z-collapse-panel>
+    <z-collapse-panel key="2" header="This is panel header 2">
       <p>{{ text }}</p>
-    </a-collapse-panel>
-    <a-collapse-panel key="3" header="This is panel header 3">
+    </z-collapse-panel>
+    <z-collapse-panel key="3" header="This is panel header 3">
       <p>{{ text }}</p>
-    </a-collapse-panel>
-  </a-collapse>
+    </z-collapse-panel>
+  </z-collapse>
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue';

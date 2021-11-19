@@ -16,7 +16,7 @@ A example shows how to select a dynamic range by using `onCalendarChange` and `d
 
 </docs>
 <template>
-  <a-range-picker
+  <z-range-picker
     :value="hackValue || value"
     :disabled-date="disabledDate"
     @change="onChange"
@@ -71,4 +71,3 @@ export default defineComponent({
   },
 });
 </script>
-

@@ -17,47 +17,47 @@ When dealing with long content, a fixed sider can provide a better user experien
 
 </docs>
 <template>
-  <a-layout>
-    <a-layout-sider :style="{ overflow: 'auto', height: '100vh', position: 'fixed', left: 0 }">
+  <z-layout>
+    <z-layout-sider :style="{ overflow: 'auto', height: '100vh', position: 'fixed', left: 0 }">
       <div class="logo" />
-      <a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline">
-        <a-menu-item key="1">
+      <z-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline">
+        <z-menu-item key="1">
           <user-outlined />
           <span class="nav-text">nav 1</span>
-        </a-menu-item>
-        <a-menu-item key="2">
+        </z-menu-item>
+        <z-menu-item key="2">
           <video-camera-outlined />
           <span class="nav-text">nav 2</span>
-        </a-menu-item>
-        <a-menu-item key="3">
+        </z-menu-item>
+        <z-menu-item key="3">
           <upload-outlined />
           <span class="nav-text">nav 3</span>
-        </a-menu-item>
-        <a-menu-item key="4">
+        </z-menu-item>
+        <z-menu-item key="4">
           <bar-chart-outlined />
           <span class="nav-text">nav 4</span>
-        </a-menu-item>
-        <a-menu-item key="5">
+        </z-menu-item>
+        <z-menu-item key="5">
           <cloud-outlined />
           <span class="nav-text">nav 5</span>
-        </a-menu-item>
-        <a-menu-item key="6">
+        </z-menu-item>
+        <z-menu-item key="6">
           <appstore-outlined />
           <span class="nav-text">nav 6</span>
-        </a-menu-item>
-        <a-menu-item key="7">
+        </z-menu-item>
+        <z-menu-item key="7">
           <team-outlined />
           <span class="nav-text">nav 7</span>
-        </a-menu-item>
-        <a-menu-item key="8">
+        </z-menu-item>
+        <z-menu-item key="8">
           <shop-outlined />
           <span class="nav-text">nav 8</span>
-        </a-menu-item>
-      </a-menu>
-    </a-layout-sider>
-    <a-layout :style="{ marginLeft: '200px' }">
-      <a-layout-header :style="{ background: '#fff', padding: 0 }" />
-      <a-layout-content :style="{ margin: '24px 16px 0', overflow: 'initial' }">
+        </z-menu-item>
+      </z-menu>
+    </z-layout-sider>
+    <z-layout :style="{ marginLeft: '200px' }">
+      <z-layout-header :style="{ background: '#fff', padding: 0 }" />
+      <z-layout-content :style="{ margin: '24px 16px 0', overflow: 'initial' }">
         <div :style="{ padding: '24px', background: '#fff', textAlign: 'center' }">
           ...
           <br />
@@ -155,12 +155,12 @@ When dealing with long content, a fixed sider can provide a better user experien
           <br />
           content
         </div>
-      </a-layout-content>
-      <a-layout-footer :style="{ textAlign: 'center' }">
+      </z-layout-content>
+      <z-layout-footer :style="{ textAlign: 'center' }">
         Ant Design ©2018 Created by Ant UED
-      </a-layout-footer>
-    </a-layout>
-  </a-layout>
+      </z-layout-footer>
+    </z-layout>
+  </z-layout>
 </template>
 <script lang="ts">
 import {

@@ -25,7 +25,7 @@ export const radioProps = {
 export type RadioProps = Partial<ExtractPropTypes<typeof radioProps>>;
 
 export default defineComponent({
-  name: 'ARadio',
+  name: 'ZRadio',
   props: radioProps,
   emits: ['update:checked', 'update:value', 'change', 'blur', 'focus'],
   setup(props, { emit, expose, slots }) {

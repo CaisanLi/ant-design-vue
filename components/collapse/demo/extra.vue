@@ -17,26 +17,26 @@ More than one panel can be expanded at a time, the first panel is initialized to
 </docs>
 
 <template>
-  <a-collapse v-model:activeKey="activeKey" :expand-icon-position="expandIconPosition">
-    <a-collapse-panel key="1" header="This is panel header 1">
+  <z-collapse v-model:activeKey="activeKey" :expand-icon-position="expandIconPosition">
+    <z-collapse-panel key="1" header="This is panel header 1">
       <p>{{ text }}</p>
       <template #extra><setting-outlined @click="handleClick" /></template>
-    </a-collapse-panel>
-    <a-collapse-panel key="2" header="This is panel header 2">
+    </z-collapse-panel>
+    <z-collapse-panel key="2" header="This is panel header 2">
       <p>{{ text }}</p>
       <template #extra><setting-outlined @click="handleClick" /></template>
-    </a-collapse-panel>
-    <a-collapse-panel key="3" header="This is panel header 3" collapsible="disabled">
+    </z-collapse-panel>
+    <z-collapse-panel key="3" header="This is panel header 3" collapsible="disabled">
       <p>{{ text }}</p>
       <template #extra><setting-outlined @click="handleClick" /></template>
-    </a-collapse-panel>
-  </a-collapse>
+    </z-collapse-panel>
+  </z-collapse>
   <br />
   <span>Expand Icon Position:</span>
-  <a-select v-model:value="expandIconPosition">
-    <a-select-option value="left">left</a-select-option>
-    <a-select-option value="right">right</a-select-option>
-  </a-select>
+  <z-select v-model:value="expandIconPosition">
+    <z-select-option value="left">left</z-select-option>
+    <z-select-option value="right">right</z-select-option>
+  </z-select>
 </template>
 <script lang="ts">
 import { SettingOutlined } from '@ant-design/icons-vue';

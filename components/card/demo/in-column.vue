@@ -18,22 +18,22 @@ Cards usually cooperate with grid column layout in overview page.
 
 <template>
   <div style="background-color: #ececec; padding: 20px">
-    <a-row :gutter="16">
-      <a-col :span="8">
-        <a-card title="Card title" :bordered="false">
+    <z-row :gutter="16">
+      <z-col :span="8">
+        <z-card title="Card title" :bordered="false">
           <p>card content</p>
-        </a-card>
-      </a-col>
-      <a-col :span="8">
-        <a-card title="Card title" :bordered="false">
+        </z-card>
+      </z-col>
+      <z-col :span="8">
+        <z-card title="Card title" :bordered="false">
           <p>card content</p>
-        </a-card>
-      </a-col>
-      <a-col :span="8">
-        <a-card title="Card title" :bordered="false">
+        </z-card>
+      </z-col>
+      <z-col :span="8">
+        <z-card title="Card title" :bordered="false">
           <p>card content</p>
-        </a-card>
-      </a-col>
-    </a-row>
+        </z-card>
+      </z-col>
+    </z-row>
   </div>
 </template>

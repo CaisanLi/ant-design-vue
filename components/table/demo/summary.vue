@@ -17,29 +17,29 @@ Set summary content by `summary` prop. Sync column fixed status with `a-table-su
 </docs>
 
 <template>
-  <a-table :columns="columns" :data-source="data" :pagination="false" bordered>
+  <z-table :columns="columns" :data-source="data" :pagination="false" bordered>
     <template #summary>
-      <a-table-summary-row>
-        <a-table-summary-cell>Total</a-table-summary-cell>
-        <a-table-summary-cell>
-          <a-typography-text type="danger">{{ totals.totalBorrow }}</a-typography-text>
-        </a-table-summary-cell>
-        <a-table-summary-cell>
-          <a-typography-text>{{ totals.totalRepayment }}</a-typography-text>
-        </a-table-summary-cell>
-      </a-table-summary-row>
-      <a-table-summary-row>
-        <a-table-summary-cell>Balance</a-table-summary-cell>
-        <a-table-summary-cell :col-span="2">
-          <a-typography-text type="danger">
+      <z-table-summary-row>
+        <z-table-summary-cell>Total</z-table-summary-cell>
+        <z-table-summary-cell>
+          <z-typography-text type="danger">{{ totals.totalBorrow }}</z-typography-text>
+        </z-table-summary-cell>
+        <z-table-summary-cell>
+          <z-typography-text>{{ totals.totalRepayment }}</z-typography-text>
+        </z-table-summary-cell>
+      </z-table-summary-row>
+      <z-table-summary-row>
+        <z-table-summary-cell>Balance</z-table-summary-cell>
+        <z-table-summary-cell :col-span="2">
+          <z-typography-text type="danger">
             {{ totals.totalBorrow - totals.totalRepayment }}
-          </a-typography-text>
-        </a-table-summary-cell>
-      </a-table-summary-row>
+          </z-typography-text>
+        </z-table-summary-cell>
+      </z-table-summary-row>
     </template>
-  </a-table>
+  </z-table>
   <br />
-  <a-table
+  <z-table
     :columns="fixedColumns"
     :data-source="fixedData"
     :pagination="false"
@@ -47,14 +47,14 @@ Set summary content by `summary` prop. Sync column fixed status with `a-table-su
     bordered
   >
     <template #summary>
-      <a-table-summary fixed>
-        <a-table-summary-row>
-          <a-table-summary-cell :index="0">Summary</a-table-summary-cell>
-          <a-table-summary-cell :index="1">This is a summary content</a-table-summary-cell>
-        </a-table-summary-row>
-      </a-table-summary>
+      <z-table-summary fixed>
+        <z-table-summary-row>
+          <z-table-summary-cell :index="0">Summary</z-table-summary-cell>
+          <z-table-summary-cell :index="1">This is a summary content</z-table-summary-cell>
+        </z-table-summary-row>
+      </z-table-summary>
     </template>
-  </a-table>
+  </z-table>
 </template>
 
 <script lang="ts">

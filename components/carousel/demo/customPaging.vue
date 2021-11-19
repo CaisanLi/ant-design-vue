@@ -17,7 +17,7 @@ Custom paging display
 </docs>
 
 <template>
-  <a-carousel arrows dots-class="slick-dots slick-thumb">
+  <z-carousel arrows dots-class="slick-dots slick-thumb">
     <template #customPaging="props">
       <a>
         <img :src="getImgUrl(props.i)" />
@@ -26,7 +26,7 @@ Custom paging display
     <div v-for="item in 4" :key="item">
       <img :src="baseUrl + 'abstract0' + item + '.jpg'" />
     </div>
-  </a-carousel>
+  </z-carousel>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';

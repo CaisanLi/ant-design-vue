@@ -73,7 +73,7 @@ Transfer accept `children` to customize render list, using follow props:
 #### example
 
 ```html
-<a-transfer>
+<z-transfer>
   <template
     #children="{
       direction,
@@ -86,7 +86,7 @@ Transfer accept `children` to customize render list, using follow props:
   >
     <your-component />
   <template>
-</a-transfer>
+</z-transfer>
 ```
 
 ## Warning

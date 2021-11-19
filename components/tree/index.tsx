@@ -25,7 +25,7 @@ export type {
 
 /* istanbul ignore next */
 
-const TreeNode = defineComponent({ ...VsTreeNode, name: 'ATreeNode' });
+const TreeNode = defineComponent({ ...VsTreeNode, name: 'ZTreeNode' });
 
 export { DirectoryTree, TreeNode };
 

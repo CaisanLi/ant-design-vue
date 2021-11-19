@@ -18,47 +18,47 @@ Components which need localization support are listed here, you can toggle the l
 <template>
   <div class="change-locale">
     <span style="margin-right: 16px">Change locale of components:</span>
-    <a-radio-group v-model:value="locale">
-      <a-radio-button key="en" :value="enUS.locale">English</a-radio-button>
-      <a-radio-button key="cn" :value="zhCN.locale">中文</a-radio-button>
-    </a-radio-group>
+    <z-radio-group v-model:value="locale">
+      <z-radio-button key="en" :value="enUS.locale">English</z-radio-button>
+      <z-radio-button key="cn" :value="zhCN.locale">中文</z-radio-button>
+    </z-radio-group>
   </div>
-  <a-config-provider :locale="locale === 'en' ? enUS : zhCN">
+  <z-config-provider :locale="locale === 'en' ? enUS : zhCN">
     <div class="locale-components">
       <div class="example">
-        <a-pagination :total="50" show-size-changer />
+        <z-pagination :total="50" show-size-changer />
       </div>
       <div class="example">
-        <a-select show-search style="width: 200px">
-          <a-select-option value="jack">jack</a-select-option>
-          <a-select-option value="lucy">lucy</a-select-option>
-        </a-select>
-        <a-date-picker />
-        <a-time-picker />
-        <a-range-picker style="width: 200px" />
+        <z-select show-search style="width: 200px">
+          <z-select-option value="jack">jack</z-select-option>
+          <z-select-option value="lucy">lucy</z-select-option>
+        </z-select>
+        <z-date-picker />
+        <z-time-picker />
+        <z-range-picker style="width: 200px" />
       </div>
       <div class="example">
-        <a-button type="primary" @click="visible = true">Show Modal</a-button>
-        <a-button @click="info">Show info</a-button>
-        <a-button @click="confirm">Show confirm</a-button>
-        <a-popconfirm title="Question?">
+        <z-button type="primary" @click="visible = true">Show Modal</z-button>
+        <z-button @click="info">Show info</z-button>
+        <z-button @click="confirm">Show confirm</z-button>
+        <z-popconfirm title="Question?">
           <a href="#">Click to confirm</a>
-        </a-popconfirm>
+        </z-popconfirm>
       </div>
       <div class="example">
-        <a-transfer :data-source="[]" show-search :target-keys="[]" :render="item => item.title" />
+        <z-transfer :data-source="[]" show-search :target-keys="[]" :render="item => item.title" />
       </div>
       <div class="site-config-provider-calendar-wrapper">
-        <a-calendar :fullscreen="false" />
+        <z-calendar :fullscreen="false" />
       </div>
       <div class="example">
-        <a-table :data-source="[]" :columns="columns" />
+        <z-table :data-source="[]" :columns="columns" />
       </div>
-      <a-modal v-model:visible="visible" title="Locale Modal">
+      <z-modal v-model:visible="visible" title="Locale Modal">
         <p>Locale Modal</p>
-      </a-modal>
+      </z-modal>
     </div>
-  </a-config-provider>
+  </z-config-provider>
 </template>
 <script>
 import { Modal } from 'ant-design-vue';

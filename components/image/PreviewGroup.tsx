@@ -4,7 +4,7 @@ import { defaultConfigProvider } from '../config-provider';
 import PropTypes from '../_util/vue-types';
 
 const InternalPreviewGroup = defineComponent({
-  name: 'AImagePreviewGroup',
+  name: 'ZImagePreviewGroup',
   inheritAttrs: false,
   props: { previewPrefixCls: PropTypes.string },
   setup(props, { attrs, slots }) {

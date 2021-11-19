@@ -17,25 +17,25 @@ Breadcrumbs support drop down menu.
 </docs>
 
 <template>
-  <a-breadcrumb>
-    <a-breadcrumb-item>Ant Design Vue</a-breadcrumb-item>
-    <a-breadcrumb-item><a href="">Component</a></a-breadcrumb-item>
-    <a-breadcrumb-item>
+  <z-breadcrumb>
+    <z-breadcrumb-item>Ant Design Vue</z-breadcrumb-item>
+    <z-breadcrumb-item><a href="">Component</a></z-breadcrumb-item>
+    <z-breadcrumb-item>
       <a href="">General</a>
       <template #overlay>
-        <a-menu>
-          <a-menu-item>
+        <z-menu>
+          <z-menu-item>
             <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">General</a>
-          </a-menu-item>
-          <a-menu-item>
+          </z-menu-item>
+          <z-menu-item>
             <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">Layout</a>
-          </a-menu-item>
-          <a-menu-item>
+          </z-menu-item>
+          <z-menu-item>
             <a target="_blank" rel="noopener noreferrer" href="http://www.tmall.com/">Navigation</a>
-          </a-menu-item>
-        </a-menu>
+          </z-menu-item>
+        </z-menu>
       </template>
-    </a-breadcrumb-item>
-    <a-breadcrumb-item>Button</a-breadcrumb-item>
-  </a-breadcrumb>
+    </z-breadcrumb-item>
+    <z-breadcrumb-item>Button</z-breadcrumb-item>
+  </z-breadcrumb>
 </template>

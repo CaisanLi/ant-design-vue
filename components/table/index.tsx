@@ -11,12 +11,12 @@ export type { ColumnProps } from './Column';
 export type { ColumnsType, ColumnType, ColumnGroupType } from './interface';
 export type { TableProps, TablePaginationConfig };
 
-const TableSummaryRow = defineComponent({ ...SummaryRow, name: 'ATableSummaryRow' });
-const TableSummaryCell = defineComponent({ ...SummaryCell, name: 'ATableSummaryCell' });
+const TableSummaryRow = defineComponent({ ...SummaryRow, name: 'ZTableSummaryRow' });
+const TableSummaryCell = defineComponent({ ...SummaryCell, name: 'ZTableSummaryCell' });
 
 const TempSummary = defineComponent({
   ...Summary,
-  name: 'ATableSummary',
+  name: 'ZTableSummary',
 });
 
 const TableSummary = TempSummary as typeof TempSummary & {

@@ -30,7 +30,7 @@ export type AvatarGroupProps = Partial<ExtractPropTypes<typeof groupProps>> & {
 };
 
 const Group = defineComponent({
-  name: 'AAvatarGroup',
+  name: 'ZAvatarGroup',
   inheritAttrs: false,
   props: groupProps,
   setup(props, { slots, attrs }) {

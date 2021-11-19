@@ -1,7 +1,7 @@
 <docs>
 ---
 order: 2
-title: 
+title:
   zh-CN: 封顶数字
   en-US: Overflow Count
 ---
@@ -17,16 +17,16 @@ title:
 </docs>
 
 <template>
-  <a-badge :count="99">
+  <z-badge :count="99">
     <a href="#" class="head-example" />
-  </a-badge>
-  <a-badge :count="100">
+  </z-badge>
+  <z-badge :count="100">
     <a href="#" class="head-example" />
-  </a-badge>
-  <a-badge :count="99" :overflow-count="10">
+  </z-badge>
+  <z-badge :count="99" :overflow-count="10">
     <a href="#" class="head-example" />
-  </a-badge>
-  <a-badge :count="1000" :overflow-count="999">
+  </z-badge>
+  <z-badge :count="1000" :overflow-count="999">
     <a href="#" class="head-example" />
-  </a-badge>
+  </z-badge>
 </template>

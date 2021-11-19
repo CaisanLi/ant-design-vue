@@ -17,7 +17,7 @@ Custom arrows display
 </docs>
 
 <template>
-  <a-carousel arrows>
+  <z-carousel arrows>
     <template #prevArrow>
       <div class="custom-slick-arrow" style="left: 10px; zindex: 1">
         <left-circle-outlined />
@@ -32,7 +32,7 @@ Custom arrows display
     <div><h3>2</h3></div>
     <div><h3>3</h3></div>
     <div><h3>4</h3></div>
-  </a-carousel>
+  </z-carousel>
 </template>
 <script lang="ts">
 import { LeftCircleOutlined, RightCircleOutlined } from '@ant-design/icons-vue';

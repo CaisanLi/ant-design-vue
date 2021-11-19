@@ -16,31 +16,31 @@ Three sizes and two shapes are available.
 </docs>
 
 <template>
-  <a-avatar :size="64">
+  <z-avatar :size="64">
     <template #icon><UserOutlined /></template>
-  </a-avatar>
-  <a-avatar size="large">
+  </z-avatar>
+  <z-avatar size="large">
     <template #icon><UserOutlined /></template>
-  </a-avatar>
-  <a-avatar>
+  </z-avatar>
+  <z-avatar>
     <template #icon><UserOutlined /></template>
-  </a-avatar>
-  <a-avatar size="small">
+  </z-avatar>
+  <z-avatar size="small">
     <template #icon><UserOutlined /></template>
-  </a-avatar>
+  </z-avatar>
   <br />
-  <a-avatar shape="square" :size="64">
+  <z-avatar shape="square" :size="64">
     <template #icon><UserOutlined /></template>
-  </a-avatar>
-  <a-avatar shape="square" size="large">
+  </z-avatar>
+  <z-avatar shape="square" size="large">
     <template #icon><UserOutlined /></template>
-  </a-avatar>
-  <a-avatar shape="square">
+  </z-avatar>
+  <z-avatar shape="square">
     <template #icon><UserOutlined /></template>
-  </a-avatar>
-  <a-avatar shape="square" size="small">
+  </z-avatar>
+  <z-avatar shape="square" size="small">
     <template #icon><UserOutlined /></template>
-  </a-avatar>
+  </z-avatar>
 </template>
 
 <script lang="ts">

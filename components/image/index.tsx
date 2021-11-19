@@ -9,7 +9,7 @@ export type ImageProps = Partial<
   ExtractPropTypes<typeof imageProps> & Omit<ImgHTMLAttributes, 'placeholder' | 'onClick'>
 >;
 const Image = defineComponent<ImageProps>({
-  name: 'AImage',
+  name: 'ZImage',
   inheritAttrs: false,
   props: imageProps as any,
   setup(props, { slots, attrs }) {

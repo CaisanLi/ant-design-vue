@@ -17,14 +17,14 @@ You can show the total number of data by setting `showTotal`.
 
 <template>
   <div>
-    <a-pagination
+    <z-pagination
       v-model:current="current1"
       :total="85"
       :show-total="total => `Total ${total} items`"
       :page-size="20"
     />
     <br />
-    <a-pagination
+    <z-pagination
       v-model:current="current2"
       :total="85"
       :show-total="(total, range) => `${range[0]}-${range[1]} of ${total} items`"

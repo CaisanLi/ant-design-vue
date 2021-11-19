@@ -11,7 +11,7 @@ const menuItemGroupProps = {
 export type MenuItemGroupProps = Partial<ExtractPropTypes<typeof menuItemGroupProps>>;
 
 export default defineComponent({
-  name: 'AMenuItemGroup',
+  name: 'ZMenuItemGroup',
   inheritAttrs: false,
   props: menuItemGroupProps,
   slots: ['title'],

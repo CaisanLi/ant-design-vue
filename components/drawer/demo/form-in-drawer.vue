@@ -17,11 +17,11 @@ Use form in drawer with submit button.
 </docs>
 
 <template>
-  <a-button type="primary" @click="showDrawer">
+  <z-button type="primary" @click="showDrawer">
     <PlusOutlined />
     New account
-  </a-button>
-  <a-drawer
+  </z-button>
+  <z-drawer
     title="Create a new account"
     :width="720"
     :visible="visible"
@@ -29,79 +29,79 @@ Use form in drawer with submit button.
     :footer-style="{ textAlign: 'right' }"
     @close="onClose"
   >
-    <a-form :model="form" :rules="rules" layout="vertical">
-      <a-row :gutter="16">
-        <a-col :span="12">
-          <a-form-item label="Name" name="name">
-            <a-input v-model:value="form.name" placeholder="Please enter user name" />
-          </a-form-item>
-        </a-col>
-        <a-col :span="12">
-          <a-form-item label="Url" name="url">
-            <a-input
+    <z-form :model="form" :rules="rules" layout="vertical">
+      <z-row :gutter="16">
+        <z-col :span="12">
+          <z-form-item label="Name" name="name">
+            <z-input v-model:value="form.name" placeholder="Please enter user name" />
+          </z-form-item>
+        </z-col>
+        <z-col :span="12">
+          <z-form-item label="Url" name="url">
+            <z-input
               v-model:value="form.url"
               style="width: 100%"
               addon-before="http://"
               addon-after=".com"
               placeholder="please enter url"
             />
-          </a-form-item>
-        </a-col>
-      </a-row>
-      <a-row :gutter="16">
-        <a-col :span="12">
-          <a-form-item label="Owner" name="owner">
-            <a-select v-model:value="form.owner" placeholder="Please a-s an owner">
-              <a-select-option value="xiao">Xiaoxiao Fu</a-select-option>
-              <a-select-option value="mao">Maomao Zhou</a-select-option>
-            </a-select>
-          </a-form-item>
-        </a-col>
-        <a-col :span="12">
-          <a-form-item label="Type" name="type">
-            <a-select v-model:value="form.type" placeholder="Please choose the type">
-              <a-select-option value="private">Private</a-select-option>
-              <a-select-option value="public">Public</a-select-option>
-            </a-select>
-          </a-form-item>
-        </a-col>
-      </a-row>
-      <a-row :gutter="16">
-        <a-col :span="12">
-          <a-form-item label="Approver" name="approver">
-            <a-select v-model:value="form.approver" placeholder="Please choose the approver">
-              <a-select-option value="jack">Jack Ma</a-select-option>
-              <a-select-option value="tom">Tom Liu</a-select-option>
-            </a-select>
-          </a-form-item>
-        </a-col>
-        <a-col :span="12">
-          <a-form-item label="DateTime" name="dateTime">
-            <a-date-picker
+          </z-form-item>
+        </z-col>
+      </z-row>
+      <z-row :gutter="16">
+        <z-col :span="12">
+          <z-form-item label="Owner" name="owner">
+            <z-select v-model:value="form.owner" placeholder="Please a-s an owner">
+              <z-select-option value="xiao">Xiaoxiao Fu</z-select-option>
+              <z-select-option value="mao">Maomao Zhou</z-select-option>
+            </z-select>
+          </z-form-item>
+        </z-col>
+        <z-col :span="12">
+          <z-form-item label="Type" name="type">
+            <z-select v-model:value="form.type" placeholder="Please choose the type">
+              <z-select-option value="private">Private</z-select-option>
+              <z-select-option value="public">Public</z-select-option>
+            </z-select>
+          </z-form-item>
+        </z-col>
+      </z-row>
+      <z-row :gutter="16">
+        <z-col :span="12">
+          <z-form-item label="Approver" name="approver">
+            <z-select v-model:value="form.approver" placeholder="Please choose the approver">
+              <z-select-option value="jack">Jack Ma</z-select-option>
+              <z-select-option value="tom">Tom Liu</z-select-option>
+            </z-select>
+          </z-form-item>
+        </z-col>
+        <z-col :span="12">
+          <z-form-item label="DateTime" name="dateTime">
+            <z-date-picker
               v-model:value="form.dateTime"
               style="width: 100%"
               :get-popup-container="trigger => trigger.parentNode"
             />
-          </a-form-item>
-        </a-col>
-      </a-row>
-      <a-row :gutter="16">
-        <a-col :span="24">
-          <a-form-item label="Description" name="description">
-            <a-textarea
+          </z-form-item>
+        </z-col>
+      </z-row>
+      <z-row :gutter="16">
+        <z-col :span="24">
+          <z-form-item label="Description" name="description">
+            <z-textarea
               v-model:value="form.description"
               :rows="4"
               placeholder="please enter url description"
             />
-          </a-form-item>
-        </a-col>
-      </a-row>
-    </a-form>
+          </z-form-item>
+        </z-col>
+      </z-row>
+    </z-form>
     <template #footer>
-      <a-button style="margin-right: 8px" @click="onClose">Cancel</a-button>
-      <a-button type="primary" @click="onClose">Submit</a-button>
+      <z-button style="margin-right: 8px" @click="onClose">Cancel</z-button>
+      <z-button type="primary" @click="onClose">Submit</z-button>
     </template>
-  </a-drawer>
+  </z-drawer>
 </template>
 <script lang="ts">
 import { PlusOutlined } from '@ant-design/icons-vue';

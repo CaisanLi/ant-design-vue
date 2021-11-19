@@ -11,7 +11,7 @@ export interface SkeletonButtonProps extends Omit<SkeletonElementProps, 'size'> 
 }
 
 const SkeletonButton = defineComponent({
-  name: 'ASkeletonButton',
+  name: 'ZSkeletonButton',
   props: { ...skeletonElementProps(), size: PropTypes.oneOf(tuple('large', 'small', 'default')) },
   setup(props) {
     const { prefixCls } = useConfigInject('skeleton', props);

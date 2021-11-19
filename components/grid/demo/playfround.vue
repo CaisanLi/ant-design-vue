@@ -21,7 +21,7 @@ A simple playground for column count and gutter.
     <div style="margin-bottom: 16px">
       <span style="margin-right: 6px">Horizontal Gutter (px):</span>
       <div style="width: 50%">
-        <a-slider
+        <z-slider
           v-model:value="gutterKey"
           :min="0"
           :max="Object.keys(gutters).length - 1"
@@ -31,7 +31,7 @@ A simple playground for column count and gutter.
       </div>
       <span style="margin-right: 6px">Vertical Gutter (px):</span>
       <div style="width: 50%">
-        <a-slider
+        <z-slider
           v-model:value="vgutterKey"
           :min="0"
           :max="Object.keys(vgutters).length - 1"
@@ -41,7 +41,7 @@ A simple playground for column count and gutter.
       </div>
       <span style="margin-right: 6px">Column Count:</span>
       <div style="width: 50%">
-        <a-slider
+        <z-slider
           v-model:value="colCountKey"
           :min="0"
           :max="Object.keys(colCounts).length - 1"
@@ -50,23 +50,23 @@ A simple playground for column count and gutter.
         />
       </div>
     </div>
-    <a-row :gutter="[gutters[gutterKey], vgutters[vgutterKey]]">
-      <a-col
+    <z-row :gutter="[gutters[gutterKey], vgutters[vgutterKey]]">
+      <z-col
         v-for="item in colCounts[colCountKey]"
         :key="item.toString()"
         :span="24 / colCounts[colCountKey]"
       >
         <div>Column</div>
-      </a-col>
+      </z-col>
 
-      <a-col
+      <z-col
         v-for="item in colCounts[colCountKey]"
         :key="item.toString()"
         :span="24 / colCounts[colCountKey]"
       >
         <div>Column</div>
-      </a-col>
-    </a-row>
+      </z-col>
+    </z-row>
     <pre
       >{{ rowColHtml }}
     </pre>
@@ -106,12 +106,12 @@ export default defineComponent({
     const rowColHtml = computed(() => {
       const colCount = state.colCounts[state.colCountKey];
       const getter = [state.gutters[state.gutterKey], state.vgutters[state.vgutterKey]];
-      let colCode = '<a-row :gutter="[' + getter + ']">\n';
+      let colCode = '<z-row :gutter="[' + getter + ']">\n';
       for (let i = 0; i < colCount; i++) {
         const spanNum = 24 / colCount;
-        colCode += '  <a-col :span="' + spanNum + '"/>\n';
+        colCode += '  <z-col :span="' + spanNum + '"/>\n';
       }
-      colCode += '</a-row>';
+      colCode += '</z-row>';
       return colCode;
     });
     return {

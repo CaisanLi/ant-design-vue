@@ -1,7 +1,7 @@
 <docs>
 ---
 order: 3
-title: 
+title:
   zh-CN: 讨嫌的小红点
   en-US: Red badge
 ---
@@ -18,15 +18,15 @@ If count equals 0, it won't display the dot.
 
 <template>
   <div id="components-badge-demo-dot">
-    <a-badge dot>
+    <z-badge dot>
       <notification-outlined />
-    </a-badge>
-    <a-badge :count="0" dot>
+    </z-badge>
+    <z-badge :count="0" dot>
       <notification-outlined />
-    </a-badge>
-    <a-badge dot>
+    </z-badge>
+    <z-badge dot>
       <a href="#">Link something</a>
-    </a-badge>
+    </z-badge>
   </div>
 </template>
 <script lang="ts">

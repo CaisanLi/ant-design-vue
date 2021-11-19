@@ -17,12 +17,12 @@ A group of radio components.
 </docs>
 <template>
   <div>
-    <a-radio-group v-model:value="value">
-      <a-radio :value="1">A</a-radio>
-      <a-radio :value="2">B</a-radio>
-      <a-radio :value="3">C</a-radio>
-      <a-radio :value="4">D</a-radio>
-    </a-radio-group>
+    <z-radio-group v-model:value="value">
+      <z-radio :value="1">A</z-radio>
+      <z-radio :value="2">B</z-radio>
+      <z-radio :value="3">C</z-radio>
+      <z-radio :value="4">D</z-radio>
+    </z-radio-group>
   </div>
 </template>
 <script lang="ts">

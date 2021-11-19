@@ -9,7 +9,7 @@ export interface AddButtonProps {
 }
 
 export default defineComponent({
-  name: 'AddButton',
+  name: 'ZddButton',
   inheritAttrs: false,
   props: {
     prefixCls: String,

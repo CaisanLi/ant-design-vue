@@ -20,7 +20,7 @@ We can upload serveral files at once in modern browsers by giving the input the 
 </docs>
 
 <template>
-  <a-upload-dragger
+  <z-upload-dragger
     v-model:fileList="fileList"
     name="file"
     :multiple="true"
@@ -35,7 +35,7 @@ We can upload serveral files at once in modern browsers by giving the input the 
       Support for a single or bulk upload. Strictly prohibit from uploading company data or other
       band files
     </p>
-  </a-upload-dragger>
+  </z-upload-dragger>
 </template>
 <script lang="ts">
 import { InboxOutlined } from '@ant-design/icons-vue';

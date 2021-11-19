@@ -17,9 +17,9 @@ you are not authorized to access this page.
 </docs>
 
 <template>
-  <a-result status="403" title="403" sub-title="Sorry, you are not authorized to access this page.">
+  <z-result status="403" title="403" sub-title="Sorry, you are not authorized to access this page.">
     <template #extra>
-      <a-button type="primary">Back Home</a-button>
+      <z-button type="primary">Back Home</z-button>
     </template>
-  </a-result>
+  </z-result>
 </template>

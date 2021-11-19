@@ -15,14 +15,14 @@ Use `rowClassName` Customize the table with Striped.
 </docs>
 
 <template>
-  <a-table
+  <z-table
     class="ant-table-striped"
     size="middle"
     :columns="columns"
     :data-source="data"
     :row-class-name="(_record, index) => (index % 2 === 1 ? 'table-striped' : null)"
   />
-  <a-table
+  <z-table
     class="ant-table-striped"
     size="middle"
     :columns="columns"

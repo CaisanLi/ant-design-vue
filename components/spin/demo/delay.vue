@@ -17,15 +17,15 @@ Specifies a delay for loading state. If `spinning` ends during delay, loading st
 </docs>
 
 <template>
-  <a-spin :spinning="spinning" :delay="delayTime">
-    <a-alert
+  <z-spin :spinning="spinning" :delay="delayTime">
+    <z-alert
       message="Alert message title"
       description="Further details about the context of this alert."
-    ></a-alert>
-  </a-spin>
+    ></z-alert>
+  </z-spin>
   <div class="spin-state">
     Loading state：
-    <a-switch v-model:checked="spinning" />
+    <z-switch v-model:checked="spinning" />
   </div>
 </template>
 <script lang="ts">

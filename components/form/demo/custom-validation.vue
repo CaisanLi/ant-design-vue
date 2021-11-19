@@ -19,7 +19,7 @@ See more advanced usage at [async-validator](https://github.com/yiminghe/async-v
 </docs>
 
 <template>
-  <a-form
+  <z-form
     ref="formRef"
     name="custom-validation"
     :model="formState"
@@ -29,20 +29,20 @@ See more advanced usage at [async-validator](https://github.com/yiminghe/async-v
     @validate="handleValidate"
     @finishFailed="handleFinishFailed"
   >
-    <a-form-item has-feedback label="Password" name="pass">
-      <a-input v-model:value="formState.pass" type="password" autocomplete="off" />
-    </a-form-item>
-    <a-form-item has-feedback label="Confirm" name="checkPass">
-      <a-input v-model:value="formState.checkPass" type="password" autocomplete="off" />
-    </a-form-item>
-    <a-form-item has-feedback label="Age" name="age">
-      <a-input-number v-model:value="formState.age" />
-    </a-form-item>
-    <a-form-item :wrapper-col="{ span: 14, offset: 4 }">
-      <a-button type="primary" html-type="submit">Submit</a-button>
-      <a-button style="margin-left: 10px" @click="resetForm">Reset</a-button>
-    </a-form-item>
-  </a-form>
+    <z-form-item has-feedback label="Password" name="pass">
+      <z-input v-model:value="formState.pass" type="password" autocomplete="off" />
+    </z-form-item>
+    <z-form-item has-feedback label="Confirm" name="checkPass">
+      <z-input v-model:value="formState.checkPass" type="password" autocomplete="off" />
+    </z-form-item>
+    <z-form-item has-feedback label="Age" name="age">
+      <z-input-number v-model:value="formState.age" />
+    </z-form-item>
+    <z-form-item :wrapper-col="{ span: 14, offset: 4 }">
+      <z-button type="primary" html-type="submit">Submit</z-button>
+      <z-button style="margin-left: 10px" @click="resetForm">Reset</z-button>
+    </z-form-item>
+  </z-form>
 </template>
 <script lang="ts">
 import type { RuleObject } from 'ant-design-vue/es/form';

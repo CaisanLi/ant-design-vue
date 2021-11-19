@@ -5,7 +5,7 @@ import PropTypes from '../_util/vue-types';
 import useConfigInject from '../_util/hooks/useConfigInject';
 
 const CheckableTag = defineComponent({
-  name: 'ACheckableTag',
+  name: 'ZCheckableTag',
   props: {
     prefixCls: PropTypes.string,
     checked: PropTypes.looseBool,

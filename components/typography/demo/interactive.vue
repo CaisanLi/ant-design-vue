@@ -15,22 +15,22 @@ title:
 Provide additional interactive capacity of editable and copyable.
 </docs>
 <template>
-  <a-typography-paragraph v-model:content="editableStr" editable />
-  <a-typography-paragraph v-model:content="customIconStr" editable>
+  <z-typography-paragraph v-model:content="editableStr" editable />
+  <z-typography-paragraph v-model:content="customIconStr" editable>
     <template #editableIcon><HighlightOutlined /></template>
     <template #editableTooltip>click to edit text</template>
-  </a-typography-paragraph>
-  <a-typography-paragraph v-model:content="hideTooltipStr" :editable="{ tooltip: false }" />
-  <a-typography-paragraph
+  </z-typography-paragraph>
+  <z-typography-paragraph v-model:content="hideTooltipStr" :editable="{ tooltip: false }" />
+  <z-typography-paragraph
     v-model:content="lengthLimitedStr"
     :editable="{ maxlength: 50, autoSize: { maxRows: 5, minRows: 3 } }"
   />
 
-  <a-typography-paragraph copyable>This is a copyable text.</a-typography-paragraph>
-  <a-typography-paragraph :copyable="{ text: 'Hello, Ant Design!' }">
+  <z-typography-paragraph copyable>This is a copyable text.</z-typography-paragraph>
+  <z-typography-paragraph :copyable="{ text: 'Hello, Ant Design!' }">
     Replace copy text.
-  </a-typography-paragraph>
-  <a-typography-paragraph copyable content="Custom Copy icon and replace tooltips text.">
+  </z-typography-paragraph>
+  <z-typography-paragraph copyable content="Custom Copy icon and replace tooltips text.">
     <template #copyableIcon="{ copied }">
       <SmileOutlined v-if="!copied" key="copy-icon" />
       <SmileFilled v-else key="copied-icon" />
@@ -39,10 +39,10 @@ Provide additional interactive capacity of editable and copyable.
       <span v-if="!copied" key="copy-tooltip">click here</span>
       <span v-else key="copied-tooltip">you clicked!!</span>
     </template>
-  </a-typography-paragraph>
-  <a-typography-paragraph :copyable="{ tooltips: false }">
+  </z-typography-paragraph>
+  <z-typography-paragraph :copyable="{ tooltips: false }">
     Hide Copy tooltips.
-  </a-typography-paragraph>
+  </z-typography-paragraph>
 </template>
 <script lang="ts">
 import { defineComponent, ref, watch } from 'vue';

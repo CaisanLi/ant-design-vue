@@ -11,11 +11,11 @@ cover: https://gw.alipayobjects.com/zos/antfincdn/UZYqMizXHaj/Steps.svg
 ## API
 
 ```jsx
-<a-steps>
-  <a-step title="first step" />
-  <a-step title="second step" />
-  <a-step title="third step" />
-</a-steps>
+<z-steps>
+  <z-step title="first step" />
+  <z-step title="second step" />
+  <z-step title="third step" />
+</z-steps>
 ```
 
 ### Steps
@@ -38,7 +38,7 @@ The whole of the step bar.
 #### Steps Events
 
 | Events Name | Description                  | Arguments         | Version |
-| ----------- | ---------------------------- | ----------------- | ------- |
+| ----------- | ---------------------------- | ----------------- | ------- | ----- |
 | change      | Trigger when Step is changed | (current) => void | -       | 1.5.0 |
 
 ### Steps.Step

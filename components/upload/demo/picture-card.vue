@@ -17,7 +17,7 @@ After users upload picture, the thumbnail will be shown in list. The upload butt
 
 <template>
   <div class="clearfix">
-    <a-upload
+    <z-upload
       v-model:file-list="fileList"
       action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
       list-type="picture-card"
@@ -27,10 +27,10 @@ After users upload picture, the thumbnail will be shown in list. The upload butt
         <plus-outlined />
         <div class="ant-upload-text">Upload</div>
       </div>
-    </a-upload>
-    <a-modal :visible="previewVisible" :footer="null" @cancel="handleCancel">
+    </z-upload>
+    <z-modal :visible="previewVisible" :footer="null" @cancel="handleCancel">
       <img alt="example" style="width: 100%" :src="previewImage" />
-    </a-modal>
+    </z-modal>
   </div>
 </template>
 <script lang="ts">
