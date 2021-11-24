@@ -13,7 +13,7 @@ const Paragraph: FunctionalComponent<BlockProps> = (props, { slots, attrs }) => 
   return <Base {...paragraphProps} v-slots={slots}></Base>;
 };
 
-Paragraph.displayName = 'ATypographyParagraph';
+Paragraph.displayName = 'ZTypographyParagraph';
 Paragraph.inheritAttrs = false;
 Paragraph.props = omit(baseProps(), ['component']) as any;
 
