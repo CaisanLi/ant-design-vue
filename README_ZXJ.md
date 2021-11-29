@@ -1,5 +1,11 @@
 ### 发版记录
 
+---
+
+- 2021/11/29 v1.0.2
+  1. 修复 默认语言为中文
+  2. 修复 一些前缀未改到的组件
+  3. 更新 官方`release 3.0.0-alpha.13`
 - 2021/11/24 v1.0.1
   1. 修复 一些前缀未改到的组件
   2. 更新 官方 `release 3.0.0-alpha.12`
@@ -7,6 +13,8 @@
   1. 初始化
 
 ### 调整组件
+
+---
 
 1. Button
 
@@ -63,4 +71,22 @@
 1. 新增`logo`组件
 2. 新增number,height,width,titleStyle属性
 3. 新增title插槽
+```
+
+### 发布
+
+已在`package.json`的`publishConfig`配置私有的 NPM 仓库地址，账号和密码请问当时的前端负责人。
+
+> 发布前请注意更新`package.json`的`version`
+
+1. 登录私有仓库账号
+
+```javascript
+npm login --registry=http://192.168.5.16:8081/repository/npm-hosted/
+```
+
+2. 打包并发布
+
+```javascript
+npm run pub
 ```
