@@ -10,7 +10,9 @@
           class="drawer drawer-left"
           :visible="visible"
           wrapper-class-name="drawer-wrapper"
+          width="60%"
         >
+          <surelyVueVue />
           <Menu :menus="dataSource" :active-menu-item="activeMenuItem" :is-zh-c-n="isZhCN" />
           <template #handle>
             <div class="drawer-handle" @click="handleClickShowButton">
@@ -24,7 +26,10 @@
         <z-col :xxl="4" :xl="5" :lg="6" :md="6" :sm="24" :xs="24" class="main-menu">
           <z-affix>
             <section class="main-menu-inner">
-              <Sponsors :is-c-n="isZhCN" />
+              <!-- <Sponsors :is-c-n="isZhCN" /> -->
+              <div>
+                <surelyVueVue />
+              </div>
               <Menu :menus="dataSource" :active-menu-item="activeMenuItem" :is-zh-c-n="isZhCN" />
             </section>
           </z-affix>
@@ -87,6 +92,7 @@ import Sponsors from '../components/rice/sponsors.vue';
 import RightBottomAd from '../components/rice/right_bottom_rice.vue';
 import { CloseOutlined, MenuOutlined } from '@ant-design/icons-vue';
 import ThemeIcon from './ThemeIcon.vue';
+import surelyVueVue from '../components/surelyVue.vue';
 
 const rControl = /[\u0000-\u001f]/g;
 const rSpecial = /[\s~`!@#$%^&*()\-_+=[\]{}|\\;:"'<>,.?/]+/g;
@@ -105,6 +111,7 @@ export default defineComponent({
     CloseOutlined,
     MenuOutlined,
     ThemeIcon,
+    surelyVueVue,
   },
   setup() {
     const visible = ref(false);
