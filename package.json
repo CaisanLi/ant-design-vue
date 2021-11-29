@@ -50,7 +50,7 @@
     "codecov": "codecov",
     "routes": "node site/scripts/genrateRoutes.js",
     "tsc": "tsc --noEmit",
-    "site": "yarn routes && ./node_modules/vite/bin/vite.js build site --base=https://next.antdv.com/",
+    "site": "yarn routes && ./node_modules/vite/bin/vite.js build site",
     "pub:site": "npm run site && node site/scripts/pushToOSS.js",
     "prepare": "husky install"
   },
