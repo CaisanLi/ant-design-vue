@@ -58,7 +58,7 @@ export default defineComponent({
       val => {
         clearTimeout(delayTimeoutRef.value);
         if (typeof loadingOrDelay.value === 'number') {
-          delayTimeoutRef.value = window.setTimeout(() => {
+          delayTimeoutRef.value = setTimeout(() => {
             innerLoading.value = val;
           }, loadingOrDelay.value);
         } else {

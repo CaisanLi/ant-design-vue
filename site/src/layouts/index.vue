@@ -23,7 +23,7 @@
         </z-drawer>
       </template>
       <template v-else>
-        <z-col :xxl="4" :xl="5" :lg="6" :md="6" :sm="24" :xs="24" class="main-menu">
+        <z-col :xxxl="4" :xxl="4" :xl="5" :lg="6" :md="6" :sm="24" :xs="24" class="main-menu">
           <z-affix>
             <section class="main-menu-inner">
               <!-- <Sponsors :is-c-n="isZhCN" /> -->
@@ -35,7 +35,7 @@
           </z-affix>
         </z-col>
       </template>
-      <z-col :xxl="20" :xl="19" :lg="18" :md="18" :sm="24" :xs="24">
+      <z-col :xxxl="20" :xxl="20" :xl="19" :lg="18" :md="18" :sm="24" :xs="24">
         <section :class="mainContainerClass">
           <TopAd :is-c-n="isZhCN" />
           <Demo v-if="isDemo" :page-data="pageData" :is-zh-c-n="isZhCN">
