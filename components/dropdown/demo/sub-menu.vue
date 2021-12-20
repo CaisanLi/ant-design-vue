@@ -23,18 +23,18 @@ The menu has multiple levels.
       <DownOutlined />
     </a>
     <template #overlay>
-      <z-menu>
+      <zmenu>
         <z-menu-item>1st menu item</z-menu-item>
         <z-menu-item>2nd menu item</z-menu-item>
-        <z-sub-menu key="test" title="sub menu">
+        <z-sub-menu key="sub1" title="sub menu">
           <z-menu-item>3rd menu item</z-menu-item>
           <z-menu-item>4th menu item</z-menu-item>
         </z-sub-menu>
-        <z-sub-menu title="disabled sub menu" disabled>
+        <z-sub-menu key="sub2" title="disabled sub menu" disabled>
           <z-menu-item>5d menu item</z-menu-item>
           <z-menu-item>6th menu item</z-menu-item>
         </z-sub-menu>
-      </z-menu>
+      </zmenu>
     </template>
   </z-dropdown>
 </template>

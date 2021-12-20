@@ -2,7 +2,7 @@ import { flattenChildren, getPropsSlot, isValidElement } from '../../_util/props
 import PropTypes from '../../_util/vue-types';
 import type { ExtractPropTypes } from 'vue';
 import { computed, defineComponent, getCurrentInstance, onBeforeUnmount, ref, watch } from 'vue';
-import { useInjectKeyPath } from './hooks/useKeyPath';
+import { useInjectKeyPath, useMeasure } from './hooks/useKeyPath';
 import { useInjectFirstLevel, useInjectMenu } from './hooks/useMenuContext';
 import { cloneElement } from '../../_util/vnode';
 import Tooltip from '../../tooltip';
@@ -19,7 +19,7 @@ const menuItemProps = {
   disabled: Boolean,
   danger: Boolean,
   title: { type: [String, Boolean], default: undefined },
-  icon: PropTypes.VNodeChild,
+  icon: PropTypes.any,
 };
 
 export type MenuItemProps = Partial<ExtractPropTypes<typeof menuItemProps>>;
@@ -32,7 +32,7 @@ export default defineComponent({
   slots: ['icon', 'title'],
   setup(props, { slots, emit, attrs }) {
     const instance = getCurrentInstance();
-
+    const isMeasure = useMeasure();
     const key =
       typeof instance.vnode.key === 'symbol' ? String(instance.vnode.key) : instance.vnode.key;
     devWarning(
@@ -70,7 +70,6 @@ export default defineComponent({
       parentKeys,
       isLeaf: true,
     };
-
     registerMenuInfo(eventKey, menuInfo);
 
     onBeforeUnmount(() => {
@@ -174,6 +173,7 @@ export default defineComponent({
     const directionStyle = useDirectionStyle(computed(() => keysPath.value.length));
 
     return () => {
+      if (isMeasure) return null;
       const title = props.title ?? slots.title?.();
       const children = flattenChildren(slots.default?.());
       const childrenLength = children.length;

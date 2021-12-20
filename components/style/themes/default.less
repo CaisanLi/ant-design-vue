@@ -11,15 +11,33 @@
 
 // -------- Colors -----------
 @primary-color: @blue-6;
+@primary-color-hover: color(~`colorPalette('@{primary-color}', 5) `);
+@primary-color-active: color(~`colorPalette('@{primary-color}', 7) `);
+@primary-color-outline: fade(@primary-color, @outline-fade);
 @info-color: @primary-color;
 @success-color: @green-6;
 @processing-color: @blue-6;
 @error-color: @red-6;
 @highlight-color: @red-5;
-@warning-color: @gold-6;
 @normal-color: #d9d9d9;
 @white: #fff;
 @black: #000;
+
+// >>> Warning
+@warning-color: @gold-6;
+@warning-color-hover: color(~`colorPalette('@{warning-color}', 5) `);
+@warning-color-active: color(~`colorPalette('@{warning-color}', 7) `);
+@warning-color-outline: fade(@warning-color, @outline-fade);
+@warning-color-deprecated-bg: color(~`colorPalette('@{warning-color}', 1) `);
+@warning-color-deprecated-border: color(~`colorPalette('@{warning-color}', 3) `);
+
+// >>> Error
+@error-color: @red-5;
+@error-color-hover: color(~`colorPalette('@{error-color}', 5) `);
+@error-color-active: color(~`colorPalette('@{error-color}', 7) `);
+@error-color-outline: fade(@error-color, @outline-fade);
+@error-color-deprecated-bg: color(~`colorPalette('@{error-color}', 1) `);
+@error-color-deprecated-border: color(~`colorPalette('@{error-color}', 3) `);
 
 // Color used by default to control hover and active backgrounds and for
 // alert info backgrounds.
@@ -141,6 +159,7 @@
 @outline-blur-size: 0;
 @outline-width: 2px;
 @outline-color: @primary-color;
+@outline-fade: 20%;
 
 @background-color-light: hsv(0, 0, 98%); // background of header and selected item
 @background-color-base: hsv(0, 0, 96%); // Default grey background color
@@ -379,16 +398,26 @@
 
 // Input
 // ---
-@input-height-base: 32px;
-@input-height-lg: 40px;
-@input-height-sm: 24px;
+@input-height-base: @height-base;
+@input-height-lg: @height-lg;
+@input-height-sm: @height-sm;
 @input-padding-horizontal: @control-padding-horizontal - 1px;
 @input-padding-horizontal-base: @input-padding-horizontal;
 @input-padding-horizontal-sm: @control-padding-horizontal-sm - 1px;
 @input-padding-horizontal-lg: @input-padding-horizontal;
-@input-padding-vertical-base: 4px;
-@input-padding-vertical-sm: 0px;
-@input-padding-vertical-lg: 6.5px;
+@input-padding-vertical-base: max(
+  (round(((@input-height-base - @font-size-base * @line-height-base) / 2) * 10) / 10) -
+    @border-width-base,
+  3px
+);
+@input-padding-vertical-sm: max(
+  (round(((@input-height-sm - @font-size-base * @line-height-base) / 2) * 10) / 10) -
+    @border-width-base,
+  0
+);
+@input-padding-vertical-lg: (
+    ceil(((@input-height-lg - @font-size-lg * @line-height-base) / 2) * 10) / 10
+  ) - @border-width-base;
 @input-placeholder-color: hsv(0, 0, 75%);
 @input-color: @text-color;
 @input-icon-color: @input-color;
@@ -404,6 +433,7 @@
 @input-disabled-bg: @disabled-bg;
 @input-outline-offset: 0 0;
 @input-icon-hover-color: fade(@black, 85%);
+@input-disabled-color: @disabled-color;
 
 // Mentions
 // ---

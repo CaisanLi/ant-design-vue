@@ -30,7 +30,7 @@ export const siderProps = {
   defaultCollapsed: PropTypes.looseBool,
   reverseArrow: PropTypes.looseBool,
   zeroWidthTriggerStyle: PropTypes.style,
-  trigger: PropTypes.VNodeChild,
+  trigger: PropTypes.any,
   width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   collapsedWidth: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   breakpoint: PropTypes.oneOf(tuple('xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl')),
@@ -111,6 +111,8 @@ export default defineComponent({
       return responsiveHandlerRef.value!(mql);
     }
     const uniqueId = generateId('ant-sider-');
+    siderHook && siderHook.addSider(uniqueId);
+
     onMounted(() => {
       if (typeof window !== 'undefined') {
         const { matchMedia } = window;
@@ -124,7 +126,6 @@ export default defineComponent({
           responsiveHandler(mql);
         }
       }
-      siderHook && siderHook.addSider(uniqueId);
     });
     onBeforeUnmount(() => {
       try {
@@ -200,7 +201,7 @@ export default defineComponent({
         attrs.class,
       );
       return (
-        <aside {...attrs} class={siderCls} style={divStyle} ref={ref}>
+        <aside {...attrs} class={siderCls} style={divStyle}>
           <div class={`${pre}-children`}>{slots.default?.()}</div>
           {collapsible || (below.value && zeroWidthTrigger) ? triggerDom : null}
         </aside>

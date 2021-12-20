@@ -10,6 +10,39 @@
 
 ---
 
+## 3.0.0-alpha.16
+
+`2021-12-19`
+
+- 🌟 重构 Input，新增无边框配置
+- Table
+  - 🌟 Table customCell 新增 column 参数[#5052](https://github.com/vueComponent/ant-design-vue/issues/5052)
+  - 🐞 修复 Table 翻页时，控制台输出错误 warning 问题 [#5029](https://github.com/vueComponent/ant-design-vue/issues/5029)
+  - 🐞 修复 Table 翻页组件弹出框隐藏时，弹框位置错误问题 [#5028](https://github.com/vueComponent/ant-design-vue/issues/5028)
+- 🐞 修复 Rate 组件全局 prefixCls 未生效问题 [#5026](https://github.com/vueComponent/ant-design-vue/issues/5026)
+- 🐞 修复 Menu 自定义 class 未生效问题 [#5038](https://github.com/vueComponent/ant-design-vue/issues/5038)
+- 🐞 修复 Carousel 移动设备触摸时，打印 warning 问题 [#5040](https://github.com/vueComponent/ant-design-vue/issues/5040)
+- 🐞 修复自定义 prefixCls 时，Select 无法选中问题 [#5023](https://github.com/vueComponent/ant-design-vue/issues/5023)
+
+## 3.0.0-alpha.15
+
+`2021-12-12`
+
+- 🌟 优化 Layout 性能
+- 🌟 Menu 支持懒加载(SubMenu 必须填写 key)，提升性能 [#4812](https://github.com/vueComponent/ant-design-vue/issues/4812)
+- 🌟 Input、Textarea 支持 lazy 指令修饰符 [#4951](https://github.com/vueComponent/ant-design-vue/issues/4951)
+- 🐞 Select placeholder 支持 slot [#4995](https://github.com/vueComponent/ant-design-vue/issues/4995)
+- 🐞 修复 Radio cursor 样式 [#4997](https://github.com/vueComponent/ant-design-vue/issues/4997)
+- 🐞 修复 Statistic.Countdown 属性支持插槽 [#4996](https://github.com/vueComponent/ant-design-vue/issues/4996)
+- 🐞 修复 FormItem name 属性类型错误 [#4998](https://github.com/vueComponent/ant-design-vue/issues/4998)
+- 🐞 修复 Menu 隐藏动画丢失问题
+- 🐞 修复 FormItem explain style 未响应问题 [#5004](https://github.com/vueComponent/ant-design-vue/issues/5004)
+- 🐞 修复 Slider tooltip 特殊条件不显示问题
+- 🐞 修复 Dropdown 特殊条件触发两次 click 事件问题 [#5002](https://github.com/vueComponent/ant-design-vue/issues/5002)
+- 🐞 修复部分组件在 SSR 下报错问题，支持 Nuxt
+- 🐞 修复下拉框组件，在边缘处位置跳动问题 [#5008](https://github.com/vueComponent/ant-design-vue/issues/5008)
+- 🐞 修复 Table 类型错误 [#5009](https://github.com/vueComponent/ant-design-vue/issues/5009)
+
 ## 3.0.0-alpha.14
 
 `2021-12-05`

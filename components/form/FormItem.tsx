@@ -76,16 +76,16 @@ function getPropByPath(obj: any, namePathList: any, strict?: boolean) {
 export const formItemProps = {
   htmlFor: PropTypes.string,
   prefixCls: PropTypes.string,
-  label: PropTypes.VNodeChild,
-  help: PropTypes.VNodeChild,
-  extra: PropTypes.VNodeChild,
+  label: PropTypes.any,
+  help: PropTypes.any,
+  extra: PropTypes.any,
   labelCol: { type: Object as PropType<ColProps> },
   wrapperCol: { type: Object as PropType<ColProps> },
   hasFeedback: PropTypes.looseBool.def(false),
   colon: PropTypes.looseBool,
   labelAlign: PropTypes.oneOf(tuple('left', 'right')),
-  prop: { type: [String, Number, Array] as PropType<string | number | string[] | number[]> },
-  name: { type: [String, Number, Array] as PropType<string | number | string[] | number[]> },
+  prop: { type: [String, Number, Array] as PropType<string | number | Array<string | number>> },
+  name: { type: [String, Number, Array] as PropType<string | number | Array<string | number>> },
   rules: PropTypes.oneOfType([Array, Object]),
   autoLink: PropTypes.looseBool.def(true),
   required: PropTypes.looseBool,
@@ -245,13 +245,13 @@ export default defineComponent({
       validateRules({ triggerName: 'change' });
     };
     const clearValidate = () => {
-      validateState.value = '';
+      validateState.value = props.validateStatus;
       validateDisabled.value = false;
       errors.value = [];
     };
 
     const resetField = () => {
-      validateState.value = '';
+      validateState.value = props.validateStatus;
       validateDisabled.value = true;
       errors.value = [];
       const model = formContext.model.value || {};

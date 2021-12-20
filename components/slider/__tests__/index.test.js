@@ -15,13 +15,13 @@ describe('Slider', () => {
     });
     await asyncExpect(() => {
       wrapper.findAll('.ant-slider-handle')[0].trigger('mouseenter');
-    });
+    }, 1000);
     await asyncExpect(() => {
       expect(document.body.innerHTML).toMatchSnapshot();
       wrapper.findAll('.ant-slider-handle')[0].trigger('mouseleave');
-    }, 100);
+    }, 1000);
     await asyncExpect(() => {
       expect(document.body.innerHTML).toMatchSnapshot();
-    }, 100);
+    }, 1000);
   });
 });

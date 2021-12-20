@@ -21,7 +21,7 @@ export type Key = number | string;
 
 export type FixedType = 'left' | 'right' | boolean;
 
-export type DefaultRecordType = Record<string, any>;
+export type DefaultRecordType = any;
 
 export type TableLayout = 'auto' | 'fixed';
 
@@ -136,6 +136,7 @@ export interface StickyOffsets {
 export type GetComponentProps<DataType> = (
   data: DataType,
   index?: number,
+  column?: ColumnType<any>,
 ) => Omit<HTMLAttributes, 'style'> & { style?: CSSProperties };
 
 type Component<P> = DefineComponent<P> | FunctionalComponent<P> | string;

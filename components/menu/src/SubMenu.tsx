@@ -1,15 +1,20 @@
 import PropTypes from '../../_util/vue-types';
 import type { PropType, ExtractPropTypes } from 'vue';
 import { computed, defineComponent, getCurrentInstance, ref, watch, onBeforeUnmount } from 'vue';
-import useProvideKeyPath, { useInjectKeyPath } from './hooks/useKeyPath';
-import { useInjectMenu, useProvideFirstLevel, MenuContextProvider } from './hooks/useMenuContext';
+import useProvideKeyPath, { useInjectKeyPath, useMeasure } from './hooks/useKeyPath';
+import {
+  useInjectMenu,
+  useProvideFirstLevel,
+  MenuContextProvider,
+  useProvideForceRender,
+  useInjectForceRender,
+} from './hooks/useMenuContext';
 import { getPropsSlot, isValidElement } from '../../_util/props-util';
 import classNames from '../../_util/classNames';
 import useDirectionStyle from './hooks/useDirectionStyle';
 import PopupTrigger from './PopupTrigger';
 import SubMenuList from './SubMenuList';
 import InlineSubMenuList from './InlineSubMenuList';
-import Transition, { getTransitionProps } from '../../_util/transition';
 import { cloneElement } from '../../_util/vnode';
 import Overflow from '../../vc-overflow';
 import devWarning from '../../vc-util/devWarning';
@@ -18,8 +23,8 @@ import isValid from '../../_util/isValid';
 let indexGuid = 0;
 
 const subMenuProps = {
-  icon: PropTypes.VNodeChild,
-  title: PropTypes.VNodeChild,
+  icon: PropTypes.any,
+  title: PropTypes.any,
   disabled: Boolean,
   level: Number,
   popupClassName: String,
@@ -39,7 +44,7 @@ export default defineComponent({
   emits: ['titleClick', 'mouseenter', 'mouseleave'],
   setup(props, { slots, attrs, emit }) {
     useProvideFirstLevel(false);
-
+    const isMeasure = useMeasure();
     const instance = getCurrentInstance();
     const vnodeKey =
       typeof instance.vnode.key === 'symbol' ? String(instance.vnode.key) : instance.vnode.key;
@@ -54,7 +59,6 @@ export default defineComponent({
       (isValid(vnodeKey) ? `sub_menu_${++indexGuid}_$$_${vnodeKey}` : (key as string));
     const { parentEventKeys, parentInfo, parentKeys } = useInjectKeyPath();
     const keysPath = computed(() => [...parentKeys.value, key]);
-    const eventKeysPath = computed(() => [...parentEventKeys.value, eventKey]);
     const childrenEventKeys = ref([]);
     const menuInfo = {
       eventKey,
@@ -87,17 +91,23 @@ export default defineComponent({
       onOpenChange,
       registerMenuInfo,
       unRegisterMenuInfo,
-      selectedSubMenuEventKeys,
-      motion,
-      defaultMotions,
+      selectedSubMenuKeys,
       expandIcon: menuExpandIcon,
     } = useInjectMenu();
 
-    registerMenuInfo(eventKey, menuInfo);
+    const hasKey = vnodeKey !== undefined && vnodeKey !== null;
+    // If not set key, use forceRender = true for children
+    // 如果没有 key，强制 render 子元素
+    const forceRender = !isMeasure && (useInjectForceRender() || !hasKey);
+    useProvideForceRender(forceRender);
 
-    onBeforeUnmount(() => {
-      unRegisterMenuInfo(eventKey);
-    });
+    if ((isMeasure && hasKey) || (!isMeasure && !hasKey) || forceRender) {
+      registerMenuInfo(eventKey, menuInfo);
+
+      onBeforeUnmount(() => {
+        unRegisterMenuInfo(eventKey);
+      });
+    }
 
     const subMenuPrefixCls = computed(() => `${prefixCls.value}-submenu`);
     const mergedDisabled = computed(() => contextDisabled.value || props.disabled);
@@ -114,7 +124,7 @@ export default defineComponent({
 
     // =============================== Select ===============================
     const childrenSelected = computed(() => {
-      return selectedSubMenuEventKeys.value.includes(eventKey);
+      return selectedSubMenuKeys.value.includes(key);
     });
 
     const isActive = ref(false);
@@ -137,7 +147,7 @@ export default defineComponent({
 
       // Trigger open by click when mode is `inline`
       if (mode.value === 'inline') {
-        onOpenChange(eventKey, !originOpen.value);
+        onOpenChange(key, !originOpen.value);
       }
     };
 
@@ -155,12 +165,12 @@ export default defineComponent({
     };
 
     // ========================== DirectionStyle ==========================
-    const directionStyle = useDirectionStyle(computed(() => eventKeysPath.value.length));
+    const directionStyle = useDirectionStyle(computed(() => keysPath.value.length));
 
     // >>>>> Visible change
     const onPopupVisibleChange = (newVisible: boolean) => {
       if (mode.value !== 'inline') {
-        onOpenChange(eventKey, newVisible);
+        onOpenChange(key, newVisible);
       }
     };
 
@@ -185,7 +195,7 @@ export default defineComponent({
     const renderTitle = (title: any, icon: any) => {
       if (!icon) {
         return inlineCollapsed.value &&
-          !parentEventKeys.value.length &&
+          !parentKeys.value.length &&
           title &&
           typeof title === 'string' ? (
           <div class={`${prefixCls.value}-inline-collapsed-noicon`}>{title.charAt(0)}</div>
@@ -212,24 +222,21 @@ export default defineComponent({
 
     // Cache mode if it change to `inline` which do not have popup motion
     const triggerModeRef = computed(() => {
-      return mode.value !== 'inline' && eventKeysPath.value.length > 1 ? 'vertical' : mode.value;
+      return mode.value !== 'inline' && keysPath.value.length > 1 ? 'vertical' : mode.value;
     });
 
     const renderMode = computed(() => (mode.value === 'horizontal' ? 'vertical' : mode.value));
 
-    const style = ref({});
-    const className = ref('');
-    const mergedMotion = computed(() => {
-      const m = motion.value || defaultMotions.value?.[mode.value] || defaultMotions.value?.other;
-      const res = typeof m === 'function' ? m(style, className) : m;
-      return res ? getTransitionProps(res.name) : undefined;
-    });
-
     const subMenuTriggerModeRef = computed(() =>
       triggerModeRef.value === 'horizontal' ? 'vertical' : triggerModeRef.value,
     );
-
     return () => {
+      if (isMeasure) {
+        if (!hasKey) {
+          return null;
+        }
+        return slots.default?.();
+      }
       const subMenuPrefixClsValue = subMenuPrefixCls.value;
       const baseTitleNode = () => {
         const icon = getPropsSlot(slots, props, 'icon');
@@ -273,13 +280,11 @@ export default defineComponent({
             disabled={mergedDisabled.value}
             onVisibleChange={onPopupVisibleChange}
             v-slots={{
-              popup: ({ visible }) => (
+              popup: () => (
                 <MenuContextProvider mode={subMenuTriggerModeRef.value} isRootMenu={false}>
-                  <Transition {...mergedMotion.value}>
-                    <SubMenuList v-show={visible} id={popupId} ref={popupRef}>
-                      {slots.default?.()}
-                    </SubMenuList>
-                  </Transition>
+                  <SubMenuList id={popupId} ref={popupRef}>
+                    {slots.default?.()}
+                  </SubMenuList>
                 </MenuContextProvider>
               ),
             }}

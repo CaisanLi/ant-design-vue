@@ -2,11 +2,11 @@ import Trigger from '../../vc-trigger';
 import type { PropType } from 'vue';
 import { computed, defineComponent, onBeforeUnmount, ref, watch } from 'vue';
 import type { MenuMode } from './interface';
-import { useInjectMenu } from './hooks/useMenuContext';
+import { useInjectForceRender, useInjectMenu } from './hooks/useMenuContext';
 import { placements, placementsRtl } from './placements';
-import type { RafFrame } from '../../_util/raf';
 import raf from '../../_util/raf';
 import classNames from '../../_util/classNames';
+import { getTransitionProps } from '../../_util/transition';
 
 const popupPlacementMap = {
   horizontal: 'bottomLeft',
@@ -39,8 +39,12 @@ export default defineComponent({
       builtinPlacements,
       triggerSubMenuAction,
       isRootMenu,
+      forceSubMenuRender,
+      motion,
+      defaultMotions,
+      mode,
     } = useInjectMenu();
-
+    const forceRender = useInjectForceRender();
     const placement = computed(() =>
       rtl.value
         ? { ...placementsRtl, ...builtinPlacements.value }
@@ -49,7 +53,7 @@ export default defineComponent({
 
     const popupPlacement = computed(() => popupPlacementMap[props.mode]);
 
-    const visibleRef = ref<RafFrame>();
+    const visibleRef = ref<number>();
     watch(
       () => props.visible,
       visible => {
@@ -67,6 +71,13 @@ export default defineComponent({
     const onVisibleChange = (visible: boolean) => {
       emit('visibleChange', visible);
     };
+    const style = ref({});
+    const className = ref('');
+    const mergedMotion = computed(() => {
+      const m = motion.value || defaultMotions.value?.[mode.value] || defaultMotions.value?.other;
+      const res = typeof m === 'function' ? m(style, className) : m;
+      return res ? getTransitionProps(res.name, { css: true }) : undefined;
+    });
     return () => {
       const { prefixCls, popupClassName, mode, popupOffset, disabled } = props;
       return (
@@ -91,7 +102,8 @@ export default defineComponent({
           mouseEnterDelay={subMenuOpenDelay.value}
           mouseLeaveDelay={subMenuCloseDelay.value}
           onPopupVisibleChange={onVisibleChange}
-          forceRender={true}
+          forceRender={forceRender || forceSubMenuRender.value}
+          popupAnimation={mergedMotion.value}
           v-slots={{
             popup: () => {
               return slots.popup?.({ visible: innerVisible.value });

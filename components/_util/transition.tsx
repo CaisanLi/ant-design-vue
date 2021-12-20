@@ -26,7 +26,7 @@ export const getTransitionProps = (transitionName: string, opt: TransitionProps 
         // appearActiveClass: `antdv-base-transtion`,
         // appearToClass: `${transitionName}-appear ${transitionName}-appear-active`,
         enterFromClass: `${transitionName}-enter ${transitionName}-enter-prepare`,
-        // enterActiveClass: `${transitionName}-enter ${transitionName}-enter-active`,
+        enterActiveClass: `${transitionName}-enter ${transitionName}-enter-prepare`,
         enterToClass: `${transitionName}-enter ${transitionName}-enter-active`,
         leaveFromClass: ` ${transitionName}-leave`,
         leaveActiveClass: `${transitionName}-leave ${transitionName}-leave-active`,
@@ -59,11 +59,16 @@ let Transition = T;
 let TransitionGroup = TG;
 
 if (process.env.NODE_ENV === 'test') {
+  let warn = true;
   Transition = defineComponent({
     name: 'TransitionForTest',
     inheritAttrs: false,
     setup(_props, { slots, attrs }) {
       const instance = getCurrentInstance();
+      if (warn) {
+        console.warn('application runing at test env, you should build use production env');
+        warn = false;
+      }
       onUpdated(() => {
         const child = instance.subTree.children[0];
         if (child && child.dirs && child.dirs[0]) {
