@@ -10,6 +10,56 @@
 
 ---
 
+## 3.0.0-beta.4
+
+`2021-12-28`
+
+- 🌟 重构 Checkbox 组件，性能更优
+- 🌟 FormItem 新增 noStyle 属性，更加方便组织表单布局
+- 🐞 修复 InputNumber 在 precision 为 0 时，无法输入最小值问题 [#5083](https://github.com/vueComponent/ant-design-vue/issues/5083)
+
+#### 文档：
+
+- 🌟 Form 新增 2 个示例：校验时间类组件、校验其它组件
+
+## 3.0.0-beta.3
+
+`2021-12-27`
+
+- 🐞 修复 `Select` 虚拟滚动，动态修正高度错误问题 [#5082](https://github.com/vueComponent/ant-design-vue/issues/5082)
+
+## 3.0.0-beta.2
+
+`2021-12-27`
+
+- 🐞 修复 FormItem 未传递 name 时，触发检验问题 [#5081](https://github.com/vueComponent/ant-design-vue/issues/5081)
+- 🐞 修复 Table 首次渲染时宽度闪动问题 [#5075](https://github.com/vueComponent/ant-design-vue/issues/5075) [#4993](https://github.com/vueComponent/ant-design-vue/issues/4993)
+
+## 3.0.0-beta.1
+
+`2021-12-24`
+
+- 🌟 重构 InputNumber 组件，新增属性： `bordered` `controls` `keyboard` `stringMode`， 插槽： `addonAfter` `addonBefore`， 事件：`step`，具体请查看 InputNumber API 说明
+- 🌟 添加 global.d.ts 类型文件，方便 volar 识别 [#5067](https://github.com/vueComponent/ant-design-vue/issues/5067)
+- 🐞 修复 web-type.json 丢失问题 [#4860](https://github.com/vueComponent/ant-design-vue/issues/4860)
+- Tabs
+
+  - 🌟 Tabs 折叠节点新增删除功能
+  - 🐞 Tabs 特殊场景未激活选项问题 [#5056](https://github.com/vueComponent/ant-design-vue/issues/5056)
+  - 🐞 修复默认导出的 TabPane 组件名称错误问题 [b645f8](https://github.com/vueComponent/ant-design-vue/commit/b645f827d0e13d60bc01c740ae8cbc8f61cf2cdf)
+
+- Form
+
+  - 🌟 文档新增 7 个使用示例
+  - 🌟 新增 FormInstance 类型导出
+  - 🌟 校验 Number 类型时无需指定类型 [#5064](https://github.com/vueComponent/ant-design-vue/issues/5064)
+  - 🐞 回滚 FormItem 主动赋值时自动校验特性，此场景不应该自动校验 [#5056](https://github.com/vueComponent/ant-design-vue/issues/5056)
+  - 🐞 修复 validateMessages 错误问题
+
+- 🌟 优化虚拟列表基础组件，提升 Tree、TreeSelect、Select 性能 [4e70c6](https://github.com/vueComponent/ant-design-vue/commit/4e70c6dd775254ae713d8633db2d0363027708e1) [#5069](https://github.com/vueComponent/ant-design-vue/issues/5069)
+- 🐞 修复 Tree 展开时卡顿闪动问题 [#5069](https://github.com/vueComponent/ant-design-vue/issues/5069)
+- 🐞 修复 Input 重置 undefined 时，不更新问题
+
 ## 3.0.0-alpha.16
 
 `2021-12-19`
@@ -221,7 +271,7 @@ Github：[https://github.com/surely-vue/table]
 - `DatePicker` `TimePicker` `Calendar`
 
   - 默认使用更加轻量级的 dayjs 替换 momentjs，如果你的项目过大，使用了大量的 momentjs 的方法，你可以参考文档[自定义时间库](/docs/vue/replace-date-cn)，替换成 momentjs。
-  - UI 交互调整，对其 antd 4.x 交互规范
+  - UI 交互调整，对齐 antd 4.x 交互规范
 
 - `Form` 这次更新主要目标是提升性能，如果你没有自定义表单控件，几乎可以忽略该部分
 

@@ -43,6 +43,7 @@ export { default as Carousel } from './carousel';
 export type { CascaderProps } from './cascader';
 export { default as Cascader } from './cascader';
 
+export type { CheckboxProps, CheckboxGroupProps, CheckboxOptionType } from './checkbox';
 export { default as Checkbox, CheckboxGroup } from './checkbox';
 
 export type { ColProps } from './col';
@@ -76,7 +77,7 @@ export { default as Drawer } from './drawer';
 export type { EmptyProps } from './empty';
 export { default as Empty } from './empty';
 
-export type { FormProps, FormItemProps } from './form';
+export type { FormProps, FormItemProps, FormInstance } from './form';
 export { default as Form, FormItem, FormItemRest } from './form';
 
 export { default as Grid } from './grid';
