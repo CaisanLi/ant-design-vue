@@ -8,20 +8,25 @@ title:
 
 ## zh-CN
 
-可以通过唯一的 `key` 来更新内容。
+可以通过唯一的 `key` 来更新内容、或者响应式数据。
 
 ## en-US
 
-Update message content with unique `key`.
+Update message content with unique `key`，or use reactive data.
 
 </docs>
 
 <template>
-  <z-button type="primary" @click="openMessage">Open the message box</z-button>
+  <z-button type="primary" @click="openMessage">Open the message box (update by key)</z-button>
+  <br />
+  <br />
+  <z-button type="primary" @click="openMessage2">
+    Open the message box (update by reactive)
+  </z-button>
 </template>
 <script lang="ts">
 import { message } from 'ant-design-vue';
-import { defineComponent } from 'vue';
+import { defineComponent, ref } from 'vue';
 const key = 'updatable';
 export default defineComponent({
   setup() {
@@ -31,8 +36,17 @@ export default defineComponent({
         message.success({ content: 'Loaded!', key, duration: 2 });
       }, 1000);
     };
+    const content = ref('Loading...');
+    const openMessage2 = () => {
+      // content must use function
+      message.loading({ content: () => content.value });
+      setTimeout(() => {
+        content.value = 'Loaded!';
+      }, 1000);
+    };
     return {
       openMessage,
+      openMessage2,
     };
   },
 });

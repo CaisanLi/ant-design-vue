@@ -17,5 +17,5 @@ Simplest Usage with no description.
 </docs>
 
 <template>
-  <z-empty :description="false" />
+  <z-empty :description="null" />
 </template>

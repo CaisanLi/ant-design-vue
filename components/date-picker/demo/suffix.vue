@@ -28,7 +28,7 @@ Customize the suffix icon through `suffixIcon`
         <SmileOutlined />
       </template>
     </z-date-picker>
-    <z-range-picker @change="onChange">
+    <z-range-picker @change="onRangeChange">
       <template #suffixIcon>
         <SmileOutlined />
       </template>
@@ -40,7 +40,7 @@ Customize the suffix icon through `suffixIcon`
     </z-date-picker>
     <z-date-picker suffix-icon="ab" @change="onChange" />
     <z-date-picker suffix-icon="ab" placeholder="Select month" picker="month" @change="onChange" />
-    <z-range-picker suffix-icon="ab" @change="onChange" />
+    <z-range-picker suffix-icon="ab" @change="onRangeChange" />
     <z-date-picker suffix-icon="ab" placeholder="Select week" picker="week" @change="onChange" />
   </z-space>
 </template>
@@ -53,12 +53,16 @@ export default defineComponent({
     SmileOutlined,
   },
   setup() {
-    const onChange = (date: Dayjs, dateString: string[]) => {
+    const onChange = (date: Dayjs | string, dateString: string) => {
       console.log(date, dateString);
     };
 
+    const onRangeChange = (date: [Dayjs, Dayjs], dateString: [string, string]) => {
+      console.log(date, dateString);
+    };
     return {
       onChange,
+      onRangeChange,
     };
   },
 });

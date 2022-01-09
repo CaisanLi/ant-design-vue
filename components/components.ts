@@ -105,7 +105,7 @@ export { default as List, ListItem, ListItemMeta } from './list';
 export type { MessageArgsProps } from './message';
 export { default as message } from './message';
 
-export type { MenuProps, MenuTheme, SubMenuProps, MenuItemProps } from './menu';
+export type { MenuProps, MenuTheme, SubMenuProps, MenuItemProps, MenuMode } from './menu';
 export { default as Menu, MenuDivider, MenuItem, MenuItemGroup, SubMenu } from './menu';
 
 export type { MentionsProps } from './mentions';
@@ -117,6 +117,7 @@ export { default as Modal } from './modal';
 export type { StatisticProps } from './statistic';
 export { default as Statistic, StatisticCountdown } from './statistic';
 
+export type { NotificationPlacement } from './notification';
 export { default as notification } from './notification';
 
 export type { PageHeaderProps } from './page-header';
