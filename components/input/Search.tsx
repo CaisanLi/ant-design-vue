@@ -136,8 +136,9 @@ export default defineComponent({
           onPressEnter={onSearch}
           size={size.value}
           prefixCls={inputPrefixCls.value}
-          addonAfter={button}
+          addonAfter={enterButton ? button : ''}
           suffix={suffix}
+          prefix={enterButton ? '' : searchIcon}
           onChange={onChange}
           class={cls}
           disabled={disabled}

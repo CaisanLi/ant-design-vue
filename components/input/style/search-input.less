@@ -6,17 +6,18 @@
 @search-prefix: ~'@{ant-prefix}-input-search';
 
 .@{search-prefix} {
+  .@{ant-prefix}-input-prefix {
+    .anticon-search {
+      color: #ccc;
+    }
+  }
   .@{ant-prefix}-input {
     &:hover,
     &:focus {
       border-color: @input-hover-border-color;
-
       + .@{ant-prefix}-input-group-addon .@{search-prefix}-button:not(.@{ant-prefix}-btn-primary) {
         border-left-color: @input-hover-border-color;
       }
-    }
-    &:focus {
-      color: @blue-6;
     }
   }
 
