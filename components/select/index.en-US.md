@@ -47,6 +47,7 @@ Select component to select value from options.
 | optionFilterProp | Which prop value of option will be used for filter if filterOption is true | string | value |  |
 | optionLabelProp | Which prop value of option will render as content of select. | string | `children` \| `label`(when use options) |  |
 | placeholder | Placeholder of select | string\|slot | - |  |
+| searchValue | The current input "search" text | string | - |  |
 | showSearch | Whether show search input in single mode. | boolean | false |  |
 | showArrow | Whether to show the drop-down arrow | boolean | true |  |
 | size | Size of Select input. `default` `large` `small` | string | default |  |
@@ -55,6 +56,7 @@ Select component to select value from options.
 | clearIcon | The custom clear icon | VNode \| slot | - |  |
 | menuItemSelectedIcon | The custom menuItemSelected icon | VNode \| slot | - |  |
 | tokenSeparators | Separator used to tokenize on tag/multiple mode | string\[] |  |  |
+| tagRender | Customize tag render, only applies when `mode` is set to `multiple` or `tags` | slot \| (props) => any | - |  |
 | value(v-model) | Current selected option. | string\|number\|string\[]\|number\[] | - |  |
 | options | Data of the selectOption, manual construction work is no longer needed if this property has been set | array&lt;{value, label, [disabled, key, title]}> | \[] |  |
 | option | custom render option by slot | v-slot:option="{value, label, [disabled, key, title]}" | - | 2.2.5 |

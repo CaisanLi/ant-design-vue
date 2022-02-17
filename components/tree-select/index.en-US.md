@@ -26,6 +26,7 @@ Tree selection control.
 | filterTreeNode | Whether to filter treeNodes by input value. The value of `treeNodeFilterProp` is used for filtering by default. | boolean\|Function(inputValue: string, treeNode: TreeNode) (should return boolean) | Function |  |
 | getPopupContainer | To set the container of the dropdown menu. The default is to create a `div` element in `body`, you can reset it to the scrolling area and make a relative reposition. | Function(triggerNode) | () => document.body |  |
 | labelInValue | whether to embed label in value, turn the format of value from `string` to `{value: string, label: VNode, halfChecked: string[]}` | boolean | false |  |
+| listHeight | Config popup height | number | 256 |  |
 | loadData | Load data asynchronously. | function(node) | - |  |
 | maxTagCount | Max tag count to show | number | - |  |
 | maxTagPlaceholder | Placeholder for not showing tags | slot/function(omittedValues) | - |  |
@@ -47,19 +48,22 @@ Tree selection control.
 | treeDefaultExpandAll | Whether to expand all treeNodes by default | boolean | false |  |
 | treeDefaultExpandedKeys | Default expanded treeNodes | string\[] \| number\[] | - |  |
 | treeExpandedKeys(v-model) | Set expanded keys | string\[] \| number\[] | - |  |
+| treeLine | Show the line. Ref [Tree - showLine](/components/tree/#components-tree-demo-line) | boolean \| object | false | 3.0 |
 | treeNodeFilterProp | Will be used for filtering if `filterTreeNode` returns true | string | 'value' |  |
 | treeNodeLabelProp | Will render as content of select | string | 'title' |  |
 | value(v-model) | To set the current selected treeNode(s). | string\|string\[] | - |  |
+| virtual | Disable virtual scroll when set to false | boolean | true | 3.0 |
 | title | custom title | slot |  | 3.0.0 |
 
 ### Events
 
-| Events Name | Description | Arguments |
-| --- | --- | --- |
-| change | A callback function, can be executed when selected treeNodes or input value change | function(value, label, extra) |
-| search | A callback function, can be executed when the search input changes. | function(value: string) |
-| select | A callback function, can be executed when you select a treeNode. | function(value, node, extra) |
-| treeExpand | A callback function, can be executed when treeNode expanded | function(expandedKeys) |
+| Events Name | Description | Arguments | Version |
+| --- | --- | --- | --- |
+| change | A callback function, can be executed when selected treeNodes or input value change | function(value, label, extra) |  |
+| search | A callback function, can be executed when the search input changes. | function(value: string) |  |
+| select | A callback function, can be executed when you select a treeNode. | function(value, node, extra) |  |
+| treeExpand | A callback function, can be executed when treeNode expanded | function(expandedKeys) |  |
+| dropdownVisibleChange | Called when dropdown open | function(open) | 3.0 |
 
 ### Tree Methods
 

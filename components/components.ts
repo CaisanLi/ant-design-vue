@@ -52,6 +52,7 @@ export { default as Col } from './col';
 export type { CommentProps } from './comment';
 export { default as Comment } from './comment';
 
+export type { ConfigProviderProps } from './config-provider';
 export { default as ConfigProvider } from './config-provider';
 
 export type { DatePickerProps } from './date-picker';
@@ -72,16 +73,18 @@ export { default as Divider } from './divider';
 export type { DropdownProps } from './dropdown';
 export { default as Dropdown, DropdownButton } from './dropdown';
 
+export type { DrawerProps } from './drawer';
 export { default as Drawer } from './drawer';
 
 export type { EmptyProps } from './empty';
 export { default as Empty } from './empty';
 
-export type { FormProps, FormItemProps, FormInstance } from './form';
+export type { FormProps, FormItemProps, FormInstance, FormItemInstance } from './form';
 export { default as Form, FormItem, FormItemRest } from './form';
 
 export { default as Grid } from './grid';
 
+export type { InputProps, TextAreaProps } from './input';
 export { default as Input, InputGroup, InputPassword, InputSearch, Textarea } from './input';
 
 export type { ImageProps } from './image';
@@ -126,13 +129,16 @@ export { default as PageHeader } from './page-header';
 export type { PaginationProps } from './pagination';
 export { default as Pagination } from './pagination';
 
+export type { PopconfirmProps } from './popconfirm';
 export { default as Popconfirm } from './popconfirm';
 
+export type { PopoverProps } from './popover';
 export { default as Popover } from './popover';
 
 export type { ProgressProps } from './progress';
 export { default as Progress } from './progress';
 
+export type { RadioProps, RadioChangeEvent, RadioGroupProps } from './radio';
 export { default as Radio, RadioButton, RadioGroup } from './radio';
 
 export type { RateProps } from './rate';
@@ -156,6 +162,7 @@ export {
   SkeletonImage,
 } from './skeleton';
 
+export type { SliderProps } from './slider';
 export { default as Slider } from './slider';
 
 export type { SpaceProps } from './space';
@@ -164,6 +171,7 @@ export { default as Space } from './space';
 export type { SpinProps } from './spin';
 export { default as Spin } from './spin';
 
+export type { StepProps, StepsProps } from './steps';
 export { default as Steps, Step } from './steps';
 
 export type { SwitchProps } from './switch';

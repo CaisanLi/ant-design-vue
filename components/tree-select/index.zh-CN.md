@@ -27,6 +27,7 @@ cover: https://gw.alipayobjects.com/zos/alicdn/Ax4DA0njr/TreeSelect.svg
 | filterTreeNode | 是否根据输入项进行筛选，默认用 treeNodeFilterProp 的值作为要筛选的 TreeNode 的属性值 | boolean\|Function(inputValue: string, treeNode: TreeNode) (函数需要返回 bool 值) | Function |  |
 | getPopupContainer | 菜单渲染父节点。默认渲染到 body 上，如果你遇到菜单滚动定位问题，试试修改为滚动的区域，并相对其定位。 | Function(triggerNode) | () => document.body |  |
 | labelInValue | 是否把每个选项的 label 包装到 value 中，会把 value 类型从 `string` 变为 `{value: string, label: VNode, halfChecked(treeCheckStrictly 时有效): string[] }` 的格式 | boolean | false |  |
+| listHeight | 设置弹窗滚动高度 | number | 256 |  |
 | loadData | 异步加载数据 | function(node) | - |  |
 | maxTagCount | 最多显示多少个 tag | number | - |  |
 | maxTagPlaceholder | 隐藏 tag 时显示的内容 | slot/function(omittedValues) | - |  |
@@ -48,19 +49,22 @@ cover: https://gw.alipayobjects.com/zos/alicdn/Ax4DA0njr/TreeSelect.svg
 | treeDefaultExpandAll | 默认展开所有树节点 | boolean | false |  |
 | treeDefaultExpandedKeys | 默认展开的树节点 | string\[] \| number\[] | - |  |
 | treeExpandedKeys(v-model) | 设置展开的树节点 | string\[] \| number\[] | - |  |
+| treeLine | 是否展示线条样式，请参考 [Tree - showLine](/components/tree/#components-tree-demo-line) | boolean \| object | false | 3.0 |
 | treeNodeFilterProp | 输入项过滤对应的 treeNode 属性 | string | 'value' |  |
 | treeNodeLabelProp | 作为显示的 prop 设置 | string | 'title' |  |
 | value(v-model) | 指定当前选中的条目 | string/string\[] | - |  |
+| virtual | 设置 false 时关闭虚拟滚动 | boolean | true | 3.0 |
 | title | 自定义标题 | slot |  | 3.0.0 |
 
 ### 事件
 
-| 事件名称   | 说明                   | 回调参数                      |
-| ---------- | ---------------------- | ----------------------------- |
-| change     | 选中树节点时调用此函数 | function(value, label, extra) |
-| search     | 文本框值变化时回调     | function(value: string)       |
-| select     | 被选中时调用           | function(value, node, extra)  |
-| treeExpand | 展开节点时调用         | function(expandedKeys)        |
+| 事件名称              | 说明                   | 回调参数                      | 版本 |
+| --------------------- | ---------------------- | ----------------------------- | ---- |
+| change                | 选中树节点时调用此函数 | function(value, label, extra) |      |
+| search                | 文本框值变化时回调     | function(value: string)       |      |
+| select                | 被选中时调用           | function(value, node, extra)  |      |
+| treeExpand            | 展开节点时调用         | function(expandedKeys)        |      |
+| dropdownVisibleChange | 展开下拉菜单的回调     | function(open)                | 3.0  |
 
 ### Tree 方法
 

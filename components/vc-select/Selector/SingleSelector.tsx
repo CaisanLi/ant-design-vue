@@ -3,13 +3,13 @@ import Input from './Input';
 import type { InnerSelectorProps } from './interface';
 import { Fragment, computed, defineComponent, ref, watch } from 'vue';
 import PropTypes from '../../_util/vue-types';
-import { useInjectTreeSelectContext } from '../../vc-tree-select/Context';
 import type { VueNode } from '../../_util/type';
+import useInjectLegacySelectContext from '../../vc-tree-select/LegacyContext';
 
 interface SelectorProps extends InnerSelectorProps {
   inputElement: VueNode;
   activeValue: string;
-  backfill?: boolean;
+  optionLabelRender: Function;
 }
 const props = {
   inputElement: PropTypes.any,
@@ -25,10 +25,11 @@ const props = {
   showSearch: PropTypes.looseBool,
   autofocus: PropTypes.looseBool,
   autocomplete: PropTypes.string,
-  accessibilityIndex: PropTypes.number,
+  activeDescendantId: PropTypes.string,
   tabindex: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   activeValue: PropTypes.string,
   backfill: PropTypes.looseBool,
+  optionLabelRender: PropTypes.func,
   onInputChange: PropTypes.func,
   onInputPaste: PropTypes.func,
   onInputKeyDown: PropTypes.func,
@@ -51,7 +52,7 @@ const SingleSelector = defineComponent<SelectorProps>({
       }
       return inputValue;
     });
-    const treeSelectContext = useInjectTreeSelectContext();
+    const legacyTreeSelectContext = useInjectLegacySelectContext();
     watch(
       [combobox, () => props.activeValue],
       () => {
@@ -64,7 +65,7 @@ const SingleSelector = defineComponent<SelectorProps>({
 
     // Not show text when closed expect combobox mode
     const hasTextInput = computed(() =>
-      props.mode !== 'combobox' && !props.open ? false : !!inputValue.value,
+      props.mode !== 'combobox' && !props.open && !props.showSearch ? false : !!inputValue.value,
     );
 
     const title = computed(() => {
@@ -73,6 +74,18 @@ const SingleSelector = defineComponent<SelectorProps>({
         ? item.label.toString()
         : undefined;
     });
+
+    const renderPlaceholder = () => {
+      if (props.values[0]) {
+        return null;
+      }
+      const hiddenStyle = hasTextInput.value ? { visibility: 'hidden' as const } : undefined;
+      return (
+        <span class={`${props.prefixCls}-selection-placeholder`} style={hiddenStyle}>
+          {props.placeholder}
+        </span>
+      );
+    };
 
     return () => {
       const {
@@ -84,10 +97,10 @@ const SingleSelector = defineComponent<SelectorProps>({
         disabled,
         autofocus,
         autocomplete,
-        accessibilityIndex,
+        activeDescendantId,
         open,
-        placeholder,
         tabindex,
+        optionLabelRender,
         onInputKeyDown,
         onInputMouseDown,
         onInputChange,
@@ -98,20 +111,24 @@ const SingleSelector = defineComponent<SelectorProps>({
       const item = values[0];
       let titleNode = null;
       // custom tree-select title by slot
-      if (item && treeSelectContext.value.slots) {
+
+      // For TreeSelect
+      if (item && legacyTreeSelectContext.customSlots) {
+        const key = item.key ?? item.value;
+        const originData = legacyTreeSelectContext.keyEntities[key]?.node || {};
         titleNode =
-          treeSelectContext.value.slots[item?.option?.data?.slots?.title] ||
-          treeSelectContext.value.slots.title ||
+          legacyTreeSelectContext.customSlots[originData.slots?.title] ||
+          legacyTreeSelectContext.customSlots.title ||
           item.label;
         if (typeof titleNode === 'function') {
-          titleNode = titleNode(item.option?.data || {});
+          titleNode = titleNode(originData);
         }
         //  else if (treeSelectContext.value.slots.titleRender) {
         //   // 因历史 title 是覆盖逻辑，新增 titleRender，所有的 title 都走一遍 titleRender
         //   titleNode = treeSelectContext.value.slots.titleRender(item.option?.data || {});
         // }
       } else {
-        titleNode = item?.label;
+        titleNode = optionLabelRender && item ? optionLabelRender(item.option) : item?.label;
       }
       return (
         <>
@@ -126,7 +143,7 @@ const SingleSelector = defineComponent<SelectorProps>({
               autofocus={autofocus}
               autocomplete={autocomplete}
               editable={inputEditable.value}
-              accessibilityIndex={accessibilityIndex}
+              activeDescendantId={activeDescendantId}
               value={inputValue.value}
               onKeydown={onInputKeyDown}
               onMousedown={onInputMouseDown}
@@ -145,14 +162,12 @@ const SingleSelector = defineComponent<SelectorProps>({
           {/* Display value */}
           {!combobox.value && item && !hasTextInput.value && (
             <span class={`${prefixCls}-selection-item`} title={title.value}>
-              <Fragment key={item.key || item.value}>{titleNode}</Fragment>
+              <Fragment key={item.key ?? item.value}>{titleNode}</Fragment>
             </span>
           )}
 
           {/* Display placeholder */}
-          {!item && !hasTextInput.value && (
-            <span class={`${prefixCls}-selection-placeholder`}>{placeholder}</span>
-          )}
+          {renderPlaceholder()}
         </>
       );
     };

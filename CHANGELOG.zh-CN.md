@@ -10,6 +10,40 @@
 
 ---
 
+## 3.0.0-beta.9
+
+`2022-01-28`
+
+🔥🔥🔥 新年快乐 🔥🔥🔥
+
+- 🌟 `Progress` 添加 title 属性，避免 title 被内部 title 覆盖问题 [#4929](https://github.com/vueComponent/ant-design-vue/issues/4929)
+- 🐞 修复 `Input` focus 状态时，样式边框问题 [#5188](https://github.com/vueComponent/ant-design-vue/issues/5188)
+- 🌟 优化虚拟滚动在 mobile 下的滚动效果 [#5191](https://github.com/vueComponent/ant-design-vue/issues/5191)
+- 🐞 修复 `Tree` 组件在拖拽时的样式问题 [6d4248](https://github.com/vueComponent/ant-design-vue/commit/6d4248d046a420aa6a1ddfeb78632e4405b91e51)
+- 🐞 修复 `TreeSelect` 在空内容时，回车按键填充空节点问题 [#5217](https://github.com/vueComponent/ant-design-vue/issues/5217)
+- 🐞 修复 `Button` 在设置 size 后，block 样式失效问题 [#5219](https://github.com/vueComponent/ant-design-vue/issues/5219)
+
+## 3.0.0-beta.8
+
+`2022-01-21`
+
+- 🔥 重构 `Cascader`, 支持多选，新增 `tagRender` `multiple` `maxTagCount` `maxTagPlaceholder` `expandIcon`, 使用 `dropdownClassName` `dropdownStyle` `open` `placement` 分别替换 `popupClassName` `popupStyle` `popupVisible` `popupPlacement` 属性
+- 🌟 Select、TreeSelect 支持插槽 maxTagPlaceholder
+- 🌟 `Table.Summary.Cell` 支持 `style`、`class` 的原生属性
+- 🌟 导出更多组件类型: `ConfigProviderProps` `InputProps` `TextAreaProps` `PopconfirmProps` `PopoverProps` `SliderProps` `StepProps` `StepsProps`
+- 🐞 修复 Modal 在 vue@3.2.28 下报错问题 [#5190](https://github.com/vueComponent/ant-design-vue/issues/5190)
+- 🐞 修复 `Modal` `getContainer` 失效问题 [#5147](https://github.com/vueComponent/ant-design-vue/issues/5147)
+- 🐞 修复 `Table` `responsive` 失效问题 [#5172](https://github.com/vueComponent/ant-design-vue/issues/5172)
+- 🐞 修复 `Tabs` activeKey 受控失效问题 [#5180](https://github.com/vueComponent/ant-design-vue/issues/5180)
+
+## 3.0.0-beta.7
+
+`2022-01-10`
+
+- 🌟 导出 FormItemInstance 类型 [23f5fb](https://github.com/vueComponent/ant-design-vue/commit/23f5fba013ae8a76fb814c218fb319488da3c70b)
+- 🐞 修复 Modal 在 Dropdown 下不显示问题 [#5139](https://github.com/vueComponent/ant-design-vue/issues/5139)
+- 🐞 修复 Modal esc 快捷键失效问题 [3297f7](https://github.com/vueComponent/ant-design-vue/commit/3297f7aa58f6098b2b1dd147341b5c8dc5f2f5e5)
+
 ## 3.0.0-beta.6
 
 `2022-01-07`

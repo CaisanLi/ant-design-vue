@@ -80,7 +80,7 @@ Use form in drawer with submit button.
             <z-date-picker
               v-model:value="form.dateTime"
               style="width: 100%"
-              :get-popup-container="trigger => trigger.parentNode"
+              :get-popup-container="trigger => trigger.parentElement"
             />
           </z-form-item>
         </z-col>
@@ -117,7 +117,7 @@ export default defineComponent({
       owner: '',
       type: '',
       approver: '',
-      dateTime: '',
+      dateTime: null,
       description: '',
     });
 

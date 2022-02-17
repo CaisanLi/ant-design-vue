@@ -37,8 +37,9 @@ cover: https://gw.alipayobjects.com/zos/alicdn/Xh-oWqg9k/Tree.svg
 | selectedKeys(v-model) | （受控）设置选中的树节点 | string\[] \| number\[] | - |  |
 | showIcon | 是否展示 TreeNode title 前的图标，没有默认样式，如设置为 true，需要自行定义图标相关样式 | boolean | false |  |
 | switcherIcon | 自定义树节点的展开/折叠图标 | slot | - |  |
-| showLine | 是否展示连接线 | boolean | false |  |
+| showLine | 是否展示连接线 | boolean \| {showLeafIcon: boolean}(3.0+) | false |  |
 | title | 自定义标题 | slot |  | 2.0.0 |
+| virtual | 设置 false 时关闭虚拟滚动 | boolean | true | 3.0 |
 
 ### 事件
 

@@ -19,7 +19,7 @@ The height of the input field for the select defaults to 32px. If size is set to
 <template>
   <z-radio-group v-model:value="size">
     <z-radio-button value="large">Large</z-radio-button>
-    <z-radio-button value="default">Default</z-radio-button>
+    <z-radio-button value="middle">Middle</z-radio-button>
     <z-radio-button value="small">Small</z-radio-button>
   </z-radio-group>
   <br />
@@ -51,6 +51,7 @@ The height of the input field for the select defaults to 32px. If size is set to
   </z-space>
 </template>
 <script lang="ts">
+import type { SelectProps } from 'ant-design-vue';
 import { defineComponent, ref } from 'vue';
 export default defineComponent({
   setup() {
@@ -60,7 +61,7 @@ export default defineComponent({
 
     return {
       popupScroll,
-      size: ref('default'),
+      size: ref<SelectProps['size']>('middle'),
       value1: ref('a1'),
       value2: ref(['a1', 'b2']),
       value3: ref(['a1', 'b2']),

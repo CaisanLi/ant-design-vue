@@ -10,6 +10,40 @@
 
 ---
 
+## 3.0.0-beta.9
+
+`2022-01-28`
+
+🔥🔥🔥 Happy New Year 🔥🔥🔥
+
+- 🌟 `Progress` add title attribute to avoid title being overwritten by internal title [#4929](https://github.com/vueComponent/ant-design-vue/issues/4929)
+- 🐞 Fix `Input` focus state, style border issue [#5188](https://github.com/vueComponent/ant-design-vue/issues/5188)
+- 🌟 Optimize the scrolling effect of virtual scrolling under mobile [#5191](https://github.com/vueComponent/ant-design-vue/issues/5191)
+- 🐞 Fix the style issue of `Tree` component when dragging [6d4248](https://github.com/vueComponent/ant-design-vue/commit/6d4248d046a420aa6a1ddfeb78632e4405b91e51)
+- 🐞 Fix `TreeSelect` when the content is empty, the Enter button fills the empty node problem [#5217](https://github.com/vueComponent/ant-design-vue/issues/5217)
+- 🐞 Fix `Button` block style invalid after setting size [#5219](https://github.com/vueComponent/ant-design-vue/issues/5219)
+
+## 3.0.0-beta.8
+
+`2022-01-21`
+
+- 🔥 Refactor `Cascader`, support multiple selection, add `tagRender` `multiple` `maxTagCount` `maxTagPlaceholder` `expandIcon`, use `dropdownClassName` `dropdownStyle` `open` `placement` to replace `popupClassName` `popupStyle` respectively ` `popupVisible` `popupPlacement` property
+- 🌟 Select, TreeSelect support slot maxTagPlaceholder
+- 🌟 `Table.Summary.Cell` supports `style`, `class` native properties
+- 🌟 Export more component types: `ConfigProviderProps` `InputProps` `TextAreaProps` `PopconfirmProps` `PopoverProps` `SliderProps` `StepProps` `StepsProps`
+- 🐞 Fix Modal reporting error under vue@3.2.28 [#5190](https://github.com/vueComponent/ant-design-vue/issues/5190)
+- 🐞 Fix `Modal` `getContainer` invalid problem [#5147](https://github.com/vueComponent/ant-design-vue/issues/5147)
+- 🐞 Fix `Table` `responsive` invalid problem [#5172](https://github.com/vueComponent/ant-design-vue/issues/5172)
+- 🐞 Fix `Tabs` activeKey controlled invalidation issue [#5180](https://github.com/vueComponent/ant-design-vue/issues/5180)
+
+## 3.0.0-beta.7
+
+`2022-01-10`
+
+- 🌟 Export FormItemInstance type [23f5fb](https://github.com/vueComponent/ant-design-vue/commit/23f5fba013ae8a76fb814c218fb319488da3c70b)
+- 🐞 Fix Modal not showing issue under Dropdown [#5139](https://github.com/vueComponent/ant-design-vue/issues/5139)
+- 🐞 Fix Modal esc shortcut key invalid issue [3297f7](https://github.com/vueComponent/ant-design-vue/commit/3297f7aa58f6098b2b1dd147341b5c8dc5f2f5e5)
+
 ## 3.0.0-beta.6
 
 `2022-01-07`

@@ -34,7 +34,11 @@ Set a number and automatically fold after exceeding.
       placeholder="Select Item..."
       :max-tag-count="maxTagCount"
       :options="options"
-    ></z-select>
+    >
+      <template #maxTagPlaceholder="omittedValues">
+        <span style="color: red">+ {{ omittedValues.length }} ...</span>
+      </template>
+    </z-select>
     <h2>maxTagCount: responsive</h2>
     <z-select
       v-model:value="value"
