@@ -1,9 +1,6 @@
 export type { AffixProps } from './affix';
 export { default as Affix } from './affix';
 
-export type { logoProps } from './logo';
-export { default as Logo } from './logo';
-
 export type { AnchorProps, AnchorLinkProps } from './anchor';
 export { default as Anchor, AnchorLink } from './anchor';
 
