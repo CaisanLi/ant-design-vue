@@ -18,26 +18,26 @@ Components which support rtl direction are listed here, you can toggle the direc
 
 <template>
   <span style="margin-right: 16px">Change direction of components:</span>
-  <a-radio-group v-model:value="state.direction">
-    <a-radio-button value="ltr">LTR</a-radio-button>
-    <a-radio-button value="rtl">RTL</a-radio-button>
-  </a-radio-group>
-  <a-divider />
-  <a-config-provider :direction="state.direction">
+  <z-radio-group v-model:value="state.direction">
+    <z-radio-button value="ltr">LTR</z-radio-button>
+    <z-radio-button value="rtl">RTL</z-radio-button>
+  </z-radio-group>
+  <z-divider />
+  <z-config-provider :direction="state.direction">
     <div class="direction-components">
-      <a-row>
-        <a-col :span="24">
-          <a-divider orientation="left">Cascader example</a-divider>
-          <a-cascader
+      <z-row>
+        <z-col :span="24">
+          <z-divider orientation="left">Cascader example</z-divider>
+          <z-cascader
             :options="cascaderOptions"
             placeholder="یک مورد انتخاب کنید"
             :placement="state.popupPlacement"
             @change="onCascaderChange"
           >
             <template #suffixIcon><SearchIcon /></template>
-          </a-cascader>
+          </z-cascader>
           &nbsp;&nbsp;&nbsp;&nbsp; With search:
-          <a-cascader
+          <z-cascader
             :options="cascaderOptions"
             placeholder="Select an item"
             :placement="state.popupPlacement"
@@ -45,71 +45,71 @@ Components which support rtl direction are listed here, you can toggle the direc
             @change="onCascaderChange"
           >
             <template #suffixIcon><SmileOutlined /></template>
-          </a-cascader>
-        </a-col>
-      </a-row>
+          </z-cascader>
+        </z-col>
+      </z-row>
       <br />
-      <a-row>
-        <a-col :span="12">
-          <a-divider orientation="left">Switch example</a-divider>
+      <z-row>
+        <z-col :span="12">
+          <z-divider orientation="left">Switch example</z-divider>
           &nbsp;&nbsp;
-          <a-switch default-checked />
+          <z-switch default-checked />
           &nbsp;&nbsp;
-          <a-switch loading default-checked />
+          <z-switch loading default-checked />
           &nbsp;&nbsp;
-          <a-switch size="small" loading />
-        </a-col>
-        <a-col :span="12">
-          <a-divider orientation="left">Radio Group example</a-divider>
+          <z-switch size="small" loading />
+        </z-col>
+        <z-col :span="12">
+          <z-divider orientation="left">Radio Group example</z-divider>
 
-          <a-radio-group default-value="c" button-style="solid">
-            <a-radio-button value="a">تهران</a-radio-button>
-            <a-radio-button value="b" disabled>اصفهان</a-radio-button>
-            <a-radio-button value="c">فارس</a-radio-button>
-            <a-radio-button value="d">خوزستان</a-radio-button>
-          </a-radio-group>
-        </a-col>
-      </a-row>
+          <z-radio-group default-value="c" button-style="solid">
+            <z-radio-button value="a">تهران</z-radio-button>
+            <z-radio-button value="b" disabled>اصفهان</z-radio-button>
+            <z-radio-button value="c">فارس</z-radio-button>
+            <z-radio-button value="d">خوزستان</z-radio-button>
+          </z-radio-group>
+        </z-col>
+      </z-row>
       <br />
-      <a-row>
-        <a-col :span="12">
-          <a-divider orientation="left">Button example</a-divider>
+      <z-row>
+        <z-col :span="12">
+          <z-divider orientation="left">Button example</z-divider>
           <div class="button-demo">
-            <a-button type="primary">
+            <z-button type="primary">
               <template #icon><DownloadOutlined /></template>
-            </a-button>
-            <a-button type="primary" shape="circle">
+            </z-button>
+            <z-button type="primary" shape="circle">
               <template #icon><DownloadOutlined /></template>
-            </a-button>
-            <a-button type="primary" shape="round">
+            </z-button>
+            <z-button type="primary" shape="round">
               <template #icon><DownloadOutlined /></template>
-            </a-button>
-            <a-button type="primary" shape="round">
-              <template #icon><DownloadOutlined /></template>
-              Download
-            </a-button>
-            <a-button type="primary">
+            </z-button>
+            <z-button type="primary" shape="round">
               <template #icon><DownloadOutlined /></template>
               Download
-            </a-button>
+            </z-button>
+            <z-button type="primary">
+              <template #icon><DownloadOutlined /></template>
+              Download
+            </z-button>
             <br />
-            <a-button-group>
-              <a-button type="primary">
+            <z-button-group>
+              <z-button type="primary">
                 <LeftOutlined />
                 Backward
-              </a-button>
-              <a-button type="primary">
+              </z-button>
+              <z-button type="primary">
                 Forward
                 <RightOutlined />
-              </a-button>
-            </a-button-group>
-            <a-button type="primary" loading>Loading</a-button>
-            <a-button type="primary" size="small" loading>Loading</a-button>
+              </z-button>
+            </z-button-group>
+            <z-button type="primary" loading>Loading</z-button>
+            <z-button type="primary" size="small" loading>Loading</z-button>
           </div>
-        </a-col>
-        <a-col :span="12">
-          <a-divider orientation="left">Tree example</a-divider>
-          <a-tree
+        </z-col>
+        <z-col :span="12">
+          <z-divider orientation="left">Tree example</z-divider>
+          <z-tree
             v-model:expandedKeys="expandedKeys"
             v-model:selectedKeys="selectedKeys"
             v-model:checkedKeys="checkedKeys"
@@ -121,76 +121,76 @@ Components which support rtl direction are listed here, you can toggle the direc
               <span v-if="key === '0-0-1-0'" style="color: #1890ff">{{ title }}</span>
               <template v-else>{{ title }}</template>
             </template>
-          </a-tree>
-        </a-col>
-      </a-row>
+          </z-tree>
+        </z-col>
+      </z-row>
       <br />
-      <a-row>
-        <a-col :span="24">
-          <a-divider orientation="left">Input (Input Group) example</a-divider>
-          <a-input-group size="large">
-            <a-row :gutter="8">
-              <a-col :span="5">
-                <a-input default-value="0571" />
-              </a-col>
-              <a-col :span="8">
-                <a-input default-value="26888888" />
-              </a-col>
-            </a-row>
-          </a-input-group>
+      <z-row>
+        <z-col :span="24">
+          <z-divider orientation="left">Input (Input Group) example</z-divider>
+          <z-input-group size="large">
+            <z-row :gutter="8">
+              <z-col :span="5">
+                <z-input default-value="0571" />
+              </z-col>
+              <z-col :span="8">
+                <z-input default-value="26888888" />
+              </z-col>
+            </z-row>
+          </z-input-group>
           <br />
-          <a-input-group compact>
-            <a-input style="width: 20%" default-value="0571" />
-            <a-input style="width: 30%" default-value="26888888" />
-          </a-input-group>
+          <z-input-group compact>
+            <z-input style="width: 20%" default-value="0571" />
+            <z-input style="width: 30%" default-value="26888888" />
+          </z-input-group>
           <br />
-          <a-input-group compact>
-            <a-select default-value="Option1">
-              <a-select-option value="Option1">Option1</a-select-option>
-              <a-select-option value="Option2">Option2</a-select-option>
-            </a-select>
-            <a-input style="width: 50%" default-value="input content" />
-            <a-inputNumber />
-          </a-input-group>
+          <z-input-group compact>
+            <z-select default-value="Option1">
+              <z-select-option value="Option1">Option1</z-select-option>
+              <z-select-option value="Option2">Option2</z-select-option>
+            </z-select>
+            <z-input style="width: 50%" default-value="input content" />
+            <z-inputNumber />
+          </z-input-group>
           <br />
-          <a-input-search placeholder="input search text" enter-button="Search" size="large" />
+          <z-input-search placeholder="input search text" enter-button="Search" size="large" />
           <br />
           <br />
           <div style="margin-bottom: 16px">
-            <a-input default-value="mysite">
+            <z-input default-value="mysite">
               <template #selectBefore>
-                <a-select default-value="Http://" style="width: 90px">
-                  <a-select-option value="Http://">Http://</a-select-option>
-                  <a-select-option value="Https://">Https://</a-select-option>
-                </a-select>
+                <z-select default-value="Http://" style="width: 90px">
+                  <z-select-option value="Http://">Http://</z-select-option>
+                  <z-select-option value="Https://">Https://</z-select-option>
+                </z-select>
               </template>
               <template #selectAfter>
-                <a-select default-value=".com" style="width: 80px">
-                  <a-select-option value=".com">.com</a-select-option>
-                  <a-select-option value=".jp">.jp</a-select-option>
-                  <a-select-option value=".cn">.cn</a-select-option>
-                  <a-select-option value=".org">.org</a-select-option>
-                </a-select>
+                <z-select default-value=".com" style="width: 80px">
+                  <z-select-option value=".com">.com</z-select-option>
+                  <z-select-option value=".jp">.jp</z-select-option>
+                  <z-select-option value=".cn">.cn</z-select-option>
+                  <z-select-option value=".org">.org</z-select-option>
+                </z-select>
               </template>
-            </a-input>
+            </z-input>
           </div>
           <br />
-          <a-row>
-            <a-col :span="12">
-              <a-divider orientation="left">Select example</a-divider>
-              <a-select mode="multiple" default-value="مورچه" style="width: 120px">
-                <a-select-option value="jack">Jack</a-select-option>
-                <a-select-option value="مورچه">مورچه</a-select-option>
-                <a-select-option value="disabled" disabled>Disabled</a-select-option>
-                <a-select-option value="Yiminghe">yiminghe</a-select-option>
-              </a-select>
-              <a-select default-value="مورچه" style="width: 120px" disabled>
-                <a-select-option value="مورچه">مورچه</a-select-option>
-              </a-select>
-              <a-select default-value="مورچه" style="width: 120px" loading>
-                <a-select-option value="مورچه">مورچه</a-select-option>
-              </a-select>
-              <a-select
+          <z-row>
+            <z-col :span="12">
+              <z-divider orientation="left">Select example</z-divider>
+              <z-select mode="multiple" default-value="مورچه" style="width: 120px">
+                <z-select-option value="jack">Jack</z-select-option>
+                <z-select-option value="مورچه">مورچه</z-select-option>
+                <z-select-option value="disabled" disabled>Disabled</z-select-option>
+                <z-select-option value="Yiminghe">yiminghe</z-select-option>
+              </z-select>
+              <z-select default-value="مورچه" style="width: 120px" disabled>
+                <z-select-option value="مورچه">مورچه</z-select-option>
+              </z-select>
+              <z-select default-value="مورچه" style="width: 120px" loading>
+                <z-select-option value="مورچه">مورچه</z-select-option>
+              </z-select>
+              <z-select
                 show-search
                 style="width: 200px"
                 placeholder="Select a person"
@@ -200,15 +200,15 @@ Components which support rtl direction are listed here, you can toggle the direc
                     option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
                 "
               >
-                <a-select-option value="jack">Jack</a-select-option>
-                <a-select-option value="سعید">سعید</a-select-option>
-                <a-select-option value="tom">Tom</a-select-option>
-              </a-select>
-            </a-col>
-            <a-col :span="12">
-              <a-divider orientation="left">TreeSelect example</a-divider>
+                <z-select-option value="jack">Jack</z-select-option>
+                <z-select-option value="سعید">سعید</z-select-option>
+                <z-select-option value="tom">Tom</z-select-option>
+              </z-select>
+            </z-col>
+            <z-col :span="12">
+              <z-divider orientation="left">TreeSelect example</z-divider>
               <div>
-                <a-tree-select
+                <z-tree-select
                   show-search
                   style="width: 100%"
                   :dropdown-style="{ maxHeight: '400px', overflow: 'auto' }"
@@ -216,121 +216,121 @@ Components which support rtl direction are listed here, you can toggle the direc
                   allow-clear
                   tree-default-expand-all
                   :tree-data="treeSelectData"
-                ></a-tree-select>
+                ></z-tree-select>
               </div>
-            </a-col>
-          </a-row>
+            </z-col>
+          </z-row>
           <br />
-          <a-row>
-            <a-col :span="24">
-              <a-divider orientation="left">Modal example</a-divider>
+          <z-row>
+            <z-col :span="24">
+              <z-divider orientation="left">Modal example</z-divider>
               <div>
-                <a-button type="primary" @click="showModal">Open Modal</a-button>
-                <a-modal v-model:visible="state.modalVisible" title="پنچره ساده">
+                <z-button type="primary" @click="showModal">Open Modal</z-button>
+                <z-modal v-model:visible="state.modalVisible" title="پنچره ساده">
                   <p>نگاشته‌های خود را اینجا قراردهید</p>
                   <p>نگاشته‌های خود را اینجا قراردهید</p>
                   <p>نگاشته‌های خود را اینجا قراردهید</p>
-                </a-modal>
+                </z-modal>
               </div>
-            </a-col>
-          </a-row>
+            </z-col>
+          </z-row>
           <br />
-          <a-row>
-            <a-col :span="24">
-              <a-divider orientation="left">Steps example</a-divider>
+          <z-row>
+            <z-col :span="24">
+              <z-divider orientation="left">Steps example</z-divider>
               <div>
-                <a-steps progress-dot :current="state.currentStep">
-                  <a-step title="Finished" description="This is a description." />
-                  <a-step title="In Progress" description="This is a description." />
-                  <a-step title="Waiting" description="This is a description." />
-                </a-steps>
+                <z-steps progress-dot :current="state.currentStep">
+                  <z-step title="Finished" description="This is a description." />
+                  <z-step title="In Progress" description="This is a description." />
+                  <z-step title="Waiting" description="This is a description." />
+                </z-steps>
                 <br />
-                <a-steps :current="state.currentStep" @change="onStepsChange">
-                  <a-step title="Step 1" description="This is a description." />
-                  <a-step title="Step 2" description="This is a description." />
-                  <a-step title="Step 3" description="This is a description." />
-                </a-steps>
+                <z-steps :current="state.currentStep" @change="onStepsChange">
+                  <z-step title="Step 1" description="This is a description." />
+                  <z-step title="Step 2" description="This is a description." />
+                  <z-step title="Step 3" description="This is a description." />
+                </z-steps>
               </div>
-            </a-col>
-          </a-row>
+            </z-col>
+          </z-row>
           <br />
-          <a-row>
-            <a-col :span="12">
-              <a-divider orientation="left">Rate example</a-divider>
+          <z-row>
+            <z-col :span="12">
+              <z-divider orientation="left">Rate example</z-divider>
               <div>
-                <a-rate v-model:value="rateValue" />
+                <z-rate v-model:value="rateValue" />
                 <br />
                 <strong>* Note:</strong>
                 Half star not implemented in RTL direction.
               </div>
-            </a-col>
-            <a-col :span="12">
-              <a-divider orientation="left">Badge example</a-divider>
+            </z-col>
+            <z-col :span="12">
+              <z-divider orientation="left">Badge example</z-divider>
               <div>
                 <div>
-                  <a-badge :count="state.badgeCount">
+                  <z-badge :count="state.badgeCount">
                     <a href="#" class="head-example" />
-                  </a-badge>
-                  <a-button-group>
-                    <a-button @click="declineBadge">
+                  </z-badge>
+                  <z-button-group>
+                    <z-button @click="declineBadge">
                       <MinusOutlined />
-                    </a-button>
-                    <a-button @click="increaseBadge">
+                    </z-button>
+                    <z-button @click="increaseBadge">
                       <PlusOutlined />
-                    </a-button>
-                  </a-button-group>
+                    </z-button>
+                  </z-button-group>
                 </div>
                 <div style="margin-top: 10px">
-                  <a-badge :dot="state.showBadge">
+                  <z-badge :dot="state.showBadge">
                     <a href="#" class="head-example" />
-                  </a-badge>
-                  <a-switch :checked="state.showBadge" @change="onChangeBadge" />
+                  </z-badge>
+                  <z-switch :checked="state.showBadge" @change="onChangeBadge" />
                 </div>
               </div>
-            </a-col>
-          </a-row>
-        </a-col>
-      </a-row>
+            </z-col>
+          </z-row>
+        </z-col>
+      </z-row>
 
       <br />
       <br />
-      <a-row>
-        <a-col :span="24">
-          <a-divider orientation="left">Pagination example</a-divider>
-          <a-pagination show-size-changer :default-current="3" :total="500" />
-        </a-col>
-      </a-row>
+      <z-row>
+        <z-col :span="24">
+          <z-divider orientation="left">Pagination example</z-divider>
+          <z-pagination show-size-changer :default-current="3" :total="500" />
+        </z-col>
+      </z-row>
       <br />
-      <a-row>
-        <a-col :span="24">
-          <a-divider orientation="left">Grid System example</a-divider>
+      <z-row>
+        <z-col :span="24">
+          <z-divider orientation="left">Grid System example</z-divider>
           <div class="grid-demo">
             <div class="code-box-demo">
               <p>
                 <strong>* Note:</strong>
                 Every calculation in RTL grid system is from right side (offset, push, etc.)
               </p>
-              <a-row>
-                <a-col :span="8">col-8</a-col>
-                <a-col :span="8" :offset="8">col-8</a-col>
-              </a-row>
-              <a-row>
-                <a-col :span="6" :offset="6">col-6 col-offset-6</a-col>
-                <a-col :span="6" :offset="6">col-6 col-offset-6</a-col>
-              </a-row>
-              <a-row>
-                <a-col :span="12" :offset="6">col-12 col-offset-6</a-col>
-              </a-row>
-              <a-row>
-                <a-col :span="18" :push="6">col-18 col-push-6</a-col>
-                <a-col :span="6" :pull="18">col-6 col-pull-18</a-col>
-              </a-row>
+              <z-row>
+                <z-col :span="8">col-8</z-col>
+                <z-col :span="8" :offset="8">col-8</z-col>
+              </z-row>
+              <z-row>
+                <z-col :span="6" :offset="6">col-6 col-offset-6</z-col>
+                <z-col :span="6" :offset="6">col-6 col-offset-6</z-col>
+              </z-row>
+              <z-row>
+                <z-col :span="12" :offset="6">col-12 col-offset-6</z-col>
+              </z-row>
+              <z-row>
+                <z-col :span="18" :push="6">col-18 col-push-6</z-col>
+                <z-col :span="6" :pull="18">col-6 col-pull-18</z-col>
+              </z-row>
             </div>
           </div>
-        </a-col>
-      </a-row>
+        </z-col>
+      </z-row>
     </div>
-  </a-config-provider>
+  </z-config-provider>
 </template>
 <script lang="ts">
 import { defineComponent, reactive, watch, ref } from 'vue';
@@ -561,10 +561,10 @@ export default defineComponent({
     border-radius: 4px;
   }
 
-  .ant-badge:not(.ant-badge-not-a-wrapper) {
+  .ant-badge:not(.ant-badge-not-z-wrapper) {
     margin-right: 20px;
   }
-  .ant-badge-rtl:not(.ant-badge-not-a-wrapper) {
+  .ant-badge-rtl:not(.ant-badge-not-z-wrapper) {
     margin-right: 0;
     margin-left: 20px;
   }

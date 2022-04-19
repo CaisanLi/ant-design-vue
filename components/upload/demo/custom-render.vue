@@ -16,25 +16,25 @@ Custom render by using `itemRender` slot.
 </docs>
 
 <template>
-  <a-upload
+  <z-upload
     v-model:file-list="fileList"
     name="file"
     action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
     :headers="headers"
     @change="handleChange"
   >
-    <a-button>
+    <z-button>
       <upload-outlined></upload-outlined>
       Click to Upload
-    </a-button>
+    </z-button>
     <template #itemRender="{ file, actions }">
-      <a-space>
+      <z-space>
         <span :style="file.status === 'error' ? 'color: red' : ''">{{ file.name }}</span>
         <a href="javascript:;" @click="actions.download">download</a>
         <a href="javascript:;" @click="actions.remove">delete</a>
-      </a-space>
+      </z-space>
     </template>
-  </a-upload>
+  </z-upload>
 </template>
 <script lang="ts">
 import { message } from 'ant-design-vue';

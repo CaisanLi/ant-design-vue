@@ -81,8 +81,14 @@
     </z-row>
   </div>
 </template>
+<script lang="ts">
+import type { GlobalConfig } from '../App.vue';
+import { GLOBAL_CONFIG } from '../SymbolKey';
+import { defineComponent, inject, computed, ref, provide, watch } from 'vue';
+import { useRoute } from 'vue-router';
 import Header from './header/index.vue';
 import Footer from './Footer.vue';
+import Menu from './Menu.vue';
 import PrevAndNext from './PrevAndNext.vue';
 import Demo from './Demo.vue';
 import useMenus from '../hooks/useMenus';
@@ -266,7 +272,7 @@ export default defineComponent({
   }
 }
 
-[datz-theme='dark'] .toc-affix :deep(.ant-anchor) {
+[data-theme='dark'] .toc-affix :deep(.ant-anchor) {
   .ant-anchor-link {
     border-left: 2px solid #303030;
   }

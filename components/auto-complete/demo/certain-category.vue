@@ -58,7 +58,7 @@ Lookup-Patterns - Certain Category.
           </div>
         </template>
       </template>
-      <z-input-search placeholder="input here" size="large"></-input-search>
+      <z-input-search placeholder="input here" size="large"></z-input-search>
     </z-auto-complete>
   </div>
 </template>

@@ -17,47 +17,47 @@ Config component default size.
 </docs>
 
 <template>
-  <a-radio-group v-model:value="componentSize">
-    <a-radio-button value="small">Small</a-radio-button>
-    <a-radio-button value="middle">Middle</a-radio-button>
-    <a-radio-button value="large">Large</a-radio-button>
-  </a-radio-group>
-  <a-divider />
-  <a-config-provider :component-size="componentSize">
+  <z-radio-group v-model:value="componentSize">
+    <z-radio-button value="small">Small</z-radio-button>
+    <z-radio-button value="middle">Middle</z-radio-button>
+    <z-radio-button value="large">Large</z-radio-button>
+  </z-radio-group>
+  <z-divider />
+  <z-config-provider :component-size="componentSize">
     <div class="example">
-      <a-input />
+      <z-input />
     </div>
     <div class="example">
-      <a-tabs>
-        <a-tab-pane key="1" tab="Tab 1">Content of Tab Pane 1</a-tab-pane>
-        <a-tab-pane key="2" tab="Tab 2">Content of Tab Pane 2</a-tab-pane>
-        <a-tab-pane key="3" tab="Tab 3">Content of Tab Pane 3</a-tab-pane>
-      </a-tabs>
+      <z-tabs>
+        <z-tab-pane key="1" tab="Tab 1">Content of Tab Pane 1</z-tab-pane>
+        <z-tab-pane key="2" tab="Tab 2">Content of Tab Pane 2</z-tab-pane>
+        <z-tab-pane key="3" tab="Tab 3">Content of Tab Pane 3</z-tab-pane>
+      </z-tabs>
     </div>
     <div class="example">
-      <a-input-search allow-clear />
+      <z-input-search allow-clear />
     </div>
     <div class="example">
-      <a-textarea allow-clear />
+      <z-textarea allow-clear />
     </div>
     <div class="example">
-      <a-select style="width: 100px" placeholder="select value" :options="[{ value: 'demo' }]" />
+      <z-select style="width: 100px" placeholder="select value" :options="[{ value: 'demo' }]" />
     </div>
     <div class="example">
-      <a-datePicker />
+      <z-datePicker />
     </div>
     <div class="example">
-      <a-range-picker />
+      <z-range-picker />
     </div>
     <div class="example">
-      <a-button>Button</a-button>
+      <z-button>Button</z-button>
     </div>
     <div class="example">
-      <a-card title="Card">
-        <a-table :columns="columns" :data-source="dataSource" />
-      </a-card>
+      <z-card title="Card">
+        <z-table :columns="columns" :data-source="dataSource" />
+      </z-card>
     </div>
-  </a-config-provider>
+  </z-config-provider>
 </template>
 <script>
 import { defineComponent, ref } from 'vue';

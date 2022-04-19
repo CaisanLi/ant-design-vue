@@ -17,7 +17,7 @@ Use `progress` for customize progress bar.
 </docs>
 
 <template>
-  <a-upload
+  <z-upload
     v-model:file-list="fileList"
     name="file"
     action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
@@ -25,11 +25,11 @@ Use `progress` for customize progress bar.
     :progress="progress"
     @change="handleChange"
   >
-    <a-button>
+    <z-button>
       <upload-outlined></upload-outlined>
       Click to Upload
-    </a-button>
-  </a-upload>
+    </z-button>
+  </z-upload>
 </template>
 <script lang="ts">
 import { message } from 'ant-design-vue';
