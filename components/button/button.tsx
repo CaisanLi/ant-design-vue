@@ -83,7 +83,7 @@ export default defineComponent({
         [`${pre}-${type}`]: type,
         [`${pre}-${shape}`]: shape !== 'default' && shape,
         [`${pre}-${sizeCls}`]: sizeCls,
-        [`${pre}-textCls`]: text,
+        [`${pre}-text`]: text,
         [`${pre}-outline`]: outline,
         [`${pre}-dashed`]: dashed,
         [`${pre}-loading`]: innerLoading.value,
