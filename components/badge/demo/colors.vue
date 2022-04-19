@@ -1,7 +1,7 @@
 <docs>
 ---
 order: 7
-title: 
+title:
   zh-CN: 多彩徽标
   en-US: Colorful Badge
 ---
@@ -23,16 +23,14 @@ New feature after 3.16.0. We preset a series of colorful Badge styles for use in
       <z-badge :color="color" :text="color" />
     </div>
   </div>
-  <h4 style="margin: 16px 0">Custom:</h4>
-  <div>
-    <z-badge color="#f50" text="#f50" />
-    <br />
-    <z-badge color="#2db7f5" text="#2db7f5" />
-    <br />
-    <z-badge color="#87d068" text="#87d068" />
-    <br />
-    <z-badge color="#108ee9" text="#108ee9" />
-  </div>
+  <z-divider orientation="left">Custom</z-divider>
+  <z-badge color="#f50" text="#f50" />
+  <br />
+  <z-badge color="#2db7f5" text="#2db7f5" />
+  <br />
+  <z-badge color="#87d068" text="#87d068" />
+  <br />
+  <z-badge color="#108ee9" text="#108ee9" />
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';

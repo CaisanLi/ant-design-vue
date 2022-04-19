@@ -25,12 +25,14 @@ import DropIndicator from './DropIndicator';
 import {
   computed,
   defineComponent,
-  onMounted,
   onUnmounted,
   reactive,
   ref,
   shallowRef,
+  watch,
   watchEffect,
+  nextTick,
+  toRaw,
 } from 'vue';
 import initDefaultProps from '../_util/props-util/initDefaultProps';
 import type { CheckInfo, DraggableFn } from './props';
@@ -39,6 +41,7 @@ import { warning } from '../vc-util/warning';
 import KeyCode from '../_util/KeyCode';
 import classNames from '../_util/classNames';
 import pickAttrs from '../_util/pickAttrs';
+import useMaxLevel from './useMaxLevel';
 
 const MAX_RETRY_TIMES = 10;
 
@@ -100,9 +103,17 @@ export default defineComponent({
       // abstract-drag-over-node is the top node
       dragOverNodeKey: null,
     });
-    const treeData = computed(() => {
-      return props.treeData !== undefined ? props.treeData : convertTreeToData(props.children);
-    });
+    const treeData = shallowRef([]);
+    watch(
+      [() => props.treeData, () => props.children],
+      () => {
+        treeData.value =
+          props.treeData !== undefined
+            ? toRaw(props.treeData)
+            : convertTreeToData(toRaw(props.children));
+      },
+      { immediate: true, deep: true },
+    );
     const keyEntities = shallowRef({});
 
     const focused = ref(false);
@@ -136,7 +147,9 @@ export default defineComponent({
 
     watchEffect(() => {
       if (treeData.value) {
-        const entitiesMap = convertDataToEntities(treeData.value, { fieldNames: fieldNames.value });
+        const entitiesMap = convertDataToEntities(treeData.value, {
+          fieldNames: fieldNames.value,
+        });
         keyEntities.value = {
           [MOTION_KEY]: MotionEntity,
           ...entitiesMap.keyEntities,
@@ -145,38 +158,43 @@ export default defineComponent({
     });
     let init = false; // 处理 defaultXxxx api, 仅仅首次有效
 
-    onMounted(() => {
-      init = true;
-    });
+    watch(
+      [() => props.expandedKeys, () => props.autoExpandParent, keyEntities],
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      ([_newKeys, newAutoExpandParent], [_oldKeys, oldAutoExpandParent]) => {
+        let keys = expandedKeys.value;
+        // ================ expandedKeys =================
+        if (
+          props.expandedKeys !== undefined ||
+          (init && newAutoExpandParent !== oldAutoExpandParent)
+        ) {
+          keys =
+            props.autoExpandParent || (!init && props.defaultExpandParent)
+              ? conductExpandParent(props.expandedKeys, keyEntities.value)
+              : props.expandedKeys;
+        } else if (!init && props.defaultExpandAll) {
+          const cloneKeyEntities = { ...keyEntities.value };
+          delete cloneKeyEntities[MOTION_KEY];
+          keys = Object.keys(cloneKeyEntities).map(key => cloneKeyEntities[key].key);
+        } else if (!init && props.defaultExpandedKeys) {
+          keys =
+            props.autoExpandParent || props.defaultExpandParent
+              ? conductExpandParent(props.defaultExpandedKeys, keyEntities.value)
+              : props.defaultExpandedKeys;
+        }
 
-    // ================ expandedKeys =================
-    watchEffect(() => {
-      let keys = expandedKeys.value;
-      // ================ expandedKeys =================
-      if (props.expandedKeys !== undefined || (init && props.autoExpandParent)) {
-        keys =
-          props.autoExpandParent || (!init && props.defaultExpandParent)
-            ? conductExpandParent(props.expandedKeys, keyEntities.value)
-            : props.expandedKeys;
-      } else if (!init && props.defaultExpandAll) {
-        const cloneKeyEntities = { ...keyEntities.value };
-        delete cloneKeyEntities[MOTION_KEY];
-        keys = Object.keys(cloneKeyEntities).map(key => cloneKeyEntities[key].key);
-      } else if (!init && props.defaultExpandedKeys) {
-        keys =
-          props.autoExpandParent || props.defaultExpandParent
-            ? conductExpandParent(props.defaultExpandedKeys, keyEntities.value)
-            : props.defaultExpandedKeys;
-      }
-
-      if (keys) {
-        expandedKeys.value = keys;
-      }
-    });
+        if (keys) {
+          expandedKeys.value = keys;
+        }
+        init = true;
+      },
+      { immediate: true },
+    );
 
     // ================ flattenNodes =================
-    const flattenNodes = computed(() => {
-      return flattenTreeData(treeData.value, expandedKeys.value, fieldNames.value);
+    const flattenNodes = shallowRef([]);
+    watchEffect(() => {
+      flattenNodes.value = flattenTreeData(treeData.value, expandedKeys.value, fieldNames.value);
     });
     // ================ selectedKeys =================
     watchEffect(() => {
@@ -188,7 +206,7 @@ export default defineComponent({
         }
       }
     });
-
+    const { maxLevel, levelEntities } = useMaxLevel(keyEntities);
     // ================= checkedKeys =================
     watchEffect(() => {
       if (props.checkable) {
@@ -211,7 +229,13 @@ export default defineComponent({
             checkedKeyEntity;
 
           if (!props.checkStrictly) {
-            const conductKeys = conductCheck(newCheckedKeys, true, keyEntities.value);
+            const conductKeys = conductCheck(
+              newCheckedKeys,
+              true,
+              keyEntities.value,
+              maxLevel.value,
+              levelEntities.value,
+            );
             ({ checkedKeys: newCheckedKeys, halfCheckedKeys: newHalfCheckedKeys } = conductKeys);
           }
 
@@ -242,6 +266,26 @@ export default defineComponent({
     const scrollTo: ScrollTo = scroll => {
       listRef.value.scrollTo(scroll);
     };
+    watch(
+      () => props.activeKey,
+      () => {
+        if (props.activeKey !== undefined) {
+          activeKey.value = props.activeKey;
+        }
+      },
+      { immediate: true },
+    );
+    watch(
+      activeKey,
+      val => {
+        nextTick(() => {
+          if (val !== null) {
+            scrollTo({ key: val });
+          }
+        });
+      },
+      { immediate: true, flush: 'post' },
+    );
     // =========================== Expanded ===========================
     /** Set uncontrolled `expandedKeys`. This will also auto update `flattenNodes`. */
     const setExpandedKeys = (keys: Key[]) => {
@@ -266,16 +310,14 @@ export default defineComponent({
       currentMouseOverDroppableNodeKey = null;
     };
     // if onNodeDragEnd is called, onWindowDragEnd won't be called since stopPropagation() is called
-    const onNodeDragEnd: NodeDragEventHandler = (event, node, outsideTree = false) => {
+    const onNodeDragEnd: NodeDragEventHandler = (event, node) => {
       const { onDragend } = props;
 
       dragState.dragOverNodeKey = null;
 
       cleanDragState();
 
-      if (onDragend && !outsideTree) {
-        onDragend({ event, node: node.eventData });
-      }
+      onDragend?.({ event, node: node.eventData });
 
       dragNode = null;
     };
@@ -376,7 +418,7 @@ export default defineComponent({
         delayedDragEnterLogic[pos] = window.setTimeout(() => {
           if (dragState.draggingNodeKey === null) return;
 
-          let newExpandedKeys = [...expandedKeys.value];
+          let newExpandedKeys = expandedKeys.value.slice();
           const entity = keyEntities.value[node.eventKey];
 
           if (entity && (entity.children || []).length) {
@@ -526,7 +568,7 @@ export default defineComponent({
 
       if (dropTargetKey === null) return;
       const abstractDropNodeProps = {
-        ...getTreeNodeProps(dropTargetKey, treeNodeRequiredProps.value),
+        ...getTreeNodeProps(dropTargetKey, toRaw(treeNodeRequiredProps.value)),
         active: activeItem.value?.key === dropTargetKey,
         data: keyEntities.value[dropTargetKey].node,
       };
@@ -548,8 +590,8 @@ export default defineComponent({
         dropPosition: dropPosition + Number(posArr[posArr.length - 1]),
       };
 
-      if (onDrop && !outsideTree) {
-        onDrop(dropResult);
+      if (!outsideTree) {
+        onDrop?.(dropResult);
       }
 
       dragNode = null;
@@ -623,7 +665,7 @@ export default defineComponent({
         checked,
         nativeEvent: e,
       };
-
+      const keyEntitiesValue = keyEntities.value;
       if (checkStrictly) {
         const newCheckedKeys = checked
           ? arrAdd(checkedKeys.value, key)
@@ -631,7 +673,6 @@ export default defineComponent({
         const newHalfCheckedKeys = arrDel(halfCheckedKeys.value, key);
         checkedObj = { checked: newCheckedKeys, halfChecked: newHalfCheckedKeys };
 
-        const keyEntitiesValue = keyEntities.value;
         eventObj.checkedNodes = newCheckedKeys
           .map(checkedKey => keyEntitiesValue[checkedKey])
           .filter(entity => entity)
@@ -645,7 +686,9 @@ export default defineComponent({
         let { checkedKeys: newCheckedKeys, halfCheckedKeys: newHalfCheckedKeys } = conductCheck(
           [...checkedKeys.value, key],
           true,
-          keyEntities.value,
+          keyEntitiesValue,
+          maxLevel.value,
+          levelEntities.value,
         );
 
         // If remove, we do it again to correction
@@ -655,7 +698,9 @@ export default defineComponent({
           ({ checkedKeys: newCheckedKeys, halfCheckedKeys: newHalfCheckedKeys } = conductCheck(
             Array.from(keySet),
             { checked: false, halfCheckedKeys: newHalfCheckedKeys },
-            keyEntities.value,
+            keyEntitiesValue,
+            maxLevel.value,
+            levelEntities.value,
           ));
         }
 
@@ -666,7 +711,7 @@ export default defineComponent({
         eventObj.checkedNodesPositions = [];
         eventObj.halfCheckedKeys = newHalfCheckedKeys;
         newCheckedKeys.forEach(checkedKey => {
-          const entity = keyEntities.value[checkedKey];
+          const entity = keyEntitiesValue[checkedKey];
           if (!entity) return;
 
           const { node, pos } = entity;
@@ -861,8 +906,9 @@ export default defineComponent({
       if (activeKey.value === newActiveKey) {
         return;
       }
-
-      activeKey.value = newActiveKey;
+      if (props.activeKey !== undefined) {
+        activeKey.value = newActiveKey;
+      }
       if (newActiveKey !== null) {
         scrollTo({ key: newActiveKey });
       }
@@ -882,7 +928,6 @@ export default defineComponent({
 
     const offsetActiveKey = (offset: number) => {
       let index = flattenNodes.value.findIndex(({ key }) => key === activeKey.value);
-
       // Align with index
       if (index === -1 && offset < 0) {
         index = flattenNodes.value.length;

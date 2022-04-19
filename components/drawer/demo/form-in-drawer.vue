@@ -18,7 +18,7 @@ Use form in drawer with submit button.
 
 <template>
   <z-button type="primary" @click="showDrawer">
-    <PlusOutlined />
+    <template #icon><PlusOutlined /></template>
     New account
   </z-button>
   <z-drawer
@@ -51,7 +51,7 @@ Use form in drawer with submit button.
       <z-row :gutter="16">
         <z-col :span="12">
           <z-form-item label="Owner" name="owner">
-            <z-select v-model:value="form.owner" placeholder="Please a-s an owner">
+            <z-select v-model:value="form.owner" placeholder="Please z-s an owner">
               <z-select-option value="xiao">Xiaoxiao Fu</z-select-option>
               <z-select-option value="mao">Maomao Zhou</z-select-option>
             </z-select>
@@ -97,9 +97,11 @@ Use form in drawer with submit button.
         </z-col>
       </z-row>
     </z-form>
-    <template #footer>
-      <z-button style="margin-right: 8px" @click="onClose">Cancel</z-button>
-      <z-button type="primary" @click="onClose">Submit</z-button>
+    <template #extra>
+      <z-space>
+        <z-button @click="onClose">Cancel</z-button>
+        <z-button type="primary" @click="onClose">Submit</z-button>
+      </z-space>
     </template>
   </z-drawer>
 </template>

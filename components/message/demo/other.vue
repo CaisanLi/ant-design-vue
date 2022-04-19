@@ -17,11 +17,11 @@ Messages of success, error and warning types.
 </docs>
 
 <template>
-  <div>
+  <z-space>
     <z-button @click="success">Success</z-button>
     <z-button @click="error">Error</z-button>
     <z-button @click="warning">Warning</z-button>
-  </div>
+  </z-space>
 </template>
 <script lang="ts">
 import { message } from 'ant-design-vue';

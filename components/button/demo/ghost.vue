@@ -21,6 +21,6 @@ title:
     <z-button type="primary" ghost>Primary</z-button>
     <z-button ghost>Default</z-button>
     <z-button type="dashed" ghost>Dashed</z-button>
-    <z-button danger ghost>Danger</z-button>
+    <z-button type="primary" danger ghost>Danger</z-button>
   </div>
 </template>

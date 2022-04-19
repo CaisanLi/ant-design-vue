@@ -46,8 +46,8 @@ If a large or small button is desired, set the `size` property to either `large`
   <z-button type="primary" shape="round" :size="size">
     <template #icon>
       <DownloadOutlined />
-      Download
     </template>
+    Download
   </z-button>
   <z-button type="primary" shape="round" :size="size">
     <template #icon>

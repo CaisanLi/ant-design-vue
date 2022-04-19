@@ -21,7 +21,7 @@ Child elements depending on the value of the `start`,`center`, `end`,`space-betw
 <template>
   <div id="components-grid-demo-flex">
     <p>sub-element align left</p>
-    <z-row type="flex" justify="start">
+    <z-row justify="start">
       <z-col :span="4">col-4</z-col>
       <z-col :span="4">col-4</z-col>
       <z-col :span="4">col-4</z-col>
@@ -29,7 +29,7 @@ Child elements depending on the value of the `start`,`center`, `end`,`space-betw
     </z-row>
 
     <p>sub-element align center</p>
-    <z-row type="flex" justify="center">
+    <z-row justify="center">
       <z-col :span="4">col-4</z-col>
       <z-col :span="4">col-4</z-col>
       <z-col :span="4">col-4</z-col>
@@ -37,7 +37,7 @@ Child elements depending on the value of the `start`,`center`, `end`,`space-betw
     </z-row>
 
     <p>sub-element align right</p>
-    <z-row type="flex" justify="end">
+    <z-row justify="end">
       <z-col :span="4">col-4</z-col>
       <z-col :span="4">col-4</z-col>
       <z-col :span="4">col-4</z-col>
@@ -45,7 +45,7 @@ Child elements depending on the value of the `start`,`center`, `end`,`space-betw
     </z-row>
 
     <p>sub-element monospaced arrangement</p>
-    <z-row type="flex" justify="space-between">
+    <z-row justify="space-between">
       <z-col :span="4">col-4</z-col>
       <z-col :span="4">col-4</z-col>
       <z-col :span="4">col-4</z-col>
@@ -53,7 +53,7 @@ Child elements depending on the value of the `start`,`center`, `end`,`space-betw
     </z-row>
 
     <p>sub-element align full</p>
-    <z-row type="flex" justify="space-around">
+    <z-row justify="space-around">
       <z-col :span="4">col-4</z-col>
       <z-col :span="4">col-4</z-col>
       <z-col :span="4">col-4</z-col>

@@ -31,7 +31,7 @@ A Card that supports `cover`, `avatar`, `title` and `description`.
     </template>
     <z-card-meta title="Card title" description="This is the description">
       <template #avatar>
-        <z-avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+        <z-avatar src="https://joeschmoe.io/api/v1/random" />
       </template>
     </z-card-meta>
   </z-card>

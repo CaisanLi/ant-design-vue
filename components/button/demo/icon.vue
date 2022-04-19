@@ -49,6 +49,52 @@ If you want specific control over the positioning and placement of the `Icon`, t
     <template #icon><SearchOutlined /></template>
     Search
   </z-button>
+  <z-button href="https://www.google.com">
+    <template #icon><SearchOutlined /></template>
+  </z-button>
+  <br />
+  <br />
+  <z-tooltip title="search">
+    <z-button type="primary" shape="circle" size="large">
+      <template #icon><SearchOutlined /></template>
+    </z-button>
+  </z-tooltip>
+  <z-button type="primary" shape="circle" size="large">A</z-button>
+  <z-button type="primary" size="large">
+    <template #icon><SearchOutlined /></template>
+    Search
+  </z-button>
+  <z-tooltip title="search">
+    <z-button shape="circle" size="large">
+      <template #icon><SearchOutlined /></template>
+    </z-button>
+  </z-tooltip>
+  <z-button size="large">
+    <template #icon><SearchOutlined /></template>
+    Search
+  </z-button>
+  <br />
+  <z-tooltip title="search">
+    <z-button shape="circle" size="large">
+      <template #icon><SearchOutlined /></template>
+    </z-button>
+  </z-tooltip>
+  <z-button size="large">
+    <template #icon><SearchOutlined /></template>
+    Search
+  </z-button>
+  <z-tooltip title="search">
+    <z-button type="dashed" shape="circle" size="large">
+      <template #icon><SearchOutlined /></template>
+    </z-button>
+  </z-tooltip>
+  <z-button type="dashed" size="large">
+    <template #icon><SearchOutlined /></template>
+    Search
+  </z-button>
+  <z-button size="large" href="https://www.google.com">
+    <template #icon><SearchOutlined /></template>
+  </z-button>
 </template>
 <script>
 import { SearchOutlined } from '@ant-design/icons-vue';

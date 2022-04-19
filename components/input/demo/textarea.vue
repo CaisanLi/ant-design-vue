@@ -17,6 +17,9 @@ For multi-line input.
 </docs>
 <template>
   <z-textarea v-model:value="value" placeholder="Basic usage" :rows="4" />
+  <br />
+  <br />
+  <z-textarea :rows="4" placeholder="maxLength is 6" :maxlength="6" />
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue';

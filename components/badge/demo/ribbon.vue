@@ -16,7 +16,28 @@ Use ribbon badge.
 </docs>
 
 <template>
-  <z-badge-ribbon text="Pushes open the window">
-    <z-card>And raises the spyglass.</z-card>
+  <z-badge-ribbon text="Hippies">
+    <z-card title="Pushes open the window" size="small">and raises the spyglass.</z-card>
+  </z-badge-ribbon>
+  <z-badge-ribbon text="Hippies" color="pink">
+    <z-card title="Pushes open the window" size="small">and raises the spyglass.</z-card>
+  </z-badge-ribbon>
+  <z-badge-ribbon text="Hippies" color="red">
+    <z-card title="Pushes open the window" size="small">and raises the spyglass.</z-card>
+  </z-badge-ribbon>
+  <z-badge-ribbon text="Hippies" color="cyan">
+    <z-card title="Pushes open the window" size="small">and raises the spyglass.</z-card>
+  </z-badge-ribbon>
+  <z-badge-ribbon text="Hippies" color="green">
+    <z-card title="Pushes open the window" size="small">and raises the spyglass.</z-card>
+  </z-badge-ribbon>
+  <z-badge-ribbon text="Hippies" color="purple">
+    <z-card title="Pushes open the window" size="small">and raises the spyglass.</z-card>
+  </z-badge-ribbon>
+  <z-badge-ribbon text="Hippies" color="volcano">
+    <z-card title="Pushes open the window" size="small">and raises the spyglass.</z-card>
+  </z-badge-ribbon>
+  <z-badge-ribbon text="Hippies" color="magenta">
+    <z-card title="Pushes open the window" size="small">and raises the spyglass.</z-card>
   </z-badge-ribbon>
 </template>

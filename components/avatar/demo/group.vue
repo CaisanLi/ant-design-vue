@@ -17,7 +17,7 @@ Avatar group display.
 
 <template>
   <z-avatar-group>
-    <z-avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+    <z-avatar src="https://joeschmoe.io/api/v1/random" />
     <z-avatar style="background-color: #f56a00">K</z-avatar>
     <z-tooltip title="Ant User" placement="top">
       <z-avatar style="background-color: #87d068">
@@ -30,7 +30,7 @@ Avatar group display.
   </z-avatar-group>
   <z-divider />
   <z-avatar-group :max-count="2" :max-style="{ color: '#f56a00', backgroundColor: '#fde3cf' }">
-    <z-avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+    <z-avatar src="https://joeschmoe.io/api/v1/random" />
     <z-avatar style="background-color: #1890ff">K</z-avatar>
     <z-tooltip title="Ant User" placement="top">
       <z-avatar style="background-color: #87d068">
@@ -50,7 +50,7 @@ Avatar group display.
       backgroundColor: '#fde3cf',
     }"
   >
-    <z-avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+    <z-avatar src="https://joeschmoe.io/api/v1/random" />
     <z-avatar style="background-color: #1890ff">K</z-avatar>
     <z-tooltip title="Ant User" placement="top">
       <z-avatar style="background-color: #87d068">

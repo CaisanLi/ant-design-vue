@@ -17,6 +17,8 @@ Bordered-less style component.
 </docs>
 
 <template>
-  <z-time-picker :bordered="false" />
-  <z-time-range-picker :bordered="false" />
+  <z-space direction="vertical">
+    <z-time-picker :bordered="false" />
+    <z-time-range-picker :bordered="false" />
+  </z-space>
 </template>

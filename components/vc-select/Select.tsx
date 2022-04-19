@@ -42,7 +42,7 @@ import { toArray } from './utils/commonUtil';
 import useFilterOptions from './hooks/useFilterOptions';
 import useCache from './hooks/useCache';
 import type { Key, VueNode } from '../_util/type';
-import { computed, defineComponent, ref, toRef, watchEffect } from 'vue';
+import { computed, defineComponent, ref, shallowRef, toRef, watchEffect } from 'vue';
 import type { ExtractPropTypes, PropType } from 'vue';
 import PropTypes from '../_util/vue-types';
 import { initDefaultProps } from '../_util/props-util';
@@ -64,6 +64,7 @@ export type OnInternalSelect = (value: RawValueType, info: { selected: boolean }
 export type RawValueType = string | number;
 export interface LabelInValueType {
   label: any;
+  originLabel?: any;
   value: RawValueType;
   /** @deprecated `key` is useless since it should always same as `value` */
   key?: Key;
@@ -283,7 +284,7 @@ export default defineComponent({
 
       return mergedValues.value.map(item => ({
         ...item,
-        label: item.label ?? item.value,
+        label: (typeof item.label === 'function' ? item.label() : item.label) ?? item.value,
       }));
     });
 
@@ -314,13 +315,15 @@ export default defineComponent({
     };
 
     // Fill tag as option if mode is `tags`
-    const filledTagOptions = computed(() => {
+    const filledTagOptions = shallowRef();
+    watchEffect(() => {
       if (props.mode !== 'tags') {
-        return mergedOptions.value;
+        filledTagOptions.value = mergedOptions.value;
+        return;
       }
 
       // >>> Tag mode
-      const cloneOptions = [...mergedOptions.value];
+      const cloneOptions = mergedOptions.value.slice();
 
       // Check if value exist in options (include new patch item)
       const existOptions = (val: RawValueType) => valueOptions.value.has(val);
@@ -336,7 +339,7 @@ export default defineComponent({
           }
         });
 
-      return cloneOptions;
+      filledTagOptions.value = cloneOptions;
     });
 
     const filteredOptions = useFilterOptions(
@@ -389,7 +392,15 @@ export default defineComponent({
         (labeledValues.length !== mergedValues.value.length ||
           labeledValues.some((newVal, index) => mergedValues.value[index]?.value !== newVal?.value))
       ) {
-        const returnValues = props.labelInValue ? labeledValues : labeledValues.map(v => v.value);
+        const returnValues = props.labelInValue
+          ? labeledValues.map(v => {
+              return {
+                ...v,
+                originLabel: v.label,
+                label: typeof v.label === 'function' ? v.label() : v.label,
+              };
+            })
+          : labeledValues.map(v => v.value);
         const returnOptions = labeledValues.map(v =>
           injectPropsWithOption(getMixedOption(v.value)),
         );
@@ -424,10 +435,12 @@ export default defineComponent({
     const triggerSelect = (val: RawValueType, selected: boolean) => {
       const getSelectEnt = (): [RawValueType | LabelInValueType, DefaultOptionType] => {
         const option = getMixedOption(val);
+        const originLabel = option?.[mergedFieldNames.value.label];
         return [
           props.labelInValue
             ? {
-                label: option?.[mergedFieldNames.value.label],
+                label: typeof originLabel === 'function' ? originLabel() : originLabel,
+                originLabel,
                 value: val,
                 key: option.key ?? val,
               }

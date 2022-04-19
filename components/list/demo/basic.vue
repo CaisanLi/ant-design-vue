@@ -17,7 +17,7 @@ Basic list.
 </docs>
 
 <template>
-  <z-list item-layout="horizontal" :data-source="data">
+  <z-list item-layout="horizontal" :datz-source="data">
     <template #renderItem="{ item }">
       <z-list-item>
         <z-list-item-meta
@@ -27,7 +27,7 @@ Basic list.
             <a href="https://www.antdv.com/">{{ item.title }}</a>
           </template>
           <template #avatar>
-            <z-avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+            <z-avatar src="https://joeschmoe.io/api/v1/random" />
           </template>
         </z-list-item-meta>
       </z-list-item>

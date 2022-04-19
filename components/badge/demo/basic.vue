@@ -17,16 +17,16 @@ Simplest Usage. Badge will be hidden when `count` is `0`, but we can use `showZe
 </docs>
 <template>
   <z-badge count="5">
-    <a href="#" class="head-example" />
+    <z-avatar shape="square" size="large" />
   </z-badge>
   <z-badge count="0" show-zero>
-    <a href="#" class="head-example" />
+    <z-avatar shape="square" size="large" />
   </z-badge>
   <z-badge>
     <template #count>
       <clock-circle-outlined style="color: #f5222d" />
     </template>
-    <a href="#" class="head-example"></a>
+    <z-avatar shape="square" size="large" />
   </z-badge>
 </template>
 

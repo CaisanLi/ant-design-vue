@@ -40,5 +40,20 @@ Set the color of circles. `green` means completed or success status, `red` means
       <p>Technical testing 2</p>
       <p>Technical testing 3 2015-09-01</p>
     </z-timeline-item>
+    <z-timeline-item color="#00CCFF">
+      <template #dot>
+        <SmileOutlined />
+      </template>
+      <p>Custom color testing</p>
+    </z-timeline-item>
   </z-timeline>
 </template>
+<script lang="ts">
+import { defineComponent } from 'vue';
+import { SmileOutlined } from '@ant-design/icons-vue';
+export default defineComponent({
+  components: {
+    SmileOutlined,
+  },
+});
+</script>

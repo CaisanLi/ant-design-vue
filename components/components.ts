@@ -93,7 +93,7 @@ export { default as Image, ImagePreviewGroup } from './image';
 export type { InputNumberProps } from './input-number';
 export { default as InputNumber } from './input-number';
 
-export type { LayoutProps } from './layout';
+export type { LayoutProps, SiderProps } from './layout';
 export {
   default as Layout,
   LayoutHeader,
@@ -102,13 +102,20 @@ export {
   LayoutContent,
 } from './layout';
 
-export type { ListProps } from './list';
+export type { ListProps, ListItemProps, ListItemMetaProps } from './list';
 export { default as List, ListItem, ListItemMeta } from './list';
 
 export type { MessageArgsProps } from './message';
 export { default as message } from './message';
 
-export type { MenuProps, MenuTheme, SubMenuProps, MenuItemProps, MenuMode } from './menu';
+export type {
+  MenuProps,
+  MenuTheme,
+  SubMenuProps,
+  MenuItemProps,
+  MenuMode,
+  MenuDividerProps,
+} from './menu';
 export { default as Menu, MenuDivider, MenuItem, MenuItemGroup, SubMenu } from './menu';
 
 export type { MentionsProps } from './mentions';
@@ -153,13 +160,21 @@ export { default as Row } from './row';
 export type { SelectProps } from './select';
 export { default as Select, SelectOptGroup, SelectOption } from './select';
 
-export type { SkeletonProps } from './skeleton';
+export type {
+  SkeletonProps,
+  SkeletonButtonProps,
+  SkeletonInputProps,
+  SkeletonImageProps,
+  SkeletonAvatarProps,
+  SkeletonTitleProps,
+} from './skeleton';
 export {
   default as Skeleton,
   SkeletonButton,
   SkeletonAvatar,
   SkeletonInput,
   SkeletonImage,
+  SkeletonTitle,
 } from './skeleton';
 
 export type { SliderProps } from './slider';
@@ -227,7 +242,7 @@ export {
   TypographyTitle,
 } from './typography';
 
-export type { UploadProps, UploadListProps, UploadChangeParam } from './upload';
+export type { UploadProps, UploadListProps, UploadChangeParam, UploadFile } from './upload';
 
 export { default as Upload, UploadDragger } from './upload';
 

@@ -19,7 +19,7 @@ Comment can be used as editor, user can customize the editor component.
 <template>
   <z-list
     v-if="comments.length"
-    :data-source="comments"
+    :datz-source="comments"
     :header="`${comments.length} ${comments.length > 1 ? 'replies' : 'reply'}`"
     item-layout="horizontal"
   >
@@ -36,10 +36,7 @@ Comment can be used as editor, user can customize the editor component.
   </z-list>
   <z-comment>
     <template #avatar>
-      <z-avatar
-        src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-        alt="Han Solo"
-      />
+      <z-avatar src="https://joeschmoe.io/api/v1/random" alt="Han Solo" />
     </template>
     <template #content>
       <z-form-item>
@@ -78,7 +75,7 @@ export default defineComponent({
         comments.value = [
           {
             author: 'Han Solo',
-            avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+            avatar: 'https://joeschmoe.io/api/v1/random',
             content: value.value,
             datetime: dayjs().fromNow(),
           },

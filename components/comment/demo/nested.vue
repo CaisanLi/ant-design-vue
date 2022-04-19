@@ -25,10 +25,7 @@ Comments can be nested.
       <a>Han Solo</a>
     </template>
     <template #avatar>
-      <z-avatar
-        src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-        alt="Han Solo"
-      />
+      <z-avatar src="https://joeschmoe.io/api/v1/random" alt="Han Solo" />
     </template>
     <template #content>
       <p>
@@ -44,10 +41,7 @@ Comments can be nested.
         <a>Han Solo</a>
       </template>
       <template #avatar>
-        <z-avatar
-          src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-          alt="Han Solo"
-        />
+        <z-avatar src="https://joeschmoe.io/api/v1/random" alt="Han Solo" />
       </template>
       <template #content>
         <p>
@@ -63,10 +57,7 @@ Comments can be nested.
           <a>Han Solo</a>
         </template>
         <template #avatar>
-          <z-avatar
-            src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-            alt="Han Solo"
-          />
+          <z-avatar src="https://joeschmoe.io/api/v1/random" alt="Han Solo" />
         </template>
         <template #content>
           <p>
@@ -83,10 +74,7 @@ Comments can be nested.
           <a>Han Solo</a>
         </template>
         <template #avatar>
-          <z-avatar
-            src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-            alt="Han Solo"
-          />
+          <z-avatar src="https://joeschmoe.io/api/v1/random" alt="Han Solo" />
         </template>
         <template #content>
           <p>

@@ -17,14 +17,20 @@ For long table，need to scroll to view the header and scroll bar，then you can
 </docs>
 
 <template>
-  <z-table sticky :columns="columns" :data-source="data" :scroll="{ x: 1500 }">
+  <z-table sticky :columns="columns" :datz-source="data" :scroll="{ x: 1500 }">
     <template #bodyCell="{ column }">
       <template v-if="column.key === 'operation'"><a>action</a></template>
     </template>
     <template #summary>
-      <z-table-summary>
+      <z-table-summary :fixed="fixedTop ? 'top' : 'bottom'">
         <z-table-summary-row>
-          <z-table-summary-cell :index="0" :col-span="2">Fix Left</z-table-summary-cell>
+          <z-table-summary-cell :index="0" :col-span="2">
+            <z-switch
+              v-model:checked="fixedTop"
+              checked-children="Fixed Top"
+              un-checked-children="Fixed Top"
+            ></z-switch>
+          </z-table-summary-cell>
           <z-table-summary-cell :index="2" :col-span="8">Scroll Context</z-table-summary-cell>
           <z-table-summary-cell :index="10">Fix Right</z-table-summary-cell>
         </z-table-summary-row>
@@ -117,6 +123,7 @@ export default defineComponent({
     return {
       data,
       columns,
+      fixedTop: ref(false),
     };
   },
 });
@@ -127,8 +134,8 @@ export default defineComponent({
 #components-table-demo-summary tfoot td {
   background: #fafafa;
 }
-[data-theme='dark'] #components-table-demo-summary tfoot th,
-[data-theme='dark'] #components-table-demo-summary tfoot td {
+[datz-theme='dark'] #components-table-demo-summary tfoot th,
+[datz-theme='dark'] #components-table-demo-summary tfoot td {
   background: #1d1d1d;
 }
 </style>

@@ -19,54 +19,89 @@ Load more list with `loadMore` property.
 <template>
   <z-list
     class="demo-loadmore-list"
-    :loading="loading"
+    :loading="initLoading"
     item-layout="horizontal"
-    :data-source="dataList"
+    :datz-source="list"
   >
     <template #loadMore>
-      <div :style="{ textAlign: 'center', marginTop: '12px', height: '32px', lineHeight: '32px' }">
-        <z-spin v-if="loadingMore" />
-        <z-button v-else @click="loadMore">loading more</z-button>
+      <div
+        v-if="!initLoading && !loading"
+        :style="{ textAlign: 'center', marginTop: '12px', height: '32px', lineHeight: '32px' }"
+      >
+        <z-button @click="onLoadMore">loading more</z-button>
       </div>
     </template>
     <template #renderItem="{ item }">
       <z-list-item>
         <template #actions>
-          <a>edit</a>
-          <a>more</a>
+          <a key="list-loadmore-edit">edit</a>
+          <a key="list-loadmore-more">more</a>
         </template>
-        <z-list-item-meta
-          description="Ant Design, a design language for background applications, is refined by Ant UED Team"
-        >
-          <template #title>
-            <a href="https://www.antdv.com/">{{ item.name.last }}</a>
-          </template>
-          <template #avatar>
-            <z-avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
-          </template>
-        </z-list-item-meta>
-        <div>content</div>
+        <z-skeleton avatar :title="false" :loading="!!item.loading" active>
+          <z-list-item-meta
+            description="Ant Design, a design language for background applications, is refined by Ant UED Team"
+          >
+            <template #title>
+              <a href="https://www.antdv.com/">{{ item.name.last }}</a>
+            </template>
+            <template #avatar>
+              <z-avatar :src="item.picture.large" />
+            </template>
+          </z-list-item-meta>
+          <div>content</div>
+        </z-skeleton>
       </z-list-item>
     </template>
   </z-list>
 </template>
 <script lang="ts">
-import { defineComponent } from 'vue';
-import { useLoadMore } from 'vue-request';
-
-const getFakeData = () => `https://randomuser.me/api/?results=5&inc=name,gender,email,nat&noinfo`;
+import { defineComponent, onMounted, ref, nextTick } from 'vue';
+const count = 3;
+const fakeDataUrl = `https://randomuser.me/api/?results=${count}&inc=name,gender,email,nat,picture&noinfo`;
 
 export default defineComponent({
   setup() {
-    const { dataList, loading, loadingMore, loadMore } = useLoadMore(getFakeData, {
-      listKey: 'results',
+    const initLoading = ref(true);
+    const loading = ref(false);
+    const data = ref([]);
+    const list = ref([]);
+    onMounted(() => {
+      fetch(fakeDataUrl)
+        .then(res => res.json())
+        .then(res => {
+          initLoading.value = false;
+          data.value = res.results;
+          list.value = res.results;
+        });
     });
+
+    const onLoadMore = () => {
+      loading.value = true;
+      list.value = data.value.concat(
+        [...new Array(count)].map(() => ({ loading: true, name: {}, picture: {} })),
+      );
+      fetch(fakeDataUrl)
+        .then(res => res.json())
+        .then(res => {
+          const newData = data.value.concat(res.results);
+          loading.value = false;
+          data.value = newData;
+          list.value = newData;
+          nextTick(() => {
+            // Resetting window's offsetTop so as to display react-virtualized demo underfloor.
+            // In real scene, you can using public method of react-virtualized:
+            // https://stackoverflow.com/questions/46700726/how-to-use-public-method-updateposition-of-react-virtualized
+            window.dispatchEvent(new Event('resize'));
+          });
+        });
+    };
 
     return {
       loading,
-      loadingMore,
-      dataList,
-      loadMore,
+      initLoading,
+      data,
+      list,
+      onLoadMore,
     };
   },
 });

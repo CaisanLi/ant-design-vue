@@ -1,5 +1,5 @@
 <template>
-  <z-dropdown>
+  <z-dropdown placement="bottom">
     <z-button size="small" class="header-button">
       {{ $t('app.header.menu.more') }}
       <DownOutlined

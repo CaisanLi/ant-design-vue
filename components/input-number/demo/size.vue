@@ -17,11 +17,11 @@ There are three sizes available to a numeric input box. By default, the size is 
 </docs>
 
 <template>
-  <div>
+  <z-space>
     <z-input-number v-model:value="value1" size="large" :min="1" :max="100000" />
     <z-input-number v-model:value="value2" :min="1" :max="100000" />
     <z-input-number v-model:value="value3" size="small" :min="1" :max="100000" />
-  </div>
+  </z-space>
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
@@ -39,8 +39,3 @@ export default defineComponent({
   },
 });
 </script>
-<style scoped>
-.ant-input-number {
-  margin-right: 10px;
-}
-</style>

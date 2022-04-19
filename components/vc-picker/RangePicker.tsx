@@ -36,6 +36,7 @@ import { warning } from '../vc-util/warning';
 import useState from '../_util/hooks/useState';
 import classNames from '../_util/classNames';
 import { useProviderTrigger } from '../vc-trigger/context';
+import { legacyPropsWarning } from './utils/warnUtil';
 
 function reorderValues<DateType>(
   values: RangeValue<DateType>,
@@ -105,8 +106,11 @@ export type RangePickerSharedProps<DateType> = {
   onPanelChange?: (values: RangeValue<DateType>, modes: [PanelMode, PanelMode]) => void;
   onFocus?: FocusEventHandler;
   onBlur?: FocusEventHandler;
+  onMousedown?: MouseEventHandler;
+  onMouseup?: MouseEventHandler;
   onMouseenter?: MouseEventHandler;
   onMouseleave?: MouseEventHandler;
+  onClick?: MouseEventHandler;
   onOk?: (dates: RangeValue<DateType>) => void;
   direction?: 'ltr' | 'rtl';
   autocomplete?: string;
@@ -216,8 +220,11 @@ function RangerPicker<DateType>() {
       'onCalendarChange',
       'onFocus',
       'onBlur',
+      'onMousedown',
+      'onMouseup',
       'onMouseenter',
       'onMouseleave',
+      'onClick',
       'onOk',
       'onKeydown',
       'components',
@@ -241,6 +248,12 @@ function RangerPicker<DateType>() {
       const separatorRef = ref<HTMLDivElement>(null);
       const startInputRef = ref<HTMLInputElement>(null);
       const endInputRef = ref<HTMLInputElement>(null);
+      const arrowRef = ref<HTMLDivElement>(null);
+
+      // ============================ Warning ============================
+      if (process.env.NODE_ENV !== 'production') {
+        legacyPropsWarning(props);
+      }
 
       // ============================= Misc ==============================
       const formatList = computed(() =>
@@ -408,8 +421,16 @@ function RangerPicker<DateType>() {
         let values = newValue;
         let startValue = getValue(values, 0);
         let endValue = getValue(values, 1);
-        const { generateConfig, locale, picker, order, onCalendarChange, allowEmpty, onChange } =
-          props;
+        const {
+          generateConfig,
+          locale,
+          picker,
+          order,
+          onCalendarChange,
+          allowEmpty,
+          onChange,
+          showTime,
+        } = props;
 
         // >>>>> Format start & end values
         if (startValue && endValue && generateConfig.isAfter(startValue, endValue)) {
@@ -423,7 +444,9 @@ function RangerPicker<DateType>() {
             (picker !== 'week' &&
               picker !== 'quarter' &&
               picker !== 'time' &&
-              !isSameDate(generateConfig, startValue, endValue))
+              !(showTime
+                ? isEqual(generateConfig, startValue, endValue)
+                : isSameDate(generateConfig, startValue, endValue)))
           ) {
             // Clean up end date when start date is after end date
             if (sourceIndex === 0) {
@@ -604,7 +627,7 @@ function RangerPicker<DateType>() {
         },
         isClickOutside: (target: EventTarget | null) =>
           !elementsContains(
-            [panelDivRef.value, startInputDivRef.value, endInputDivRef.value],
+            [panelDivRef.value, startInputDivRef.value, endInputDivRef.value, containerRef.value],
             target as HTMLElement,
           ),
         onFocus: (e: FocusEvent) => {
@@ -615,6 +638,14 @@ function RangerPicker<DateType>() {
           triggerOpen(newOpen, index);
         },
         onSubmit: () => {
+          if (
+            // When user typing disabledDate with keyboard and enter, this value will be empty
+            !selectedValue.value ||
+            // Normal disabled check
+            (props.disabledDate && props.disabledDate(selectedValue.value[index]))
+          ) {
+            return false;
+          }
           triggerChange(selectedValue.value, index);
           resetText();
         },
@@ -649,6 +680,7 @@ function RangerPicker<DateType>() {
       const onPickerClick = (e: MouseEvent) => {
         // When click inside the picker & outside the picker's input elements
         // the panel should still be opened
+        props.onClick?.(e);
         if (
           !mergedOpen.value &&
           !startInputRef.value.contains(e.target as Node) &&
@@ -664,6 +696,7 @@ function RangerPicker<DateType>() {
 
       const onPickerMousedown = (e: MouseEvent) => {
         // shouldn't affect input elements if picker is active
+        props.onMousedown?.(e);
         if (
           mergedOpen.value &&
           (startFocused.value || endFocused.value) &&
@@ -880,7 +913,6 @@ function RangerPicker<DateType>() {
                   ? getValue(selectedValue.value, 1)
                   : getValue(selectedValue.value, 0)
               }
-              defaultPickerValue={undefined}
             />
           </RangeContextProvider>
         );
@@ -938,6 +970,7 @@ function RangerPicker<DateType>() {
           renderExtraFooter,
           onMouseenter,
           onMouseleave,
+          onMouseup,
           onOk,
           components,
           direction,
@@ -954,7 +987,14 @@ function RangerPicker<DateType>() {
           // Arrow offset
           arrowLeft = startInputDivRef.value.offsetWidth + separatorRef.value.offsetWidth;
 
-          if (panelDivRef.value.offsetWidth && arrowLeft > panelDivRef.value.offsetWidth) {
+          if (
+            panelDivRef.value.offsetWidth &&
+            arrowRef.value.offsetWidth &&
+            arrowLeft >
+              panelDivRef.value.offsetWidth -
+                arrowRef.value.offsetWidth -
+                (direction === 'rtl' ? 0 : arrowRef.value.offsetLeft)
+          ) {
             panelLeft = arrowLeft;
           }
         }
@@ -1066,7 +1106,7 @@ function RangerPicker<DateType>() {
             class={classNames(`${prefixCls}-range-wrapper`, `${prefixCls}-${picker}-range-wrapper`)}
             style={{ minWidth: `${popupMinWidth.value}px` }}
           >
-            <div class={`${prefixCls}-range-arrow`} style={arrowPositionStyle} />
+            <div ref={arrowRef} class={`${prefixCls}-range-arrow`} style={arrowPositionStyle} />
             {renderPanels()}
           </div>
         );
@@ -1157,6 +1197,7 @@ function RangerPicker<DateType>() {
               onMouseenter={onMouseenter}
               onMouseleave={onMouseleave}
               onMousedown={onPickerMousedown}
+              onMouseup={onMouseup}
               {...getDataOrAriaProps(props)}
             >
               <div

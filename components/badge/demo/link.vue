@@ -18,7 +18,7 @@ The badge can be wrapped with `a` tag to make it linkable.
 <template>
   <a href="#">
     <z-badge count="5">
-      <span class="head-example" />
+      <z-avatar shape="square" size="large" />
     </z-badge>
   </a>
 </template>

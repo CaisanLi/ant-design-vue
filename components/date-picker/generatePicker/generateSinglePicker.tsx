@@ -34,10 +34,10 @@ export default function generateSinglePicker<DateType, ExtraProps = {}>(
       slots: [
         'suffixIcon',
         // 'clearIcon',
-        // 'prevIcon',
-        // 'nextIcon',
-        // 'superPrevIcon',
-        // 'superNextIcon',
+        'prevIcon',
+        'nextIcon',
+        'superPrevIcon',
+        'superNextIcon',
         // 'panelRender',
         'dateRender',
         'renderExtraFooter',
@@ -119,7 +119,7 @@ export default function generateSinglePicker<DateType, ExtraProps = {}>(
               ? generateConfig.toDate(props.value as string | DateType, props.valueFormat)
               : props.value;
           }
-          return props.value;
+          return (props.value === '' ? undefined : props.value) as DateType;
         });
         const defaultValue = computed(() => {
           if (props.defaultValue) {
@@ -127,7 +127,7 @@ export default function generateSinglePicker<DateType, ExtraProps = {}>(
               ? generateConfig.toDate(props.defaultValue as string | DateType, props.valueFormat)
               : props.defaultValue;
           }
-          return props.defaultValue;
+          return (props.defaultValue === '' ? undefined : props.defaultValue) as DateType;
         });
         const defaultPickerValue = computed(() => {
           if (props.defaultPickerValue) {
@@ -138,7 +138,9 @@ export default function generateSinglePicker<DateType, ExtraProps = {}>(
                 )
               : props.defaultPickerValue;
           }
-          return props.defaultPickerValue;
+          return (
+            props.defaultPickerValue === '' ? undefined : props.defaultPickerValue
+          ) as DateType;
         });
 
         return () => {
@@ -216,10 +218,10 @@ export default function generateSinglePicker<DateType, ExtraProps = {}>(
               prefixCls={pre}
               getPopupContainer={attrs.getCalendarContainer || getPopupContainer.value}
               generateConfig={generateConfig}
-              prevIcon={<span class={`${pre}-prev-icon`} />}
-              nextIcon={<span class={`${pre}-next-icon`} />}
-              superPrevIcon={<span class={`${pre}-super-prev-icon`} />}
-              superNextIcon={<span class={`${pre}-super-next-icon`} />}
+              prevIcon={slots.prevIcon?.() || <span class={`${pre}-prev-icon`} />}
+              nextIcon={slots.nextIcon?.() || <span class={`${pre}-next-icon`} />}
+              superPrevIcon={slots.superPrevIcon?.() || <span class={`${pre}-super-prev-icon`} />}
+              superNextIcon={slots.superNextIcon?.() || <span class={`${pre}-super-next-icon`} />}
               components={Components}
               direction={direction.value}
               onChange={onChange}

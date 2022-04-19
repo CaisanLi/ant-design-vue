@@ -17,11 +17,11 @@ TimePicker of 12 hours format, with default format `h:mm:ss a`.
 </docs>
 
 <template>
-  <div>
+  <z-space direction="vertical">
     <z-time-picker v-model:value="value" use12-hours />
     <z-time-picker v-model:value="value" use12-hours format="h:mm:ss A" style="width: 140px" />
     <z-time-picker v-model:value="value" use12-hours format="h:mm a" />
-  </div>
+  </z-space>
 </template>
 <script lang="ts">
 import { Dayjs } from 'dayjs';

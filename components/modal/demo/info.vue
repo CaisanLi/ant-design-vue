@@ -17,12 +17,12 @@ In the various types of information modal dialog, only one button to close dialo
 </docs>
 
 <template>
-  <div>
+  <z-space wrap>
     <z-button @click="info">Info</z-button>
     <z-button @click="success">Success</z-button>
     <z-button @click="error">Error</z-button>
     <z-button @click="warning">Warning</z-button>
-  </div>
+  </z-space>
 </template>
 <script lang="ts">
 import { Modal } from 'ant-design-vue';

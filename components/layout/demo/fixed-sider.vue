@@ -17,8 +17,10 @@ When dealing with long content, a fixed sider can provide a better user experien
 
 </docs>
 <template>
-  <z-layout>
-    <z-layout-sider :style="{ overflow: 'auto', height: '100vh', position: 'fixed', left: 0 }">
+  <z-layout has-sider>
+    <z-layout-sider
+      :style="{ overflow: 'auto', height: '100vh', position: 'fixed', left: 0, top: 0, bottom: 0 }"
+    >
       <div class="logo" />
       <z-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline">
         <z-menu-item key="1">
@@ -26,7 +28,7 @@ When dealing with long content, a fixed sider can provide a better user experien
           <span class="nav-text">nav 1</span>
         </z-menu-item>
         <z-menu-item key="2">
-          <video-camera-outlined />
+          <video-camerz-outlined />
           <span class="nav-text">nav 2</span>
         </z-menu-item>
         <z-menu-item key="3">
@@ -203,7 +205,7 @@ export default defineComponent({
   background: #fff;
 }
 
-[data-theme='dark'] .site-layout .site-layout-background {
+[datz-theme='dark'] .site-layout .site-layout-background {
   background: #141414;
 }
 </style>

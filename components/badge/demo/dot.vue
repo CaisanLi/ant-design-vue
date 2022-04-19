@@ -17,17 +17,12 @@ If count equals 0, it won't display the dot.
 </docs>
 
 <template>
-  <div id="components-badge-demo-dot">
-    <z-badge dot>
-      <notification-outlined />
-    </z-badge>
-    <z-badge :count="0" dot>
-      <notification-outlined />
-    </z-badge>
-    <z-badge dot>
-      <a href="#">Link something</a>
-    </z-badge>
-  </div>
+  <z-badge dot>
+    <notification-outlined style="font-size: 16px" />
+  </z-badge>
+  <z-badge dot>
+    <a href="#">Link something</a>
+  </z-badge>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';
@@ -38,11 +33,3 @@ export default defineComponent({
   },
 });
 </script>
-<style scoped>
-#components-badge-demo-dot .anticon-notification {
-  width: 16px;
-  height: 16px;
-  line-height: 16px;
-  font-size: 16px;
-}
-</style>

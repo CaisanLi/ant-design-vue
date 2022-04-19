@@ -13,7 +13,7 @@ title:
 
 ## en-US
 
-Input.Group example
+z-input-group example
 Note: You don't need `Col` to control the width in the `compact` mode.
 
 </docs>
@@ -115,10 +115,25 @@ Note: You don't need `Col` to control the width in the `compact` mode.
         placeholder="Select Address"
       />
     </z-input-group>
+    <br />
+    <z-input-group compact>
+      <z-input v-model:value="value19" style="width: calc(100% - 200px)" />
+      <z-button type="primary">Submit</z-button>
+    </z-input-group>
+    <br />
+    <z-input-group compact>
+      <z-input v-model:value="value20" style="width: calc(100% - 200px)" />
+      <z-tooltip title="copy git url">
+        <z-button>
+          <template #icon><CopyOutlined /></template>
+        </z-button>
+      </z-tooltip>
+    </z-input-group>
   </div>
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
+import { CopyOutlined } from '@ant-design/icons-vue';
 
 const options = [
   {
@@ -155,6 +170,9 @@ const options = [
   },
 ];
 export default defineComponent({
+  components: {
+    CopyOutlined,
+  },
   setup() {
     const value1 = ref<string>('0571');
     const value2 = ref<string>('26888888');
@@ -174,6 +192,8 @@ export default defineComponent({
     const value16 = ref<string>('');
     const value17 = ref<string>('Home');
     const value18 = ref<string[]>([]);
+    const value19 = ref<string>('https://surely.cool');
+    const value20 = ref<string>('https://antdv.com');
 
     return {
       value1,
@@ -195,6 +215,8 @@ export default defineComponent({
       value17,
       value18,
       options,
+      value19,
+      value20,
     };
   },
 });

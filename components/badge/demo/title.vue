@@ -17,21 +17,7 @@ The badge will display `title` when hovered over, instead of `count`.
 </docs>
 
 <template>
-  <div id="components-badge-demo-title">
-    <z-badge :count="5" title="Custom hover text">
-      <a href="#" class="head-example" />
-    </z-badge>
-  </div>
+  <z-badge :count="5" title="Custom hover text">
+    <z-avatar shape="square" size="large" />
+  </z-badge>
 </template>
-<style scoped>
-#components-badge-demo-title .ant-badge:not(.ant-badge-status) {
-  margin-right: 20px;
-}
-.head-example {
-  width: 42px;
-  height: 42px;
-  border-radius: 4px;
-  background: #eee;
-  display: inline-block;
-}
-</style>

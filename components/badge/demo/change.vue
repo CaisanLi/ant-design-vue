@@ -18,7 +18,7 @@ The count will be animated as it changes.
 <template>
   <div>
     <z-badge :count="count">
-      <a href="#" class="head-example" />
+      <z-avatar shape="square" size="large" />
     </z-badge>
     <z-button-group>
       <z-button @click="decline">
@@ -29,12 +29,11 @@ The count will be animated as it changes.
       </z-button>
     </z-button-group>
   </div>
-  <div style="margin-top: 10px">
-    <z-badge :dot="show">
-      <a href="#" class="head-example" />
-    </z-badge>
-    <z-switch v-model:checked="show" />
-  </div>
+  <z-divider />
+  <z-badge :dot="show">
+    <z-avatar shape="square" size="large" />
+  </z-badge>
+  <z-switch v-model:checked="show" />
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue';

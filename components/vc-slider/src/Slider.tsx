@@ -11,19 +11,20 @@ const Slider = defineComponent({
   mixins: [BaseMixin],
   inheritAttrs: false,
   props: {
-    defaultValue: PropTypes.number,
-    value: PropTypes.number,
-    disabled: PropTypes.looseBool,
-    autofocus: PropTypes.looseBool,
+    defaultValue: Number,
+    value: Number,
+    disabled: { type: Boolean, default: undefined },
+    autofocus: { type: Boolean, default: undefined },
     tabindex: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-    reverse: PropTypes.looseBool,
-    min: PropTypes.number,
-    max: PropTypes.number,
+    reverse: { type: Boolean, default: undefined },
+    min: Number,
+    max: Number,
     ariaLabelForHandle: String,
     ariaLabelledByForHandle: String,
     ariaValueTextFormatterForHandle: String,
     startPoint: Number,
   },
+  emits: ['beforeChange', 'afterChange', 'change'],
   data() {
     const defaultValue = this.defaultValue !== undefined ? this.defaultValue : this.min;
     const value = this.value !== undefined ? this.value : defaultValue;

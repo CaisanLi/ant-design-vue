@@ -3,18 +3,18 @@ import { defineComponent } from 'vue';
 import useConfigInject from '../_util/hooks/useConfigInject';
 import PropTypes from '../_util/vue-types';
 
-export const listItemMetaProps = {
+export const listItemMetaProps = () => ({
   avatar: PropTypes.any,
   description: PropTypes.any,
-  prefixCls: PropTypes.string,
+  prefixCls: String,
   title: PropTypes.any,
-};
+});
 
-export type ListItemMetaProps = Partial<ExtractPropTypes<typeof listItemMetaProps>>;
+export type ListItemMetaProps = Partial<ExtractPropTypes<ReturnType<typeof listItemMetaProps>>>;
 
 export default defineComponent({
-  name: 'ZListItemMeta',
-  props: listItemMetaProps,
+  name: 'AListItemMeta',
+  props: listItemMetaProps(),
   displayName: 'AListItemMeta', // 兼容历史函数式组件
   __ANT_LIST_ITEM_META: true,
   slots: ['avatar', 'description', 'title'],
@@ -26,16 +26,16 @@ export default defineComponent({
       const description = props.description ?? slots.description?.();
       const avatar = props.avatar ?? slots.avatar?.();
       const content = (
-        <div class={`${prefixCls.value}-item-meta-content`}>
-          {title && <h4 class={`${prefixCls.value}-item-meta-title`}>{title}</h4>}
+        <div class={`${prefixCls.value}-item-metz-content`}>
+          {title && <h4 class={`${prefixCls.value}-item-metz-title`}>{title}</h4>}
           {description && (
-            <div class={`${prefixCls.value}-item-meta-description`}>{description}</div>
+            <div class={`${prefixCls.value}-item-metz-description`}>{description}</div>
           )}
         </div>
       );
       return (
         <div class={classString}>
-          {avatar && <div class={`${prefixCls.value}-item-meta-avatar`}>{avatar}</div>}
+          {avatar && <div class={`${prefixCls.value}-item-metz-avatar`}>{avatar}</div>}
           {(title || description) && content}
         </div>
       );
