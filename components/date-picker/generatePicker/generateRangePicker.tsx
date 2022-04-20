@@ -4,7 +4,7 @@ import CloseCircleFilled from '@ant-design/icons-vue/CloseCircleFilled';
 import SwapRightOutlined from '@ant-design/icons-vue/SwapRightOutlined';
 import { RangePicker as VCRangePicker } from '../../vc-picker';
 import type { GenerateConfig } from '../../vc-picker/generate/index';
-import enUS from '../locale/en_US';
+import zhCN from '../locale/zh_CN';
 import { useLocaleReceiver } from '../../locale-provider/LocaleReceiver';
 import { getRangePlaceholder } from '../util';
 import { getTimeProps, Components } from '.';
@@ -109,7 +109,7 @@ export default function generateRangePicker<DateType, ExtraProps = {}>(
         const values = maybeToStrings(dates);
         emit('calendarChange', values, dateStrings, info);
       };
-      const [contextLocale] = useLocaleReceiver('DatePicker', enUS);
+      const [contextLocale] = useLocaleReceiver('DatePicker', zhCN);
 
       const value = computed(() => {
         if (props.value) {

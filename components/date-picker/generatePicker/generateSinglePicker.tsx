@@ -4,7 +4,7 @@ import CloseCircleFilled from '@ant-design/icons-vue/CloseCircleFilled';
 import RCPicker from '../../vc-picker';
 import type { PanelMode, PickerMode } from '../../vc-picker/interface';
 import type { GenerateConfig } from '../../vc-picker/generate/index';
-import enUS from '../locale/en_US';
+import zhCN from '../locale/zh_CN';
 import { getPlaceholder } from '../util';
 import { useLocaleReceiver } from '../../locale-provider/LocaleReceiver';
 import { getTimeProps, Components } from '.';
@@ -111,7 +111,7 @@ export default function generateSinglePicker<DateType, ExtraProps = {}>(
           emit('ok', value);
         };
 
-        const [contextLocale] = useLocaleReceiver('DatePicker', enUS);
+        const [contextLocale] = useLocaleReceiver('DatePicker', zhCN);
 
         const value = computed(() => {
           if (props.value) {
