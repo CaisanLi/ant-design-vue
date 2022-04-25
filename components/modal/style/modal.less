@@ -22,6 +22,9 @@
     font-size: @modal-header-title-font-size;
     line-height: @modal-header-title-line-height;
     word-wrap: break-word;
+    border-bottom: @modal-header-border-width @modal-header-border-style
+      @modal-header-border-color-split;
+    padding-bottom: 8px;
   }
 
   &-content {
@@ -36,8 +39,8 @@
 
   &-close {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 16px;
+    right: 16px;
     z-index: @zindex-popup-close;
     padding: 0;
     color: @modal-close-color;
@@ -52,11 +55,11 @@
 
     &-x {
       display: block;
-      width: @modal-header-close-size;
-      height: @modal-header-close-size;
-      font-size: @font-size-lg;
+      //width: @modal-header-close-size;
+      //height: @modal-header-close-size;
+      font-size: 24px;
       font-style: normal;
-      line-height: @modal-header-close-size;
+      //line-height: @modal-header-close-size;
       text-align: center;
       text-transform: none;
       text-rendering: auto;
@@ -73,30 +76,33 @@
     padding: @modal-header-padding;
     color: @text-color;
     background: @modal-header-bg;
-    border-bottom: @modal-header-border-width @modal-header-border-style
-      @modal-header-border-color-split;
     border-radius: @border-radius-base @border-radius-base 0 0;
   }
 
   &-body {
-    padding: @modal-body-padding;
+    padding: 24px @modal-body-padding @modal-body-padding @modal-body-padding;
     font-size: @font-size-base;
     line-height: @line-height-base;
     word-wrap: break-word;
   }
 
   &-footer {
-    padding: @modal-footer-padding-vertical @modal-footer-padding-horizontal;
+    padding: 0 @modal-footer-padding-horizontal @modal-footer-padding-vertical
+      @modal-footer-padding-horizontal;
     text-align: right;
     background: @modal-footer-bg;
-    border-top: @modal-footer-border-width @modal-footer-border-style
-      @modal-footer-border-color-split;
-    border-radius: 0 0 @border-radius-base @border-radius-base;
+    // border-top: @modal-footer-border-width @modal-footer-border-style
+    //   @modal-footer-border-color-split;
+    //border-radius: 0 0 @border-radius-base @border-radius-base;
 
     .@{ant-prefix}-btn + .@{ant-prefix}-btn:not(.@{ant-prefix}-dropdown-trigger) {
       margin-bottom: 0;
-      margin-left: 8px;
+      margin-left: 16px;
     }
+    //.@{ant-prefix}-btn{
+    //  padding: 8px 12px;
+    //  line-height: 1;
+    //}
   }
 
   &-open {

@@ -160,11 +160,11 @@ html {
 @heading-5-size: ceil(@font-size-base * 1.14);
 // https://github.com/ant-design/ant-design/issues/20210
 @line-height-base: 1.5715;
-@border-radius-base: 2px;
+@border-radius-base: 4px;
 @border-radius-sm: @border-radius-base;
 
 // vertical paddings
-@padding-lg: 24px; // containers
+@padding-lg: 32px; // containers
 @padding-md: 16px; // small containers and buttons
 @padding-sm: 12px; // Form controls and items
 @padding-xs: 8px; // small items
@@ -287,9 +287,9 @@ html {
 
 @btn-font-size-lg: @font-size-lg;
 @btn-font-size-sm: @font-size-base;
-@btn-padding-horizontal-base: @padding-md - 1px;
+@btn-padding-horizontal-base: @padding-md;
 @btn-padding-horizontal-lg: @btn-padding-horizontal-base;
-@btn-padding-horizontal-sm: @padding-xs - 1px;
+@btn-padding-horizontal-sm: @padding-xs;
 
 @btn-height-base: @height-base;
 @btn-height-lg: @height-lg;
@@ -606,7 +606,8 @@ html {
 @modal-header-padding-horizontal: @padding-lg;
 @modal-body-padding: @padding-lg;
 @modal-header-bg: @component-background;
-@modal-header-padding: @modal-header-padding-vertical @modal-header-padding-horizontal;
+@modal-header-padding: @modal-header-padding-vertical @modal-header-padding-horizontal 0
+  @modal-header-padding-vertical;
 @modal-header-border-width: @border-width-base;
 @modal-header-border-style: @border-style-base;
 @modal-header-title-line-height: 22px;
@@ -619,8 +620,8 @@ html {
 @modal-footer-bg: transparent;
 @modal-footer-border-color-split: @border-color-split;
 @modal-footer-border-style: @border-style-base;
-@modal-footer-padding-vertical: 10px;
-@modal-footer-padding-horizontal: 16px;
+@modal-footer-padding-vertical: 32px;
+@modal-footer-padding-horizontal: 32px;
 @modal-footer-border-width: @border-width-base;
 @modal-mask-bg: fade(@black, 45%);
 @modal-confirm-body-padding: 32px 32px 24px;
@@ -694,7 +695,7 @@ html {
 @table-body-selected-sort-bg: @table-selected-row-bg;
 @table-selected-row-hover-bg: ~'var(--@{ant-prefix}-primary-color-active-deprecated-d-02)';
 @table-expanded-row-bg: #fbfbfb;
-@table-padding-vertical: 16px;
+@table-padding-vertical: 13px;
 @table-padding-horizontal: 16px;
 @table-padding-vertical-md: (@table-padding-vertical * 3 / 4);
 @table-padding-horizontal-md: (@table-padding-horizontal / 2);
