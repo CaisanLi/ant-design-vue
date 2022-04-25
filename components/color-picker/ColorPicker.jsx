@@ -5,7 +5,7 @@ import BaseMixin from '../_util/BaseMixin';
 import Pickr from '@simonwep/pickr/dist/pickr.es5.min';
 import Icon from '../icon';
 import LocaleReceiver from '../locale-provider/LocaleReceiver';
-import enUS from './locale/en_US';
+import zhCN from './locale/zh_CN';
 import debounce from 'lodash-es/debounce';
 
 import { getOptionProps, findDOMNode } from '../_util/props-util';
@@ -40,7 +40,7 @@ export default {
       colors,
       myOpen: false,
       pickr: null,
-      i18n: enUS,
+      i18n: zhCN,
     };
   },
   watch: {
@@ -165,7 +165,7 @@ export default {
     },
     getDefaultLocale() {
       const result = {
-        ...enUS,
+        ...zhCN,
         ...this.$props.locale,
       };
       result.lang = {

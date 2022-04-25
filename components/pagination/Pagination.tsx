@@ -8,7 +8,7 @@ import VcSelect from '../select';
 import MiniSelect from './MiniSelect';
 import { useLocaleReceiver } from '../locale-provider/LocaleReceiver';
 import VcPagination from '../vc-pagination';
-import enUS from '../vc-pagination/locale/en_US';
+import zhCN from '../vc-pagination/locale/zh_CN';
 import classNames from '../_util/classNames';
 import useConfigInject from '../_util/hooks/useConfigInject';
 import useBreakpoint from '../_util/hooks/useBreakpoint';
@@ -85,7 +85,7 @@ export default defineComponent({
       configProvider.getPrefixCls('select', props.selectPrefixCls),
     );
     const breakpoint = useBreakpoint();
-    const [locale] = useLocaleReceiver('Pagination', enUS, toRef(props, 'locale'));
+    const [locale] = useLocaleReceiver('Pagination', zhCN, toRef(props, 'locale'));
     const getIconsProps = (pre: string) => {
       const ellipsis = <span class={`${pre}-item-ellipsis`}>•••</span>;
       let prevIcon = (
