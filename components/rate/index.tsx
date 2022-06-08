@@ -1,4 +1,4 @@
-import type { ExtractPropTypes, PropType, VNode } from 'vue';
+import type { CSSProperties, ExtractPropTypes, PropType, VNode } from 'vue';
 import { watch, defineComponent, ref, reactive, onMounted } from 'vue';
 import { initDefaultProps, getPropsSlot, findDOMNode } from '../_util/props-util';
 import { withInstall } from '../_util/type';
@@ -119,13 +119,13 @@ const Rate = defineComponent({
       changeValue(isReset ? 0 : newValue);
       state.cleanedValue = isReset ? newValue : null;
     };
-    const onFocus = () => {
+    const onFocus = (e: FocusEvent) => {
       state.focused = true;
-      emit('focus');
+      emit('focus', e);
     };
-    const onBlur = () => {
+    const onBlur = (e: FocusEvent) => {
       state.focused = false;
-      emit('blur');
+      emit('blur', e);
       formItemContext.onFieldBlur();
     };
     const onKeyDown = (event: KeyboardEvent) => {
@@ -230,7 +230,7 @@ const Rate = defineComponent({
           {...attrs}
           id={id}
           class={rateClassName}
-          style={style}
+          style={style as CSSProperties}
           onMouseleave={disabled ? null : onMouseLeave}
           tabindex={disabled ? -1 : tabindex}
           onFocus={disabled ? null : onFocus}

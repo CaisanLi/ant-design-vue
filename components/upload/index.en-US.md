@@ -21,7 +21,7 @@ Uploading is the process of publishing information (web pages, text, pictures, v
 | --- | --- | --- | --- | --- | --- |
 | accept | File types that can be accepted. See [input accept Attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#accept) | string | - |  |  |
 | action | Uploading URL | string\|(file) => `Promise` | - |  |  |
-| beforeUpload | Hook function which will be executed before uploading. Uploading will be stopped with `false` or a rejected Promise returned. | (file, fileList) => \`boolean | Promise\` | - |  |
+| beforeUpload | Hook function which will be executed before uploading. Uploading will be stopped with `false` or a rejected Promise returned. | (file, fileList) => `boolean` \| `Promise` | - |  |
 | customRequest | override for the default xhr behavior allowing for additional customization and ability to implement your own XMLHttpRequest | Function | - |  |  |
 | data | Uploading params or function which can return uploading params. | object\|function(file) | - |  |  |
 | directory | support upload whole directory ([caniuse](https://caniuse.com/#feat=input-file-directory)) | boolean | false |  |  |
@@ -44,7 +44,7 @@ Uploading is the process of publishing information (web pages, text, pictures, v
 | previewIcon | custom preview icon | v-slot:iconRender="{file: UploadFile}" | - | 3.0 |  |
 | progress | Custom progress bar | [ProgressProps](/components/progress/#API) (support `type="line"` only) | { strokeWidth: 2, showInfo: false } | 3.0 |  |
 | removeIcon | custom remove icon | v-slot:iconRender="{file: UploadFile}" | - | 3.0 |  |
-| showUploadList | Whether to show default upload list, could be an object to specify `showPreviewIcon` and `showRemoveIcon` individually | Boolean or { showPreviewIcon?: boolean, showRemoveIcon?: booleanshowDownloadIcon?: boolean } | true | showDownloadIcon(3.0) |  |
+| showUploadList | Whether to show default upload list, could be an object to specify `showPreviewIcon`, `showRemoveIcon` and `showDownloadIcon` individually | Boolean or { showPreviewIcon?: boolean, showRemoveIcon?: boolean, showDownloadIcon?: boolean } | true | showDownloadIcon(3.0) |  |
 | supportServerRender | Need to be turned on while the server side is rendering. | boolean | false |  |  |
 | withCredentials | ajax upload with cookie sent | boolean | false |  |  |
 

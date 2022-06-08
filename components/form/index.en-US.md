@@ -57,13 +57,17 @@ A form consists of one or more form fields whose type includes input, textarea, 
 
 ### Methods
 
-| Method | Description | Parameters |  |
+| Method | Description | Parameters | Version |
 | --- | --- | --- | --- |
-| clearValidate | clear validation message for certain fields. The parameter is name or an array of names of the form items whose validation messages will be removed. When omitted, all fields' validation messages will be cleared | Function(props: string \| array) |  |
-| resetFields | reset all the fields and remove validation result | — |  |
+| clearValidate | clear validation message for certain fields. The parameter is name or an array of names of the form items whose validation messages will be removed. When omitted, all fields' validation messages will be cleared | (nameList?: [NamePath](#NamePath)\[]) => void |  |
+| resetFields | reset all the fields and remove validation result | (nameList?: [NamePath](#NamePath)\[]) => void |  |
 | scrollToField | Scroll to field position | (name: [NamePath](#NamePath), options: \[[ScrollOptions](https://github.com/stipsan/scroll-into-view-if-needed/tree/ece40bd9143f48caf4b99503425ecb16b0ad8249#options)]) => void |  |
 | validate | Validate fields, it is same as validateFields | (nameList?: [NamePath](#NamePath)\[]) => Promise |  |
 | validateFields | Validate fields | (nameList?: [NamePath](#NamePath)\[]) => Promise |  |
+
+#### NamePath
+
+`string | number | (string | number)[]`
 
 ### Form.Item
 
@@ -96,7 +100,7 @@ You can reference [Customized Form Controls](#components-form-demo-customized-fo
 
 But it also has some disadvantages:
 
-1. If the custom component wants Form.Item to be verified and displayed, you need to inject `const {id, onFieldChange, onFieldBlur} = useFormItemContext()` and call the corresponding method.
+1. If the custom component wants Form.Item to be verified and displayed, you need to inject `const {id, onFieldChange, onFieldBlur} = useInjectFormItemContext()` and call the corresponding method.
 
 2. A Form.Item can only collect the data of one form item. If there are multiple form items, it will cause collection confusion, for example,
 
@@ -118,7 +122,7 @@ The first is to use multiple `a-form-item`:
 </z-form-item>
 ```
 
-The second way is to wrap it with a custom component and call `useFormItemContext` in the custom component, It is equivalent to merging multiple form items into one.
+The second way is to wrap it with a custom component and call `useInjectFormItemContext` in the custom component, It is equivalent to merging multiple form items into one.
 
 ```html
 <script>
@@ -127,7 +131,7 @@ The second way is to wrap it with a custom component and call `useFormItemContex
   export default {
     name: 'custom-name',
     setup() {
-      const formItemContext = Form.useFormItemContext();
+      const formItemContext = Form.useInjectFormItemContext();
     },
   };
 </script>

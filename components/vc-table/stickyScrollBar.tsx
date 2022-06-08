@@ -1,7 +1,8 @@
 import type { Ref } from 'vue';
 import {
+  nextTick,
+  onActivated,
   watchEffect,
-  getCurrentInstance,
   defineComponent,
   onBeforeUnmount,
   onMounted,
@@ -21,7 +22,10 @@ interface StickyScrollBarProps {
   onScroll: (params: { scrollLeft?: number }) => void;
   offsetScroll: number;
   container: HTMLElement | Window;
-  scrollBodySizeInfo: { scrollWidth: number; clientWidth: number };
+  scrollBodySizeInfo: {
+    scrollWidth: number;
+    clientWidth: number;
+  };
 }
 
 export default defineComponent<StickyScrollBarProps>({
@@ -34,7 +38,6 @@ export default defineComponent<StickyScrollBarProps>({
     const bodyScrollWidth = ref(0);
     const bodyWidth = ref(0);
     const scrollBarWidth = ref(0);
-    const instance = getCurrentInstance();
     watchEffect(
       () => {
         bodyScrollWidth.value = props.scrollBodySizeInfo.scrollWidth || 0;
@@ -49,7 +52,7 @@ export default defineComponent<StickyScrollBarProps>({
 
     const [scrollState, setScrollState] = useLayoutState({
       scrollLeft: 0,
-      isHiddenScrollBar: false,
+      isHiddenScrollBar: true,
     });
 
     const refState = ref({
@@ -120,7 +123,6 @@ export default defineComponent<StickyScrollBarProps>({
           isHiddenScrollBar: false,
         }));
       }
-      instance.update?.();
     };
 
     const setScrollLeft = (left: number) => {
@@ -144,14 +146,23 @@ export default defineComponent<StickyScrollBarProps>({
       onMouseMoveListener = addEventListenerWrap(document.body, 'mousemove', onMouseMove, false);
       onResizeListener = addEventListenerWrap(window, 'resize', onContainerScroll, false);
     });
-
-    watch(
-      [scrollBarWidth, isActive],
-      () => {
+    onActivated(() => {
+      nextTick(() => {
         onContainerScroll();
-      },
-      { immediate: true },
-    );
+      });
+    });
+
+    onMounted(() => {
+      setTimeout(() => {
+        watch(
+          [scrollBarWidth, isActive],
+          () => {
+            onContainerScroll();
+          },
+          { immediate: true, flush: 'post' },
+        );
+      });
+    });
 
     watch(
       () => props.container,

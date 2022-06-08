@@ -5,10 +5,11 @@ import VcTree from '../vc-tree';
 import PropTypes from '../_util/vue-types';
 import { filterEmpty } from '../_util/props-util';
 import initDefaultProps from '../_util/props-util/initDefaultProps';
-import type { DataNode, EventDataNode, FieldNames, Key } from '../vc-tree/interface';
+import type { DataNode, EventDataNode, FieldNames, Key, ScrollTo } from '../vc-tree/interface';
 import type { TreeNodeProps } from '../vc-tree/props';
 import { treeProps as vcTreeProps } from '../vc-tree/props';
 import useConfigInject from '../_util/hooks/useConfigInject';
+import type { SwitcherIconProps } from './utils/iconUtil';
 import renderSwitcherIcon from './utils/iconUtil';
 import dropIndicatorRender from './utils/dropIndicator';
 import devWarning from '../vc-util/devWarning';
@@ -167,11 +168,15 @@ export default defineComponent({
     );
     const { prefixCls, direction, virtual } = useConfigInject('tree', props);
     const treeRef = ref();
+    const scrollTo: ScrollTo = scroll => {
+      treeRef.value?.scrollTo(scroll);
+    };
     expose({
       treeRef,
       onNodeExpand: (...args) => {
         treeRef.value?.onNodeExpand(...args);
       },
+      scrollTo,
       selectedKeys: computed(() => treeRef.value?.selectedKeys),
       checkedKeys: computed(() => treeRef.value?.checkedKeys),
       halfCheckedKeys: computed(() => treeRef.value?.halfCheckedKeys),
@@ -229,7 +234,7 @@ export default defineComponent({
         icon,
         itemHeight,
       };
-
+      const children = slots.default ? filterEmpty(slots.default()) : undefined;
       return (
         <VcTree
           {...newProps}
@@ -249,7 +254,7 @@ export default defineComponent({
           direction={direction.value}
           checkable={checkable}
           selectable={selectable}
-          switcherIcon={(nodeProps: AntTreeNodeProps) =>
+          switcherIcon={(nodeProps: SwitcherIconProps) =>
             renderSwitcherIcon(prefixCls.value, switcherIcon, showLine, nodeProps)
           }
           onCheck={handleCheck}
@@ -260,7 +265,7 @@ export default defineComponent({
             ...slots,
             checkable: () => <span class={`${prefixCls.value}-checkbox-inner`} />,
           }}
-          children={filterEmpty(slots.default?.())}
+          children={children}
         ></VcTree>
       );
     };

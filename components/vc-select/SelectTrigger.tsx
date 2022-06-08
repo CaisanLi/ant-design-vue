@@ -5,8 +5,11 @@ import type { CSSProperties, PropType } from 'vue';
 import { computed, ref, defineComponent } from 'vue';
 import type { VueNode } from '../_util/type';
 import type { DropdownRender, Placement, RenderDOMFunc } from './BaseSelect';
+import type { AlignType } from '../vc-trigger/interface';
 
-const getBuiltInPlacements = (adjustX: number) => {
+const getBuiltInPlacements = (dropdownMatchSelectWidth: number | boolean) => {
+  // Enable horizontal overflow auto-adjustment when a custom dropdown width is provided
+  const adjustX = dropdownMatchSelectWidth === true ? 0 : 1;
   return {
     bottomLeft: {
       points: ['tl', 'bl'],
@@ -43,14 +46,6 @@ const getBuiltInPlacements = (adjustX: number) => {
   };
 };
 
-const getAdjustX = (
-  adjustXDependencies: Pick<SelectTriggerProps, 'autoAdjustOverflow' | 'dropdownMatchSelectWidth'>,
-) => {
-  const { autoAdjustOverflow, dropdownMatchSelectWidth } = adjustXDependencies;
-  if (!!autoAdjustOverflow) return 1;
-  // Enable horizontal overflow auto-adjustment when a custom dropdown width is provided
-  return typeof dropdownMatchSelectWidth !== 'number' ? 0 : 1;
-};
 export interface RefTriggerProps {
   getPopupElement: () => HTMLDivElement;
 }
@@ -70,9 +65,8 @@ export interface SelectTriggerProps {
   dropdownMatchSelectWidth?: boolean | number;
   dropdownRender?: DropdownRender;
   getPopupContainer?: RenderDOMFunc;
-  dropdownAlign: object;
+  dropdownAlign: AlignType;
   empty: boolean;
-  autoAdjustOverflow?: boolean;
   getTriggerDOMNode: () => any;
   onPopupVisibleChange?: (visible: boolean) => void;
 
@@ -83,14 +77,13 @@ const SelectTrigger = defineComponent<SelectTriggerProps, { popupRef: any }>({
   name: 'SelectTrigger',
   inheritAttrs: false,
   props: {
-    dropdownAlign: PropTypes.object,
+    dropdownAlign: Object as PropType<AlignType>,
     visible: { type: Boolean, default: undefined },
     disabled: { type: Boolean, default: undefined },
     dropdownClassName: String,
     dropdownStyle: PropTypes.object,
     placement: String,
     empty: { type: Boolean, default: undefined },
-    autoAdjustOverflow: { type: Boolean, default: undefined },
     prefixCls: String,
     popupClassName: String,
     animation: String,
@@ -107,13 +100,8 @@ const SelectTrigger = defineComponent<SelectTriggerProps, { popupRef: any }>({
   } as any,
   setup(props, { slots, attrs, expose }) {
     const builtInPlacements = computed(() => {
-      const { autoAdjustOverflow, dropdownMatchSelectWidth } = props;
-      return getBuiltInPlacements(
-        getAdjustX({
-          autoAdjustOverflow,
-          dropdownMatchSelectWidth,
-        }),
-      );
+      const { dropdownMatchSelectWidth } = props;
+      return getBuiltInPlacements(dropdownMatchSelectWidth);
     });
     const popupRef = ref();
     expose({

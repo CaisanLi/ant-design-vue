@@ -108,10 +108,7 @@ export default defineComponent({
         'aria-valuenow': value,
         'aria-disabled': !!disabled,
       };
-      const elStyle = {
-        ...(attrs.style as CSSProperties),
-        ...positionStyle.value,
-      };
+      const elStyle = [attrs.style as CSSProperties, positionStyle.value];
       let mergedTabIndex = tabindex || 0;
       if (disabled || tabindex === null) {
         mergedTabIndex = null;

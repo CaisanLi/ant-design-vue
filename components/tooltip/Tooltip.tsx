@@ -75,7 +75,7 @@ export default defineComponent({
   slots: ['title'],
   // emits: ['update:visible', 'visibleChange'],
   setup(props, { slots, emit, attrs, expose }) {
-    const { prefixCls, getTargetContainer } = useConfigInject('tooltip', props);
+    const { prefixCls, getPopupContainer } = useConfigInject('tooltip', props);
 
     const visible = ref(firstNotUndefined([props.visible, props.defaultVisible]));
 
@@ -158,6 +158,7 @@ export default defineComponent({
             display: 'inline-block', // default inline-block is important
             ...picked,
             cursor: 'not-allowed',
+            lineHeight: 1, // use the true height of child nodes
             width: ele.props && ele.props.block ? '100%' : null,
           };
           const buttonStyle = {
@@ -172,7 +173,7 @@ export default defineComponent({
             true,
           );
           return (
-            <span style={spanStyle} class={`${prefixCls}-disabled-compatible-wrapper`}>
+            <span style={spanStyle} class={`${prefixCls.value}-disabled-compatible-wrapper`}>
               {child}
             </span>
           );
@@ -216,7 +217,7 @@ export default defineComponent({
     };
 
     return () => {
-      const { openClassName, getPopupContainer, color, overlayClassName } = props;
+      const { openClassName, color, overlayClassName } = props;
       let children = filterEmpty(slots.default?.()) ?? null;
       children = children.length === 1 ? children[0] : children;
 
@@ -244,12 +245,11 @@ export default defineComponent({
         formattedOverlayInnerStyle = { backgroundColor: color };
         arrowContentStyle = { backgroundColor: color };
       }
-
       const vcTooltipProps = {
         ...attrs,
         ...(props as TooltipProps),
         prefixCls: prefixCls.value,
-        getTooltipContainer: getPopupContainer || getTargetContainer.value,
+        getPopupContainer: getPopupContainer.value,
         builtinPlacements: tooltipPlacements.value,
         visible: tempVisible,
         ref: tooltip,

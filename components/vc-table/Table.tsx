@@ -98,7 +98,7 @@ export interface TableProps<RecordType = DefaultRecordType> {
   direction?: 'ltr' | 'rtl';
 
   // Expandable
-  expandFixed?: boolean;
+  expandFixed?: 'left' | 'right' | boolean;
   expandColumnWidth?: number;
   expandedRowKeys?: Key[];
   defaultExpandedRowKeys?: Key[];
@@ -508,10 +508,17 @@ export default defineComponent<TableProps<DefaultRecordType>>({
     });
     onUpdated(() => {
       nextTick(() => {
-        scrollBodySizeInfo.value = {
-          scrollWidth: scrollBodyRef.value?.scrollWidth || 0,
-          clientWidth: scrollBodyRef.value?.clientWidth || 0,
-        };
+        const scrollWidth = scrollBodyRef.value?.scrollWidth || 0;
+        const clientWidth = scrollBodyRef.value?.clientWidth || 0;
+        if (
+          scrollBodySizeInfo.value.scrollWidth !== scrollWidth ||
+          scrollBodySizeInfo.value.clientWidth !== clientWidth
+        ) {
+          scrollBodySizeInfo.value = {
+            scrollWidth,
+            clientWidth,
+          };
+        }
       });
     });
 
@@ -830,7 +837,7 @@ export default defineComponent<TableProps<DefaultRecordType>>({
               flattenColumns.value[columnCount.value - 1].fixed === 'right',
             [attrs.class as string]: attrs.class,
           })}
-          style={attrs.style}
+          style={attrs.style as CSSProperties}
           id={id}
           ref={fullTableRef}
         >

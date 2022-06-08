@@ -13,7 +13,6 @@ import isEqual from 'lodash-es/isEqual';
 import type { Options } from 'scroll-into-view-if-needed';
 import scrollIntoView from 'scroll-into-view-if-needed';
 import initDefaultProps from '../_util/props-util/initDefaultProps';
-import type { VueNode } from '../_util/type';
 import { tuple } from '../_util/type';
 import type { ColProps } from '../grid/Col';
 import type {
@@ -24,6 +23,7 @@ import type {
   ValidateOptions,
   Callbacks,
   ValidateMessages,
+  Rule,
 } from './interface';
 import { useInjectSize } from '../_util/hooks/useSize';
 import useConfigInject from '../_util/hooks/useConfigInject';
@@ -34,32 +34,8 @@ import useForm from './useForm';
 export type RequiredMark = boolean | 'optional';
 export type FormLayout = 'horizontal' | 'inline' | 'vertical';
 
-export type ValidationRule = {
-  /** validation error message */
-  message?: VueNode;
-  /** built-in validation type, available options: https://github.com/yiminghe/async-validator#type */
-  type?: string;
-  /** indicates whether field is required */
-  required?: boolean;
-  /** treat required fields that only contain whitespace as errors */
-  whitespace?: boolean;
-  /** validate the exact length of a field */
-  len?: number;
-  /** validate the min length of a field */
-  min?: number;
-  /** validate the max length of a field */
-  max?: number;
-  /** validate the value from a list of possible values */
-  enum?: string | string[];
-  /** validate from a regular expression */
-  pattern?: RegExp;
-  /** transform a value before validation */
-  transform?: (value: any) => any;
-  /** custom validate function (Note: callback must be called) */
-  validator?: (rule: any, value: any, callback: any, source?: any, options?: any) => any;
-
-  trigger?: string;
-};
+/** @deprecated Will warning in future branch. Pls use `Rule` instead. */
+export type ValidationRule = Rule;
 
 export const formProps = () => ({
   layout: PropTypes.oneOf(tuple('horizontal', 'inline', 'vertical')),
@@ -73,7 +49,7 @@ export const formProps = () => ({
   /** @deprecated Will warning in future branch. Pls use `requiredMark` instead. */
   hideRequiredMark: { type: Boolean, default: undefined },
   model: PropTypes.object,
-  rules: { type: Object as PropType<{ [k: string]: ValidationRule[] | ValidationRule }> },
+  rules: { type: Object as PropType<{ [k: string]: Rule[] | Rule }> },
   validateMessages: {
     type: Object as PropType<ValidateMessages>,
     default: undefined as ValidateMessages,
@@ -154,6 +130,7 @@ const Form = defineComponent({
     const validateMessages = computed(() => {
       return {
         ...defaultValidateMessages,
+        ...contextForm.value?.validateMessages,
         ...props.validateMessages,
       };
     });
@@ -174,7 +151,7 @@ const Form = defineComponent({
       delete fields[eventKey];
     };
 
-    const getFieldsByNameList = (nameList: NamePath[]) => {
+    const getFieldsByNameList = (nameList: NamePath | NamePath[]) => {
       const provideNameList = !!nameList;
       const namePathList = provideNameList ? toArray(nameList).map(getNamePath) : [];
       if (!provideNameList) {
@@ -186,17 +163,17 @@ const Form = defineComponent({
         );
       }
     };
-    const resetFields = (name?: NamePath) => {
+    const resetFields = (name?: NamePath | NamePath[]) => {
       if (!props.model) {
         warning(false, 'Form', 'model is required for resetFields to work.');
         return;
       }
-      getFieldsByNameList(name ? [name] : undefined).forEach(field => {
+      getFieldsByNameList(name).forEach(field => {
         field.resetField();
       });
     };
-    const clearValidate = (name?: NamePath) => {
-      getFieldsByNameList(name ? [name] : undefined).forEach(field => {
+    const clearValidate = (name?: NamePath | NamePath[]) => {
+      getFieldsByNameList(name).forEach(field => {
         field.clearValidate();
       });
     };

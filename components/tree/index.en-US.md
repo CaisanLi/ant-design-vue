@@ -35,7 +35,7 @@ Almost anything can be represented in a tree structure. Examples include directo
 | selectedKeys(v-model) | (Controlled) Specifies the keys of the selected treeNodes | string\[] \| number\[] | - |  |
 | showIcon | Shows the icon before a TreeNode's title. There is no default style; you must set a custom style for it if set to `true` | boolean | false |  |
 | showLine | Shows a connecting line | boolean \| {showLeafIcon: boolean}(3.0+) | false |  |
-| switcherIcon | customize collapse/expand icon of tree node | slot | - |  |
+| switcherIcon | customize collapse/expand icon of tree node | v-slot:switcherIcon="{active, checked, expanded, loading, selected, halfChecked, title, key, children, dataRef, data, defaultIcon, switcherCls}" | - |  |
 | title | custom title | slot |  | 2.0.0 |
 | treeData | treeNode of tree, please use `treeNodes` before v1.1.4 | [TreeNode\[\]](#TreeNode) | - |  |
 | virtual | Disable virtual scroll when set to false | boolean | true | 3.0 |
@@ -55,6 +55,12 @@ Almost anything can be represented in a tree structure. Examples include directo
 | load | Callback function for when a treeNode is loaded | function(loadedKeys, {event, node}) |
 | rightClick | Callback function for when the user right clicks a treeNode | function({event, node}) |
 | select | Callback function for when the user clicks a treeNode | function(selectedKeys, e:{selected: bool, selectedNodes, node, event}) |
+
+### Tree Methods
+
+| Name | Description |
+| --- | --- |
+| scrollTo({ key: string \| number; align?: 'top' \| 'bottom' \| 'auto'; offset?: number }) | Scroll to key item in virtual scroll |
 
 ### TreeNode
 

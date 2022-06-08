@@ -8,11 +8,14 @@
       key="version"
       class="version"
       size="small"
+      :dropdown-match-select-width="false"
       :default-value="antdVersion"
-      :get-popup-container="trigger => trigger.parentNode"
     >
       <z-select-option :value="antdVersion">{{ antdVersion }}</z-select-option>
-      <z-select-option value="1.x" @click="changeVersion">1.x</z-select-option>
+      <z-select-option value="2.x" @click="changeVersion('2x')">
+        2.x (Not Recommended)
+      </z-select-option>
+      <z-select-option value="1.x" @click="changeVersion('1x')">1.x (For Vue 2)</z-select-option>
     </z-select>
     <z-button
       key="lang-button"
@@ -66,8 +69,8 @@ export default defineComponent({
         );
     };
 
-    const changeVersion = () => {
-      location.href = `https://1x.antdv.com${route.fullPath}`;
+    const changeVersion = v => {
+      location.href = `https://${v}.antdv.com${route.fullPath}`;
     };
     return {
       onLangChange,

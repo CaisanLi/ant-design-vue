@@ -10,6 +10,107 @@
 
 ---
 
+## 3.2.6
+
+`2022-06-07`
+
+- 🌟 `Cascader` custom trigger supports custom components [#5677](https://github.com/vueComponent/ant-design-vue/issues/5677)
+- 🐞 Fix `DateRangePicker` `TimeRangePicker` arrow not following the movement issue [#71c619](https://github.com/vueComponent/ant-design-vue/commit/71c6195771c0b9ddffadd294ce01f7515c5adc40)
+- 🐞 Fix `TimeRangePicker` minSteps, hourSteps, secondStep not taking effect [#5671](https://github.com/vueComponent/ant-design-vue/issues/5671)
+
+## 3.2.5
+
+`2022-05-26`
+
+- 🌟 Image Added left and right arrow switching function [#5642](https://github.com/vueComponent/ant-design-vue/issues/5642)
+- 🐞 Fix Steps progressDot slot failure [#5648](https://github.com/vueComponent/ant-design-vue/issues/5648)
+- 🐞 Fix Tooltip global getPopupContainer invalid problem [#5636](https://github.com/vueComponent/ant-design-vue/issues/5636)
+- 🐞 Fix useForm help style issue [#5635](https://github.com/vueComponent/ant-design-vue/issues/5635)
+- 🐞 Fix Table, Tree drag and drop style conflict [#5644](https://github.com/vueComponent/ant-design-vue/issues/5644)
+
+## 3.2.4
+
+`2022-05-23`
+
+- 🐞 Fix InputNumber v-model type error [#5577](https://github.com/vueComponent/ant-design-vue/issues/5677)
+- 🌟 Select supports global size [#5590](https://github.com/vueComponent/ant-design-vue/issues/5590)
+- 🐞 Form clearValidate resetValidate support array [#5619](https://github.com/vueComponent/ant-design-vue/issues/5619)
+- 🐞 Drawer custom closeIcon does not take effect [#5616](https://github.com/vueComponent/ant-design-vue/issues/5616)
+- 🌟 Fix CountDown support dayjs [#5edca6](https://github.com/vueComponent/ant-design-vue/commit/5edca6be5a4e1aee9cde46724b14900f6c86bfb2)
+- 🌟 Tree support scrollTo [#5626](https://github.com/vueComponent/ant-design-vue/issues/5626)
+- 🐞 Tooltip disabled class name error [#5627](https://github.com/vueComponent/ant-design-vue/issues/5627)
+
+## 3.2.3
+
+`2022-05-05`
+
+- 🌟 Optimize `Tree` performance [#5551](https://github.com/vueComponent/ant-design-vue/issues/5551)
+- 🐞 Fix `Progress` `type='dashboard'` invalid problem [#5549](https://github.com/vueComponent/ant-design-vue/issues/5549)
+- 🐞 Fix console warning when `Table` customRender returns `Fragment` component [#5556](https://github.com/vueComponent/ant-design-vue/issues/5556)
+- 🐞 Fix the issue of rendering redundant dom nodes when the `Card` slot is empty
+
+## 3.2.2
+
+`2022-04-26`
+
+- 🐞 Fix `Table` ceiling infinite loop problem [#5543](https://github.com/vueComponent/ant-design-vue/issues/5543)
+
+## 3.2.1
+
+`2022-04-25`
+
+- 🌟 `Image` previewMask supports `false`, `function` [#5531](https://github.com/vueComponent/ant-design-vue/issues/5531)
+- 🌟 `Select` option to add title
+- 🌟 `Table` optimizes the drag handle to prevent sorting, filtering, etc. from being triggered when dragging
+- 🐞 Fix the issue of triggering search event after `Select` is selected [#5537](https://github.com/vueComponent/ant-design-vue/issues/5537)
+- 🐞 Fix SSR memory leak issue [#5502](https://github.com/vueComponent/ant-design-vue/issues/5502)
+- 🐞 Fix `Table` expandFixed ts type error [#5539](https://github.com/vueComponent/ant-design-vue/issues/5539)
+
+#### Documentation:
+
+- 🌟 Added Modal drag and drop demo [More](https://www.antdv.com/components/modal#components-modal-demo-modal-render)
+
+## 3.2.0
+
+`2022-04-19`
+
+- 🌟 `InputNumber` supports lazy modifier
+- 🌟 `Image` add `previewMask` property, `error` event [#5479](https://github.com/vueComponent/ant-design-vue/issues/5479)
+- 🌟 `Modal` style supports string type [#5449](https://github.com/vueComponent/ant-design-vue/issues/5449)
+- 🌟 `Cascader` supports `clearIcon`, `removeIcon` slots
+- 🌟 Optimize `DatePicker` panel switching logic [#5488](https://github.com/vueComponent/ant-design-vue/issues/5488)
+- 🐞 Fix `Cascader` not automatically correcting the popup position [#5482](https://github.com/vueComponent/ant-design-vue/issues/5482)
+- 🐞 `Tabs` left, right direction disable animation [#5464](https://github.com/vueComponent/ant-design-vue/issues/5464)
+- 🐞 `TimeRangePicker` value ts type supports string
+- 🐞 `Tree` supports deep monitoring [#5480](https://github.com/vueComponent/ant-design-vue/issues/5480)
+- 🐞 Fix `Table` not showing virtual scroll bar when keepalive active
+- 🐞 Fix `Input` size warning [#5508](https://github.com/vueComponent/ant-design-vue/issues/5508)
+
+## 3.1.1
+
+`2022-04-06`
+
+- 🌟 Optimize `Form` rule type hints [#5439](https://github.com/vueComponent/ant-design-vue/issues/5439)
+- 🐞 Fix the problem of incorrect height calculation when virtual scroll related components dynamically update content [4a4670](https://github.com/vueComponent/ant-design-vue/commit/4a4670bdce9e1043348fd741ec7a262ba2413a3a)
+
+## 3.1.0
+
+`2022-04-06`
+
+### 🔥🔥🔥 3.1.0 official version released 🔥🔥🔥
+
+- 🐞 Fix `Select.Option` child element is empty, the error is reported [272430](https://github.com/vueComponent/ant-design-vue/commit/272430ba06e44e06eb07694d6aef4d474fb741cb)
+
+## 3.1.0-rc.6
+
+`2022-04-01`
+
+- 🌟 Optimize `Table` performance, reduce the number of render times when hovering [900464](https://github.com/vueComponent/ant-design-vue/commit/900464473823277e4b06ace1c1ddc69ab3ef21d9)
+- 🐞 Fix `Tabs` not folding when setting addIcon [669b22](https://github.com/vueComponent/ant-design-vue/commit/669b22a54b33892c193dfd36150ae1ac2fb350dd)
+- 🐞 Fix `Mentions` component cannot be selected [#5432](https://github.com/vueComponent/ant-design-vue/issues/5432)
+- 🐞 Fix component focus and blur events do not carry event parameters, resulting in popover error [#5434](https://github.com/vueComponent/ant-design-vue/issues/5434)
+- 🐞 Fix `Select.Option`, when setting Tooltip, error is reported [#5307](https://github.com/vueComponent/ant-design-vue/issues/5307)
+
 ## 3.1.0-rc.5
 
 `2022-03-28`
@@ -471,7 +572,7 @@ Github：[https://github.com/surely-vue/table]
 
     You can reference [Customized Form Controls](#components-form-demo-customized-form-controls), but it also has some disadvantages:
 
-    1. If the custom component wants Form.Item to be verified and displayed, you need to inject `const {id, onFieldChange, onFieldBlur} = useFormItemContext()` and call the corresponding method.
+    1. If the custom component wants Form.Item to be verified and displayed, you need to inject `const {id, onFieldChange, onFieldBlur} = useInjectFormItemContext()` and call the corresponding method.
 
     2. A Form.Item can only collect the data of one form item. If there are multiple form items, it will cause collection confusion. For example,
 
@@ -493,7 +594,7 @@ Github：[https://github.com/surely-vue/table]
     </z-form-item>
     ```
 
-    The second way is to wrap it with a custom component and call `useFormItemContext` in the custom component, It is equivalent to merging multiple form items into one.
+    The second way is to wrap it with a custom component and call `useInjectFormItemContext` in the custom component, It is equivalent to merging multiple form items into one.
 
     ```html
     <script>
@@ -502,7 +603,7 @@ Github：[https://github.com/surely-vue/table]
       export default {
         name: 'custom-name',
         setup() {
-          const formItemContext = Form.useFormItemContext();
+          const formItemContext = Form.useInjectFormItemContext();
         },
       };
     </script>

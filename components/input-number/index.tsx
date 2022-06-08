@@ -23,7 +23,8 @@ export const inputNumberProps = () => ({
   addonBefore: PropTypes.any,
   addonAfter: PropTypes.any,
   prefix: PropTypes.any,
-  'update:value': baseProps.onChange,
+  'onUpdate:value': baseProps.onChange,
+  valueModifiers: Object,
 });
 
 export type InputNumberProps = Partial<ExtractPropTypes<ReturnType<typeof inputNumberProps>>>;
@@ -64,14 +65,14 @@ const InputNumber = defineComponent({
       emit('change', val);
       formItemContext.onFieldChange();
     };
-    const handleBlur = () => {
+    const handleBlur = (e: FocusEvent) => {
       focused.value = false;
-      emit('blur');
+      emit('blur', e);
       formItemContext.onFieldBlur();
     };
-    const handleFocus = () => {
+    const handleFocus = (e: FocusEvent) => {
       focused.value = true;
-      emit('focus');
+      emit('focus', e);
     };
     onMounted(() => {
       nextTick(() => {
@@ -91,8 +92,9 @@ const InputNumber = defineComponent({
         addonBefore = slots.addonBefore?.(),
         addonAfter = slots.addonAfter?.(),
         prefix = slots.prefix?.(),
+        valueModifiers = {},
         ...others
-      } = { ...(attrs as HTMLAttributes), ...props };
+      } = { ...attrs, ...props } as InputNumberProps & HTMLAttributes;
 
       const preCls = prefixCls.value;
 
@@ -112,6 +114,7 @@ const InputNumber = defineComponent({
         <VcInputNumber
           {...omit(others, ['size', 'defaultValue'])}
           ref={inputNumberRef}
+          lazy={!!valueModifiers.lazy}
           value={mergedValue.value}
           class={inputNumberClass}
           prefixCls={preCls}

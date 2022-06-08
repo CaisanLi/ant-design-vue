@@ -22,7 +22,7 @@ cover: https://gw.alipayobjects.com/zos/alicdn/QaeBt_ZMg/Upload.svg
 | --- | --- | --- | --- | --- | --- |
 | accept | 接受上传的文件类型, 详见 [input accept Attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#accept) | string | 无 |  |  |
 | action | 上传的地址 | string\|(file) => `Promise` | 无 |  |  |
-| beforeUpload | 上传文件之前的钩子，参数为上传的文件，若返回 `false` 则停止上传。支持返回一个 Promise 对象，Promise 对象 reject 时则停止上传，resolve 时开始上传（ resolve 传入 `File` 或 `Blob` 对象则上传 resolve 传入对象）。 | (file, fileList) => \`boolean | Promise\` | 无 |  |
+| beforeUpload | 上传文件之前的钩子，参数为上传的文件，若返回 `false` 则停止上传。支持返回一个 Promise 对象，Promise 对象 reject 时则停止上传，resolve 时开始上传（ resolve 传入 `File` 或 `Blob` 对象则上传 resolve 传入对象）。 | (file, fileList) => `boolean` \| `Promise` | 无 |  |
 | customRequest | 通过覆盖默认的上传行为，可以自定义自己的上传实现 | Function | 无 |  |  |
 | data | 上传所需参数或返回上传参数的方法 | object\|(file) => object | 无 |  |  |
 | directory | 支持上传文件夹（[caniuse](https://caniuse.com/#feat=input-file-directory)） | boolean | false |  |  |
@@ -45,7 +45,7 @@ cover: https://gw.alipayobjects.com/zos/alicdn/QaeBt_ZMg/Upload.svg
 | previewIcon | 自定义预览 icon | v-slot:iconRender="{file: UploadFile}" | - | 3.0 |  |
 | progress | 自定义进度条样式 | [ProgressProps](/components/progress/#API)（仅支持 `type="line"`） | { strokeWidth: 2, showInfo: false } | 3.0 |  |
 | removeIcon | 自定义删除 icon | v-slot:iconRender="{file: UploadFile}" | - | 3.0 |  |
-| showUploadList | 是否展示 uploadList, 可设为一个对象，用于单独设定 showPreviewIcon 和 showRemoveIcon | Boolean or { showPreviewIcon?: boolean, showRemoveIcon?: boolean, showDownloadIcon?: boolean } | true | showDownloadIcon(3.0) |  |
+| showUploadList | 是否展示 uploadList, 可设为一个对象，用于单独设定 showPreviewIcon, showRemoveIcon 和 showDownloadIcon | Boolean or { showPreviewIcon?: boolean, showRemoveIcon?: boolean, showDownloadIcon?: boolean } | true | showDownloadIcon(3.0) |  |
 | supportServerRender | 服务端渲染时需要打开这个 | boolean | false |  |  |
 | withCredentials | 上传请求时是否携带 cookie | boolean | false |  |  |
 

@@ -46,10 +46,25 @@ export interface CommonTimePickerProps {
   hideDisabledOptions?: boolean;
   popupClassName?: string;
 }
-
-export type TimeRangePickerProps<T> = Omit<RangePickerTimeProps<T>, 'picker'> & {
+export type TimeRangePickerProps<DateType> = Omit<
+  RangePickerTimeProps<DateType>,
+  'picker' | 'defaultPickerValue' | 'defaultValue' | 'value' | 'onChange' | 'onPanelChange' | 'onOk'
+> & {
   popupClassName?: string;
   valueFormat?: string;
+  defaultPickerValue?: RangeValue<DateType> | RangeValue<string>;
+  defaultValue?: RangeValue<DateType> | RangeValue<string>;
+  value?: RangeValue<DateType> | RangeValue<string>;
+  onChange?: (
+    value: RangeValue<DateType> | RangeValue<string> | null,
+    dateString: [string, string],
+  ) => void;
+  'onUpdate:value'?: (value: RangeValue<DateType> | RangeValue<string> | null) => void;
+  onPanelChange?: (
+    values: RangeValue<DateType> | RangeValue<string>,
+    modes: [PanelMode, PanelMode],
+  ) => void;
+  onOk?: (dates: RangeValue<DateType> | RangeValue<string>) => void;
 };
 
 export type TimePickerProps<DateType> = CommonProps<DateType> &
@@ -104,11 +119,11 @@ function createTimePicker<
         emit('update:open', open);
         emit('openChange', open);
       };
-      const onFocus = () => {
-        emit('focus');
+      const onFocus = (e: FocusEvent) => {
+        emit('focus', e);
       };
-      const onBlur = () => {
-        emit('blur');
+      const onBlur = (e: FocusEvent) => {
+        emit('blur', e);
         formItemContext.onFieldBlur();
       };
       const onOk = (value: DateType) => {
@@ -151,9 +166,7 @@ function createTimePicker<
     slot: ['renderExtraFooter', 'suffixIcon', 'clearIcon'],
     setup(props, { slots, expose, emit, attrs }) {
       const pickerRef = ref();
-
       const formItemContext = useInjectFormItemContext();
-
       expose({
         focus: () => {
           pickerRef.value?.focus();
@@ -174,11 +187,11 @@ function createTimePicker<
         emit('update:open', open);
         emit('openChange', open);
       };
-      const onFocus = () => {
-        emit('focus');
+      const onFocus = (e: FocusEvent) => {
+        emit('focus', e);
       };
-      const onBlur = () => {
-        emit('blur');
+      const onBlur = (e: FocusEvent) => {
+        emit('blur', e);
         formItemContext.onFieldBlur();
       };
       const onPanelChange = (
