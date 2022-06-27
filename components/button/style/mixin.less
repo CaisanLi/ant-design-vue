@@ -128,7 +128,6 @@
 .button-variant-ghost(@color; @border; @borderHover: yellow; @borderActive: yellow) {
   .button-color(@color; null; @border);
   text-shadow: none;
-
   &:hover,
   &:focus {
     & when (@border = transparent) {
@@ -308,7 +307,8 @@
 }
 // ghost button style
 .btn-ghost() {
-  .button-variant-other(@btn-ghost-color, @btn-ghost-bg, @btn-ghost-border);
+  .button-variant-other(@btn-ghost-color, transparent, transparent);
+  box-shadow:none;
 }
 // dashed button style
 .btn-dashed() {

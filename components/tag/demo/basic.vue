@@ -24,7 +24,7 @@ Usage of basic Tag, and it could be closable by set `closable` property. Closabl
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, ref } from 'vue';
 export default defineComponent({
   setup() {
     const log = (e: MouseEvent) => {

@@ -28,7 +28,7 @@ import PropTypes from '../../_util/vue-types';
 import type { MouseEventHandler } from '../../_util/EventInterface';
 import omit from '../../_util/omit';
 
-export type TabsType = 'line' | 'card' | 'editable-card';
+export type TabsType = 'line' | 'card' | 'editable-card' | 'shallow';
 export type TabsPosition = 'top' | 'right' | 'bottom' | 'left';
 
 // Used for accessibility
@@ -305,6 +305,7 @@ const InternalTabs = defineComponent({
             {
               [`${pre}-${size.value}`]: size.value,
               [`${pre}-card`]: ['card', 'editable-card'].includes(type as string),
+              [`${pre}-shallow`]: type === 'shallow',
               [`${pre}-editable-card`]: type === 'editable-card',
               [`${pre}-centered`]: centered,
               [`${pre}-mobile`]: mobile.value,

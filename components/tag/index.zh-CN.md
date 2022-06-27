@@ -42,3 +42,16 @@ cover: https://gw.alipayobjects.com/zos/alicdn/cH1BOLfxC/Tag.svg
 | 事件名称 | 说明                 | 回调参数          |
 | -------- | -------------------- | ----------------- |
 | change   | 点击标签时触发的回调 | (checked) => void |
+
+### Tag.CheckableCloseTag
+
+| 参数             | 说明               | 类型    | 默认值 |
+| ---------------- | ------------------ | ------- | ------ |
+| checked(v-model) | 设置标签的选中状态 | boolean | false  |
+
+### 事件
+
+| 事件名称 | 说明                 | 回调参数          |
+| -------- | -------------------- | ----------------- |
+| change   | 点击标签时触发的回调 | (checked) => void |
+| close    | 关闭时的回调 | (e) => void |

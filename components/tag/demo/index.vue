@@ -8,6 +8,7 @@
     <HotTags />
     <Icon />
     <Status />
+    <CheckableCloseTag />
   </demo-sort>
 </template>
 
@@ -20,6 +21,7 @@ import Controlled from './controlled.vue';
 import HotTags from './hot-tags.vue';
 import Icon from './icon.vue';
 import Status from './status.vue';
+import CheckableCloseTag from './checkableClose.vue';
 import CN from '../index.zh-CN.md';
 import US from '../index.en-US.md';
 import { defineComponent } from 'vue';
@@ -36,6 +38,7 @@ export default defineComponent({
     HotTags,
     Icon,
     Status,
+    CheckableCloseTag,
   },
 });
 </script>

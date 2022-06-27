@@ -29,7 +29,7 @@ Ant Design has 3 types of Tabs for different situations.
 | tabBarGutter | The gap between tabs | number | - |  |
 | tabBarStyle | Tab bar style object | object | - |  |
 | tabPosition | Position of tabs | `top` \| `right` \| `bottom` \| `left` | `top` |  |
-| type | Basic style of tabs | `line` \| `card` \| `editable-card` | `line` |  |
+| type | Basic style of tabs | `line` \| `card` \| `editable-card` \|`shallow` \| `line` |  |
 
 ### Tabs Slots
 

@@ -8,6 +8,7 @@ import type { PresetColorType, PresetStatusColorType } from '../_util/colors';
 import { PresetColorTypes, PresetStatusColorTypes } from '../_util/colors';
 import type { LiteralUnion } from '../_util/type';
 import CheckableTag from './CheckableTag';
+import CheckableCloseTag from './CheckableCloseTag';
 import useConfigInject from '../_util/hooks/useConfigInject';
 
 const PresetColorRegex = new RegExp(`^(${PresetColorTypes.join('|')})(-inverse)?$`);
@@ -127,16 +128,19 @@ const Tag = defineComponent({
 });
 
 Tag.CheckableTag = CheckableTag;
+Tag.CheckableCloseTag = CheckableCloseTag;
 
 Tag.install = function (app: App) {
   app.component(Tag.name, Tag);
   app.component(CheckableTag.name, CheckableTag);
+  app.component(CheckableCloseTag.name, CheckableCloseTag);
   return app;
 };
 
-export { CheckableTag };
+export { CheckableTag, CheckableCloseTag };
 
 export default Tag as typeof Tag &
   Plugin & {
     readonly CheckableTag: typeof CheckableTag;
+    readonly CheckableCloseTag: typeof CheckableCloseTag;
   };

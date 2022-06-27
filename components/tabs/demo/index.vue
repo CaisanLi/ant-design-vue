@@ -1,6 +1,7 @@
 <template>
   <demo-sort :cols="1">
     <Basic />
+    <Shallow />
     <Disabled />
     <Centered />
     <Icon />
@@ -13,6 +14,7 @@
     <CardTop />
     <CustomAddTrigger />
     <CustomTabBar />
+
   </demo-sort>
 </template>
 
@@ -30,6 +32,7 @@ import Size from './size.vue';
 import Slide from './slide.vue';
 import CustomTabBar from './custom-tab-bar.vue';
 import Centered from './centered.vue';
+import Shallow from './shallow.vue';
 import CN from '../index.zh-CN.md';
 import US from '../index.en-US.md';
 import { defineComponent } from 'vue';
@@ -51,6 +54,7 @@ export default defineComponent({
     EditableCard,
     Extra,
     Icon,
+    Shallow,
     Position,
     Size,
     Slide,

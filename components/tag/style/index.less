@@ -9,7 +9,7 @@
   display: inline-block;
   height: auto;
   margin-right: 8px;
-  padding: 0 7px;
+  padding: 0 8px;
   font-size: @tag-font-size;
   line-height: @tag-line-height;
   white-space: nowrap;
@@ -75,6 +75,52 @@
     &:active {
       background-color: @primary-7;
     }
+
+    &-close {
+      background: #f5f5f5;
+      cursor: pointer;
+      padding: 6px 24px;
+      font-size: 14px;
+      color: #333333;
+      position: relative;
+      border: 1px solid #f5f5f5;
+      &-btn{
+        display: inline-block;
+        opacity: 0;
+        transition: all 0.3s;
+      }
+      &-triangle{
+        border: 10px solid @primary-6;
+        border-left-color: transparent;
+        border-top-color: transparent;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        line-height: 0;
+      }
+      &-icon{
+        position: absolute;
+        bottom: 1px;
+        right: 1px;
+        font-size: 8px;
+        color: #ffffff;
+      }
+    }
+
+    &-close-checked {
+      background: #E6F0FF;
+      border-color: #418EFF;
+      color: #0067FF;
+      padding: 6px 24px;
+      border: 1px solid @primary-6;
+      .@{tag-prefix-cls}-checkable-close-btn{
+        display: inline-block;
+        opacity: 1;
+        transition: all 0.3s;
+      }
+    }
+
+
   }
 
   &-hidden {

@@ -208,29 +208,30 @@
   &&-background-ghost {
     color: @btn-default-ghost-color;
     border-color: @btn-default-ghost-border;
-
     &,
     &:hover,
     &:active,
     &:focus {
       background: @btn-default-ghost-bg;
+      //background: rgba(255, 255, 255, 0.2);
     }
 
     &:hover,
     &:focus {
-      color: @primary-color-hover;
-      border-color: @primary-color-hover;
+      //color: @primary-color-hover;
+      //border-color: @primary-color-hover;
+      background: rgba(255, 255, 255, 0.2);
     }
 
-    &:active {
-      color: @primary-color-active;
-      border-color: @primary-color-active;
-    }
+    //&:active {
+    //  color: @primary-color-active;
+    //  border-color: @primary-color-active;
+    //}
 
     &[disabled] {
-      color: @disabled-color;
-      background: @btn-default-ghost-bg;
-      border-color: @btn-default-border;
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.7);
+      border-color: #ffffff;
     }
   }
 
