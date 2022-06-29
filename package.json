@@ -1,6 +1,6 @@
 {
-  "name": "zxj-ui-plus",
-  "version": "1.1.0",
+  "name": "@zxj/ui-plus",
+  "version": "1.0.0",
   "title": "Ant Design Vue",
   "description": "An enterprise-class UI design language and Vue-based implementation",
   "keywords": [
@@ -63,7 +63,7 @@
     "sort-api": "node antd-tools/cli/run.js sort-api-table"
   },
   "publishConfig": {
-    "registry": "http://192.168.5.16:8081/repository/npm-hosted/"
+    "registry": "http://192.168.5.16:4873/"
   },
   "repository": {
     "type": "git",
