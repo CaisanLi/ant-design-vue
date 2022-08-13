@@ -70,9 +70,7 @@ exports[`renders ./components/page-header/demo/actions.vue correctly 1`] = `
           class="ant-btn"
           type="button"
         >
-          
           <!---->
-          
           
           <span>
             Operation
@@ -83,9 +81,7 @@ exports[`renders ./components/page-header/demo/actions.vue correctly 1`] = `
           class="ant-btn"
           type="button"
         >
-          
           <!---->
-          
           
           <span>
             Operation
@@ -96,9 +92,7 @@ exports[`renders ./components/page-header/demo/actions.vue correctly 1`] = `
           class="ant-btn ant-btn-primary"
           type="button"
         >
-          
           <!---->
-          
           
           <span>
             Primary
@@ -331,9 +325,7 @@ exports[`renders ./components/page-header/demo/actions.vue correctly 1`] = `
           class="ant-btn"
           type="button"
         >
-          
           <!---->
-          
           
           <span>
             Operation
@@ -344,9 +336,7 @@ exports[`renders ./components/page-header/demo/actions.vue correctly 1`] = `
           class="ant-btn"
           type="button"
         >
-          
           <!---->
-          
           
           <span>
             Operation
@@ -357,9 +347,7 @@ exports[`renders ./components/page-header/demo/actions.vue correctly 1`] = `
           class="ant-btn ant-btn-primary"
           type="button"
         >
-          
           <!---->
-          
           
           <span>
             Primary
@@ -760,9 +748,7 @@ exports[`renders ./components/page-header/demo/content.vue correctly 1`] = `
           class="ant-btn"
           type="button"
         >
-          
           <!---->
-          
           
           <span>
             Operation
@@ -773,9 +759,7 @@ exports[`renders ./components/page-header/demo/content.vue correctly 1`] = `
           class="ant-btn"
           type="button"
         >
-          
           <!---->
-          
           
           <span>
             Operation
@@ -786,9 +770,7 @@ exports[`renders ./components/page-header/demo/content.vue correctly 1`] = `
           class="ant-btn ant-btn-primary"
           type="button"
         >
-          
           <!---->
-          
           
           <span>
             Primary
@@ -802,9 +784,7 @@ exports[`renders ./components/page-header/demo/content.vue correctly 1`] = `
           style="padding: 0px;"
           type="button"
         >
-          
           <!---->
-          
           
           <span
             aria-label="ellipsis"
@@ -975,9 +955,7 @@ exports[`renders ./components/page-header/demo/ghost.vue correctly 1`] = `
           class="ant-btn"
           type="button"
         >
-          
           <!---->
-          
           
           <span>
             Operation
@@ -988,9 +966,7 @@ exports[`renders ./components/page-header/demo/ghost.vue correctly 1`] = `
           class="ant-btn"
           type="button"
         >
-          
           <!---->
-          
           
           <span>
             Operation
@@ -1001,9 +977,7 @@ exports[`renders ./components/page-header/demo/ghost.vue correctly 1`] = `
           class="ant-btn ant-btn-primary"
           type="button"
         >
-          
           <!---->
-          
           
           <span>
             Primary
@@ -1230,9 +1204,7 @@ exports[`renders ./components/page-header/demo/responsive.vue correctly 1`] = `
           class="ant-btn"
           type="button"
         >
-          
           <!---->
-          
           
           <span>
             Operation
@@ -1243,9 +1215,7 @@ exports[`renders ./components/page-header/demo/responsive.vue correctly 1`] = `
           class="ant-btn"
           type="button"
         >
-          
           <!---->
-          
           
           <span>
             Operation
@@ -1256,9 +1226,7 @@ exports[`renders ./components/page-header/demo/responsive.vue correctly 1`] = `
           class="ant-btn ant-btn-primary"
           type="button"
         >
-          
           <!---->
-          
           
           <span>
             Primary

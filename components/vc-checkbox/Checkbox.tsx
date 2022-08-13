@@ -1,6 +1,6 @@
 // based on rc-checkbox 2.3.2
 import type { HTMLAttributes } from 'vue';
-import { nextTick, defineComponent, ref, watch, onMounted } from 'vue';
+import { defineComponent, ref, watch } from 'vue';
 import classNames from '../_util/classNames';
 import PropTypes from '../_util/vue-types';
 import { initDefaultProps } from '../_util/props-util';
@@ -37,15 +37,6 @@ export default defineComponent({
         checked.value = props.checked;
       },
     );
-    onMounted(() => {
-      nextTick(() => {
-        if (process.env.NODE_ENV === 'test') {
-          if (props.autofocus) {
-            inputRef.value?.focus();
-          }
-        }
-      });
-    });
     expose({
       focus() {
         inputRef.value?.focus();
@@ -113,9 +104,10 @@ export default defineComponent({
         onKeypress,
         onKeyup,
       } = attrs as HTMLAttributes;
-      const globalProps = Object.keys({ ...others, ...attrs }).reduce((prev, key) => {
+      const othersAndAttrs = { ...others, ...attrs };
+      const globalProps = Object.keys(othersAndAttrs).reduce((prev, key) => {
         if (key.substr(0, 5) === 'aria-' || key.substr(0, 5) === 'data-' || key === 'role') {
-          prev[key] = others[key];
+          prev[key] = othersAndAttrs[key];
         }
         return prev;
       }, {});

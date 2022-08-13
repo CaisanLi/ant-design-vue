@@ -10,6 +10,52 @@
 
 ---
 
+## 3.2.11
+
+`2022-08-08`
+
+- 🐞 Fix dayjs error when CDN introduces component library [#5874](https://github.com/vueComponent/ant-design-vue/issues/5874)
+- 🐞 Fix `Dropdown` submenu wrapping issue [#5798](https://github.com/vueComponent/ant-design-vue/issues/5798)
+- 🐞 Fix the problem that the package size increases when the icon is introduced [#5822](https://github.com/vueComponent/ant-design-vue/issues/5822)
+- 🐞 Fix `Select` custom field, no auto-focus selected node issue [#5843](https://github.com/vueComponent/ant-design-vue/issues/5843)
+- 🐞 Fix `InputNumber` size=large, the style is not aligned [#5853](https://github.com/vueComponent/ant-design-vue/issues/5853)
+
+## 3.2.10
+
+`2022-07-07`
+
+- 🐞 Fix the problem that the popup component cannot be used under `process.env.NODE_ENV = 'test'` [#4565](https://github.com/vueComponent/ant-design-vue/issues/4565)
+- 🐞 Fix the problem that the popup layer is directly closed when the Menu component hovers quickly [36df58](https://github.com/vueComponent/ant-design-vue/commit/36df585acf9a7d53c8b50be2ab240f54588a3b20)
+- 🐞 Fix Input autosize type error [#5766](https://github.com/vueComponent/ant-design-vue/issues/5766)
+- 🐞 Fix Table ellipsis tilte not working under fixed [#5755](https://github.com/vueComponent/ant-design-vue/issues/5755)
+
+## 3.2.9
+
+`2022-06-25`
+
+- 🐞 Fix the flickering problem when the Select edge position is closed [8a659d](https://github.com/vueComponent/ant-design-vue/commit/8a659da84fb8c44620fa279d9d6d73d6bd93d1f7)
+
+## 3.2.8
+
+`2022-06-24`
+
+- 🌟 Image add scroll wheel to zoom in and out [#5703](https://github.com/vueComponent/ant-design-vue/issues/5703)
+- 🌟 ConfigProvider.config added getPopupContainer [62dc24](https://github.com/vueComponent/ant-design-vue/commit/62dc2402f37c0ca0514f5b8fbb363247f0216bb2)
+- 🐞 Upload tooltip does not show issues [#5714](https://github.com/vueComponent/ant-design-vue/issues/5714)
+- 🐞 Row gutter property type error [#5725](https://github.com/vueComponent/ant-design-vue/issues/5725)
+- 🐞 Whether Typography is editable or not, the state is not reset after switching [#5743](https://github.com/vueComponent/ant-design-vue/issues/5743)
+- 🐞 In DirectoryTree multi-selection mode, a single node should be selected when clicking (multi-selection only selects multiple nodes when pressing ctrl and shift keys) [#5732](https://github.com/vueComponent/ant-design-vue/ issues/5732)
+
+## 3.2.7
+
+`2022-06-13`
+
+- 🌟 `Checkbox` supports adding extra properties [#5678](https://github.com/vueComponent/ant-design-vue/issues/5678)
+- 🌟 `RadioGroup` support global size [#5690](https://github.com/vueComponent/ant-design-vue/issues/5690)
+- 🌟 `Table` expandedRowKeys support v-model [#5695](https://github.com/vueComponent/ant-design-vue/issues/5695)
+- 🐞 Fix global Form message not taking effect [#5693](https://github.com/vueComponent/ant-design-vue/issues/5693)
+- 🐞 Fix `Typography` Enter key triggers end event twice, end is no longer triggered when blur [#5696](https://github.com/vueComponent/ant-design-vue/issues/5696)
+
 ## 3.2.6
 
 `2022-06-07`
@@ -451,7 +497,7 @@ Github：[https://github.com/surely-vue/table]
 - 🐞 Fix the problem that TreeSelect selectable and checkable cannot be closed [#4838](https://github.com/vueComponent/ant-design-vue/issues/4838)
 - 🐞 Fix the problem that Tabs cannot be scrolled on the mobile terminal [#4828](https://github.com/vueComponent/ant-design-vue/issues/4828)
 - 🐞 Fix InputNumber does not trigger inspection under form [#4831](https://github.com/vueComponent/ant-design-vue/issues/4831)
-- 🐞 Fix that when Select uses `<z-select-option>` to build a node, the automatic word segmentation fails [#4844](https://github.com/vueComponent/ant-design-vue/issues/4844)
+- 🐞 Fix that when Select uses `<a-select-option>` to build a node, the automatic word segmentation fails [#4844](https://github.com/vueComponent/ant-design-vue/issues/4844)
 
 ## 3.0.0-alpha.8
 
@@ -577,10 +623,10 @@ Github：[https://github.com/surely-vue/table]
     2. A Form.Item can only collect the data of one form item. If there are multiple form items, it will cause collection confusion. For example,
 
     ```html
-    <z-form-item>
-      <z-input name="a"></z-input>
-      <z-input name="b"></z-input>
-    </z-form-item>
+    <a-form-item>
+      <a-input name="a"></a-input>
+      <a-input name="b"></a-input>
+    </a-form-item>
     ```
 
     As above Form.Item does not know whether to collect `name="a"` or `name="b"`, you can solve this kind of problem in the following two ways:
@@ -588,10 +634,10 @@ Github：[https://github.com/surely-vue/table]
     The first is to use multiple `a-form-item`:
 
     ```html
-    <z-form-item>
-      <z-input name="a"></z-input>
-      <z-form-item><z-input name="b"></z-input></z-form-item>
-    </z-form-item>
+    <a-form-item>
+      <a-input name="a"></a-input>
+      <a-form-item><a-input name="b"></a-input></a-form-item>
+    </a-form-item>
     ```
 
     The second way is to wrap it with a custom component and call `useInjectFormItemContext` in the custom component, It is equivalent to merging multiple form items into one.
@@ -610,21 +656,21 @@ Github：[https://github.com/surely-vue/table]
     ```
 
     ```html
-    <z-form-item>
+    <a-form-item>
       <custom-com>
-        <z-input name="a"></z-input>
-        <z-input name="b"></z-input>
+        <a-input name="a"></a-input>
+        <a-input name="b"></a-input>
       </custom-com>
-    </z-form-item>
+    </a-form-item>
     ```
 
     Third, the component library provides an `a-form-item-rest` component, which will prevent data collection. You can put form items that do not need to be collected and verified into this component. It is the same as the first This method is very similar, but it does not generate additional dom nodes.
 
     ```html
-    <z-form-item>
-      <z-input name="a"></z-input>
-      <z-form-item-rest><z-input name="b"></z-input></z-form-item-rest>
-    </z-form-item>
+    <a-form-item>
+      <a-input name="a"></a-input>
+      <a-form-item-rest><a-input name="b"></a-input></a-form-item-rest>
+    </a-form-item>
     ```
 
 ## 2.2.8
@@ -1161,8 +1207,8 @@ In `ant-design-vue@1.2.0`, we introduced the svg icon ([Why use the svg icon?](h
 The old way of using Icon will be obsolete:
 
 ```html
-<z-icon type="smile" />
-<z-button icon="smile" />
+<a-icon type="smile" />
+<a-button icon="smile" />
 ```
 
 In 2.0, an on-demand introduction method will be adopted:
@@ -1170,9 +1216,9 @@ In 2.0, an on-demand introduction method will be adopted:
 ```html
 <template>
   <smile-outlined />
-  <z-button>
+  <a-button>
     <template v-slot:icon><smile-outlined /></template>
-  </z-buttom>
+  </a-buttom>
 </template>
 <script>
 import SmileOutlined from'@ant-design/icons-vue/SmileOutlined';

@@ -1,5 +1,5 @@
 import type { PropType, ExtractPropTypes, HTMLAttributes, App } from 'vue';
-import { watch, defineComponent, nextTick, onMounted, ref } from 'vue';
+import { watch, defineComponent, ref } from 'vue';
 import classNames from '../_util/classNames';
 import UpOutlined from '@ant-design/icons-vue/UpOutlined';
 import DownOutlined from '@ant-design/icons-vue/DownOutlined';
@@ -74,15 +74,6 @@ const InputNumber = defineComponent({
       focused.value = true;
       emit('focus', e);
     };
-    onMounted(() => {
-      nextTick(() => {
-        if (process.env.NODE_ENV === 'test') {
-          if (props.autofocus && !props.disabled) {
-            focus();
-          }
-        }
-      });
-    });
     return () => {
       const {
         class: className,
@@ -133,8 +124,6 @@ const InputNumber = defineComponent({
         const affixWrapperCls = classNames(`${preCls}-affix-wrapper`, {
           [`${preCls}-affix-wrapper-focused`]: focused.value,
           [`${preCls}-affix-wrapper-disabled`]: props.disabled,
-          [`${preCls}-affix-wrapper-sm`]: size.value === 'small',
-          [`${preCls}-affix-wrapper-lg`]: size.value === 'large',
           [`${preCls}-affix-wrapper-rtl`]: direction.value === 'rtl',
           [`${preCls}-affix-wrapper-readonly`]: readonly,
           [`${preCls}-affix-wrapper-borderless`]: !bordered,

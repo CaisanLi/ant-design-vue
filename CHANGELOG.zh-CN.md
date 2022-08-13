@@ -10,6 +10,52 @@
 
 ---
 
+## 3.2.11
+
+`2022-08-08`
+
+- 🐞 修复 CDN 引入组件库时，dayjs 报错问题 [#5874](https://github.com/vueComponent/ant-design-vue/issues/5874)
+- 🐞 修复 `Dropdown` 子菜单换行问题 [#5798](https://github.com/vueComponent/ant-design-vue/issues/5798)
+- 🐞 修复图标引入打包体积增大问题 [#5822](https://github.com/vueComponent/ant-design-vue/issues/5822)
+- 🐞 修复 `Select` 自定义字段时，没有自动聚焦选中节点问题 [#5843](https://github.com/vueComponent/ant-design-vue/issues/5843)
+- 🐞 修复 `InputNumber` size=large 时， 样式未对齐问题 [#5853](https://github.com/vueComponent/ant-design-vue/issues/5853)
+
+## 3.2.10
+
+`2022-07-07`
+
+- 🐞 修复在 `process.env.NODE_ENV = 'test'` 下弹窗类组件无法使用问题 [#4565](https://github.com/vueComponent/ant-design-vue/issues/4565)
+- 🐞 修复 Menu 组件在快速 hover 弹出层时，弹出层直接关闭问题 [36df58](https://github.com/vueComponent/ant-design-vue/commit/36df585acf9a7d53c8b50be2ab240f54588a3b20)
+- 🐞 修复 Input autosize 类型错误 [#5766](https://github.com/vueComponent/ant-design-vue/issues/5766)
+- 🐞 修复 Table ellipsis tilte 在 fixed 下失效问题 [#5755](https://github.com/vueComponent/ant-design-vue/issues/5755)
+
+## 3.2.9
+
+`2022-06-25`
+
+- 🐞 修复 Select 边缘位置关闭时闪动问题 [8a659d](https://github.com/vueComponent/ant-design-vue/commit/8a659da84fb8c44620fa279d9d6d73d6bd93d1f7)
+
+## 3.2.8
+
+`2022-06-24`
+
+- 🌟 Image 新增滚轮放大缩小 [#5703](https://github.com/vueComponent/ant-design-vue/issues/5703)
+- 🌟 ConfigProvider.config 新增 getPopupContainer [62dc24](https://github.com/vueComponent/ant-design-vue/commit/62dc2402f37c0ca0514f5b8fbb363247f0216bb2)
+- 🐞 Upload tooltip 不展示问题 [#5714](https://github.com/vueComponent/ant-design-vue/issues/5714)
+- 🐞 Row gutter 属性类型错误 [#5725](https://github.com/vueComponent/ant-design-vue/issues/5725)
+- 🐞 Typography 是否可编辑切换后，状态未重置问题 [#5743](https://github.com/vueComponent/ant-design-vue/issues/5743)
+- 🐞 DirectoryTree 多选模式下，点击时应该选中单个节点(多选只有配合 ctrl、shift 按键时选中多个节点) [#5732](https://github.com/vueComponent/ant-design-vue/issues/5732)
+
+## 3.2.7
+
+`2022-06-13`
+
+- 🌟 `Checkbox` 支持添加额外属性 [#5678](https://github.com/vueComponent/ant-design-vue/issues/5678)
+- 🌟 `RadioGroup` 支持全局 size [#5690](https://github.com/vueComponent/ant-design-vue/issues/5690)
+- 🌟 `Table` expandedRowKeys 支持 v-model [#5695](https://github.com/vueComponent/ant-design-vue/issues/5695)
+- 🐞 修复全局 Form message 未生效问题 [#5693](https://github.com/vueComponent/ant-design-vue/issues/5693)
+- 🐞 修复 `Typography` 回车键触发两次 end 事件问题，blur 时不再触发 end [#5696](https://github.com/vueComponent/ant-design-vue/issues/5696)
+
 ## 3.2.6
 
 `2022-06-07`

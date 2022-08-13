@@ -56,15 +56,19 @@
     "routes": "node site/scripts/genrateRoutes.js",
     "tsc": "tsc --noEmit",
     "vue-tsc": "vue-tsc --noEmit",
-    "site": "npm run routes && ./node_modules/vite/bin/vite.js build site",
+    "site": "npm run routes && ./node_modules/vite/bin/vite.js build site --base=https://www.antdv.com/",
     "pub:site": "npm run site && node site/scripts/pushToOSS.js",
     "prepare": "husky install",
     "version": "node ./scripts/generate-version",
     "sort-api": "node antd-tools/cli/run.js sort-api-table"
   },
-  "publishConfig": {
-    "registry": "http://192.168.5.16:4873/"
-  },
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "Firefox ESR",
+    "not dead",
+    "not IE 11"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vueComponent/ant-design-vue.git"
