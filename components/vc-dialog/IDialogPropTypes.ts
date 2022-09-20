@@ -28,6 +28,7 @@ export function dialogPropTypes() {
     rootClassName: String,
     width: [String, Number],
     height: [String, Number],
+    maxHeight: [Boolean, Number, String],
     zIndex: Number,
     bodyProps: PropTypes.any,
     maskProps: PropTypes.any,

@@ -27,7 +27,7 @@ export default defineComponent({
       mask: true,
       visible: false,
       keyboard: true,
-      closable: true,
+      closable: false,
       maskClosable: true,
       destroyOnClose: false,
       prefixCls: 'rc-dialog',
@@ -41,7 +41,6 @@ export default defineComponent({
     const contentRef = ref<ContentRef>();
     const animatedVisible = ref(props.visible);
     const ariaIdRef = ref<string>(`vcDialogTitle${getUUID()}`);
-
     // ========================= Events =========================
     const onDialogVisibleChanged = (newVisible: boolean) => {
       if (newVisible) {

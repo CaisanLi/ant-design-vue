@@ -121,9 +121,10 @@ export default defineComponent({
     };
 
     const insertSpace = (child: VNode, needInserted: boolean) => {
-      const SPACE = needInserted ? ' ' : '';
+      const SPACE = needInserted ? '' : '';
       if (child.type === Text) {
         let text = (child.children as string).trim();
+
         if (isTwoCNChar(text)) {
           text = text.split('').join(SPACE);
         }

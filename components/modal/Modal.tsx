@@ -48,6 +48,7 @@ export const modalProps = () => ({
   afterClose: Function as PropType<() => void>,
   centered: { type: Boolean, default: undefined },
   width: [String, Number],
+  maxHeight: { type: [Boolean, Number, String], default: true },
   footer: PropTypes.any,
   okText: PropTypes.any,
   okType: String as PropType<LegacyButtonType>,
@@ -201,7 +202,6 @@ export default defineComponent({
         focusTriggerAfterClose = true,
         ...restProps
       } = props;
-
       const wrapClassNameExtended = classNames(wrapClassName, {
         [`${prefixCls.value}-centered`]: !!centered,
         [`${prefixCls.value}-wrap-rtl`]: direction.value === 'rtl',

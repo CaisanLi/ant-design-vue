@@ -86,6 +86,7 @@ export default defineComponent({
         modalRender = slots.modalRender,
         destroyOnClose,
         motionName,
+        maxHeight,
       } = props;
       let footerNode: any;
       if (footer) {
@@ -112,11 +113,25 @@ export default defineComponent({
         );
       }
 
+      // 设置body 的 maxHeight
+      const zBodyStyle = { ...bodyStyle };
+      if (maxHeight === true) {
+        zBodyStyle.maxHeight = footer ? '593px' : '657px';
+      } else if (typeof maxHeight === 'string') {
+        zBodyStyle.maxHeight = maxHeight;
+      } else if (typeof maxHeight === 'number') {
+        zBodyStyle.maxHeight = maxHeight + 'px';
+      }
+
+      if (maxHeight) {
+        zBodyStyle.overflow = 'auto';
+      }
+
       const content = (
         <div class={`${prefixCls}-content`}>
           {closer}
           {headerNode}
-          <div class={`${prefixCls}-body`} style={bodyStyle} {...bodyProps}>
+          <div class={`${prefixCls}-body`} style={zBodyStyle} {...bodyProps}>
             {slots.default?.()}
           </div>
           {footerNode}
