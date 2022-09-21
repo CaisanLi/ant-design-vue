@@ -49,18 +49,6 @@ function externalDayjs(config) {
       amd: 'dayjs',
     },
   });
-  config.externals.push(function ({ _context, request }, callback) {
-    if (/^dayjs\/plugin\//.test(request)) {
-      const name = request.replaceAll('/', '_');
-      return callback(null, {
-        root: name,
-        commonjs2: name,
-        commonjs: name,
-        amd: name,
-      });
-    }
-    callback();
-  });
 }
 
 function injectWarningCondition(config) {
