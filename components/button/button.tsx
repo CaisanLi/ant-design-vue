@@ -88,7 +88,7 @@ export default defineComponent({
         [`${pre}-dashed`]: dashed,
         [`${pre}-loading`]: innerLoading.value,
         [`${pre}-background-ghost`]: ghost && !isUnborderedButtonType(type),
-        [`${pre}-two-chinese-chars`]: hasTwoCNChar.value && autoInsertSpace.value,
+        // [`${pre}-two-chinese-chars`]: hasTwoCNChar.value && autoInsertSpace.value,
         [`${pre}-block`]: block,
         [`${pre}-dangerous`]: !!danger,
         [`${pre}-rtl`]: direction.value === 'rtl',
