@@ -4,10 +4,10 @@ import type { ModalFuncProps } from './Modal';
 import { destroyFns } from './Modal';
 import ConfigProvider, { globalConfigForApi } from '../config-provider';
 import omit from '../_util/omit';
-import InfoCircleOutlined from '@ant-design/icons-vue/InfoCircleOutlined';
-import CheckCircleOutlined from '@ant-design/icons-vue/CheckCircleOutlined';
-import CloseCircleOutlined from '@ant-design/icons-vue/CloseCircleOutlined';
-import ExclamationCircleOutlined from '@ant-design/icons-vue/ExclamationCircleOutlined';
+import InfoCircleFilled from '@ant-design/icons-vue/InfoCircleFilled';
+import CheckCircleFilled from '@ant-design/icons-vue/CheckCircleFilled';
+import CloseCircleFilled from '@ant-design/icons-vue/CloseCircleFilled';
+import ExclamationCircleFilled from '@ant-design/icons-vue/ExclamationCircleFilled';
 
 type ConfigUpdate = ModalFuncProps | ((prevConfig: ModalFuncProps) => ModalFuncProps);
 
@@ -101,7 +101,7 @@ export default confirm;
 
 export function withWarn(props: ModalFuncProps): ModalFuncProps {
   return {
-    icon: () => <ExclamationCircleOutlined />,
+    icon: () => <ExclamationCircleFilled />,
     okCancel: false,
     ...props,
     type: 'warning',
@@ -110,7 +110,7 @@ export function withWarn(props: ModalFuncProps): ModalFuncProps {
 
 export function withInfo(props: ModalFuncProps): ModalFuncProps {
   return {
-    icon: () => <InfoCircleOutlined />,
+    icon: () => <InfoCircleFilled />,
     okCancel: false,
     ...props,
     type: 'info',
@@ -119,7 +119,7 @@ export function withInfo(props: ModalFuncProps): ModalFuncProps {
 
 export function withSuccess(props: ModalFuncProps): ModalFuncProps {
   return {
-    icon: () => <CheckCircleOutlined />,
+    icon: () => <CheckCircleFilled />,
     okCancel: false,
     ...props,
     type: 'success',
@@ -128,7 +128,7 @@ export function withSuccess(props: ModalFuncProps): ModalFuncProps {
 
 export function withError(props: ModalFuncProps): ModalFuncProps {
   return {
-    icon: () => <CloseCircleOutlined />,
+    icon: () => <CloseCircleFilled />,
     okCancel: false,
     ...props,
     type: 'error',
@@ -137,7 +137,7 @@ export function withError(props: ModalFuncProps): ModalFuncProps {
 
 export function withConfirm(props: ModalFuncProps): ModalFuncProps {
   return {
-    icon: () => <ExclamationCircleOutlined />,
+    icon: () => <ExclamationCircleFilled />,
     okCancel: true,
     ...props,
     type: 'confirm',
