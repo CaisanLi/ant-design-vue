@@ -1,10 +1,10 @@
 import type { CSSProperties, ExtractPropTypes, PropType } from 'vue';
 import { defineComponent, ref } from 'vue';
 import CloseOutlined from '@ant-design/icons-vue/CloseOutlined';
-import CheckCircleOutlined from '@ant-design/icons-vue/CheckCircleOutlined';
-import ExclamationCircleOutlined from '@ant-design/icons-vue/ExclamationCircleOutlined';
-import InfoCircleOutlined from '@ant-design/icons-vue/InfoCircleOutlined';
-import CloseCircleOutlined from '@ant-design/icons-vue/CloseCircleOutlined';
+// import CheckCircleOutlined from '@ant-design/icons-vue/CheckCircleOutlined';
+// import ExclamationCircleOutlined from '@ant-design/icons-vue/ExclamationCircleOutlined';
+// import InfoCircleOutlined from '@ant-design/icons-vue/InfoCircleOutlined';
+// import CloseCircleOutlined from '@ant-design/icons-vue/CloseCircleOutlined';
 import CheckCircleFilled from '@ant-design/icons-vue/CheckCircleFilled';
 import ExclamationCircleFilled from '@ant-design/icons-vue/ExclamationCircleFilled';
 import InfoCircleFilled from '@ant-design/icons-vue/InfoCircleFilled';
@@ -25,12 +25,12 @@ const iconMapFilled = {
   warning: ExclamationCircleFilled,
 };
 
-const iconMapOutlined = {
-  success: CheckCircleOutlined,
-  info: InfoCircleOutlined,
-  error: CloseCircleOutlined,
-  warning: ExclamationCircleOutlined,
-};
+// const iconMapOutlined = {
+//   success: CheckCircleOutlined,
+//   info: InfoCircleOutlined,
+//   error: CloseCircleOutlined,
+//   warning: ExclamationCircleOutlined,
+// };
 
 const AlertTypes = tuple('success', 'info', 'warning', 'error');
 
@@ -109,7 +109,7 @@ const Alert = defineComponent({
       // banner模式默认为警告
       type = banner && type === undefined ? 'warning' : type || 'info';
 
-      const IconType = (description ? iconMapOutlined : iconMapFilled)[type] || null;
+      const IconType = iconMapFilled[type] || null;
 
       // closeable when closeText is assigned
       if (closeText) {
