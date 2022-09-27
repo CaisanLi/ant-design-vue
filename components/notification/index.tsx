@@ -1,9 +1,9 @@
 import type { CSSProperties } from 'vue';
 import Notification from '../vc-notification';
-import CheckCircleOutlined from '@ant-design/icons-vue/CheckCircleOutlined';
-import InfoCircleOutlined from '@ant-design/icons-vue/InfoCircleOutlined';
-import CloseCircleOutlined from '@ant-design/icons-vue/CloseCircleOutlined';
-import ExclamationCircleOutlined from '@ant-design/icons-vue/ExclamationCircleOutlined';
+import CheckCircleFilled from '@ant-design/icons-vue/CheckCircleFilled';
+import InfoCircleFilled from '@ant-design/icons-vue/InfoCircleFilled';
+import CloseCircleFilled from '@ant-design/icons-vue/CloseCircleFilled';
+import ExclamationCircleFilled from '@ant-design/icons-vue/ExclamationCircleFilled';
 import CloseOutlined from '@ant-design/icons-vue/CloseOutlined';
 import type { VueNode } from '../_util/type';
 import { renderHelper } from '../_util/util';
@@ -162,10 +162,10 @@ function getNotificationInstance(
 }
 
 const typeToIcon = {
-  success: CheckCircleOutlined,
-  info: InfoCircleOutlined,
-  error: CloseCircleOutlined,
-  warning: ExclamationCircleOutlined,
+  success: CheckCircleFilled,
+  info: InfoCircleFilled,
+  error: CloseCircleFilled,
+  warning: ExclamationCircleFilled,
 };
 
 export interface NotificationArgsProps {
