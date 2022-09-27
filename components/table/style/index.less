@@ -132,7 +132,7 @@
     > tr:hover {
       box-shadow: 0px 5px 12px 4px rgba(0, 0, 0, 0.09), 0px 3px 6px 0px rgba(0, 0, 0, 0.12),
         0px 1px 2px -2px rgba(0, 0, 0, 0.16);
-      transform: translate3d(0, -1px, 0);
+      //transform: translate3d(0, -1px, 0);
       td.@{table-prefix-cls}-cell-fix-left {
         background: linear-gradient(
           rgba(0, 0, 0, 0),
@@ -221,7 +221,7 @@
 
   // ========================== Pagination ==========================
   &-pagination.@{ant-prefix}-pagination {
-    margin: 16px 0;
+    margin: 24px 0;
   }
 
   &-pagination {
@@ -699,13 +699,13 @@
       position: relative;
 
       &::before {
-        box-shadow: inset 10px 0 8px -8px darken(@shadow-color, 5%);
+        box-shadow: inset 10px 0 8px -8px #F5F5F5;
       }
     }
 
     .@{table-prefix-cls}-cell-fix-left-first::after,
     .@{table-prefix-cls}-cell-fix-left-last::after {
-      box-shadow: inset 10px 0 8px -8px darken(@shadow-color, 5%);
+      box-shadow: inset 10px 0 8px -8px #F5F5F5;
     }
 
     .@{table-prefix-cls}-cell-fix-left-last::before {
@@ -718,13 +718,13 @@
       position: relative;
 
       &::after {
-        box-shadow: inset -10px 0 8px -8px darken(@shadow-color, 5%);
+        box-shadow: inset -10px 0 8px -8px #F5F5F5;
       }
     }
 
     .@{table-prefix-cls}-cell-fix-right-first::after,
     .@{table-prefix-cls}-cell-fix-right-last::after {
-      box-shadow: inset -10px 0 8px -8px darken(@shadow-color, 5%);
+      box-shadow: inset -10px 0 8px -8px #F5F5F5;
     }
   }
 
