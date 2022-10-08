@@ -230,7 +230,7 @@ export default defineComponent({
           [`${prefixCls}-scrollbar-show`]: canScroll,
         })}
         style={{
-          width: '8px',
+          width: '4px',
           top: 0,
           bottom: 0,
           right: 0,
@@ -251,7 +251,7 @@ export default defineComponent({
             top,
             left: 0,
             position: 'absolute',
-            background: 'rgba(0, 0, 0, 0.5)',
+            background: '#E6E6E6',
             borderRadius: '99px',
             cursor: 'pointer',
             userSelect: 'none',

@@ -17,10 +17,10 @@ title:
 </docs>
 
 <template>
-  <div :style="{ background: 'rgb(190, 200, 200)', padding: '26px 16px 16px' }">
-    <z-button type="primary" ghost>Primary</z-button>
-    <z-button ghost>Default</z-button>
-    <z-button type="dashed" ghost>Dashed</z-button>
-    <z-button type="primary" danger ghost>Danger</z-button>
+  <div :style="{ background: '#333333', padding: '26px 16px 16px' }">
+    <z-button type="primary" ghost >Primary</z-button>
+    <z-button ghost disabled>Default</z-button>
+    <z-button dashed ghost disabled>Dashed</z-button>
+    <z-button danger ghost >Danger</z-button>
   </div>
 </template>

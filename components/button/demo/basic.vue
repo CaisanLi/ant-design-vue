@@ -18,8 +18,8 @@ There are `primary` button, `default` button, `dashed` button, `text` button and
 
 <template>
   <z-button type="primary">Primary Button</z-button>
-  <z-button>Default Button</z-button>
-  <z-button dashed>Dashed Button</z-button>
+  <z-button dashed>Default Button</z-button>
+  <z-button dashed type="primary" >Dashed Button</z-button>
   <z-button text>Text Button</z-button>
   <z-button type="link">Link Button</z-button>
 </template>

@@ -18,10 +18,10 @@ danger is a property of button after antd 2.2.0.
 
 <template>
   <div>
-    <z-button type="primary" danger>Primary</z-button>
-    <z-button danger>Default</z-button>
-    <z-button type="dashed" danger>Dashed</z-button>
-    <z-button type="text" danger>Text</z-button>
+    <z-button type="primary" danger >Primary</z-button>
+    <z-button danger >Default</z-button>
+    <z-button dashed danger>Dashed</z-button>
+    <z-button text danger >Text</z-button>
     <z-button type="link" danger>Link</z-button>
   </div>
 </template>

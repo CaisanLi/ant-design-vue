@@ -86,10 +86,10 @@
     }
   }
 
-  .button-disabled();
+  .button-disabled(#999999, #F5F5F5, #E6E6E6);
 }
 
-.button-variant-other(@color; @background; @border) {
+.button-variant-other(@color; @background; @border; @backgroundHover: yellow; @backgroundActive: yellow) {
   .button-color(@color; @background; @border);
 
   &:hover,
@@ -104,7 +104,7 @@
       );
     }
     & when (@theme = variable) {
-      .button-color(@primary-color-hover; @background; @primary-color-hover);
+      .button-color(@primary-color-hover; @backgroundHover; @primary-color-hover);
     }
   }
 
@@ -119,13 +119,13 @@
       );
     }
     & when (@theme = variable) {
-      .button-color(@primary-color-active; @background; @primary-color-active);
+      .button-color(@primary-color-active; @backgroundActive; @primary-color-active);
     }
   }
-  .button-disabled();
+  .button-disabled(#999999, #F5F5F5, #E6E6E6);
 }
 
-.button-variant-ghost(@color; @border; @borderHover: yellow; @borderActive: yellow) {
+.button-variant-ghost(@color; @border; @borderHover: yellow; @borderActive: yellow ;@background: null;@backgroundHover: null; @backgroundActive: null) {
   .button-color(@color; null; @border);
   text-shadow: none;
   &:hover,
@@ -153,7 +153,7 @@
         );
       }
       & when (@theme = variable) {
-        .button-color(@borderHover; transparent; @borderHover);
+        .button-color(@borderHover; @backgroundHover; @borderHover);
       }
     }
   }
@@ -182,11 +182,11 @@
         );
       }
       & when (@theme = variable) {
-        .button-color(@borderActive; transparent; @borderActive);
+        .button-color(@borderActive; @backgroundActive; @borderActive);
       }
     }
   }
-  .button-disabled();
+  .button-disabled(#ffffff,rgba(255, 255, 255, 0.7),#ffffff);
 }
 
 .button-group-base(@btnClassName) {
@@ -291,37 +291,44 @@
 }
 // primary button style
 .btn-primary() {
-  .button-variant-primary(@btn-primary-color; @btn-primary-bg; @primary-color-hover; @primary-color-active);
+  .button-variant-primary(@btn-primary-color; @btn-primary-bg; #3385FF; #0052CC);
 }
 // default button style
 .btn-default() {
-  .button-variant-other(@btn-default-color; @btn-default-bg; @btn-default-border; );
-
+  .button-variant-other(#666666; @btn-default-bg; #E6E6E6; );
   &:hover,
-  &:focus,
+  &:focus {
+    text-decoration: none;
+    background: #FFFFFF;
+    border-color: #3385FF;
+    color: #3385FF;
+  }
   &:active {
     text-decoration: none;
-    background: @btn-default-bg;
+    background: #FFFFFF;
+    border-color: #0052CC;
+    color: #0052CC;
   }
   border-radius: @btn-border-radius-base;
 }
 // ghost button style
 .btn-ghost() {
-  .button-variant-other(@btn-ghost-color, transparent, transparent);
+  .button-variant-other(#CCCCCC, rgba(255,255,255,0.16), #CCCCCC);
   box-shadow:none;
 }
 // dashed button style
 .btn-dashed() {
-  .button-variant-other(@btn-primary-bg, @btn-default-bg, @btn-primary-bg);
+  .button-variant-other(#333333, #FFFFFF, #E6E6E6, #FFFFFF,  #FFFFFF);
   border-style: dashed;
+  text-shadow: none;
 }
 // danger button style
 .btn-danger() {
-  .button-variant-primary(@btn-danger-color, @btn-danger-bg, @error-color-hover, @error-color-active);
+  .button-variant-primary(@btn-danger-color,#FF1919, #FF4D4D, #CC1414);
 }
 // danger default button style
 .btn-danger-default() {
-  .button-color(@error-color, @btn-default-bg, @error-color);
+  .button-color(#FF1919, @btn-default-bg, #FF1919);
 
   &:hover,
   &:focus {
@@ -338,7 +345,7 @@
       );
     }
     & when (@theme = variable) {
-      .button-color(@error-color-hover, @btn-default-bg, @error-color-hover);
+      .button-color(#FF4D4D, #FFFFFF, #FF4D4D);
     }
   }
 
@@ -356,10 +363,10 @@
       );
     }
     & when (@theme = variable) {
-      .button-color(@error-color-active, @btn-default-bg, @error-color-active);
+      .button-color(#CC1414, #FFFFFF, #CC1414);
     }
   }
-  .button-disabled();
+  .button-disabled(#999999, #F5F5F5, #E6E6E6);
 }
 // danger link button style
 .btn-danger-link() {
@@ -402,11 +409,17 @@
   }
 
   &:hover,
-  &:focus,
+  &:focus {
+    border-color: transparent;
+    background: @btn-link-hover-bg;
+    color: #3385FF;
+  }
   &:active {
     border-color: transparent;
+    background: @btn-link-hover-bg;
+    color: #0052CC;
   }
-  .button-disabled(@disabled-color; transparent; transparent);
+  .button-disabled(#999999; transparent; transparent);
 }
 // text button style
 .btn-text-default() {
@@ -421,7 +434,10 @@
   &:hover,
   &:focus {
     background: #fff;
-    color: @primary-color;
+    color: #3385FF;
+  }
+  &:active{
+    color: #0052CC;
   }
   //&:hover,
   //&:focus {
@@ -436,14 +452,28 @@
   //  border-color: transparent;
   //}
   //
-  //.button-disabled(@disabled-color; transparent; transparent);
+  .button-disabled(#999999; transparent; transparent);
 }
 .btn-outline-default() {
   border: 1px solid @blue-6;
   color: @blue-6;
+  background: transparent;
+  text-shadow: none;
+  &:hover,
+  &:focus {
+    background: #FFFFFF;
+    border-color: #0052CC;
+    color: #0052CC;
+  }
+  &:active {
+    background: #FFFFFF;
+    border-color: @blue-6;
+    color: @blue-6;
+  }
+  .button-disabled(#999999; #F5F5F5; #E6E6E6);
 }
 .btn-danger-text() {
-  .button-variant-other(@error-color, transparent, transparent);
+  .button-variant-other(#FF1919, transparent, transparent);
   box-shadow: none;
 
   &:hover,
@@ -455,7 +485,7 @@
       .button-color(~`colorPalette('@{error-color}', 5) `; @btn-text-hover-bg; transparent);
     }
     & when (@theme = variable) {
-      .button-color(@error-color-hover; @btn-text-hover-bg; transparent);
+      .button-color(#FF4D4D; transparent; transparent);
     }
   }
 
@@ -467,10 +497,10 @@
       .button-color(~`colorPalette('@{error-color}', 7) `; fadein(@btn-text-hover-bg, 1%); transparent);
     }
     & when (@theme = variable) {
-      .button-color(@error-color-active; fadein(@btn-text-hover-bg, 1%); transparent);
+      .button-color(#CC1414; transparent; transparent);
     }
   }
-  .button-disabled(@disabled-color; transparent; transparent);
+  .button-disabled(#999999; transparent; transparent);
 }
 // round button
 .btn-round(@btnClassName: btn) {
