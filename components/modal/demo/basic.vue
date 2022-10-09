@@ -19,7 +19,7 @@ Basic modal.
 <template>
   <div>
     <z-button type="primary" @click="showModal">Open Modal</z-button>
-    <z-modal v-model:visible="visible" title="Basic Modal" @ok="handleOk" >
+    <z-modal v-model:visible="visible" title="Basic Modal" @ok="handleOk" :footer="null">
       <p>Some contents...</p>
       <p>Some contents...</p>
       <p>Some contents...</p>

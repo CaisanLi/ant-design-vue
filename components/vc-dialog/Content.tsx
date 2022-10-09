@@ -116,7 +116,7 @@ export default defineComponent({
       // 设置body 的 maxHeight
       const zBodyStyle = { ...bodyStyle };
       if (maxHeight === true) {
-        zBodyStyle.maxHeight = footer ? '592px' : '656px';
+        zBodyStyle.maxHeight = footer ? '568px' : '632px';
       } else if (typeof maxHeight === 'string') {
         zBodyStyle.maxHeight = maxHeight;
       } else if (typeof maxHeight === 'number') {
