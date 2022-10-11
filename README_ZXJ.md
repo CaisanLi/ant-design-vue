@@ -6,7 +6,7 @@
   1. `tabs`组件新增卡片样式和背景色
   2. 大号`button`内边距调整
   3. 幽灵按钮新增失效状态，修改其默认样式
-  4. tag新增可选择删除tag(`CheckableCloseTag`)
+  4. tag 新增可选择删除 tag(`CheckableCloseTag`)
 - 2022/06/08 v1.0.9
   1. 更新 官方`3.2.6`
 - 2022/04/20 v1.0.8
@@ -103,7 +103,7 @@
 1. 登录私有仓库账号
 
 ```javascript
-npm login --registry=http://192.168.5.16:8081/repository/npm-hosted/
+npm login --registry=http://192.168.5.16:4873/
 ```
 
 2. 打包并发布
