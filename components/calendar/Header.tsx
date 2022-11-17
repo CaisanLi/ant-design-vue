@@ -170,7 +170,8 @@ export default defineComponent<CalendarHeaderProps<any>>({
     const divRef = ref<HTMLDivElement>(null);
     return () => {
       const props = { ..._props, ...attrs };
-      const { prefixCls, fullscreen, mode, onChange, onModeChange } = props;
+      const { prefixCls, fullscreen, mode, onChange } = props;
+      //onModeChange
       const sharedProps = {
         ...props,
         onChange,
@@ -182,7 +183,7 @@ export default defineComponent<CalendarHeaderProps<any>>({
         <div class={`${prefixCls}-header`} ref={divRef}>
           <YearSelect {...sharedProps} />
           {mode === 'month' && <MonthSelect {...sharedProps} />}
-          <ModeSwitch {...sharedProps} onModeChange={onModeChange} />
+          {/*<ModeSwitch {...sharedProps} onModeChange={onModeChange} />*/}
         </div>
       );
     };
