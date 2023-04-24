@@ -278,7 +278,6 @@
     "dayjs": "^1.10.5",
     "dom-align": "^1.12.1",
     "dom-scroll-into-view": "^2.0.0",
-    "esbuild-windows-64": "0.12.29",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.15",
     "resize-observer-polyfill": "^1.5.1",
