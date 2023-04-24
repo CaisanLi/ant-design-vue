@@ -15,6 +15,7 @@ import isMobile from '../_util/isMobile';
 
 export default defineComponent({
   name: 'ZInputSearch',
+  compatConfig: { MODE: 3 },
   inheritAttrs: false,
   props: {
     ...inputProps(),

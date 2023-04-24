@@ -12,6 +12,7 @@ const path =
 
 const SkeletonImage = defineComponent({
   name: 'ZSkeletonImage',
+  compatConfig: { MODE: 3 },
   props: omit(skeletonElementProps(), ['size', 'shape', 'active']),
   setup(props) {
     const { prefixCls } = useConfigInject('skeleton', props);

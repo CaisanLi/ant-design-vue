@@ -47,6 +47,7 @@ export type DescriptionsItemProp = Partial<
 
 export const DescriptionsItem = defineComponent({
   name: 'ZDescriptionsItem',
+  compatConfig: { MODE: 3 },
   props: descriptionsItemProp(),
   slots: ['label'],
   setup(_, { slots }) {
@@ -158,6 +159,7 @@ export const descriptionsContext: InjectionKey<DescriptionsContextProp> =
 
 const Descriptions = defineComponent({
   name: 'ZDescriptions',
+  compatConfig: { MODE: 3 },
   props: descriptionsProps(),
   slots: ['title', 'extra'],
   Item: DescriptionsItem,

@@ -71,6 +71,7 @@ export type TreeSelectProps = Partial<ExtractPropTypes<ReturnType<typeof treeSel
 
 const TreeSelect = defineComponent({
   name: 'ZTreeSelect',
+  compatConfig: { MODE: 3 },
   inheritAttrs: false,
   props: initDefaultProps(treeSelectProps(), {
     choiceTransitionName: '',

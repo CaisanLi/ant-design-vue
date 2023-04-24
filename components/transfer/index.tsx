@@ -106,6 +106,7 @@ export type TransferProps = Partial<ExtractPropTypes<ReturnType<typeof transferP
 
 const Transfer = defineComponent({
   name: 'ZTransfer',
+  compatConfig: { MODE: 3 },
   inheritAttrs: false,
   props: transferProps(),
   slots: [

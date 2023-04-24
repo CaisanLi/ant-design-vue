@@ -115,6 +115,7 @@ function parseTabList(children: any[]): Tab[] {
     .filter(tab => tab);
 }
 const InternalTabs = defineComponent({
+  compatConfig: { MODE: 3 },
   name: 'InternalTabs',
   inheritAttrs: false,
   props: {
@@ -330,6 +331,7 @@ const InternalTabs = defineComponent({
 
 export default defineComponent({
   name: 'ZTabs',
+  compatConfig: { MODE: 3 },
   inheritAttrs: false,
   props: initDefaultProps(tabsProps(), {
     tabPosition: 'top',

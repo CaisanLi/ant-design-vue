@@ -21,6 +21,7 @@ export const listItemProps = () => ({
 export type ListItemProps = Partial<ExtractPropTypes<ReturnType<typeof listItemProps>>>;
 export default defineComponent({
   name: 'ZListItem',
+  compatConfig: { MODE: 3 },
   inheritAttrs: false,
   Meta: ItemMeta,
   props: listItemProps(),

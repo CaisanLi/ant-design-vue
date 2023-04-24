@@ -33,6 +33,7 @@ export function setDefaultIndicator(Content: any) {
 
 export default defineComponent({
   name: 'ZSpin',
+  compatConfig: { MODE: 3 },
   inheritAttrs: false,
   props: initDefaultProps(spinProps(), {
     size: 'default',

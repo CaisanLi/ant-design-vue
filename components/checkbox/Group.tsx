@@ -7,6 +7,7 @@ import { CheckboxGroupContextKey, checkboxGroupProps } from './interface';
 
 export default defineComponent({
   name: 'ZCheckboxGroup',
+  compatConfig: { MODE: 3 },
   props: checkboxGroupProps(),
   // emits: ['change', 'update:value'],
   setup(props, { slots, emit, expose }) {

@@ -24,6 +24,7 @@ export const countdownProps = () => {
 export type CountdownProps = Partial<ExtractPropTypes<ReturnType<typeof countdownProps>>>;
 export default defineComponent({
   name: 'ZStatisticCountdown',
+  compatConfig: { MODE: 3 },
   props: initDefaultProps(countdownProps(), {
     format: 'HH:mm:ss',
   }),

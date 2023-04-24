@@ -32,6 +32,7 @@ export type MenuItemProps = Partial<ExtractPropTypes<ReturnType<typeof menuItemP
 
 export default defineComponent({
   name: 'ZMenuItem',
+  compatConfig: { MODE: 3 },
   inheritAttrs: false,
   props: menuItemProps(),
   // emits: ['mouseenter', 'mouseleave', 'click', 'keydown', 'focus'],

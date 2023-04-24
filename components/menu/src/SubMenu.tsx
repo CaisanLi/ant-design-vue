@@ -43,6 +43,7 @@ export type SubMenuProps = Partial<ExtractPropTypes<ReturnType<typeof subMenuPro
 
 export default defineComponent({
   name: 'ZSubMenu',
+  compatConfig: { MODE: 3 },
   inheritAttrs: false,
   props: subMenuProps(),
   slots: ['icon', 'title', 'expandIcon'],

@@ -13,6 +13,7 @@ export type DropdownButtonProps = Partial<ExtractPropTypes<ReturnType<typeof dro
 
 export default defineComponent({
   name: 'ZDropdownButton',
+  compatConfig: { MODE: 3 },
   inheritAttrs: false,
   __ANT_BUTTON: true,
   props: initDefaultProps(dropdownButtonProps(), {

@@ -95,6 +95,7 @@ export const useInjectFormItemContext = () => {
 
 export default defineComponent({
   name: 'ZFormItemRest',
+  compatConfig: { MODE: 3 },
   setup(_, { slots }) {
     provide(InternalContextKey, defaultInternalContext);
     provide(ContextKey, defaultContext);

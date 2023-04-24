@@ -2,13 +2,13 @@ import type { App, PropType, ExtractPropTypes } from 'vue';
 import { watch, ref, defineComponent } from 'vue';
 import classNames from '../_util/classNames';
 import PropTypes from '../_util/vue-types';
-import VcMentions, { Option } from '../vc-mentions';
+import VcMentions from '../vc-mentions';
 import { mentionsProps as baseMentionsProps } from '../vc-mentions/src/mentionsProps';
 import useConfigInject from '../_util/hooks/useConfigInject';
 import { flattenChildren, getOptionProps } from '../_util/props-util';
 import { useInjectFormItemContext } from '../form/FormItemContext';
 import omit from '../_util/omit';
-import { optionProps } from '../vc-mentions/src/Option';
+import { optionProps, optionOptions } from '../vc-mentions/src/Option';
 import type { KeyboardEventHandler } from '../_util/EventInterface';
 
 interface MentionsConfig {
@@ -89,6 +89,7 @@ export type MentionsProps = Partial<ExtractPropTypes<ReturnType<typeof mentionsP
 
 const Mentions = defineComponent({
   name: 'ZMentions',
+  compatConfig: { MODE: 3 },
   inheritAttrs: false,
   props: mentionsProps(),
   slots: ['notFoundContent', 'option'],
@@ -206,6 +207,8 @@ const Mentions = defineComponent({
 export const MentionsOption = defineComponent({
   ...Option,
   name: 'ZMentionsOption',
+  compatConfig: { MODE: 3 },
+  ...optionOptions,
   props: optionProps,
 });
 

@@ -15,6 +15,7 @@ import type { VueNode } from '../_util/type';
 
 export default defineComponent({
   name: 'ZProgress',
+  compatConfig: { MODE: 3 },
   props: initDefaultProps(progressProps(), {
     type: 'line',
     percent: 0,

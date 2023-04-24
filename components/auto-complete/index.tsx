@@ -40,6 +40,7 @@ export const AutoCompleteOptGroup = OptGroup;
 
 const AutoComplete = defineComponent({
   name: 'ZAutoComplete',
+  compatConfig: { MODE: 3 },
   inheritAttrs: false,
   props: autoCompleteProps(),
   // emits: ['change', 'select', 'focus', 'blur'],

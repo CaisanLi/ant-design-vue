@@ -22,6 +22,7 @@ export const icons = {
 
 const InternalPreviewGroup = defineComponent({
   name: 'ZImagePreviewGroup',
+  compatConfig: { MODE: 3 },
   inheritAttrs: false,
   props: { previewPrefixCls: String },
   setup(props, { attrs, slots }) {

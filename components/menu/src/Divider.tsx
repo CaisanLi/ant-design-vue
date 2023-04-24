@@ -11,6 +11,7 @@ export type MenuDividerProps = Partial<ExtractPropTypes<ReturnType<typeof menuDi
 
 export default defineComponent({
   name: 'ZMenuDivider',
+  compatConfig: { MODE: 3 },
   props: menuDividerProps(),
   setup(props) {
     const { prefixCls } = useConfigInject('menu', props);

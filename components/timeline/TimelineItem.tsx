@@ -19,6 +19,7 @@ export type TimelineItemProps = Partial<ExtractPropTypes<ReturnType<typeof timel
 
 export default defineComponent({
   name: 'ZTimelineItem',
+  compatConfig: { MODE: 3 },
   props: initDefaultProps(timelineItemProps(), {
     color: 'blue',
     pending: false,

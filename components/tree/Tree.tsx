@@ -143,6 +143,7 @@ export type TreeProps = Partial<ExtractPropTypes<ReturnType<typeof treeProps>>>;
 
 export default defineComponent({
   name: 'ZTree',
+  compatConfig: { MODE: 3 },
   inheritAttrs: false,
   props: initDefaultProps(treeProps(), {
     checkable: false,

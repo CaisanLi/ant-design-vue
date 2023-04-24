@@ -142,6 +142,7 @@ export const destroyFns = [];
 
 export default defineComponent({
   name: 'ZModal',
+  compatConfig: { MODE: 3 },
   inheritAttrs: false,
   props: initDefaultProps(modalProps(), {
     width: 520,

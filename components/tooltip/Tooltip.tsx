@@ -61,6 +61,7 @@ export type TooltipProps = Partial<ExtractPropTypes<ReturnType<typeof tooltipPro
 
 export default defineComponent({
   name: 'ZTooltip',
+  compatConfig: { MODE: 3 },
   inheritAttrs: false,
   props: initDefaultProps(tooltipProps(), {
     trigger: 'hover',

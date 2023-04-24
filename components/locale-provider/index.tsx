@@ -54,6 +54,7 @@ export const ANT_MARK = 'internalMark';
 
 const LocaleProvider = defineComponent({
   name: 'ZLocaleProvider',
+  compatConfig: { MODE: 3 },
   props: {
     locale: {
       type: Object as PropType<Locale>,

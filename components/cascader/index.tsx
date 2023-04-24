@@ -113,6 +113,7 @@ export interface CascaderRef {
 
 const Cascader = defineComponent({
   name: 'ZCascader',
+  compatConfig: { MODE: 3 },
   inheritAttrs: false,
   props: initDefaultProps(cascaderProps(), {
     bordered: true,
@@ -280,6 +281,7 @@ const Cascader = defineComponent({
             ...slots,
             checkable: () => <span class={`${cascaderPrefixCls.value}-checkbox-inner`} />,
           }}
+          tagRender={props.tagRender || slots.tagRender}
           displayRender={props.displayRender || slots.displayRender}
           maxTagPlaceholder={props.maxTagPlaceholder || slots.maxTagPlaceholder}
           showArrow={props.showArrow}

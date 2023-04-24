@@ -30,6 +30,7 @@ export type RadioProps = Partial<ExtractPropTypes<ReturnType<typeof radioProps>>
 
 export default defineComponent({
   name: 'ZRadio',
+  compatConfig: { MODE: 3 },
   props: radioProps(),
   // emits: ['update:checked', 'update:value', 'change', 'blur', 'focus'],
   setup(props, { emit, expose, slots }) {

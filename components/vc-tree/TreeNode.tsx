@@ -24,7 +24,8 @@ const ICON_CLOSE = 'close';
 const defaultTitle = '---';
 
 export default defineComponent({
-  name: 'TreeNode',
+  compatConfig: { MODE: 3 },
+  name: 'ATreeNode',
   inheritAttrs: false,
   props: treeNodeProps,
   isTreeNode: 1,
@@ -292,7 +293,7 @@ export default defineComponent({
     // ==================== Render: Drag Handler ====================
     const renderDragHandler = () => {
       const { draggable, prefixCls } = context.value;
-      return draggable?.icon ? (
+      return draggable && draggable?.icon ? (
         <span class={`${prefixCls}-draggable-icon`}>{draggable.icon}</span>
       ) : null;
     };

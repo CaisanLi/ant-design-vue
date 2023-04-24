@@ -10,6 +10,7 @@ export interface AddButtonProps {
 
 export default defineComponent({
   name: 'ZddButton',
+  compatConfig: { MODE: 3 },
   inheritAttrs: false,
   props: {
     prefixCls: String,

@@ -6,6 +6,7 @@ import type { RadioGroupContext } from './interface';
 
 export default defineComponent({
   name: 'ZRadioButton',
+  compatConfig: { MODE: 3 },
   props: radioProps(),
   setup(props, { slots }) {
     const { prefixCls } = useConfigInject('radio-button', props);

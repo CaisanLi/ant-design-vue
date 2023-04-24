@@ -17,6 +17,7 @@ export type RibbonProps = Partial<ExtractPropTypes<ReturnType<typeof ribbonProps
 
 export default defineComponent({
   name: 'ZBadgeRibbon',
+  compatConfig: { MODE: 3 },
   inheritAttrs: false,
   props: ribbonProps(),
   slots: ['text'],

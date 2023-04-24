@@ -20,6 +20,7 @@ export type PopoverProps = Partial<ExtractPropTypes<ReturnType<typeof popoverPro
 
 const Popover = defineComponent({
   name: 'ZPopover',
+  compatConfig: { MODE: 3 },
   props: initDefaultProps(popoverProps(), {
     ...tooltipDefaultProps(),
     trigger: 'hover',

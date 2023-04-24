@@ -22,6 +22,7 @@ const HackSlot = (_, { slots }) => {
 
 export default defineComponent({
   name: 'ZUploadList',
+  compatConfig: { MODE: 3 },
   props: initDefaultProps(uploadListProps(), {
     listType: 'text' as UploadListType, // or picture
     progress: {

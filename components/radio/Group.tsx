@@ -40,6 +40,7 @@ export type RadioGroupProps = Partial<ExtractPropTypes<ReturnType<typeof radioGr
 
 export default defineComponent({
   name: 'ZRadioGroup',
+  compatConfig: { MODE: 3 },
   props: radioGroupProps(),
   // emits: ['update:value', 'change'],
   setup(props, { slots, emit }) {

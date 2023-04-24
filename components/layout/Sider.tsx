@@ -59,6 +59,7 @@ const generateId = (() => {
 
 export default defineComponent({
   name: 'ZLayoutSider',
+  compatConfig: { MODE: 3 },
   inheritAttrs: false,
   props: initDefaultProps(siderProps(), {
     collapsible: false,

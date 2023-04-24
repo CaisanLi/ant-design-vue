@@ -28,6 +28,7 @@ export type AvatarGroupProps = Partial<ExtractPropTypes<ReturnType<typeof groupP
 
 const Group = defineComponent({
   name: 'ZAvatarGroup',
+  compatConfig: { MODE: 3 },
   inheritAttrs: false,
   props: groupProps(),
   setup(props, { slots, attrs }) {

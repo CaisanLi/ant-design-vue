@@ -46,6 +46,7 @@ function setTriggerValue(
 
 export default defineComponent({
   name: 'ZTextarea',
+  compatConfig: { MODE: 3 },
   inheritAttrs: false,
   props: textAreaProps(),
   setup(props, { attrs, expose, emit }) {

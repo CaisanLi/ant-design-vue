@@ -17,6 +17,7 @@ export type AnchorLinkProps = Partial<ExtractPropTypes<ReturnType<typeof anchorL
 
 export default defineComponent({
   name: 'ZAnchorLink',
+  compatConfig: { MODE: 3 },
   props: initDefaultProps(anchorLinkProps(), { href: '#' }),
   slots: ['title'],
   setup(props, { slots }) {

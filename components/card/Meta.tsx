@@ -13,6 +13,7 @@ export const cardMetaProps = () => ({
 export type CardGridProps = Partial<ExtractPropTypes<ReturnType<typeof cardMetaProps>>>;
 export default defineComponent({
   name: 'ZCardMeta',
+  compatConfig: { MODE: 3 },
   props: cardMetaProps(),
   slots: ['title', 'description', 'avatar'],
   setup(props, { slots }) {

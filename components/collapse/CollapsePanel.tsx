@@ -12,6 +12,7 @@ export { collapsePanelProps };
 export type CollapsePanelProps = Partial<ExtractPropTypes<ReturnType<typeof collapsePanelProps>>>;
 export default defineComponent({
   name: 'ZCollapsePanel',
+  compatConfig: { MODE: 3 },
   inheritAttrs: false,
   props: initDefaultProps(collapsePanelProps(), {
     showArrow: true,

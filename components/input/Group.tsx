@@ -6,6 +6,7 @@ import useConfigInject from '../_util/hooks/useConfigInject';
 
 export default defineComponent({
   name: 'ZInputGroup',
+  compatConfig: { MODE: 3 },
   props: {
     prefixCls: String,
     size: { type: String as PropType<SizeType> },

@@ -60,6 +60,7 @@ function getPoint(point: TargetType) {
 
 export default defineComponent({
   name: 'Zlign',
+  compatConfig: { MODE: 3 },
   props: alignProps,
   emits: ['align'],
   setup(props, { expose, slots }) {

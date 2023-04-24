@@ -60,6 +60,7 @@ const renderExtra = (prefixCls: string, extra: VNodeTypes) =>
 
 const Result = defineComponent({
   name: 'ZResult',
+  compatConfig: { MODE: 3 },
   props: resultProps(),
   slots: ['title', 'subTitle', 'icon', 'extra'],
   setup(props, { slots }) {

@@ -33,6 +33,7 @@ export type PageHeaderProps = Partial<ExtractPropTypes<ReturnType<typeof pageHea
 
 const PageHeader = defineComponent({
   name: 'ZPageHeader',
+  compatConfig: { MODE: 3 },
   props: pageHeaderProps(),
   // emits: ['back'],
   slots: ['backIcon', 'avatar', 'breadcrumb', 'title', 'subTitle', 'tags', 'extra', 'footer'],

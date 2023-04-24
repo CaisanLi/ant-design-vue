@@ -78,6 +78,7 @@ import type { RenderEmptyHandler } from '../config-provider/renderEmpty';
 
 const List = defineComponent({
   name: 'ZList',
+  compatConfig: { MODE: 3 },
   Item,
   props: initDefaultProps(listProps(), {
     dataSource: [],

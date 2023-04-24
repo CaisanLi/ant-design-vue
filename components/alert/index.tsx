@@ -64,6 +64,7 @@ export type AlertProps = Partial<ExtractPropTypes<ReturnType<typeof alertProps>>
 
 const Alert = defineComponent({
   name: 'ZAlert',
+  compatConfig: { MODE: 3 },
   inheritAttrs: false,
   props: alertProps(),
   setup(props, { slots, emit, attrs, expose }) {

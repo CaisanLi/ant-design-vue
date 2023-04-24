@@ -13,6 +13,7 @@ import { CheckboxGroupContextKey, checkboxProps } from './interface';
 
 export default defineComponent({
   name: 'ZCheckbox',
+  compatConfig: { MODE: 3 },
   inheritAttrs: false,
   __ANT_CHECKBOX: true,
   props: checkboxProps(),

@@ -17,6 +17,7 @@ export type SkeletonButtonProps = Partial<ExtractPropTypes<ReturnType<typeof ske
 
 const SkeletonButton = defineComponent({
   name: 'ZSkeletonButton',
+  compatConfig: { MODE: 3 },
   props: initDefaultProps(skeletonButtonProps(), {
     size: 'default',
   }),

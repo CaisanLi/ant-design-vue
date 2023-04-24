@@ -76,6 +76,7 @@ export interface PaginationLocale {
 
 export default defineComponent({
   name: 'ZPagination',
+  compatConfig: { MODE: 3 },
   inheritAttrs: false,
   props: paginationProps(),
   // emits: ['change', 'showSizeChange', 'update:current', 'update:pageSize'],

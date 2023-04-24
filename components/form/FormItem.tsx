@@ -27,12 +27,18 @@ import { toArray } from './utils/typeUtil';
 import { warning } from '../vc-util/warning';
 import find from 'lodash-es/find';
 import { tuple } from '../_util/type';
-import type { InternalNamePath, Rule, RuleError, RuleObject, ValidateOptions } from './interface';
+import type {
+  FormLabelAlign,
+  InternalNamePath,
+  Rule,
+  RuleError,
+  RuleObject,
+  ValidateOptions,
+} from './interface';
 import useConfigInject from '../_util/hooks/useConfigInject';
 import { useInjectForm } from './context';
 import FormItemLabel from './FormItemLabel';
 import FormItemInput from './FormItemInput';
-import type { ValidationRule } from './Form';
 import { useProvideFormItemContext } from './FormItemContext';
 import useDebounce from './utils/useDebounce';
 
@@ -46,7 +52,7 @@ export interface FieldExpose {
   resetField: () => void;
   clearValidate: () => void;
   namePath: ComputedRef<InternalNamePath>;
-  rules?: ComputedRef<ValidationRule[]>;
+  rules?: ComputedRef<Rule[]>;
   validateRules: (options: ValidateOptions) => Promise<void> | Promise<RuleError[]>;
 }
 
@@ -91,7 +97,7 @@ export const formItemProps = () => ({
   wrapperCol: { type: Object as PropType<ColProps & HTMLAttributes> },
   hasFeedback: { type: Boolean, default: false },
   colon: { type: Boolean, default: undefined },
-  labelAlign: PropTypes.oneOf(tuple('left', 'right')),
+  labelAlign: String as PropType<FormLabelAlign>,
   prop: { type: [String, Number, Array] as PropType<string | number | Array<string | number>> },
   name: { type: [String, Number, Array] as PropType<string | number | Array<string | number>> },
   rules: [Array, Object] as PropType<Rule[] | Rule>,
@@ -123,6 +129,7 @@ const defaultItemNamePrefixCls = 'form_item';
 
 export default defineComponent({
   name: 'ZFormItem',
+  compatConfig: { MODE: 3 },
   inheritAttrs: false,
   __ANT_NEW_FORM_ITEM: true,
   props: formItemProps(),
@@ -168,7 +175,7 @@ export default defineComponent({
       validateTrigger = validateTrigger === undefined ? 'change' : validateTrigger;
       return toArray(validateTrigger);
     });
-    const rulesRef = computed<ValidationRule[]>(() => {
+    const rulesRef = computed<Rule[]>(() => {
       let formRules = formContext.rules.value;
       const selfRules = props.rules;
       const requiredRule =
@@ -208,7 +215,7 @@ export default defineComponent({
       if (typeof props.label === 'string') {
         variables.label = props.label;
       } else if (props.name) {
-        variables.label = String(name);
+        variables.label = String(props.name);
       }
       if (props.messageVariables) {
         variables = { ...variables, ...props.messageVariables };

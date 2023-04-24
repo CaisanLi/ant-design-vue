@@ -22,6 +22,7 @@ export type TimelineProps = Partial<ExtractPropTypes<ReturnType<typeof timelineP
 
 export default defineComponent({
   name: 'ZTimeline',
+  compatConfig: { MODE: 3 },
   props: initDefaultProps(timelineProps(), {
     reverse: false,
     mode: '',

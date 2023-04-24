@@ -4,6 +4,7 @@ import { uploadProps } from './interface';
 
 export default defineComponent({
   name: 'ZUploadDragger',
+  compatConfig: { MODE: 3 },
   inheritAttrs: false,
   props: uploadProps(),
   setup(props, { slots, attrs }) {

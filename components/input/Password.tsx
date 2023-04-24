@@ -18,6 +18,7 @@ const defaultIconRender = (visible: boolean) =>
   visible ? <EyeOutlined /> : <EyeInvisibleOutlined />;
 export default defineComponent({
   name: 'ZInputPassword',
+  compatConfig: { MODE: 3 },
   inheritAttrs: false,
   props: {
     ...inputProps(),

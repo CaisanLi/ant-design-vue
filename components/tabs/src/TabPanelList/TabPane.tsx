@@ -22,6 +22,7 @@ export type TabPaneProps = Partial<ExtractPropTypes<ReturnType<typeof tabPanePro
 
 export default defineComponent({
   name: 'ZTabPane',
+  compatConfig: { MODE: 3 },
   inheritAttrs: false,
   __ANT_TAB_PANE: true,
   props: tabPaneProps(),

@@ -28,6 +28,7 @@ export type DividerProps = Partial<ExtractPropTypes<ReturnType<typeof dividerPro
 
 const Divider = defineComponent({
   name: 'ZDivider',
+  compatConfig: { MODE: 3 },
   props: dividerProps(),
   setup(props, { slots }) {
     const { prefixCls: prefixClsRef, direction } = useConfigInject('divider', props);

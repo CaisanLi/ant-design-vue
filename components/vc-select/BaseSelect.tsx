@@ -257,6 +257,7 @@ export function isMultiple(mode: Mode) {
 }
 
 export default defineComponent({
+  compatConfig: { MODE: 3 },
   name: 'BaseSelect',
   inheritAttrs: false,
   props: initDefaultProps(baseSelectProps(), { showAction: [], notFoundContent: 'Not Found' }),
@@ -872,7 +873,7 @@ export default defineComponent({
                 style={{
                   width: 0,
                   height: 0,
-                  display: 'flex',
+                  position: 'absolute',
                   overflow: 'hidden',
                   opacity: 0,
                 }}

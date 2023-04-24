@@ -106,6 +106,7 @@ export function triggerFocus(
 
 export default defineComponent({
   name: 'ZInput',
+  compatConfig: { MODE: 3 },
   inheritAttrs: false,
   props: inputProps(),
   setup(props, { slots, attrs, expose, emit }) {

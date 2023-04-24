@@ -91,6 +91,7 @@ export type DrawerProps = Partial<ExtractPropTypes<ReturnType<typeof drawerProps
 
 const Drawer = defineComponent({
   name: 'ZDrawer',
+  compatConfig: { MODE: 3 },
   inheritAttrs: false,
   props: initDefaultProps(drawerProps(), {
     closable: true,

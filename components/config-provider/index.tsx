@@ -72,6 +72,7 @@ const setGlobalConfig = (params: GlobalConfigProviderProps & { theme?: Theme }) 
   }
   stopWatchEffect = watchEffect(() => {
     Object.assign(globalConfigBySet, reactive(params));
+    Object.assign(globalConfigForApi, reactive(params));
   });
   if (params.theme) {
     registerTheme(getGlobalPrefixCls(), params.theme);
@@ -106,6 +107,7 @@ export const globalConfig = () => ({
 
 const ConfigProvider = defineComponent({
   name: 'ZConfigProvider',
+  compatConfig: { MODE: 3 },
   inheritAttrs: false,
   props: configProviderProps(),
   setup(props, { slots }) {
