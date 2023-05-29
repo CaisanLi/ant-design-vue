@@ -78,13 +78,12 @@ export default defineComponent({
       const sizeClassNameMap = { large: 'lg', small: 'sm', middle: undefined };
       const sizeFullname = size.value;
       const sizeCls = sizeFullname ? sizeClassNameMap[sizeFullname] || '' : '';
-
       return {
         [`${pre}`]: true,
+        [`${pre}-text`]: text,
         [`${pre}-${type}`]: type,
         [`${pre}-${shape}`]: shape !== 'default' && shape,
         [`${pre}-${sizeCls}`]: sizeCls,
-        [`${pre}-text`]: text,
         [`${pre}-outline`]: outline,
         [`${pre}-dashed`]: dashed,
         [`${pre}-loading`]: innerLoading.value,
