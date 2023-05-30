@@ -80,7 +80,7 @@ export default defineComponent<ConfirmDialogProps>({
         okButtonProps,
         cancelButtonProps,
         okCancel = true,
-        width = 416,
+        width = 520,
         mask = true,
         maskClosable = false,
         type,
@@ -157,10 +157,12 @@ export default defineComponent<ConfirmDialogProps>({
         >
           <div class={`${contentPrefixCls}-body-wrapper`}>
             <div class={`${contentPrefixCls}-body`}>
-              {renderSomeContent(icon)}
-              {title === undefined ? null : (
-                <span class={`${contentPrefixCls}-title`}>{renderSomeContent(title)}</span>
-              )}
+              <div class={`${contentPrefixCls}-header`}>
+                {renderSomeContent(icon)}
+                {title === undefined ? null : (
+                  <span class={`${contentPrefixCls}-title`}>{renderSomeContent(title)}</span>
+                )}
+              </div>
               <div class={`${contentPrefixCls}-content`}>{renderSomeContent(content)}</div>
             </div>
             <div class={`${contentPrefixCls}-btns`}>

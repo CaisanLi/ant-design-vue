@@ -94,6 +94,15 @@ export default defineComponent({
         footerNode = <div class={`${prefixCls}-footer`}>{footer}</div>;
       }
 
+      let closer: any;
+      if (closable) {
+        closer = (
+          <button type="button" onClick={onClose} aria-label="Close" class={`${prefixCls}-close`}>
+            {closeIcon || <span class={`${prefixCls}-close-x`} />}
+          </button>
+        );
+      }
+
       let headerNode: any;
       if (title) {
         headerNode = (
@@ -101,16 +110,8 @@ export default defineComponent({
             <div class={`${prefixCls}-title`} id={ariaId}>
               {title}
             </div>
+            {closer}
           </div>
-        );
-      }
-
-      let closer: any;
-      if (closable) {
-        closer = (
-          <button type="button" onClick={onClose} aria-label="Close" class={`${prefixCls}-close`}>
-            {closeIcon || <span class={`${prefixCls}-close-x`} />}
-          </button>
         );
       }
 
@@ -130,7 +131,7 @@ export default defineComponent({
 
       const content = (
         <div class={`${prefixCls}-content`}>
-          {closer}
+          {/*{closer}*/}
           {headerNode}
           <div class={`${prefixCls}-body`} style={zBodyStyle} {...bodyProps}>
             {slots.default?.()}

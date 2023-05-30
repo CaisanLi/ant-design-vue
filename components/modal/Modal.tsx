@@ -151,6 +151,7 @@ export default defineComponent({
     confirmLoading: false,
     visible: false,
     okType: 'primary',
+    closable: true,
   }),
   setup(props, { emit, slots, attrs }) {
     const [locale] = useLocaleReceiver('Modal');
