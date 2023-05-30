@@ -47,7 +47,7 @@
       align-items: center;
       height: @transfer-header-height;
       // border-top is on the transfer dom. We should minus 1px for this
-      padding: (@transfer-header-vertical-padding - 1px) @control-padding-horizontal
+      padding: @transfer-header-vertical-padding @control-padding-horizontal-md
         @transfer-header-vertical-padding;
       color: @text-color;
       background: @component-background;
@@ -106,7 +106,7 @@
         display: flex;
         align-items: center;
         min-height: @transfer-item-height;
-        padding: @transfer-item-padding-vertical @control-padding-horizontal;
+        padding: @transfer-item-padding-vertical - 1px @control-padding-horizontal-md;
         line-height: @transfer-item-height - 2 * @transfer-item-padding-vertical;
         transition: all 0.3s;
 

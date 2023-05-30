@@ -66,7 +66,7 @@
 
     &-view {
       flex: auto;
-      font-weight: 500;
+      //font-weight: 500;
       line-height: @picker-text-height;
 
       button {
@@ -179,7 +179,9 @@
 
     // >>> Hover
     &:hover:not(&-in-view),
-    &:hover:not(&-selected):not(&-range-start):not(&-range-end):not(&-range-hover-start):not(&-range-hover-end) {
+    &:hover:not(&-selected):not(&-range-start):not(&-range-end):not(&-range-hover-start):not(
+        &-range-hover-end
+      ) {
       .@{cellClassName} {
         background: @picker-basic-cell-hover-color;
       }
@@ -187,17 +189,20 @@
 
     // >>> Today
     &-in-view&-today .@{cellClassName} {
-      &::before {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 1;
-        border: @border-width-base @border-style-base @primary-color;
-        border-radius: @border-radius-base;
-        content: '';
-      }
+      background-color: #e5f0ff;
+      color: @primary-color;
+
+      //&::before {
+      //  position: absolute;
+      //  top: 0;
+      //  right: 0;
+      //  bottom: 0;
+      //  left: 0;
+      //  z-index: 1;
+      //  border: @border-width-base @border-style-base @primary-color;
+      //  border-radius: @border-radius-base;
+      //  content: '';
+      //}
     }
 
     // >>> In Range
@@ -468,6 +473,8 @@
 
     .@{picker-cell-inner-cls} {
       width: @picker-year-month-cell-width;
+      height: @picker-panel-cell-height + 8 !important;
+      line-height: @picker-panel-cell-height + 8 !important;
     }
 
     .@{picker-prefix-cls}-cell-range-hover-start::after {
@@ -498,6 +505,11 @@
   &-week-panel {
     .@{picker-prefix-cls}-body {
       padding: @padding-xs @padding-sm;
+    }
+
+    .@{picker-cell-inner-cls} {
+      height: @picker-panel-cell-height + 8 !important;
+      line-height: @picker-panel-cell-height + 8 !important;
     }
 
     // Clear cell style
@@ -610,7 +622,7 @@
       }
 
       &:not(:first-child) {
-        border-left: @border-width-base @border-style-base @picker-border-color;
+        //border-left: @border-width-base @border-style-base @picker-border-color;
       }
 
       &-active {
@@ -646,6 +658,7 @@
           &-selected {
             .@{picker-prefix-cls}-time-panel-cell-inner {
               background: @calendar-item-active-bg;
+              color: @primary-color;
             }
           }
 

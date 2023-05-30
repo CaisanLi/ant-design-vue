@@ -48,7 +48,7 @@
       display: flex;
       flex-wrap: nowrap;
       align-items: center;
-      padding: @cascader-dropdown-vertical-padding @control-padding-horizontal;
+      padding: @cascader-dropdown-vertical-padding @control-padding-horizontal-md;
       overflow: hidden;
       line-height: @cascader-dropdown-line-height;
       white-space: nowrap;
@@ -78,8 +78,13 @@
       &-active:not(&-disabled) {
         &,
         &:hover {
-          font-weight: @select-item-selected-font-weight;
+          //font-weight: @select-item-selected-font-weight;
+          color: @primary-color;
           background-color: @cascader-item-selected-bg;
+        }
+
+        .@{cascader-prefix-cls}-menu-item-expand-icon {
+          color: @primary-color;
         }
       }
 

@@ -316,7 +316,7 @@
 
   &-simple &-simple-pager {
     display: inline-block;
-    height: @pagination-item-size-sm;
+    //height: @pagination-item-size-sm;
     margin-right: 8px;
     color: #666666;
 
@@ -351,10 +351,18 @@
     }
   }
 
+  &.mini&-simple {
+    line-height: @pagination-item-size-sm;
+  }
+
   &.mini &-total-text,
   &.mini &-simple-pager {
     height: @pagination-item-size-sm;
     line-height: @pagination-item-size-sm;
+
+    input {
+      height: @pagination-item-size-sm;
+    }
   }
 
   &.mini &-item {

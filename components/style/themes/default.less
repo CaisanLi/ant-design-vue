@@ -117,6 +117,7 @@
 
 // vertical padding for all form controls
 @control-padding-horizontal: @padding-sm;
+@control-padding-horizontal-md: @padding-md;
 @control-padding-horizontal-sm: @padding-xs;
 
 // vertical margins
@@ -133,8 +134,8 @@
 
 // The background colors for active and hover states for things like
 // list items or table cells.
-@item-active-bg: @primary-1;
-@item-hover-bg: #e6f0ff;
+@item-active-bg: #e5f0ff;
+@item-hover-bg: #e5f0ff;
 
 // ICONFONT
 @iconfont-css-prefix: anticon;
@@ -470,7 +471,7 @@
 @select-item-selected-color: @text-color;
 @select-item-selected-font-weight: 600;
 @select-dropdown-bg: @component-background;
-@select-item-selected-bg: @primary-1;
+@select-item-selected-bg: @item-active-bg;
 @select-item-active-bg: @item-hover-bg;
 @select-dropdown-vertical-padding: @dropdown-vertical-padding;
 @select-dropdown-font-size: @dropdown-font-size;
@@ -491,7 +492,7 @@
 // Cascader
 // ---
 @cascader-bg: @component-background;
-@cascader-item-selected-bg: @primary-1;
+@cascader-item-selected-bg: @item-active-bg;
 @cascader-menu-bg: @component-background;
 @cascader-menu-border-color-split: @border-color-split;
 
@@ -681,7 +682,7 @@
 // ---
 @picker-bg: @component-background;
 @picker-basic-cell-hover-color: @item-hover-bg;
-@picker-basic-cell-active-with-range-color: @primary-1;
+@picker-basic-cell-active-with-range-color: #e5f0ff;
 @picker-basic-cell-hover-with-range-color: lighten(@primary-color, 35%);
 @picker-basic-cell-disabled-bg: rgba(0, 0, 0, 0.04);
 @picker-border-color: @border-color-split;
@@ -693,7 +694,7 @@
 @picker-panel-cell-height: 24px;
 @picker-panel-cell-width: 36px;
 @picker-text-height: 40px;
-@picker-panel-without-time-cell-height: 66px;
+@picker-panel-without-time-cell-height: 56px;
 
 // Calendar
 // ---
@@ -793,8 +794,8 @@
 @tabs-vertical-margin: @margin-md 0 0 0;
 @tabs-scrolling-size: 32px;
 @tabs-highlight-color: @primary-color;
-@tabs-hover-color: @primary-5;
-@tabs-active-color: @primary-7;
+@tabs-hover-color: #3385ff;
+@tabs-active-color: @primary-6;
 @tabs-card-gutter: 2px;
 @tabs-card-tab-active-border-top: 2px solid transparent;
 
@@ -1024,7 +1025,7 @@
 @process-tail-color: @border-color-split;
 @steps-nav-arrow-color: fade(@black, 25%);
 @steps-background: @component-background;
-@steps-icon-size: 32px;
+@steps-icon-size: 28px;
 @steps-icon-custom-size: @steps-icon-size;
 @steps-icon-custom-top: 0px;
 @steps-icon-custom-font-size: 24px;
