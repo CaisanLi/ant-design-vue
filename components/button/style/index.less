@@ -63,8 +63,8 @@
   &-primary&-dashed {
     //border-style: dashed;
     //text-shadow: none;
-    color: #3385FF;
-    background: #FFFFFF;
+    color: #3385ff;
+    background: #ffffff;
     border-color: @btn-primary-bg;
     .button-disabled(#B3D1FF, #FFFFFF, #B3D1FF);
   }
@@ -218,8 +218,8 @@
   }
 
   &&-background-ghost {
-    color: #CCCCCC;
-    border-color: #CCCCCC;
+    color: #cccccc;
+    border-color: #cccccc;
     &,
     &:hover,
     &:active,
@@ -233,8 +233,8 @@
       //color: @primary-color-hover;
       //border-color: @primary-color-hover;
       background: rgba(255, 255, 255, 0.2);
-      color: #FFFFFF;
-      border-color: #FFFFFF;
+      color: #ffffff;
+      border-color: #ffffff;
     }
 
     //&:active {
@@ -251,15 +251,15 @@
   }
 
   &-background-ghost&-primary {
-    .button-variant-ghost(#3385FF, #3385FF, #0067FF, #0052CC, rgba(0,103,255,0.16), rgba(0,103,255,0.16), rgba(0,103,255,0.24));
+    .button-variant-ghost(#3385ff, #3385ff, #0067ff, #0052cc, rgba(0,103,255,0.16), rgba(0,103,255,0.16), rgba(0,103,255,0.24));
   }
 
   &-background-ghost&-danger {
-    .button-variant-ghost(#FF4D4D, #FF4D4D, #FF1919, #CC1414, rgba(255,25,25,0.16), rgba(255,25,25,0.16), rgba(255,25,25,0.24));
+    .button-variant-ghost(#FF4D4D, #FF4D4D, @error-color, #CC1414, rgba(255,25,25,0.16), rgba(255,25,25,0.16), rgba(255,25,25,0.24));
   }
 
   &-background-ghost&-dangerous {
-    .button-variant-ghost(#FF4D4D, #FF4D4D, #FF1919, #CC1414, rgba(255,25,25,0.16), rgba(255,25,25,0.16), rgba(255,25,25,0.24));
+    .button-variant-ghost(#FF4D4D, #FF4D4D, @error-color, #CC1414, rgba(255,25,25,0.16), rgba(255,25,25,0.16), rgba(255,25,25,0.24));
   }
 
   &-background-ghost&-dangerous&-link {

@@ -291,7 +291,7 @@
 }
 // primary button style
 .btn-primary() {
-  .button-variant-primary(@btn-primary-color; @btn-primary-bg; #3385FF; #0052CC);
+  .button-variant-primary(@btn-primary-color; @btn-primary-bg; #3385ff; #0052cc);
 }
 // default button style
 .btn-default() {
@@ -299,22 +299,22 @@
   &:hover,
   &:focus {
     text-decoration: none;
-    background: #FFFFFF;
-    border-color: #3385FF;
-    color: #3385FF;
+    background: #ffffff;
+    border-color: #3385ff;
+    color: #3385ff;
   }
   &:active {
     text-decoration: none;
-    background: #FFFFFF;
-    border-color: #0052CC;
-    color: #0052CC;
+    background: #ffffff;
+    border-color: #0052cc;
+    color: #0052cc;
   }
   border-radius: @btn-border-radius-base;
 }
 // ghost button style
 .btn-ghost() {
   .button-variant-other(#CCCCCC, rgba(255,255,255,0.16), #CCCCCC);
-  box-shadow:none;
+  box-shadow: none;
 }
 // dashed button style
 .btn-dashed() {
@@ -324,11 +324,11 @@
 }
 // danger button style
 .btn-danger() {
-  .button-variant-primary(@btn-danger-color,#FF1919, #FF4D4D, #CC1414);
+  .button-variant-primary(@btn-danger-color,@error-color, #FF4D4D, #CC1414);
 }
 // danger default button style
 .btn-danger-default() {
-  .button-color(#FF1919, @btn-default-bg, #FF1919);
+  .button-color(@error-color, @btn-default-bg, @error-color);
 
   &:hover,
   &:focus {
@@ -412,12 +412,12 @@
   &:focus {
     border-color: transparent;
     background: @btn-link-hover-bg;
-    color: #3385FF;
+    color: #3385ff;
   }
   &:active {
     border-color: transparent;
     background: @btn-link-hover-bg;
-    color: #0052CC;
+    color: #0052cc;
   }
   .button-disabled(#999999; transparent; transparent);
 }
@@ -434,10 +434,10 @@
   &:hover,
   &:focus {
     background: #fff;
-    color: #3385FF;
+    color: #3385ff;
   }
-  &:active{
-    color: #0052CC;
+  &:active {
+    color: #0052cc;
   }
   //&:hover,
   //&:focus {
@@ -461,19 +461,19 @@
   text-shadow: none;
   &:hover,
   &:focus {
-    background: #FFFFFF;
-    border-color: #0052CC;
-    color: #0052CC;
+    background: #ffffff;
+    border-color: #0052cc;
+    color: #0052cc;
   }
   &:active {
-    background: #FFFFFF;
+    background: #ffffff;
     border-color: @blue-6;
     color: @blue-6;
   }
   .button-disabled(#999999; #F5F5F5; #E6E6E6);
 }
 .btn-danger-text() {
-  .button-variant-other(#FF1919, transparent, transparent);
+  .button-variant-other(@error-color, transparent, transparent);
   box-shadow: none;
 
   &:hover,
