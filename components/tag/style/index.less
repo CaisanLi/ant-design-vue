@@ -15,7 +15,7 @@
   white-space: nowrap;
   background: @tag-default-bg;
   border: @border-width-base @border-style-base @border-color-base;
-  border-radius: @border-radius-base;
+  border-radius: 2px;
   opacity: 1;
   transition: all 0.3s;
 
@@ -31,10 +31,14 @@
     padding: 0 8px;
   }
 
+  .anticon {
+    vertical-align: -0.13em;
+  }
+
   &-close-icon {
     margin-left: 3px;
     color: @text-color-secondary;
-    font-size: 10px;
+    font-size: 14px;
     cursor: pointer;
     transition: all 0.3s;
 
@@ -84,12 +88,12 @@
       color: #333333;
       position: relative;
       border: 1px solid #f5f5f5;
-      &-btn{
+      &-btn {
         display: inline-block;
         opacity: 0;
         transition: all 0.3s;
       }
-      &-triangle{
+      &-triangle {
         border: 10px solid @primary-6;
         border-left-color: transparent;
         border-top-color: transparent;
@@ -98,7 +102,7 @@
         right: 0;
         line-height: 0;
       }
-      &-icon{
+      &-icon {
         position: absolute;
         bottom: 1px;
         right: 1px;
@@ -108,19 +112,17 @@
     }
 
     &-close-checked {
-      background: #E6F0FF;
-      border-color: #418EFF;
-      color: #0067FF;
+      background: #e6f0ff;
+      border-color: #418eff;
+      color: #0067ff;
       padding: 6px 24px;
       border: 1px solid @primary-6;
-      .@{tag-prefix-cls}-checkable-close-btn{
+      .@{tag-prefix-cls}-checkable-close-btn {
         display: inline-block;
         opacity: 1;
         transition: all 0.3s;
       }
     }
-
-
   }
 
   &-hidden {
@@ -132,9 +134,9 @@
     .make-color-classes(@i - 1);
     @color: extract(@preset-colors, @i);
     @lightColor: '@{color}-1';
-    @lightBorderColor: '@{color}-3';
+    @lightBorderColor: '@{color}-6';
     @darkColor: '@{color}-6';
-    @textColor: '@{color}-7';
+    @textColor: '@{color}-6';
     &-@{color} {
       color: @@textColor;
       background: @@lightColor;

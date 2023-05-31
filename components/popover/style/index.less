@@ -75,15 +75,17 @@
     min-width: @popover-min-width;
     min-height: @popover-min-height;
     margin: 0; // reset heading margin
-    padding: 5px @popover-padding-horizontal 4px;
+    padding: @popover-padding-horizontal @popover-padding-horizontal 0;
     color: @heading-color;
-    font-weight: 500;
-    border-bottom: 1px solid @border-color-split;
+    //font-weight: 500;
+    //border-bottom: 1px solid @border-color-split;
   }
 
   &-inner-content {
-    padding: @padding-sm @popover-padding-horizontal;
-    color: @popover-color;
+    padding: @padding-xss @popover-padding-horizontal @popover-padding-horizontal;
+    color: #666666;
+    font-size: @font-size-sm;
+    line-height: 20px;
   }
 
   &-message {

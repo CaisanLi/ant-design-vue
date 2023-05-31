@@ -139,12 +139,12 @@ html {
   'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
   'Noto Color Emoji';
 @code-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
-@text-color: fade(@black, 85%);
+@text-color: #333;
 @text-color-secondary: fade(@black, 45%);
 @text-color-inverse: @white;
 @icon-color: inherit;
 @icon-color-hover: fade(@black, 75%);
-@heading-color: fade(@black, 85%);
+@heading-color: #333; // #333;
 @text-color-dark: fade(@white, 85%);
 @text-color-secondary-dark: fade(@white, 65%);
 @text-selection-bg: @primary-color;
@@ -481,9 +481,9 @@ html {
 @input-height-base: @height-base;
 @input-height-lg: @height-lg;
 @input-height-sm: @height-sm;
-@input-padding-horizontal: @control-padding-horizontal - 1px;
+@input-padding-horizontal: @control-padding-horizontal;
 @input-padding-horizontal-base: @input-padding-horizontal;
-@input-padding-horizontal-sm: @control-padding-horizontal-sm - 1px;
+@input-padding-horizontal-sm: @control-padding-horizontal-sm;
 @input-padding-horizontal-lg: @input-padding-horizontal;
 @input-padding-vertical-base: max(
   (round(((@input-height-base - @font-size-base * @line-height-base) / 2) * 10) / 10) -
@@ -512,7 +512,7 @@ html {
 @input-hover-border-color: @primary-5;
 @input-disabled-bg: @disabled-bg;
 @input-outline-offset: 0 0;
-@input-icon-hover-color: fade(@black, 85%);
+@input-icon-hover-color: #333;
 @input-disabled-color: @disabled-color;
 
 // Mentions
@@ -599,7 +599,7 @@ html {
 @popover-arrow-outer-color: @popover-bg;
 // Popover distance with trigger
 @popover-distance: @popover-arrow-width + 4px;
-@popover-padding-horizontal: @padding-md;
+@popover-padding-horizontal: @padding-sm;
 
 // Modal
 // --
@@ -729,8 +729,8 @@ html {
 // Tag
 // --
 @tag-default-bg: @background-color-light;
-@tag-default-color: @text-color;
-@tag-font-size: @font-size-sm;
+@tag-default-color: #666;
+@tag-font-size: @font-size-base;
 @tag-line-height: 20px;
 
 // TimePicker
@@ -769,7 +769,7 @@ html {
 
 // Badge
 // ---
-@badge-height: 20px;
+@badge-height: 18px;
 @badge-height-sm: 14px;
 @badge-dot-size: 6px;
 @badge-font-size: @font-size-sm;
@@ -781,7 +781,7 @@ html {
 
 // Rate
 // ---
-@rate-star-color: @yellow-6;
+@rate-star-color: @orange-6;
 @rate-star-bg: @border-color-split;
 @rate-star-size: 20px;
 @rate-star-hover-scale: scale(1.1);
@@ -957,15 +957,15 @@ html {
 @tree-child-padding: 18px;
 @tree-directory-selected-color: #fff;
 @tree-directory-selected-bg: @primary-color;
-@tree-node-hover-bg: @item-hover-bg;
-@tree-node-selected-bg: @primary-2;
+@tree-node-hover-bg: #fafafa;
+@tree-node-selected-bg: @item-active-bg;
 
 // Collapse
 // ---
 @collapse-header-padding: @padding-sm @padding-md;
 @collapse-header-padding-extra: 40px;
 @collapse-header-bg: @background-color-light;
-@collapse-content-padding: @padding-md;
+@collapse-content-padding: @padding-sm + 1px @padding-md;
 @collapse-content-bg: @component-background;
 @collapse-header-arrow-left: 16px;
 
@@ -1000,17 +1000,17 @@ html {
 
 // Alert
 // ---
-@alert-success-border-color: @success-color-deprecated-border;
-@alert-success-bg-color: @success-color-deprecated-bg;
+@alert-success-border-color: @success-color;
+@alert-success-bg-color: #e6fae6;
 @alert-success-icon-color: @success-color;
-@alert-info-border-color: @info-color-deprecated-border;
-@alert-info-bg-color: @info-color-deprecated-bg;
+@alert-info-border-color: @info-color;
+@alert-info-bg-color: #e5f0ff;
 @alert-info-icon-color: @info-color;
-@alert-warning-border-color: @warning-color-deprecated-border;
-@alert-warning-bg-color: @warning-color-deprecated-bg;
+@alert-warning-border-color: @warning-color;
+@alert-warning-bg-color: #ffeed6;
 @alert-warning-icon-color: @warning-color;
-@alert-error-border-color: @error-color-deprecated-border;
-@alert-error-bg-color: @error-color-deprecated-bg;
+@alert-error-border-color: @error-color;
+@alert-error-bg-color: #ffebeb;
 @alert-error-icon-color: @error-color;
 @alert-message-color: @heading-color;
 @alert-text-color: @text-color;
@@ -1047,14 +1047,14 @@ html {
 
 // Drawer
 // ---
-@drawer-header-padding: @padding-md @padding-lg;
-@drawer-body-padding: @padding-lg;
+@drawer-header-padding: @padding-sm + 1px @padding-md;
+@drawer-body-padding: @padding-md;
 @drawer-bg: @component-background;
-@drawer-footer-padding-vertical: @modal-footer-padding-vertical;
-@drawer-footer-padding-horizontal: @modal-footer-padding-horizontal;
+@drawer-footer-padding-vertical: @padding-sm + 1px;
+@drawer-footer-padding-horizontal: @padding-md;
 @drawer-header-close-size: 56px;
 @drawer-title-font-size: @font-size-lg;
-@drawer-title-line-height: 22px;
+@drawer-title-line-height: 26px;
 
 // Timeline
 // ---
@@ -1103,7 +1103,7 @@ html {
 // ---
 @notification-bg: @component-background;
 @notification-padding-vertical: 16px;
-@notification-padding-horizontal: 24px;
+@notification-padding-horizontal: 16px;
 
 //  Result
 // ---

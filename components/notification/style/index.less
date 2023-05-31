@@ -59,7 +59,7 @@
     &-message {
       margin-bottom: 8px;
       color: @heading-color;
-      font-size: @font-size-lg;
+      font-size: @font-size-base;
       line-height: 24px;
 
       // https://github.com/ant-design/ant-design/issues/5846#issuecomment-296244140
@@ -78,7 +78,7 @@
     }
 
     &-description {
-      font-size: @font-size-base;
+      font-size: @font-size-sm;
     }
 
     &-closable &-message {
@@ -86,13 +86,13 @@
     }
 
     &-with-icon &-message {
-      margin-bottom: 4px;
-      margin-left: 48px;
-      font-size: @font-size-lg;
+      //margin-bottom: 4px;
+      margin-left: 28px;
+      //font-size: @font-size-lg;
     }
 
     &-with-icon &-description {
-      margin-left: 48px;
+      margin-left: 28px;
       font-size: @font-size-base;
     }
 
@@ -101,9 +101,10 @@
     // https://github.com/ant-design/ant-design/issues/15512
     &-icon {
       position: absolute;
-      margin-left: 4px;
-      font-size: 24px;
-      line-height: 24px;
+      top: 18px;
+      //margin-left: 4px;
+      font-size: 20px;
+      line-height: 20px;
     }
 
     .@{iconfont-css-prefix}&-icon {

@@ -24,8 +24,9 @@
 
   &-description {
     display: none;
-    font-size: @font-size-base;
-    line-height: @font-size-base + 8px;
+    font-size: @font-size-sm;
+    line-height: @font-size-sm + 8px;
+    color: #666666;
   }
 
   &-success {
@@ -102,7 +103,7 @@
 
   &-with-description {
     align-items: flex-start;
-    padding: @alert-with-description-padding;
+    //padding: @alert-with-description-padding;
   }
 
   &-with-description&-no-icon {
@@ -110,15 +111,16 @@
   }
 
   &-with-description &-icon {
-    margin-right: @alert-with-description-padding-vertical;
-    font-size: @alert-with-description-icon-size;
+    margin-top: 2px;
+    //margin-right: @alert-with-description-padding-vertical;
+    font-size: @font-size-lg;
   }
 
   &-with-description &-message {
     display: block;
     margin-bottom: 4px;
     color: @alert-message-color;
-    font-size: @font-size-lg;
+    font-size: @font-size-base;
   }
 
   &-message {

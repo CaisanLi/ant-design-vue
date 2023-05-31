@@ -24,10 +24,10 @@ import type { KeyboardEventHandler, MouseEventHandler } from '../_util/EventInte
 type ILevelMove = number | [number, number];
 
 const PlacementTypes = tuple('top', 'right', 'bottom', 'left');
-export type placementType = typeof PlacementTypes[number];
+export type placementType = (typeof PlacementTypes)[number];
 
 const SizeTypes = tuple('default', 'large');
-export type sizeType = typeof SizeTypes[number];
+export type sizeType = (typeof SizeTypes)[number];
 
 export interface PushState {
   distance: string | number;
@@ -258,8 +258,8 @@ const Drawer = defineComponent({
           style={headerStyle}
         >
           <div class={`${prefixCls}-header-title`}>
-            {renderCloseIcon(prefixCls)}
             {title && <div class={`${prefixCls}-title`}>{title}</div>}
+            {renderCloseIcon(prefixCls)}
           </div>
           {extra && <div class={`${prefixCls}-extra`}>{extra}</div>}
         </div>
