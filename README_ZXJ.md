@@ -109,7 +109,7 @@
 1. 登录私有仓库账号
 
 ```javascript
-npm login --registry=http://192.168.5.16:4873/
+npm login --registry=http://192.168.4.158:32071/
 ```
 
 2. 打包并发布
