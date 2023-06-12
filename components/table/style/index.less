@@ -106,7 +106,9 @@
           text-align: center;
         }
 
-        &:not(:last-child):not(.@{table-prefix-cls}-selection-column):not(.@{table-prefix-cls}-row-expand-icon-cell):not([colspan])::before {
+        &:not(:last-child):not(.@{table-prefix-cls}-selection-column):not(
+            .@{table-prefix-cls}-row-expand-icon-cell
+          ):not([colspan])::before {
           position: absolute;
           top: 50%;
           right: 0;
@@ -129,7 +131,7 @@
 
   // ============================= Body =============================
   &-tbody {
-    > tr:hover {
+    > tr:not(.@{table-prefix-cls}-placeholder):hover {
       box-shadow: 0px 5px 12px 4px rgba(0, 0, 0, 0.09), 0px 3px 6px 0px rgba(0, 0, 0, 0.12),
         0px 1px 2px -2px rgba(0, 0, 0, 0.16);
       //transform: translate3d(0, -1px, 0);
@@ -256,31 +258,31 @@
     cursor: pointer;
     transition: all 0.3s;
 
-    &:hover {
-      background: @table-header-sort-active-bg;
-
-      &::before {
-        background-color: transparent !important;
-      }
-    }
+    //&:hover {
+    //  background: @table-header-sort-active-bg;
+    //
+    //  &::before {
+    //    background-color: transparent !important;
+    //  }
+    //}
 
     // https://github.com/ant-design/ant-design/issues/30969
-    &.@{table-prefix-cls}-cell-fix-left:hover,
-    &.@{table-prefix-cls}-cell-fix-right:hover {
-      background: @table-fixed-header-sort-active-bg;
-    }
+    //&.@{table-prefix-cls}-cell-fix-left:hover,
+    //&.@{table-prefix-cls}-cell-fix-right:hover {
+    //  background: @table-fixed-header-sort-active-bg;
+    //}
   }
 
   &-thead th.@{table-prefix-cls}-column-sort {
-    background: @table-header-sort-bg;
+    //background: @table-header-sort-bg;
 
-    &::before {
-      background-color: transparent !important;
-    }
+    //&::before {
+    //  background-color: transparent !important;
+    //}
   }
 
   td&-column-sort {
-    background: @table-body-sort-bg;
+    //background: @table-body-sort-bg;
   }
 
   &-column-title {
@@ -699,13 +701,13 @@
       position: relative;
 
       &::before {
-        box-shadow: inset 10px 0 8px -8px #F5F5F5;
+        box-shadow: inset 10px 0 8px -8px #f5f5f5;
       }
     }
 
     .@{table-prefix-cls}-cell-fix-left-first::after,
     .@{table-prefix-cls}-cell-fix-left-last::after {
-      box-shadow: inset 10px 0 8px -8px #F5F5F5;
+      box-shadow: inset 10px 0 8px -8px #f5f5f5;
     }
 
     .@{table-prefix-cls}-cell-fix-left-last::before {
@@ -718,13 +720,13 @@
       position: relative;
 
       &::after {
-        box-shadow: inset -10px 0 8px -8px #F5F5F5;
+        box-shadow: inset -10px 0 8px -8px #f5f5f5;
       }
     }
 
     .@{table-prefix-cls}-cell-fix-right-first::after,
     .@{table-prefix-cls}-cell-fix-right-last::after {
-      box-shadow: inset -10px 0 8px -8px #F5F5F5;
+      box-shadow: inset -10px 0 8px -8px #f5f5f5;
     }
   }
 
