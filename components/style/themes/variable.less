@@ -45,28 +45,28 @@ html {
   --@{ant-prefix}-success-color-active: color(~`colorPalette('@{green-6}', 7) `);
   --@{ant-prefix}-success-color-outline: fade(@green-6, @outline-fade);
   --@{ant-prefix}-success-color-deprecated-bg: ~`colorPalette('@{green-6}', 1) `;
-  --@{ant-prefix}-success-color-deprecated-border: ~`colorPalette('@{green-6}', 3) `;
+  --@{ant-prefix}-success-color-deprecated-border: green-6;
 
   // ========== Error Color ==========
   --@{ant-prefix}-error-color: @red-6;
   --@{ant-prefix}-error-color-hover: color(~`colorPalette('@{red-5}', 5) `);
   --@{ant-prefix}-error-color-active: color(~`colorPalette('@{red-5}', 7) `);
   --@{ant-prefix}-error-color-outline: fade(@red-5, @outline-fade);
-  --@{ant-prefix}-error-color-deprecated-bg: ~`colorPalette('@{red-5}', 1) `;
-  --@{ant-prefix}-error-color-deprecated-border: ~`colorPalette('@{red-5}', 3) `;
+  --@{ant-prefix}-error-color-deprecated-bg: ~`colorPalette('@{red-6}', 1) `;
+  --@{ant-prefix}-error-color-deprecated-border: @red-6;
 
   // ========= Warning Color =========
   --@{ant-prefix}-warning-color: @orange-6;
-  --@{ant-prefix}-warning-color-hover: color(~`colorPalette('@{gold-6}', 5) `);
-  --@{ant-prefix}-warning-color-active: color(~`colorPalette('@{gold-6}', 7) `);
+  --@{ant-prefix}-warning-color-hover: color(~`colorPalette('@{orange-6}', 5) `);
+  --@{ant-prefix}-warning-color-active: color(~`colorPalette('@{orange-6}', 7) `);
   --@{ant-prefix}-warning-color-outline: fade(@orange-6, @outline-fade);
-  --@{ant-prefix}-warning-color-deprecated-bg: ~`colorPalette('@{gold-6}', 1) `;
-  --@{ant-prefix}-warning-color-deprecated-border: ~`colorPalette('@{gold-6}', 3) `;
+  --@{ant-prefix}-warning-color-deprecated-bg: ~`colorPalette('@{orange-6}', 1) `;
+  --@{ant-prefix}-warning-color-deprecated-border: @orange-6;
 
   // ========== Info Color ===========
   --@{ant-prefix}-info-color: @base-primary;
   --@{ant-prefix}-info-color-deprecated-bg: ~`colorPalette('@{base-primary}', 1) `;
-  --@{ant-prefix}-info-color-deprecated-border: ~`colorPalette('@{base-primary}', 3) `;
+  --@{ant-prefix}-info-color-deprecated-border: @base-primary;
 }
 
 // -------- Colors -----------
