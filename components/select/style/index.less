@@ -263,7 +263,8 @@
     &-option {
       display: flex;
       &:hover:not(&-disabled) {
-        background-color: @select-item-selected-bg;
+        //background-color: @select-item-selected-bg;
+        color: #3385ff;
       }
       &-content {
         flex: auto;
@@ -277,13 +278,13 @@
       }
 
       &-active:not(&-disabled) {
-        background-color: @select-item-selected-bg;
+        //background-color: @select-item-selected-bg;
       }
 
       &-selected:not(&-disabled) {
         background-color: @select-item-selected-bg;
         color: @blue-6;
-        font-weight: @select-item-selected-font-weight;
+        //font-weight: @select-item-selected-font-weight;
 
         .@{select-prefix-cls}-item-option-state {
           color: @primary-color;
