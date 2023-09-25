@@ -1,6 +1,6 @@
 {
   "name": "@zxj/ui-plus",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "title": "Ant Design Vue",
   "description": "An enterprise-class UI design language and Vue-based implementation",
   "keywords": [
@@ -67,7 +67,7 @@
   },
   "browserslist": [
     "> 0.5%",
-    "last 2 versions",
+    "chrome 63",
     "Firefox ESR",
     "not dead",
     "not IE 11"
@@ -98,6 +98,7 @@
     "@babel/plugin-proposal-optional-chaining": "^7.10.1",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/plugin-transform-member-expression-literals": "^7.8.3",
+    "@babel/plugin-transform-nullish-coalescing-operator": "^7.22.11",
     "@babel/plugin-transform-object-assign": "^7.8.3",
     "@babel/plugin-transform-property-literals": "^7.8.3",
     "@babel/plugin-transform-runtime": "^7.10.5",

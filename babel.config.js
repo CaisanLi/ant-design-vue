@@ -5,6 +5,7 @@ module.exports = {
       plugins: [
         ['@vue/babel-plugin-jsx', { mergeProps: false, enableObjectSlots: false }],
         '@babel/plugin-proposal-optional-chaining',
+        '@babel/plugin-transform-nullish-coalescing-operator',
         '@babel/plugin-transform-object-assign',
         '@babel/plugin-proposal-object-rest-spread',
         '@babel/plugin-proposal-export-default-from',
