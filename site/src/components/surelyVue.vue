@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <a-carousel autoplay>
+    <z-carousel autoplay>
       <a style="display: inline-block" href="https://form.antdv.com/" target="_blank">
         <div :class="cls">
           <div class="logo">
@@ -31,7 +31,7 @@
           </div>
         </div>
       </a>
-    </a-carousel>
+    </z-carousel>
   </div>
   <div class="placeholder"></div>
 </template>

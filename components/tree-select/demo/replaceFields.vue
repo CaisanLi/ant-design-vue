@@ -17,7 +17,7 @@ Replace the title,key and children fields in treeNode with the corresponding fie
 </docs>
 
 <template>
-  <a-tree-select
+  <z-tree-select
     v-model:value="value"
     show-search
     style="width: 100%"
@@ -31,7 +31,7 @@ Replace the title,key and children fields in treeNode with the corresponding fie
       label: 'name',
       value: 'value',
     }"
-  ></a-tree-select>
+  ></z-tree-select>
 </template>
 <script lang="ts">
 import type { TreeSelectProps } from 'ant-design-vue';

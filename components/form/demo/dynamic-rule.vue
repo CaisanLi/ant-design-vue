@@ -16,31 +16,31 @@ Perform different check rules according to different situations.
 
 </docs>
 <template>
-  <a-form ref="formRef" :model="formState" name="dynamic_rule" v-bind="formItemLayout">
-    <a-form-item
+  <z-form ref="formRef" :model="formState" name="dynamic_rule" v-bind="formItemLayout">
+    <z-form-item
       label="Username"
       name="username"
       :rules="[{ required: true, message: 'Please input your username!' }]"
     >
-      <a-input v-model:value="formState.username" />
-    </a-form-item>
+      <z-input v-model:value="formState.username" />
+    </z-form-item>
 
-    <a-form-item
+    <z-form-item
       label="Nickname"
       name="nickname"
       :rules="[{ required: formState.checkNick, message: 'Please input your nickname!' }]"
     >
-      <a-input v-model:value="formState.nickname" />
-    </a-form-item>
+      <z-input v-model:value="formState.nickname" />
+    </z-form-item>
 
-    <a-form-item name="checkNick" v-bind="formTailLayout">
-      <a-checkbox v-model:checked="formState.checkNick">Nickname is required</a-checkbox>
-    </a-form-item>
+    <z-form-item name="checkNick" v-bind="formTailLayout">
+      <z-checkbox v-model:checked="formState.checkNick">Nickname is required</z-checkbox>
+    </z-form-item>
 
-    <a-form-item v-bind="formTailLayout">
-      <a-button type="primary" @click="onCheck">Check</a-button>
-    </a-form-item>
-  </a-form>
+    <z-form-item v-bind="formTailLayout">
+      <z-button type="primary" @click="onCheck">Check</z-button>
+    </z-form-item>
+  </z-form>
 </template>
 <script lang="ts">
 import { defineComponent, reactive, ref, watch } from 'vue';

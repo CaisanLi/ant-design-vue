@@ -16,10 +16,10 @@ Control keyboard behavior by `keyboard`.
 </docs>
 
 <template>
-  <a-space>
-    <a-input-number v-model:value="value" :keyboard="keyboard" :min="1" :max="10" />
-    <a-checkbox v-model:checked="keyboard">Toggle keyboard</a-checkbox>
-  </a-space>
+  <z-space>
+    <z-input-number v-model:value="value" :keyboard="keyboard" :min="1" :max="10" />
+    <z-checkbox v-model:checked="keyboard">Toggle keyboard</z-checkbox>
+  </z-space>
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue';

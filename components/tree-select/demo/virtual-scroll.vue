@@ -16,7 +16,7 @@ Use virtual list through `height` prop.
 
 </docs>
 <template>
-  <a-tree-select
+  <z-tree-select
     v-model:value="checkedKeys"
     style="width: 100%"
     tree-checkable
@@ -30,7 +30,7 @@ Use virtual list through `height` prop.
       <span v-if="value === '0-0-1-0'" style="color: #1890ff">{{ title }}</span>
       <template v-else>{{ title }}</template>
     </template>
-  </a-tree-select>
+  </z-tree-select>
 </template>
 <script lang="ts">
 import type { TreeSelectProps } from 'ant-design-vue';

@@ -17,33 +17,33 @@ Using pre & post tabs example.
 </docs>
 
 <template>
-  <a-space direction="vertical">
-    <a-input-number v-model:value="value1" addon-before="+" addon-after="$"></a-input-number>
-    <a-input-number v-model:value="value2">
+  <z-space direction="vertical">
+    <z-input-number v-model:value="value1" addon-before="+" addon-after="$"></z-input-number>
+    <z-input-number v-model:value="value2">
       <template #addonBefore>
-        <a-select v-model:value="addonBeforeValue" style="width: 60px">
-          <a-select-option value="add">+</a-select-option>
-          <a-select-option value="minus">-</a-select-option>
-        </a-select>
+        <z-select v-model:value="addonBeforeValue" style="width: 60px">
+          <z-select-option value="add">+</z-select-option>
+          <z-select-option value="minus">-</z-select-option>
+        </z-select>
       </template>
       <template #addonAfter>
-        <a-select v-model:value="addonAfterValue" style="width: 60px">
-          <a-select-option value="USD">$</a-select-option>
-          <a-select-option value="EUR">€</a-select-option>
-          <a-select-option value="GBP">£</a-select-option>
-          <a-select-option value="CNY">¥</a-select-option>
-        </a-select>
+        <z-select v-model:value="addonAfterValue" style="width: 60px">
+          <z-select-option value="USD">$</z-select-option>
+          <z-select-option value="EUR">€</z-select-option>
+          <z-select-option value="GBP">£</z-select-option>
+          <z-select-option value="CNY">¥</z-select-option>
+        </z-select>
       </template>
-    </a-input-number>
-    <a-input-number v-model:value="value3">
+    </z-input-number>
+    <z-input-number v-model:value="value3">
       <template #addonAfter><SettingOutlined /></template>
-    </a-input-number>
-    <a-input-number v-model:value="value4">
+    </z-input-number>
+    <z-input-number v-model:value="value4">
       <template #addonAfter>
-        <a-cascader placeholder="cascader" style="width: 150px" />
+        <z-cascader placeholder="cascader" style="width: 150px" />
       </template>
-    </a-input-number>
-  </a-space>
+    </z-input-number>
+  </z-space>
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue';

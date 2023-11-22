@@ -16,14 +16,14 @@ title:
 Select multiple options
 </docs>
 <template>
-  <a-cascader
+  <z-cascader
     v-model:value="value"
     style="width: 100%"
     multiple
     max-tag-count="responsive"
     :options="options"
     placeholder="Please select"
-  ></a-cascader>
+  ></z-cascader>
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue';

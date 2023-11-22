@@ -16,22 +16,22 @@ This example demonstrates the case that a form contains multiple form controls.
 
 </docs>
 <template>
-  <a-form
+  <z-form
     ref="formRef"
     name="dynamic_form_nest_item"
     :model="dynamicValidateForm"
     @finish="onFinish"
   >
-    <a-form-item name="area" label="Area" :rules="[{ required: true, message: 'Missing area' }]">
-      <a-select v-model:value="dynamicValidateForm.area" :options="areas" />
-    </a-form-item>
-    <a-space
+    <z-form-item name="area" label="Area" :rules="[{ required: true, message: 'Missing area' }]">
+      <z-select v-model:value="dynamicValidateForm.area" :options="areas" />
+    </z-form-item>
+    <z-space
       v-for="(sight, index) in dynamicValidateForm.sights"
       :key="sight.id"
       style="display: flex; margin-bottom: 8px"
       align="baseline"
     >
-      <a-form-item
+      <z-form-item
         :name="['sights', index, 'value']"
         label="Sight"
         :rules="{
@@ -39,14 +39,14 @@ This example demonstrates the case that a form contains multiple form controls.
           message: 'Missing sight',
         }"
       >
-        <a-select
+        <z-select
           v-model:value="sight.value"
           :disabled="!dynamicValidateForm.area"
           :options="(sights[dynamicValidateForm.area] || []).map(a => ({ value: a }))"
           style="width: 130px"
-        ></a-select>
-      </a-form-item>
-      <a-form-item
+        ></z-select>
+      </z-form-item>
+      <z-form-item
         label="Price"
         :name="['sights', index, 'price']"
         :rules="{
@@ -54,20 +54,20 @@ This example demonstrates the case that a form contains multiple form controls.
           message: 'Missing price',
         }"
       >
-        <a-input v-model:value="sight.price" />
-      </a-form-item>
+        <z-input v-model:value="sight.price" />
+      </z-form-item>
       <MinusCircleOutlined @click="removeSight(sight)" />
-    </a-space>
-    <a-form-item>
-      <a-button type="dashed" block @click="addSight">
+    </z-space>
+    <z-form-item>
+      <z-button type="dashed" block @click="addSight">
         <PlusOutlined />
         Add sights
-      </a-button>
-    </a-form-item>
-    <a-form-item>
-      <a-button type="primary" html-type="submit">Submit</a-button>
-    </a-form-item>
-  </a-form>
+      </z-button>
+    </z-form-item>
+    <z-form-item>
+      <z-button type="primary" html-type="submit">Submit</z-button>
+    </z-form-item>
+  </z-form>
 </template>
 
 <script lang="ts">

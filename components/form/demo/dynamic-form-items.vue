@@ -16,48 +16,48 @@ Bind nested fields by array name.
 
 </docs>
 <template>
-  <a-form
+  <z-form
     ref="formRef"
     name="dynamic_form_nest_item"
     :model="dynamicValidateForm"
     @finish="onFinish"
   >
-    <a-space
+    <z-space
       v-for="(user, index) in dynamicValidateForm.users"
       :key="user.id"
       style="display: flex; margin-bottom: 8px"
       align="baseline"
     >
-      <a-form-item
+      <z-form-item
         :name="['users', index, 'first']"
         :rules="{
           required: true,
           message: 'Missing first name',
         }"
       >
-        <a-input v-model:value="user.first" placeholder="First Name" />
-      </a-form-item>
-      <a-form-item
+        <z-input v-model:value="user.first" placeholder="First Name" />
+      </z-form-item>
+      <z-form-item
         :name="['users', index, 'last']"
         :rules="{
           required: true,
           message: 'Missing last name',
         }"
       >
-        <a-input v-model:value="user.last" placeholder="Last Name" />
-      </a-form-item>
+        <z-input v-model:value="user.last" placeholder="Last Name" />
+      </z-form-item>
       <MinusCircleOutlined @click="removeUser(user)" />
-    </a-space>
-    <a-form-item>
-      <a-button type="dashed" block @click="addUser">
+    </z-space>
+    <z-form-item>
+      <z-button type="dashed" block @click="addUser">
         <PlusOutlined />
         Add user
-      </a-button>
-    </a-form-item>
-    <a-form-item>
-      <a-button type="primary" html-type="submit">Submit</a-button>
-    </a-form-item>
-  </a-form>
+      </z-button>
+    </z-form-item>
+    <z-form-item>
+      <z-button type="primary" html-type="submit">Submit</z-button>
+    </z-form-item>
+  </z-form>
 </template>
 
 <script lang="ts">

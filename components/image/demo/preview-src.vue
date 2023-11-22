@@ -17,7 +17,7 @@ You can set different preview image.
 </docs>
 
 <template>
-  <a-image
+  <z-image
     :width="200"
     src="https://aliyuncdn.antdv.com/logo.png"
     :preview="{

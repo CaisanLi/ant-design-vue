@@ -29,8 +29,10 @@ export default defineComponent({
       for (let i = 0; i < 3; i += 1) {
         setTimeout(() => {
           Modal.confirm({
+            title: 'test title',
             content: 'destroy all',
             icon: createVNode(ExclamationCircleOutlined),
+            closable: true,
             onOk() {
               return new Promise((resolve, reject) => {
                 setTimeout(Math.random() > 0.5 ? resolve : reject, 1000);

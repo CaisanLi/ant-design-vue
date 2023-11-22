@@ -17,14 +17,14 @@ Import icons from `@ant-design/icons-vue`, component name of icons with differen
 </docs>
 
 <template>
-  <a-space>
+  <z-space>
     <home-outlined />
     <setting-filled />
     <smile-outlined />
     <sync-outlined spin />
     <smile-outlined :rotate="180" />
     <loading-outlined />
-  </a-space>
+  </z-space>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';

@@ -15,32 +15,32 @@ title:
 `name` prop support nest data structure. Customize validate message template with `validateMessages` or `message`. Ref [here](https://github.com/vueComponent/ant-design-vue/blob/main/components/form/utils/messages.ts) about message template.
 </docs>
 <template>
-  <a-form
+  <z-form
     :model="formState"
     v-bind="layout"
     name="nest-messages"
     :validate-messages="validateMessages"
     @finish="onFinish"
   >
-    <a-form-item :name="['user', 'name']" label="Name" :rules="[{ required: true }]">
-      <a-input v-model:value="formState.user.name" />
-    </a-form-item>
-    <a-form-item :name="['user', 'email']" label="Email" :rules="[{ type: 'email' }]">
-      <a-input v-model:value="formState.user.email" />
-    </a-form-item>
-    <a-form-item :name="['user', 'age']" label="Age" :rules="[{ type: 'number', min: 0, max: 99 }]">
-      <a-input-number v-model:value="formState.user.age" />
-    </a-form-item>
-    <a-form-item :name="['user', 'website']" label="Website">
-      <a-input v-model:value="formState.user.website" />
-    </a-form-item>
-    <a-form-item :name="['user', 'introduction']" label="Introduction">
-      <a-textarea v-model:value="formState.user.introduction" />
-    </a-form-item>
-    <a-form-item :wrapper-col="{ ...layout.wrapperCol, offset: 8 }">
-      <a-button type="primary" html-type="submit">Submit</a-button>
-    </a-form-item>
-  </a-form>
+    <z-form-item :name="['user', 'name']" label="Name" :rules="[{ required: true }]">
+      <z-input v-model:value="formState.user.name" />
+    </z-form-item>
+    <z-form-item :name="['user', 'email']" label="Email" :rules="[{ type: 'email' }]">
+      <z-input v-model:value="formState.user.email" />
+    </z-form-item>
+    <z-form-item :name="['user', 'age']" label="Age" :rules="[{ type: 'number', min: 0, max: 99 }]">
+      <z-input-number v-model:value="formState.user.age" />
+    </z-form-item>
+    <z-form-item :name="['user', 'website']" label="Website">
+      <z-input v-model:value="formState.user.website" />
+    </z-form-item>
+    <z-form-item :name="['user', 'introduction']" label="Introduction">
+      <z-textarea v-model:value="formState.user.introduction" />
+    </z-form-item>
+    <z-form-item :wrapper-col="{ ...layout.wrapperCol, offset: 8 }">
+      <z-button type="primary" html-type="submit">Submit</z-button>
+    </z-form-item>
+  </z-form>
 </template>
 <script lang="ts">
 import { defineComponent, reactive } from 'vue';

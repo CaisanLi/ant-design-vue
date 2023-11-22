@@ -80,7 +80,7 @@ In this way, component sub-components, such as Button and ButtonGroup, need to b
 
 ```html
 <template>
-  <a-button>Add</a-button>
+  <z-button>Add</z-button>
 </template>
 <script>
   import { Button } from 'ant-design-vue';

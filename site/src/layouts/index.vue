@@ -59,7 +59,7 @@
             </z-anchor>
           </z-affix>
         </section>
-        <a-back-top />
+        <z-back-top />
         <div class="fixed-widgets" :style="isZhCN ? { bottom: '175px' } : {}">
           <z-dropdown placement="top">
             <template #overlay>

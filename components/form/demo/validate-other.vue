@@ -15,57 +15,57 @@ title:
 Demonstration of validation configuration for form controls which are not shown in the demos above.
 </docs>
 <template>
-  <a-form
+  <z-form
     :model="formState"
     name="validate_other"
     v-bind="formItemLayout"
     @finishFailed="onFinishFailed"
     @finish="onFinish"
   >
-    <a-form-item label="Plain Text">
+    <z-form-item label="Plain Text">
       <span class="ant-form-text">China</span>
-    </a-form-item>
-    <a-form-item
+    </z-form-item>
+    <z-form-item
       name="select"
       label="Select"
       has-feedback
       :rules="[{ required: true, message: 'Please select your country!' }]"
     >
-      <a-select v-model:value="formState.select" placeholder="Please select a country">
-        <a-select-option value="china">China</a-select-option>
-        <a-select-option value="usa">U.S.A</a-select-option>
-      </a-select>
-    </a-form-item>
+      <z-select v-model:value="formState.select" placeholder="Please select a country">
+        <z-select-option value="china">China</z-select-option>
+        <z-select-option value="usa">U.S.A</z-select-option>
+      </z-select>
+    </z-form-item>
 
-    <a-form-item
+    <z-form-item
       name="select-multiple"
       label="Select[multiple]"
       :rules="[{ required: true, message: 'Please select your favourite colors!', type: 'array' }]"
     >
-      <a-select
+      <z-select
         v-model:value="formState['select-multiple']"
         mode="multiple"
         placeholder="Please select favourite colors"
       >
-        <a-select-option value="red">Red</a-select-option>
-        <a-select-option value="green">Green</a-select-option>
-        <a-select-option value="blue">Blue</a-select-option>
-      </a-select>
-    </a-form-item>
+        <z-select-option value="red">Red</z-select-option>
+        <z-select-option value="green">Green</z-select-option>
+        <z-select-option value="blue">Blue</z-select-option>
+      </z-select>
+    </z-form-item>
 
-    <a-form-item label="InputNumber">
-      <a-form-item name="input-number" no-style>
-        <a-input-number v-model:value="formState['input-number']" :min="1" :max="10" />
-      </a-form-item>
+    <z-form-item label="InputNumber">
+      <z-form-item name="input-number" no-style>
+        <z-input-number v-model:value="formState['input-number']" :min="1" :max="10" />
+      </z-form-item>
       <span class="ant-form-text">machines</span>
-    </a-form-item>
+    </z-form-item>
 
-    <a-form-item name="switch" label="Switch">
-      <a-switch v-model:checked="formState.switch" />
-    </a-form-item>
+    <z-form-item name="switch" label="Switch">
+      <z-switch v-model:checked="formState.switch" />
+    </z-form-item>
 
-    <a-form-item name="slider" label="Slider">
-      <a-slider
+    <z-form-item name="slider" label="Slider">
+      <z-slider
         v-model:value="formState.slider"
         :marks="{
           0: 'A',
@@ -76,87 +76,87 @@ Demonstration of validation configuration for form controls which are not shown 
           100: 'F',
         }"
       />
-    </a-form-item>
+    </z-form-item>
 
-    <a-form-item name="radio-group" label="Radio.Group">
-      <a-radio-group v-model:value="formState['radio-group']">
-        <a-radio value="a">item 1</a-radio>
-        <a-radio value="b">item 2</a-radio>
-        <a-radio value="c">item 3</a-radio>
-      </a-radio-group>
-    </a-form-item>
+    <z-form-item name="radio-group" label="Radio.Group">
+      <z-radio-group v-model:value="formState['radio-group']">
+        <z-radio value="a">item 1</z-radio>
+        <z-radio value="b">item 2</z-radio>
+        <z-radio value="c">item 3</z-radio>
+      </z-radio-group>
+    </z-form-item>
 
-    <a-form-item
+    <z-form-item
       name="radio-button"
       label="Radio.Button"
       :rules="[{ required: true, message: 'Please pick an item!' }]"
     >
-      <a-radio-group v-model:value="formState['radio-button']">
-        <a-radio-button value="a">item 1</a-radio-button>
-        <a-radio-button value="b">item 2</a-radio-button>
-        <a-radio-button value="c">item 3</a-radio-button>
-      </a-radio-group>
-    </a-form-item>
+      <z-radio-group v-model:value="formState['radio-button']">
+        <z-radio-button value="a">item 1</z-radio-button>
+        <z-radio-button value="b">item 2</z-radio-button>
+        <z-radio-button value="c">item 3</z-radio-button>
+      </z-radio-group>
+    </z-form-item>
 
-    <a-form-item name="checkbox-group" label="Checkbox.Group">
-      <a-checkbox-group v-model:value="formState['checkbox-group']">
-        <a-row>
-          <a-col :span="8">
-            <a-checkbox value="A" style="line-height: 32px">A</a-checkbox>
-          </a-col>
-          <a-col :span="8">
-            <a-checkbox value="B" style="line-height: 32px" disabled>B</a-checkbox>
-          </a-col>
-          <a-col :span="8">
-            <a-checkbox value="C" style="line-height: 32px">C</a-checkbox>
-          </a-col>
-          <a-col :span="8">
-            <a-checkbox value="D" style="line-height: 32px">D</a-checkbox>
-          </a-col>
-          <a-col :span="8">
-            <a-checkbox value="E" style="line-height: 32px">E</a-checkbox>
-          </a-col>
-          <a-col :span="8">
-            <a-checkbox value="F" style="line-height: 32px">F</a-checkbox>
-          </a-col>
-        </a-row>
-      </a-checkbox-group>
-    </a-form-item>
+    <z-form-item name="checkbox-group" label="Checkbox.Group">
+      <z-checkbox-group v-model:value="formState['checkbox-group']">
+        <z-row>
+          <z-col :span="8">
+            <z-checkbox value="A" style="line-height: 32px">A</z-checkbox>
+          </z-col>
+          <z-col :span="8">
+            <z-checkbox value="B" style="line-height: 32px" disabled>B</z-checkbox>
+          </z-col>
+          <z-col :span="8">
+            <z-checkbox value="C" style="line-height: 32px">C</z-checkbox>
+          </z-col>
+          <z-col :span="8">
+            <z-checkbox value="D" style="line-height: 32px">D</z-checkbox>
+          </z-col>
+          <z-col :span="8">
+            <z-checkbox value="E" style="line-height: 32px">E</z-checkbox>
+          </z-col>
+          <z-col :span="8">
+            <z-checkbox value="F" style="line-height: 32px">F</z-checkbox>
+          </z-col>
+        </z-row>
+      </z-checkbox-group>
+    </z-form-item>
 
-    <a-form-item name="rate" label="Rate">
-      <a-rate v-model:value="formState.rate" allow-half />
-    </a-form-item>
+    <z-form-item name="rate" label="Rate">
+      <z-rate v-model:value="formState.rate" allow-half />
+    </z-form-item>
 
-    <a-form-item name="upload" label="Upload" extra="longgggggggggggggggggggggggggggggggggg">
-      <a-upload
+    <z-form-item name="upload" label="Upload" extra="longgggggggggggggggggggggggggggggggggg">
+      <z-upload
         v-model:fileList="formState.upload"
         name="logo"
         action="/upload.do"
         list-type="picture"
       >
-        <a-button>
+        <z-button>
           <template #icon><UploadOutlined /></template>
           Click to upload
-        </a-button>
-      </a-upload>
-    </a-form-item>
+        </z-button>
+      </z-upload>
+    </z-form-item>
 
-    <a-form-item label="Dragger">
-      <a-form-item name="dragger" no-style>
-        <a-upload-dragger v-model:fileList="formState.dragger" name="files" action="/upload.do">
+    <z-form-item label="Dragger">
+      <z-form-item name="dragger" no-style>
+        <z-upload-dragger v-model:fileList="formState.dragger" name="files" action="/upload.do">
           <p class="ant-upload-drag-icon">
             <InboxOutlined />
           </p>
           <p class="ant-upload-text">Click or drag file to this area to upload</p>
           <p class="ant-upload-hint">Support for a single or bulk upload.</p>
-        </a-upload-dragger>
-      </a-form-item>
-    </a-form-item>
+        </z-upload-dragger>
+      </z-form-item>
+    </z-form-item>
 
-    <a-form-item :wrapper-col="{ span: 12, offset: 6 }">
-      <a-button type="primary" html-type="submit">Submit</a-button>
-    </a-form-item>
-  </a-form>
+    <z-form-item :wrapper-col="{ span: 12, offset: 6 }">
+      <z-button type="primary" html-type="submit">Submit</z-button>
+    </z-form-item>
+  </z-form>
 </template>
 <script lang="ts">
 import { defineComponent, reactive } from 'vue';

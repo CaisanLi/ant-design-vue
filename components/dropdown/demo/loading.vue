@@ -18,41 +18,41 @@ A loading indicator can be added to a button by setting the `loading` property o
 </docs>
 
 <template>
-  <a-space direction="vertical">
-    <a-dropdown-button type="primary" loading>
+  <z-space direction="vertical">
+    <z-dropdown-button type="primary" loading>
       <template #overlay>
-        <a-menu>
-          <a-menu-item key="1">Submit and continue</a-menu-item>
-        </a-menu>
+        <z-menu>
+          <z-menu-item key="1">Submit and continue</z-menu-item>
+        </z-menu>
       </template>
       Submit
-    </a-dropdown-button>
-    <a-dropdown-button type="primary" size="small" loading>
+    </z-dropdown-button>
+    <z-dropdown-button type="primary" size="small" loading>
       <template #overlay>
-        <a-menu>
-          <a-menu-item key="1">Submit and continue</a-menu-item>
-        </a-menu>
+        <z-menu>
+          <z-menu-item key="1">Submit and continue</z-menu-item>
+        </z-menu>
       </template>
       Submit
-    </a-dropdown-button>
-    <a-dropdown-button type="primary" :loading="loading1" @click="enterLoading1">
+    </z-dropdown-button>
+    <z-dropdown-button type="primary" :loading="loading1" @click="enterLoading1">
       <template #overlay>
-        <a-menu>
-          <a-menu-item key="1">Submit and continue</a-menu-item>
-        </a-menu>
+        <z-menu>
+          <z-menu-item key="1">Submit and continue</z-menu-item>
+        </z-menu>
       </template>
       Submit
-    </a-dropdown-button>
-    <a-dropdown-button :loading="loading2" @click="enterLoading2">
+    </z-dropdown-button>
+    <z-dropdown-button :loading="loading2" @click="enterLoading2">
       Submit
       <template #overlay>
-        <a-menu>
-          <a-menu-item key="1">Submit and continue</a-menu-item>
-        </a-menu>
+        <z-menu>
+          <z-menu-item key="1">Submit and continue</z-menu-item>
+        </z-menu>
       </template>
       <template #icon><DownOutlined /></template>
-    </a-dropdown-button>
-  </a-space>
+    </z-dropdown-button>
+  </z-space>
 </template>
 <script lang="ts">
 import { defineComponent, Ref, ref } from 'vue';

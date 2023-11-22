@@ -19,58 +19,58 @@ The `value` of time-related components is a `dayjs` object, which we need to pre
 or use `valueFormat` to format.
 </docs>
 <template>
-  <a-form
+  <z-form
     :model="formState"
     name="time_related_controls"
     v-bind="formItemLayout"
     @finish="onFinish"
     @finishFailed="onFinishFailed"
   >
-    <a-form-item name="date-picker" label="DatePicker" v-bind="config">
-      <a-date-picker v-model:value="formState['date-picker']" value-format="YYYY-MM-DD" />
-    </a-form-item>
-    <a-form-item name="date-time-picker" label="DatePicker[showTime]" v-bind="config">
-      <a-date-picker
+    <z-form-item name="date-picker" label="DatePicker" v-bind="config">
+      <z-date-picker v-model:value="formState['date-picker']" value-format="YYYY-MM-DD" />
+    </z-form-item>
+    <z-form-item name="date-time-picker" label="DatePicker[showTime]" v-bind="config">
+      <z-date-picker
         v-model:value="formState['date-time-picker']"
         show-time
         format="YYYY-MM-DD HH:mm:ss"
         value-format="YYYY-MM-DD HH:mm:ss"
       />
-    </a-form-item>
-    <a-form-item name="month-picker" label="MonthPicker" v-bind="config">
-      <a-date-picker
+    </z-form-item>
+    <z-form-item name="month-picker" label="MonthPicker" v-bind="config">
+      <z-date-picker
         v-model:value="formState['month-picker']"
         value-format="YYYY-MM"
         picker="month"
       />
-    </a-form-item>
-    <a-form-item name="range-picker" label="RangePicker" v-bind="rangeConfig">
-      <a-range-picker v-model:value="formState['range-picker']" value-format="YYYY-MM-DD" />
-    </a-form-item>
-    <a-form-item name="range-time-picker" label="RangePicker[showTime]" v-bind="rangeConfig">
-      <a-range-picker
+    </z-form-item>
+    <z-form-item name="range-picker" label="RangePicker" v-bind="rangeConfig">
+      <z-range-picker v-model:value="formState['range-picker']" value-format="YYYY-MM-DD" />
+    </z-form-item>
+    <z-form-item name="range-time-picker" label="RangePicker[showTime]" v-bind="rangeConfig">
+      <z-range-picker
         v-model:value="formState['range-time-picker']"
         show-time
         format="YYYY-MM-DD HH:mm:ss"
         value-format="YYYY-MM-DD HH:mm:ss"
       />
-    </a-form-item>
-    <a-form-item name="time-picker" label="TimePicker" v-bind="config">
-      <a-time-picker
+    </z-form-item>
+    <z-form-item name="time-picker" label="TimePicker" v-bind="config">
+      <z-time-picker
         v-model:value="formState['time-picker']"
         format="HH:mm:ss"
         value-format="HH:mm:ss"
       />
-    </a-form-item>
-    <a-form-item
+    </z-form-item>
+    <z-form-item
       :wrapper-col="{
         xs: { span: 24, offset: 0 },
         sm: { span: 16, offset: 8 },
       }"
     >
-      <a-button type="primary" html-type="submit">Submit</a-button>
-    </a-form-item>
-  </a-form>
+      <z-button type="primary" html-type="submit">Submit</z-button>
+    </z-form-item>
+  </z-form>
 </template>
 <script lang="ts">
 import { defineComponent, reactive } from 'vue';

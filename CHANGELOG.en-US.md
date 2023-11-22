@@ -576,7 +576,7 @@ Github：[https://github.com/surely-vue/table]
 - 🐞 Fix the problem that TreeSelect selectable and checkable cannot be closed [#4838](https://github.com/vueComponent/ant-design-vue/issues/4838)
 - 🐞 Fix the problem that Tabs cannot be scrolled on the mobile terminal [#4828](https://github.com/vueComponent/ant-design-vue/issues/4828)
 - 🐞 Fix InputNumber does not trigger inspection under form [#4831](https://github.com/vueComponent/ant-design-vue/issues/4831)
-- 🐞 Fix that when Select uses `<a-select-option>` to build a node, the automatic word segmentation fails [#4844](https://github.com/vueComponent/ant-design-vue/issues/4844)
+- 🐞 Fix that when Select uses `<z-select-option>` to build a node, the automatic word segmentation fails [#4844](https://github.com/vueComponent/ant-design-vue/issues/4844)
 
 ## 3.0.0-alpha.8
 
@@ -702,10 +702,10 @@ Github：[https://github.com/surely-vue/table]
     2. A Form.Item can only collect the data of one form item. If there are multiple form items, it will cause collection confusion. For example,
 
     ```html
-    <a-form-item>
-      <a-input name="a"></a-input>
-      <a-input name="b"></a-input>
-    </a-form-item>
+    <z-form-item>
+      <z-input name="a"></z-input>
+      <z-input name="b"></z-input>
+    </z-form-item>
     ```
 
     As above Form.Item does not know whether to collect `name="a"` or `name="b"`, you can solve this kind of problem in the following two ways:
@@ -713,10 +713,10 @@ Github：[https://github.com/surely-vue/table]
     The first is to use multiple `a-form-item`:
 
     ```html
-    <a-form-item>
-      <a-input name="a"></a-input>
-      <a-form-item><a-input name="b"></a-input></a-form-item>
-    </a-form-item>
+    <z-form-item>
+      <z-input name="a"></z-input>
+      <z-form-item><z-input name="b"></z-input></z-form-item>
+    </z-form-item>
     ```
 
     The second way is to wrap it with a custom component and call `useInjectFormItemContext` in the custom component, It is equivalent to merging multiple form items into one.
@@ -735,21 +735,21 @@ Github：[https://github.com/surely-vue/table]
     ```
 
     ```html
-    <a-form-item>
+    <z-form-item>
       <custom-com>
-        <a-input name="a"></a-input>
-        <a-input name="b"></a-input>
+        <z-input name="a"></z-input>
+        <z-input name="b"></z-input>
       </custom-com>
-    </a-form-item>
+    </z-form-item>
     ```
 
     Third, the component library provides an `a-form-item-rest` component, which will prevent data collection. You can put form items that do not need to be collected and verified into this component. It is the same as the first This method is very similar, but it does not generate additional dom nodes.
 
     ```html
-    <a-form-item>
-      <a-input name="a"></a-input>
-      <a-form-item-rest><a-input name="b"></a-input></a-form-item-rest>
-    </a-form-item>
+    <z-form-item>
+      <z-input name="a"></z-input>
+      <z-form-item-rest><z-input name="b"></z-input></z-form-item-rest>
+    </z-form-item>
     ```
 
 ## 2.2.8
@@ -1286,8 +1286,8 @@ In `ant-design-vue@1.2.0`, we introduced the svg icon ([Why use the svg icon?](h
 The old way of using Icon will be obsolete:
 
 ```html
-<a-icon type="smile" />
-<a-button icon="smile" />
+<z-icon type="smile" />
+<z-button icon="smile" />
 ```
 
 In 2.0, an on-demand introduction method will be adopted:
@@ -1295,9 +1295,9 @@ In 2.0, an on-demand introduction method will be adopted:
 ```html
 <template>
   <smile-outlined />
-  <a-button>
+  <z-button>
     <template v-slot:icon><smile-outlined /></template>
-  </a-buttom>
+  </z-buttom>
 </template>
 <script>
 import SmileOutlined from'@ant-design/icons-vue/SmileOutlined';

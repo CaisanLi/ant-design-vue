@@ -9,7 +9,7 @@ title:
 </docs>
 
 <template>
-  <a-cascader
+  <z-cascader
     v-model:value="value"
     multiple
     :options="options"
@@ -17,9 +17,9 @@ title:
     suffix-icon="Shopping Around"
   >
     <template #tagRender="data">
-      <a-tag :key="data.value" color="blue">{{ data.label }}</a-tag>
+      <z-tag :key="data.value" color="blue">{{ data.label }}</z-tag>
     </template>
-  </a-cascader>
+  </z-cascader>
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue';

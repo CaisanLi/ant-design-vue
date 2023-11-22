@@ -22,7 +22,7 @@ You can use `filterMode` to change default filter interface, options: `menu`(def
 </docs>
 
 <template>
-  <a-table :columns="columns" :data-source="data" @change="onChange"></a-table>
+  <z-table :columns="columns" :data-source="data" @change="onChange"></z-table>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';

@@ -82,7 +82,7 @@ app.config.globalProperties.$message = message;
 
 ```html
 <template>
-  <a-button>Add</a-button>
+  <z-button>Add</z-button>
 </template>
 <script>
   import { Button } from 'ant-design-vue';
